@@ -1,0 +1,1 @@
+<svg data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.89 127.89"><g fill="none" stroke="#1f339a" stroke-width="8" data-name="Layer 1"><circle cx="63.95" cy="63.95" r="59.95" stroke-miterlimit="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M88.03 75.74L63.95 63.95v-36.3"/></g></svg>

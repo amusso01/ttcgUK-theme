@@ -1,0 +1,32 @@
+.fdry-main__price-promise{
+  margin: 50px 0 0;
+  &-title{
+    font-family: $text__fontname;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+
+  .fdry-price-promise__top-info{
+    margin-bottom: 40px;
+
+    p+p {
+      margin-top: 20px;
+    }
+
+    strong{
+      color: #1834A0;
+    }
+  }
+
+  .fdry-price-promise__bottom-info{
+    margin-bottom: 80px;
+    h2{
+      margin-bottom: 27px;
+    }
+    p+p {
+      margin-top: 20px;
+    }
+  }
+}

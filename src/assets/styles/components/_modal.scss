@@ -1,0 +1,30 @@
+.hystmodal__window{
+  padding: 30px 21px;
+
+  .hystmodal-title{
+    margin-bottom: 25px;
+  }
+
+  .ac{
+    border: none;
+    margin-top: 15px;
+  }
+
+  .ac-panel{
+    padding: 0 20px;
+    ul{
+      margin-top: 10px;
+      li{
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 15px;
+
+        span{
+          display: inline-block;
+          margin-left: auto;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

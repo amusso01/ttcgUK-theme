@@ -1,0 +1,32 @@
+
+.pricepromisebutton {
+  position: absolute;
+  color: white;
+  background-color: #0F2F5E;
+  padding: 15px 20px;
+  left: 64%;
+  top: 39%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.pricepromisebutton:hover {
+  color: white;
+  background-color: #123a75;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .pricepromisebutton {
+      font-size: 0.9rem;
+      padding: 8px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricepromisebutton {
+      top: 37%;
+      font-size: 0.7rem;
+  }
+}

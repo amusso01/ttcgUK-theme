@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="9" viewBox="0 0 11 9"><g data-name="Polygon 1" fill="#011025"><path d="M.892.5h9.216L5.5 8.041.892.5z"/><path d="M5.5 7.082L9.217 1H1.783L5.5 7.082M5.5 9L0 0h11L5.5 9z" fill="#fff"/></g></svg>

@@ -1,0 +1,167 @@
+<?php
+
+global $carItem, $saleModeDiscount, $amount, $listingType, $hide1hrMsg;
+
+
+if (empty($carItem['image'])) {
+    $carItem['image'] = 'https://cdn.tradecentregroup.io/image/upload/q_auto/f_auto/w_400/web/Group/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'] . '.png';
+}
+
+$classesA = 'col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 px-2 | carlist carlist_salemode';
+$classesB = 'col col-5 col-md-12 | carlist__carimage';
+$classesC = 'col col-7 col-md-12';
+
+$fromPrice = $carItem['from_price'] ? $carItem['from_price'] : 'TBC';
+$rrp = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
+
+$discount =  $carItem['discount'] ?  $carItem['discount'] : 0;
+$totalPrice = $rrp - $discount;
+
+$saleMessage = $saleModeDiscount;
+if (isset($carItem['sale_mode_override']) && !empty($carItem['sale_mode_override'])) {
+    $saleMessage = html_entity_decode($carItem['sale_mode_override']);
+}
+
+if ($amount == 1) {
+    $classesA = 'col-10 px-2 | carlist carlist_salemode one-car';
+    $classesB = 'col-12 col-sm-5 col-md-6 | carlist__carimage';
+    $classesC = 'col col-md-6 pt-2 pt-sm-0 pt-md-4 pt-lg-5';
+} elseif ($amount == 2) {
+    $classesA = 'col-10 col-md-6 col-lg-4 px-2 | carlist carlist_salemode two-car';
+    $classesB = 'col-12 col-sm-5 col-md-12 | carlist__carimage';
+    $classesC = 'col col-md-12 pt-2 pt-sm-0';
+} elseif ($amount == 3) {
+    $classesA = 'col-12 col-sm-10 col-md-6 col-lg-4 px-2 | carlist carlist_salemode less-than-4';
+}
+
+if (!isset($carmodel) || $listingType === 'similarcarlisting') {
+    //$link = 'href="' . area_link('/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'], true) . '"';
+    $link = 'href="' . '/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'] . '/' . $carItem['car_id'] . '"';
+} else {
+    $link = '';
+}
+?>
+<div class="<?php
+echo $classesA; ?>"
+     data-rrp=""
+     data-make="<?php
+     echo $carItem['make_title'] ?>"
+     data-range="<?php
+     echo $carItem['model_title'] ?>"
+     data-location=""
+     data-branch=""
+     data-current-area="0">
+    <div class="row">
+        <div class="col-12 d-none d-md-block | carlist__prices__salerow">
+            <img src="<?php echo $saleMessage; ?>" />.
+        </div>
+        <div class="<?php
+        echo $classesB; ?>">
+            <a <?php
+            echo $link; ?> class="car-link">
+                <div class="d-md-none carlist__prices__salerow"> <img src="<?php echo $saleMessage; ?>" /></div>
+                <div class="img-holder">
+                    <img class="car-img" src="<?php
+                    echo $carItem['image']; ?>" alt="<?php
+                    echo $carItem['make_title'] . ' ' . $carItem['model_title']; ?>"/>
+                    <?php
+                    if (!isset($carmodel) || $listingType === 'similarcarlisting') : ?>
+                       <!-- <div class="text-center car-name d-md-none"><small> </small><?php
+                            echo $carItem['title']; ?></div> -->
+                    <?php
+                    endif; ?>
+                    <div class="deposit">
+                        <div class="deposittext">&pound;<?php
+                            echo '99';//TcFinance::getDeposit($fromPrice); ?></div>
+                        <div class="depositlabel">DEPOSIT</div>
+                    </div>
+                </div>
+				
+				<div class="text-center car-name"> <?php
+                        echo $carItem['title']; ?></div> 
+				
+				
+                <?php
+                if (!isset($carmodel) || $listingType === 'similarcarlisting') : ?>
+                  <!--   <div class="text-center car-name d-none d-md-block"><small> </small><?php
+                        echo $carItem['title']; ?></div> -->
+                <?php
+                endif; ?>
+            </a>
+        </div>
+        <div class="<?php
+        echo $classesC; ?>">
+            <div class="row">
+                <a <?php
+                echo $link; ?> class="col col-12 col-md-12 | carlist__prices">
+                    <div class="row no-gutters" style="text-align: center;">
+                        <div class="col-6 carlist__saleprices">
+                            <div class="row no-gutters">
+                                <div class="col-12 carlist__wasprice">
+                                    <span class="smalltext">Was</span>
+                                    <span class="pricetext">&pound;
+										<?php //echo $fromPrice + 1000; ?>
+										<?php echo $rrp; ?>
+									</span>
+                                </div>
+                                <div class="col-12 carlist__nowprice">
+                                    <span class="smalltext">Now</span>
+                                    <span class="pricetext">&pound;
+										<?php //echo $fromPrice; ?>
+										<?php echo $totalPrice; ?>
+									</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 carlist__weeklyprice" style="">
+                            <span class="smalltext">Just</span>
+                            <span class="weeklyprice">&pound;<?php
+                                echo TcFinance::getWeeklyPrice($totalPrice); ?></span>
+                            <span class="weektext">Per Week</span>
+                        </div>
+                        <div class="carlist__prices__divider">or</div>
+                    </div>
+                </a>
+                <div class="col col-12 col-md-12 offset-md-0 | carlist__finance">
+                    <a href="/finance-check/" class="text-center | carlist__button">Free Finance
+                        Check</a>
+                    <figure data-image="<?php
+                    echo $carItem['image']; ?>" data-title="<?php
+                    echo $carItem['make_title'] . ' ' . $carItem['model_title'] ?>" data-rrp="<?php
+                    echo $totalPrice; ?>" class="finance-example">Finance Example
+                    </figure>
+                </div>
+
+                <!--<div class="row">
+                <a <?php
+                echo $link; ?> class="col col-12 col-md-12 | carlist__prices">
+                    <div class="row no-gutters text-center">
+                        <div class="col | carlist__prices__price from_price">
+                            <small>from</small>
+                            &pound;<span><?php
+                echo $fromPrice; ?></span>
+                        </div>
+                        <div class="col | carlist__prices__deposit from_price">
+                            <div>&pound;<i><?php
+                echo TcFinance::getDeposit($fromPrice); ?></i> Deposit
+                            </div>
+                            &pound;<span class="text-left"><?php
+                echo TcFinance::getWeeklyPrice($fromPrice); ?></span>
+                        </div>
+                        <div class="carlist__prices__divider">or</div>
+                    </div>
+                </a>
+                <div class="col col-12 col-md-12 offset-md-0 | carlist__finance">
+                    <a href="#freefinance" class="text-center | carlist__button">Free Finance
+                        Check</a>
+                    <figure data-image="<?php
+                echo $carItem['image']; ?>" data-title="<?php
+                echo $carItem['make_title'] . ' ' . $carItem['model_title'] ?>" data-rrp="<?php
+                echo $fromPrice; ?>" class="finance-example">Finance Example
+                    </figure>
+                </div>
+            </div>-->
+            </div>
+        </div>
+    </div>
+</div>

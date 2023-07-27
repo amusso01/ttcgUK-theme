@@ -1,0 +1,203 @@
+.fdry-carrow__grid{
+
+  margin-bottom: 70px;
+
+  .car-4-grid-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 35px;
+
+    @include media('<phone-land'){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media('<phone'){
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .fdry-carlist-break-banner{
+    margin: 40px 0;
+  }
+
+  .fdry-car-single-card {
+    box-shadow: 0px 3px 12px #0000001C;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+
+
+    .fdy-car-single-card__image{
+      margin-bottom: 7px;
+      figure{
+        position: relative;
+        max-width: 100%;
+        height: 170px;
+
+        img{
+          @extend %cover;
+          object-fit: contain;
+        }
+
+        .fdry-car-reg{
+          position: absolute;
+          background-color: #F7CB62;
+          font-family: $text__fontname;
+          font-weight: 700;
+          bottom: 0;
+          left: 7px;
+          border-radius: 6px;
+          padding: 3px 8px;
+        }
+      }
+
+    }
+
+    .fdry-car-single-card__info{
+      padding: 10px 20px;
+
+      a{
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      
+      h2{
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      
+      .fdry-car-model{
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      .fdry-car-spec{
+        display: flex;
+        row-gap: 10px;
+        column-gap: 4px;
+        flex-wrap: wrap;
+        margin-bottom: 13px;
+      }
+
+      .single-spec{
+        background-color: #F5F5F5;
+        border-radius: 18px;
+        padding: 6px 10px;
+
+        p{
+          font-size: 11px;
+          font-weight: 500;
+          color: #1834A0;
+        }
+      }
+    }
+
+    .fdry-car-single__cost{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      padding: 20px 0;
+
+      .fdry-grey-line{
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: #F5F5F5;
+        left: 50%;
+        top: 0;
+      }
+
+      .fdry-cash-cost-or{
+        position: absolute;
+        background-color: #F5F5F5;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+          font-weight: 600;
+          color: #1834A0;
+          font-size: 10px;
+        }
+      }
+
+      .fdry-car-single__cost-card{
+        .fdry-text{
+          font-size: 11px;
+          margin-bottom: 1px;
+          font-weight: 500;
+        }
+
+        .fdry-red-price{
+          color: #B22D24;
+          font-size: 17px;
+          font-weight: 700;
+        }
+
+        .fdry-blue-cost{
+          color: #1834A0;
+          font-size: 17px;
+          font-weight: 700;
+
+          span{
+            font-size: 12px;
+            font-weight: 600;
+            color: #000000;
+          }
+        }
+      }
+
+      .fdry-monthly-cost{
+        padding-left: 22px;
+      }
+    }
+
+    .fdry-car-finance-check{
+      margin-top: auto;
+      padding: 10px 10px;
+      position: relative;
+      a{
+        background-color: #01B47A;
+        color: $color__bright;
+        font-size: 15px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 20px;
+        border-radius: 20px;
+        @include media('<desktop'){
+          font-size: 13px;
+        }
+
+        span{
+          position: absolute;
+          width: 46px;
+          height: 46px;
+          background-color: #01B500;
+          font-size: 11px;
+          padding: 3px;
+          border-radius: 24px;
+          border: 2px solid $color__bright;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include media('<desktop'){
+            width: 43px;
+            height: 43px;
+            font-size:9px;
+          }
+        }
+      }
+    }
+  }
+}

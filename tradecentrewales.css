@@ -1,0 +1,121 @@
+
+.banner {
+    width: 100%;
+    padding-top: 20.83%;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -1px
+}
+
+.safetyimg {
+    max-width: 1000px;
+    margin-bottom: -15px;
+    margin-top: -15px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (max-width: 575.98px) {
+    .banner {
+        padding-top: 66.67%;
+    }
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.banner video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner.no-image {
+    padding-top: 0 !important
+}
+
+
+/* FDRY CODE  */
+
+.marquee_text{
+    color: #000000;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 3px 0;
+    background-color:#ffe100;
+    letter-spacing: 1px;
+    width:200%;
+    overflow: hidden;
+    word-wrap: normal;
+}
+
+.marquee_text .smaller{
+    top:-3px;
+    font-size:18px;
+}
+
+
+@media (max-width: 1161px) {
+    .fdry-single-branch__information-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .fdry-locations-other-branches__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fdry-locations-other-branches__title{
+        margin-bottom:50px;
+        font-size:17px;
+        letter-spacing:0px;
+    }
+}
+
+@media (max-width: 870px) {
+    .fdry-locations-other-branches__grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .fdry-single-branch__hero-overlay{
+        width:100%;
+        height:130px;
+        top: calc(100% - 130px);
+    }
+
+
+    .fdry-single-branch__information .fdry-single-branch__info-title{
+        font-size:18px;
+    }
+
+    .fdry-single-branch__hero-wrapper h1{
+        font-size:28px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+
+    .marquee_text{
+        font-size: 19px;
+        background-color:#ffe100;
+        letter-spacing: 1px;
+    }
+
+    .marquee_text .smaller{
+        font-size:12px;
+        top:-2px;
+    }
+}
+
+
+/* ADD NEW STYLE DOWN HERE PLEASE DON"T USE MAIN.CSS in dist folder */

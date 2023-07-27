@@ -1,0 +1,97 @@
+/* SINGLE LOCATIONS */
+
+.fdry-single-branch__hero-wrapper{
+  position:relative;
+}
+
+.fdry-single-branch__hero-wrapper h1{
+  margin-bottom:60px;
+  text-align:center;
+  font-size:40px;
+  text-transform:uppercase;
+  margin-top: 80px;
+  @include media('<phone-land'){
+    font-size:30px;
+    margin-bottom:30px;
+    margin-top: 50px;
+  }
+}
+
+.fdry-single-branch__information{
+  max-width:1240px;
+  margin:auto;
+  padding:0 24px;
+}
+.fdry-single-branch__information .fdry-single-branch__info-title{
+  text-align:center;
+  color:#000000;
+  font-weight:500;
+  font-size:36px;
+  margin-bottom:50px;
+}
+
+.fdry-single-branch__information-grid{
+  display:grid;
+  grid-template-columns: 0.7fr 1fr;
+  column-gap:40px;
+  row-gap:30px;
+  margin-bottom:40px;
+
+  @include media('<phone-land'){
+    grid-template-columns: 1fr;
+  }
+
+  video{
+    width: 100%;
+    border-radius: 12px;
+  }
+
+
+  .fdry-locations-landing-singleLocation{
+    padding: 26px 46px 35px;
+  }
+}
+.fdry-single-branch__information-grid .fdry-locations-landing-singleLocation:nth-child(1){
+  grid-column:auto;
+}
+
+.fdry-locations-other-branches{
+  max-width:1500px;
+  padding-left:24px;
+  padding-right:24px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:100px;
+}
+
+.fdry-locations-other-branches__title{
+  text-align:center;
+  color:#000000;
+  font-weight:400;
+  font-size:36px;
+  margin-bottom:55px;
+  line-height: normal;
+  @include media('<phone'){
+    font-size:28px;
+  }
+}
+
+.fdry-single-branch__information-map iframe{
+  border-radius: 12px;
+}
+
+.fdry-locations-other-branches__grid{
+  display: grid;
+  column-gap: 40px;
+  row-gap: 55px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include media('<phone-land'){
+    grid-template-columns: 1fr;
+  }
+}
+
+.fdry-locations-other-branches__grid .fdry-locations-landing-singleLocation{
+  grid-column:auto;
+
+}

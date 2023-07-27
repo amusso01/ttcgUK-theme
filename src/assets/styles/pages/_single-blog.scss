@@ -1,0 +1,29 @@
+.fdry-single-blog-title{
+  margin-bottom: 20px;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.fdry-single-blog-figure{
+  margin-bottom: 40px;
+
+  position: relative;
+  height: 460px;
+
+  img{
+    @extend %cover;
+    object-fit: contain;
+  }
+}
+
+.fdry-signle-blog__content{
+  p{
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  p + p {
+    margin-top: 13px;
+  }
+
+}

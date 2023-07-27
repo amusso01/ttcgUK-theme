@@ -1,0 +1,198 @@
+<?php
+
+/**
+ * The carmodel post single template file
+ *
+ * @package CNS
+ * @subpackage TradeCentreWales
+ * @since 1.0
+ * @version 1.0
+ */
+
+global $wp, $show404, $carmake, $carmodel, $car, $branch, $listingType, $custom, $title, $similarCars, $similarCarTitle,
+$metaDescription, $saleModeDiscount, $carsArray, $carItem, $amount, $saleMode, $regYear, $carId;
+?>
+
+<?php
+get_header();
+
+
+
+?>
+<?php get_template_part( 'components/getters/car-getter' ) ?>
+
+<?php
+// ARRAY HOLDING CAR INFO
+$carItem = $carsArray[0];
+
+$amount = count($carsArray);
+
+// CAR NAME IF AMOUNT IS 0 hence no car are present in the array
+$carname = $carmake->post_title . ' ' . $carmodel->post_title;
+
+// CAR IMAGE
+if (empty($carItem['image'])) {
+$carItem['image'] = 'https://cdn.tradecentregroup.io/image/upload/q_auto/f_auto/w_400/web/Group/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'] . '.png';
+}
+
+$carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
+
+// REPLACE MERCEDES TITLE
+if (strtolower($carItem['make_title']) == 'mercedes-benz') {
+    $carItem['make_title'] = 'Mercedes';
+}
+
+// GET CAR SPEC
+$techinfo = cns_car_technical_data( $carItem['car_id'] ); 
+
+$mpg = "";
+$insurence = "";
+foreach ($techinfo as $categoryName => $data) :
+    foreach ($data as $featureTitle => $featureValue) : 
+        if( $featureValue != "Not Available"){
+            if(strpos($featureTitle, "(mpg)" ) !== false){
+                $mpg = $featureValue;
+            } 
+
+            if(strpos($featureTitle, "Insurance" ) !== false){
+                $insurence = $featureValue;
+            } 
+
+        }
+      
+    endforeach;
+    
+endforeach;
+
+?>
+
+<?php get_template_part( 'components/header/header-video' ) ?>
+<?php get_template_part( 'components/header/header-image-banner' ) ?>
+<?php get_template_part( 'components/header/header-marquee' ) ?>
+
+
+<?php get_template_part( 'components/modal/car-info' ) ?>
+
+<main class="fdry-main__single-car content-max">
+    <?php if($amount) : ?>
+        
+    <section class="fdry-single-car__specs content-block">
+        <div class="single-car__grid">
+            <div class="car-figure">
+                <figure class="fdry-single-car-figure" data-vrm="<?= $carItem['reg_number']; ?>">
+         
+                    <img class="car-img" src="<?= $carItem['image']; ?>" alt="<?= $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
+    
+                    <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
+    
+                </figure>
+                <h3>Car Overview</h3>
+            </div>
+
+            <div class="car-specs-card__wrapper">
+                <div class="car-spec-card__info">
+                    <h1 class="car-name"><?= strtoupper($carItem['make_title']) .' '.strtoupper($carItem['model_title']) ?></h1>
+                    <p class="model"><?= $carItem['derivative'] ?></p>
+
+                    <div class="fdry-car-spec">
+                        <div class="single-spec">
+                            <?php if($carItem['reg_year']!="") { ?>
+                            <p class="spec"><?php echo $carItem['reg_year']; ?></p>
+                            <?php } ?>  
+                        </div>
+                        <div class="single-spec">
+                            <?php if($carItem['fueltype']!="") { ?>
+                            <p class="spec"><?php echo $carItem['fueltype']; ?></p>
+                            <?php } ?>  
+                        </div>
+                        <div class="single-spec">
+                            <?php if($carItem['mileage']>0) { ?>
+                            <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
+                            <?php } ?>  
+                        </div>
+                        <div class="single-spec">
+                            <?php if($carItem['transmission']!="") { ?>
+                            <p class="spec"><?php echo $carItem['transmission']; ?></p>
+                            <?php } ?>  
+                        </div>
+                        <div class="single-spec">
+                            <?php if($insurence!= "") { ?>
+                            <p class="spec"><?php echo $insurence ; ?> Ins. Group</p>
+                            <?php } ?>  
+                        </div>
+                    </div>
+                    <div class="fdry-car-single__cost">
+                        <div class="fdry-cash-cost fdry-car-single__cost-card">
+                            <p class="fdry-text">Cash or Finance</p>
+                            <p class="fdry-red-price">&pound;<?php echo  $carItem['rrp']  ?></p>
+                        </div>
+                        <div class="fdry-grey-line"></div>
+                        <div class="fdry-cash-cost-or">
+                            <p>Or</p>
+                        </div>
+                        <div class="fdry-monthly-cost fdry-car-single__cost-card">
+                            <p class="fdry-text">From</p>
+                            <p class="fdry-blue-cost">&pound; <?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?> <span>Per Month</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fdry-car-finance-check">
+                    <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn">
+                        FREE FINANCE CHECK 
+                        <span>Click<br>Here</span>
+                    </a>
+                </div>
+                <div class="fdry-visit-us">
+                    <a href="<?= get_permalink( $branch->ID )?>">
+                        <i><?php get_template_part( 'svg-template/svg', 'geo-tag-icon' ) ?></i>
+                        VISIT US
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- CAR OVERVIEW SECTION -->
+    <?php get_template_part( 'components/partials/car-overview' ) ?>
+
+    <!-- CAR BANNERS -->
+    <?php get_template_part( 'components/partials/car-legal-banner' ) ?>
+
+    <!-- TC PROMISE CARD -->
+    <?php get_template_part( 'components/partials/car-tc-promise-card' ) ?>
+
+    <!-- VIDEO -->
+    <?php get_template_part( 'components/banners/better-car-video' ) ?>   
+    <!-- BANNERS -->
+    <?php get_template_part( 'components/banners/price-promise' ) ?>
+
+    <!-- BRANCHES -->
+    <div class="content-block content-max" style="margin-top: 50px; margin-bottom: 40px; padding-bottom:60px">
+        <?php get_template_part( 'components/pages/branches-carousel' ) ?>
+    </div>
+
+    <!-- TRUSTPILOT -->
+    <?php get_template_part( 'components/pages/trustpilot' ) ?>
+
+    <!-- ACTION BOX GRID -->
+    <?php get_template_part( 'components/pages/action-box-grid' ) ?>
+
+    <!-- VIDEO GUIDE -->
+    <?php get_template_part( 'components/pages/video-guide' ) ?>
+
+    <?php else: ?>
+        <p>We currently have no <?= $carname; ?> in our centres, however we have a large
+            selection to choose from at our car supermarkets.</p>
+    <?php endif; ?>
+
+    <?php
+    $techData = cns_car_technical_data($carId);
+    $standardEquipment = cns_car_standard_equiptment($carId);
+    ?>
+
+</main>
+
+<?php 
+
+get_footer();

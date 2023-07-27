@@ -1,0 +1,52 @@
+/* PRESETS
+/––––––––––––––––––––––––*/
+
+.content-block {
+	//create the "container" with this applied to any row or any 100% width element
+	padding: 0 1rem;
+	@include media(">phone") {
+		padding: 0 1.5rem;
+	}	
+	@include media(">desktop") {
+		padding: 0 3.2rem;
+	}	
+}
+
+.content-block__carloop{
+	padding: 0 1rem;
+	@include media(">phone") {
+		padding: 0 2.5rem;
+	}	
+	@include media(">desktop") {
+		padding: 0 5.2rem;
+	}	
+}
+
+.content-block-header {
+	//create the "container" with this applied to any row or any 100% width element
+	padding: 0 1rem;
+	@include media(">phone") {
+		padding: 0 1.5rem;
+	}	
+	@include media(">desktop") {
+		padding: 0 2.2rem;
+	}	
+}
+
+.content-max{
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto ;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+%cover {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}

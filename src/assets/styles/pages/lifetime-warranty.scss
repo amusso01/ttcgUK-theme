@@ -1,0 +1,187 @@
+.page-template-template-lifetime-waranty{
+  .sticky-top-banner{
+    margin-bottom: 0;
+  }
+
+  .fdry-lifetime-blue-bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    .top-title-banner{
+      margin-bottom: 40px;
+    }
+
+    h3{
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: $color__bright;
+      text-align: center;
+      line-height: normal;
+      @include media('<phone-land'){
+        font-size: 21px;
+      }
+    }
+    h1{
+      font-size: 42px;
+      margin-bottom: 55px;
+      color: $color__bright;
+      text-align: center;
+      line-height: normal;
+      @include media('<phone-land'){
+        font-size: 28px;
+      }
+    }
+  }
+  .fdry-lifetime-blue-bg__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+    column-gap: 40px;
+    justify-items: center;
+
+    @include media('<phone-land'){
+      grid-template-columns: 1fr;
+      row-gap: 35px;
+    }
+
+    h5{
+      color: $color__bright;
+      margin-bottom: 15px;
+    }
+    ul>li{
+      color: $color__bright;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: $header__fontname;
+    }
+  }
+  .pdf{
+    color: $color__bright;
+    text-align: center;
+    font-family: $header__fontname;
+    a{
+      color: #D85F26;
+    }
+  }
+
+  .fdry-lifetime-orange-bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    .title{
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: $color__bright;
+      text-align: center;
+      line-height: normal;
+      @include media('<phone-land'){
+        font-size: 32px;
+      }
+    }
+    .sub-title{
+      font-size: 16px;
+      margin-bottom: 45px;
+      color: $color__bright;
+      text-align: center;
+    }
+
+    .fdry-level__services-grid{
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+      column-gap: 20px;
+      row-gap: 20px;
+      margin-bottom: 100px;
+      @include media('<phone-land'){
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .single-level{
+
+      .header{
+        background-color: #0F2F5E;
+        padding: 15px 0;
+        text-align: center;
+        p{
+          color: $color__bright;
+          font-family: $header__fontname;
+          &.heading{
+            font-size: 28px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .list{
+        padding: 40px 16px;
+        background-color: $color__bright;
+      }
+
+      ul{
+        list-style: none;
+        li{
+          font-size: 13px;
+          margin-bottom: 7px;
+          img{
+            width: 18px;
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .potential-cost{
+    h4{
+      font-size: 23px;
+      margin-bottom: 5px;
+      color: $color__bright;
+      text-align: center;
+      .blue{
+        color: #0F2F5E;
+      }
+    }
+
+    figure{
+      margin-bottom: 25px;
+    }
+
+    .caption{
+      color: $color__bright;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .faq{
+    h3{
+      font-size: 38px;
+      margin-bottom: 65px;
+    }
+
+    .single-faq{
+      margin-bottom: 45px;
+
+      .question{
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: $color__bright;
+        text-decoration: underline;
+      }
+      .answer{
+        color: $color__bright;
+        font-size: 15px;
+        font-weight: 300;
+        a{
+          color: #D85F26;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

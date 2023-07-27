@@ -1,0 +1,24 @@
+.fdry-video__wrapper{
+  margin-bottom: 50px;
+}
+
+.fdry-video-guide__info{
+  margin-bottom: 50px;
+
+  .fdry-video-guide__title{
+    font-size: 28px;
+    font-weight: 700;
+    font-family: $text__fontname;
+    margin-bottom: 30px;
+    @include media('<phone'){
+      font-size: 21px;
+      line-height: normal;
+    }
+  }
+
+  .fdry-video-content{
+    p+p{
+      margin-top: 25px;
+    }
+  }
+}

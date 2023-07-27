@@ -1,0 +1,12 @@
+.fdry-video-desktop{
+  @include media('<phone'){
+    display: none;
+  }
+}
+
+.fdry-video-mobile{
+  display: none;
+  @include media('<phone'){
+    display: block;
+  }
+}

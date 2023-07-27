@@ -1,0 +1,105 @@
+.fdry-footer__wrapper-top{
+  background-color: #021B79;
+  padding: 60px 0;
+}
+
+.fdry-footer__wrapper-bottom{
+  background-color: #1834A0;
+  padding: 60px 0 35px;
+}
+
+.fdry-footer-top-text, .fdry-footer__apr-text{
+  p+p{
+    margin-top: 20px;
+  }
+}
+
+.fdry-footer{
+  color: $color__bright;
+  text-align: center;
+
+  .content-block{
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  p{
+    color: $color__bright;
+    font-size: 12px;
+    line-height: 25px;
+    font-weight: 400;
+  }
+
+  .fdry-footer-apr__title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  .fdry-footer-social{
+    margin-bottom: 41px;
+
+  }
+
+  .fdry-footer-social__wrapper{
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+
+    img{
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  .fdry-footer__area-links{
+    margin-bottom:40px;
+    a{
+      color: $color__bright;
+      font-size: 12px;
+    }
+  }
+
+  .fdry-footer__menu-wrapper{
+    margin-bottom: 45px;
+    margin-top: 25px;
+
+    @include media('<phone'){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      margin-top: 25px;
+    }
+
+    nav +nav {
+      margin-top: 25px;
+      @include media('<phone'){
+        margin-top: 0;
+      }
+    }
+
+    nav{
+      ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        column-gap: 34px;
+        @include media('<phone'){
+          flex-direction: column;
+          row-gap: 20px;
+        }
+        a{
+          color: $color__bright;
+          font-size: 13px;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .copyright{
+    font-size: 11px;
+  }
+
+}
+

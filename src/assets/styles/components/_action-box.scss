@@ -1,0 +1,136 @@
+.fdry-action-box{
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  .action-box-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6px;
+    row-gap: 6px;
+
+    a{
+      &:hover{
+        text-decoration: none;
+
+        .action-box__image{
+
+          &::after{
+            background-color: rgba($color__main, 0.1);
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .action-box__image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+
+    &::after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: all .3s;
+      background-color: rgba(#000000, 0.4);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .action-box-text{
+      position: relative;
+      color: $color__bright;
+      z-index: 1;
+      padding: 50px;
+      font-family: $header__fontname;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      @include media('<phone'){
+        padding: 20px;
+      }
+
+    }
+  }
+
+  .action-box1x1{
+
+    @include media('<phone'){
+      grid-column: span 2;
+    }
+    
+    .action-box__image{
+      min-height: 330px;
+      @include media('<phone'){
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .action-box-text{
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+  }
+
+  .action-box1x2{
+    grid-row: span 2;
+
+    @include media('<phone'){
+      grid-column: span 2;
+      .action-box__image{
+        min-height: 330px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .action-box-text{
+      font-size: 24px;
+      font-weight: 500;
+      @include media('<phone'){
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .action-box2x1{
+    grid-column: span 2;
+
+    .action-box__image{
+      min-height: 410px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include media('<phone'){
+        min-height: 330px;
+      }
+    }
+
+    .action-box-text{
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      @include media('<phone'){
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.fdry-banner-video-top{
+  .fdry-video{
+    background-size: contain;
+  }
+}
+
+.fdry-banner-image-top{
+  .fdry-banner-image{
+    width: 100%;
+  }
+  .fdry-banner-image-top__desktop {
+    display: none;
+
+    @include media('>phone'){
+      display: block;
+    }
+  }
+  .fdry-banner-image-top__mobile {
+    display: block;
+
+    @include media('>phone'){
+      display: none;
+    }
+  }
+}

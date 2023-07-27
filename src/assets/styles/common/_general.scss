@@ -1,0 +1,114 @@
+html{
+	overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  font-size: $text__p;
+  color: $color__textLight;
+  font-family: $text__fontname;
+  font-weight: 400;
+}
+
+p,
+li,
+code,
+pre,
+ul,
+li,
+ol {
+  color: $color__textLight;
+  font-weight: 500;
+}
+
+em,
+i,
+q,
+dfn {
+	font-style: italic;
+  color: $color__textLight;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+  color: $color__textLight;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/**
+ * Links
+ */
+ a {
+  color: $color__textLight;
+	text-decoration: none;
+	font-size: $text__p;
+  font-weight: inherit;
+	&:hover {
+		color: $color__link-hover;
+    text-decoration: underline;
+	}
+}
+
+/*
+ * Headings
+ */
+
+ .h1,
+ .h2,
+ .h3,
+ .h4,
+ .h5,
+ .h6,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 0px;
+   font-family: $header__fontname;
+   color: $color__text;
+ }
+ 
+ h1,
+.h1 {
+	line-height: 45px;
+	font-size: $text__h1;
+}
+
+h2,
+.h2 {
+	font-size: $text__h2;
+	line-height: 33px;
+}
+
+h3,
+.h3 {
+	font-size: $text__h3;
+  line-height: 24px;
+}
+
+h4,
+.h4 {
+	font-size: $text__h4;
+}
+
+h5,
+.h5 {
+	font-size: $text__h5;
+}
+
+h6,
+.h6 {
+	font-size: $text__h6;
+}

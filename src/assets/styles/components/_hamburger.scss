@@ -1,0 +1,77 @@
+$icon-height: 25px;
+$icon-width: 40px;
+$line-height: 3px;
+
+$icon-top: 0;
+$icon-middle: ($icon-height / 2) - ($line-height / 2);
+$icon-bottom: $icon-height - $line-height;
+
+$flip-duration: 0.5s;
+
+#hamburger-menu {
+  position: relative;
+  height: $icon-height;
+  width: $icon-width;
+  margin: 30px auto;
+  display: block;
+}
+
+.hamburger-line {
+  position: absolute;
+  height: $line-height;
+  width: $icon-width;
+  background-color: #fff;
+  transform-origin: 50%;
+  border-radius: 3px;
+}
+
+.top {
+  top: $icon-top;
+}
+
+.middle {
+  top: $icon-middle;
+}
+
+.bottom {
+  top: $icon-bottom;
+}
+
+
+.opened {
+  .top {
+    top: $icon-middle; 
+    transform: rotate(-225deg);
+    transition-property: transform, top;
+    transition-duration: $flip-duration;
+   }
+  .middle {
+    opacity: 0;
+    transition: opacity $flip-duration;
+  }
+  .bottom {
+      top: $icon-middle;
+      transform: rotate(225deg);
+      transition-property: transform, top;
+      transition-duration: $flip-duration;
+  }
+}
+
+.closed  {
+  .top {
+    top: $icon-top;
+    transform: rotate(0deg);
+    transition-property: transform, top;
+    transition-duration: $flip-duration;
+  }
+  .middle {
+    opacity: 1;
+    transition: opacity $flip-duration;
+  }
+  .bottom { 
+    top: $icon-height - $line-height;
+    transform: rotate(0deg);
+    transition-property: transform, top;
+    transition-duration: $flip-duration;
+  }
+}

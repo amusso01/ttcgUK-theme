@@ -1,0 +1,121 @@
+<?php
+
+global $carItem, $saleModeDiscount, $amount, $listingType, $hide1hrMsg;
+
+if (empty($carItem['image'])) {
+    $carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&make='.$carItem['make_name'].'&modelFamily='.$carItem['model_name'].'&modelYear='.$carItem['model_year'].'&modelRange='.$carItem['model_range'].'&modelVariant='.$carItem['model_variant'].'&powerTrain='.$carItem['power_train'].'&bodySize='.$carItem['body_size'].'&trim='.$carItem['trim'].'&paintId='.$carItem['paint_id'].'&paintDescription='.$carItem['paint_description'].'&rimId='.$carItem['rim_id'].'&rimDescription='.$carItem['rim_description'].'&interiorId='.$carItem['interior_id'].'&interiorDescription='.$carItem['interior_description'].'&fileType=webp&zoomType=fullscreen&zoomLevel=10&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
+}
+
+$classesA = 'col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3 px-2 | carlist carlist_frommode';
+$classesB = 'col col-5 col-md-12 | carlist__carimage';
+$classesC = 'col col-7 col-md-12';
+
+$fromPrice = $carItem['from_price'] ? $carItem['from_price'] : 'TBC';
+
+$saleMessage = $saleModeDiscount;
+if (isset($carItem['sale_mode_override']) && !empty($carItem['sale_mode_override'])) {
+    $saleMessage = html_entity_decode($carItem['sale_mode_override']);
+}
+
+if ($amount == 1) {
+    $classesA = 'col-10 px-2 | carlist carlist_frommode one-car';
+    $classesB = 'col-12 col-sm-5 col-md-6 | carlist__carimage';
+    $classesC = 'col col-md-6 pt-2 pt-sm-0 pt-md-4 pt-lg-5';
+} elseif ($amount == 2) {
+    $classesA = 'col-10 col-md-6 col-lg-4 px-2 | carlist carlist_frommode two-car';
+    $classesB = 'col-12 col-sm-5 col-md-12 | carlist__carimage';
+    $classesC = 'col col-md-12 pt-2 pt-sm-0';
+} elseif ($amount == 3) {
+    $classesA = 'col-12 col-sm-10 col-md-6 col-lg-4 px-2 | carlist carlist_frommode less-than-4';
+}
+
+if (!isset($carmodel) || $listingType === 'similarcarlisting') {
+    $link = 'href="' . area_link('/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'], true) . '"';
+} else {
+    $link = '';
+}
+?>
+<div class="<?php
+echo $classesA; ?>"
+     data-rrp=""
+     data-make="<?php
+     echo $carItem['make_title'] ?>"
+     data-range="<?php
+     echo $carItem['model_title'] ?>"
+     data-location=""
+     data-branch=""
+     data-current-area="0">
+    <div class="row">
+        <div class="<?php
+        echo $classesB; ?>">
+            <?php if (!isset($carmodel) || $listingType === 'similarcarlisting') : ?>
+                <!--<div class="text-center car-name d-md-none"><?php
+                    echo $carItem['title']; ?></div>-->
+            <?php endif; ?>
+            <div class="col-12 | carlist__prices__fromrow">Huge choice of <?php echo strtoupper($carItem['make_title']); ?></div>
+            <a <?php
+            echo $link; ?> class="car-link">
+                <div class="img-holder">
+                    <img class="car-img" src="<?php
+                    echo $carItem['image']; ?>" alt="<?php
+                    echo $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
+                    <!--<div class="carlist__carreg--opaque larger">HUGE CHOICE</div>-->
+                </div>
+                <?php if (!isset($carmodel) || $listingType === 'similarcarlisting') : ?>
+                    <div class="text-center car-name"><!--<small>Like this </small>--><?php
+                        echo $carItem['title']; ?></div>
+                <?php
+                endif; ?>
+            </a>
+            <figure data-image="<?php
+            echo $carItem['image']; ?>" data-title="<?php
+            echo $carItem['make_title'] . ' ' . $carItem['model_title'] ?>" data-rrp="<?php
+            echo $fromPrice; ?>" class="finance-example">Finance Example
+            </figure>
+        </div>
+        <div class="<?php
+        echo $classesC; ?>">
+            <div class="row">
+                <a <?php
+                echo $link; ?> class="col col-12 col-md-12 | carlist__prices">
+                    <div class="row no-gutters text-center">
+                        <div class="col | carlist__prices__price from_price">
+                            <small>from</small>
+                            &pound;<span><?php
+                                echo $fromPrice; ?></span>
+                        </div>
+                        <div class="col | carlist__prices__deposit from_price">
+                            &pound;<span class="text-left"><?php
+                                echo TcFinance::getWeeklyPrice($fromPrice); ?></span>
+                        </div>
+                        <div class="carlist__prices__divider">or</div>
+                    </div>
+                </a>
+                <?php
+                if (!$hide1hrMsg) :
+                    ?>
+                    <div class="col-12 drive-away-container">
+                        <a href="#" class="drive-away">
+                            <div class="row no-gutters">
+                                <div class="col-5 text-right"><span class="deposit">&pound;<?php
+                                        echo TcFinance::getDeposit($fromPrice); ?></span></div>
+                                <div class="col-7">OR YOUR <strong>OLD CAR</strong><br/> AS <strong>DEPOSIT</strong></div>
+                            </div>
+                        </a>
+                    </div>
+                <?php
+                endif;
+                ?>
+                <div class="col col-12 col-md-12 offset-md-0 | carlist__finance">
+                    <a href="#freefinance" class="text-center | carlist__button">Free Finance
+                        Check</a>
+                    <figure data-image="<?php
+                    echo $carItem['image']; ?>" data-title="<?php
+                    echo $carItem['make_title'] . ' ' . $carItem['model_title'] ?>" data-rrp="<?php
+                    echo $fromPrice; ?>" class="finance-example">Finance Example
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

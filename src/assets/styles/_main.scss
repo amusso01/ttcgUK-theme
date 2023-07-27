@@ -1,0 +1,43 @@
+/* ======!!!!!!!! PLEASE DON"T USE THIS FILE TO ADD STYLE  !!!!!!!!!!=======*/
+/* =====!!!!!!!!! YOU CAN USE tradecenter.css at the root of the theme !!!!!!!!!====*/
+
+// VENDORS
+@import "vendors/glide";
+@import "vendors/hystmodal";
+@import "vendors/accordion";
+
+// Common
+@import "common/reset";
+@import "common/variables";
+@import "common/helper";
+
+// OLD
+@import "old-style/old";
+
+// COMMON
+@import "common/general";
+
+// COMPONENTS
+@import "components/hamburger";
+@import "components/header";
+@import "components/header-video";
+@import "components/footer";
+@import "components/banner-header";
+@import "components/car-loop";
+@import "components/branches-carousel";
+@import "components/action-box";
+@import "components/video-guide";
+@import "components/tc-promise-card";
+@import "components/modal";
+
+// PAGES
+@import "pages/locations";
+@import "pages/single-location";
+@import "pages/news-blog";
+@import "pages/single-blog";
+@import "pages/contact";
+@import "pages/price-promise";
+@import "pages/single-car";
+@import "pages/standard-one-column";
+@import "pages/kit-club";
+@import "pages/lifetime-warranty";
