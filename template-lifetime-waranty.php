@@ -15,9 +15,9 @@ get_header();
 
 <main class="fdry-main fdry-main__lifetime-warranty">
   <div class="content-max">
-    <div class="fdry-lifetime-blue-bg" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/10/blue-background-scaled-1.jpg)">
+    <div class="fdry-lifetime-blue-bg" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/12/blue-background-scaled-1.jpg)">
       <div class="container">
-        <img class="top-title-banner" src="<?= site_url( '/' ) ?>wp-content/uploads/2022/10/LIFETIME-WARRANTY-TCW-HORIZONTAL-sml-3-1536x214.png" alt="Lifetime warranty">
+        <img class="top-title-banner" src="<?= site_url( '/' ) ?>wp-content/uploads/2022/10/LIFETIME-WARRANTY-TCUK-HORIZONTAL-sml-1.png" alt="Lifetime warranty">
         <h3>AVAILABLE ON EVERY SINGLE CAR!</h3>
         <h1>BENEFITS OF LIFETIME WARRANTY</h1>
 
@@ -49,7 +49,7 @@ get_header();
           </div>
         </div>
 
-        <p class="pdf">For full limitations & exclusions, please view this<a href="<?= site_url( '/' ) ?>wp-content/uploads/2023/06/TCW-Lifetime-Warranty.pdf"> PDF document.</a></p>
+        <p class="pdf">For full limitations & exclusions, please view this<a href="<?= site_url( '/' ) ?>wp-content/uploads/2022/11/TCW-and-TCUK-99-Point-Vehicle-Safety-Inspection.pdf"> PDF document.</a></p>
       </div>
     </div>
     <div class="fdry-lifetime-orange-bg" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/10/Orange-Background-copy.jpg)">
@@ -155,7 +155,7 @@ get_header();
       </div>
     </div>
 
-    <div class="fdry-lifetime-blue-bg faq" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/10/blue-background-scaled-1.jpg)">
+    <div class="fdry-lifetime-blue-bg faq" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/12/blue-background-scaled-1.jpg)">
       <div class="container">
         <h3>FAQ</h3>
         <div class="single-faq">

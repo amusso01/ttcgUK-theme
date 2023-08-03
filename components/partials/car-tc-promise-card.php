@@ -3,7 +3,7 @@
     <div class="fdry-tc-promise__wrapper fdry-shadow-card"> 
      
       <figure>
-        <img src="<?= get_template_directory_uri() ?>/dist/images/tcw-logo.svg" alt="trade center logo">        
+        <img src="<?= get_template_directory_uri() ?>/dist/images/tcuk-logo.svg" alt="trade center logo">        
       </figure>
 
       <h3 class="main-title">The Trade Centre Promise</h3>

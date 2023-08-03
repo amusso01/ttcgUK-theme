@@ -138,7 +138,7 @@ get_header();
             </div>
 
             <div class="faq-image">
-              <img src="<?= site_url( '/' ) ?>wp-content/uploads/2021/06/kit-1.png" alt="football kit">
+              <img src="<?= site_url( '/' ) ?>wp-content/uploads/2023/07/kit.png" alt="football kit">
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ get_header();
       </div>
     </section>
 
-    <section class="fdry-kit-club__showcase" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/10/blue-background-scaled-1.jpg)">
+    <section class="fdry-kit-club__showcase" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/12/blue-background-scaled-1.jpg)">
       <div class="content-block">
         <h4>Kit Klub Showcase</h4>
         <?php $videos = get_field('vimeo_videos'); ?>

@@ -10,6 +10,14 @@ export default function carouselBranch() {
     peek: {
       before: 0,
       after: 60
+    },
+    breakpoints: {
+      1024: {
+        perView: 2
+      },
+      600: {
+        perView: 1
+      }
     }
   })
 

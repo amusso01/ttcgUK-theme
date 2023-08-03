@@ -59,7 +59,6 @@ global $branch, $branchCustom;
                     <div class="col col-6 col-sm-6 col-md-12 col-lg-12 pr-2 pr-md-3">
                         <img class="branch-locations__image" src="<?php echo get_the_post_thumbnail_url($item->ID); ?>"
                              alt="<?php echo $item->post_title; ?> Trade Centre">
-                        <img class="logo-img" src="<?php echo $logo; ?>" alt="<?php echo $item->post_title; ?>"/>
                     </div>
                     <div class="col pl-1 pl-md-3">
                         <h2 class="d-none"><?php echo $item->post_title; ?></h2>

@@ -69,6 +69,7 @@ endif;
           <div class="fdry-carrow__grid" >
 
             <?php 
+              $x=0;
               $i = 0;
               foreach ($carsArray as $carItem) {
                   $i++;
@@ -98,9 +99,35 @@ endif;
 
                  if($i % 4 === 0 ){ ?>
                     </div>
-
                     <?php
-                    get_template_part( 'components/banners/carloop-banner');
+                    $countLoop = count($fpOptions['break_collection']);
+                    // dd(count($fpOptions['break_collection']));
+                    $banner_break_front_page = [];
+                    if (count($fpOptions['break_collection'])) :
+                      foreach ($fpOptions['break_collection'] as $breakRow) {
+                          $banner_break_front_page[] = [
+                              'desktop' => $breakRow['break_desktop'],
+                              'desktop_link' => $breakRow['break_desktop_link'],
+                              'mobile' => $breakRow['break_mobile'],
+                              'mobile_link' => $breakRow['break_mobile_link']
+                          ];
+                      }
+                    endif;
+                    ?>
+
+                    <div class="fdry-carlist-break-banner" >
+                        <img class="d-none carlist-desktop-break d-md-block w-100"
+                              src="<?php echo $banner_break_front_page[$x]['desktop']; ?>?v=<?php echo date("HdmY"); ?>"/>
+                        <img class="d-md-none carlist-mobile-break w-100"
+                              src="<?php echo $banner_break_front_page[$x]['mobile']; ?>?v=<?php echo date("HdmY"); ?>"/>
+                    </div>
+                  <?php
+                  if( $x+1  === $countLoop){
+                    $x=0;
+                  }else{
+                    $x++;
+                  }
+                    // get_template_part( 'components/banners/carloop-banner');
                 }
               }?>
             

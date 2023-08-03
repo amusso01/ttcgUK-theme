@@ -67,7 +67,6 @@ src="https://cdn.tradecentregroup.io/image/upload/v1683128679/TCG-Banner-Desktop
                             <?php else : ?>
                             <img class="branch-locations__image" src="<?= get_the_post_thumbnail_url($ID); ?>"
                                 alt="<?= $post->post_title; ?> Trade Centre">
-                            <img class="logo-img" src="<?=$logo; ?>" alt="<?= $post->post_title; ?>"/>
                             <?php endif; ?>
                         </div>
                         <div class="col pl-md-3">

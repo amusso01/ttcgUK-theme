@@ -6,7 +6,7 @@ $trustLogo = get_field('trustpilot_logo', 'option');
     <div class="fdry-site-header__wrapper">
       <div class="fdry-main-logo">
         <a href="<?= site_url()?>">
-          <img src="<?= get_template_directory_uri() ?>/dist/images/tcw-logo.svg" alt="trade center logo">                        
+          <img src="<?= get_template_directory_uri() ?>/dist/images/tcuk-logo.svg" alt="trade center logo">                        
         </a>
       </div>
   

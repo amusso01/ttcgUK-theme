@@ -4,7 +4,7 @@
  * The header template file
  *
  * @package CNS
- * @subpackage TradeCentreWales
+ * @subpackage TradeCentreUK
  * @since 1.0
  * @version 1.0
  */
@@ -41,13 +41,14 @@ if (empty($title)) {
 
 if (empty($metaDescription) && ($wp->request == '' || substr($wp->request, 0, 3) === 'in/')) {
     if (isset($_SESSION['area'])) {
-        $metaDescription = "Our " . $_SESSION['areaBranch'] . " showroom near " . $_SESSION['area'] . " is one of Wales' " .
-            "Largest Used Car Supermarkets. Our showrooms and floodlit forecourts are brimming with thousands of cars" .
-            ", from superminis to SUV's or sporty convertibles and are open until 9pm weekdays and 6pm at weekends.";
+        $metaDescription = "Our " . $_SESSION['areaBranch'] . " showroom near " . $_SESSION['area'] . " is one of the " .
+            "Largest Used Car Supermarkets in the UK. Our showrooms and floodlit forecourts are brimming with thousands ".
+            "of cars, from superminis to SUV's or sporty convertibles and are open until 9pm weekdays and 6pm at weekends.";
     } else {
-        $metaDescription = "Wales' Largest Used Car Supermarket with sites in Abercynon & Neath. Our " .
-            "showrooms and floodlit forecourts are brimming with thousands of cars, from superminis to SUV's or " .
-            "sporty convertibles and are open until 9pm weekdays and 6pm at weekends.";
+        $metaDescription = "The Trade Centre UK, Home of Probably the UK's Cheapest Cars. The Regions Largest Used Car " .
+            "Supermarket with sites in Coventry, Rochdale, Rotherham, Birmingham South and Wednesbury. Our showrooms and floodlit forecourts are " .
+            "brimming with thousands of cars, from superminis to SUV's or sporty convertibles and are open until " .
+            "9pm weekdays and 6pm at weekends.";
     }
 }
 
@@ -91,7 +92,6 @@ if (get_option('cns_opening_mobile_override')) {
 <head>
 	
     <title><?php echo $genTitle; ?></title>
-	<meta name="facebook-domain-verification" content="eftbl5amvdioil49ycov4jqiunva1t" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -125,8 +125,8 @@ if (get_option('cns_opening_mobile_override')) {
         echo $metaImage; ?>"/>
     <?php
     else : ?>
-        <meta property="og:image" content="/images/standard-sharing-image-tcw.jpg"/>
-        <meta property="twitter:image" content="/images/standard-sharing-image-tcw.jpg"/>
+        <meta property="og:image" content="/images/standard-sharing-image-tcuk.jpg"/>
+        <meta property="twitter:image" content="/images/standard-sharing-image-tcuk.jpg"/>
     <?php
     endif;
     ?>
@@ -137,17 +137,16 @@ if (get_option('cns_opening_mobile_override')) {
     <?php echo getJsFinanceExamples(); ?>
     </script>
 
-    <meta name="facebook-domain-verification" content="tcol8jwubyqbc78czzbkyhzr3ymnar" />
+    <meta name="facebook-domain-verification" content="eqzaudvw68jxsa95gen5n9l8bcbfmt" />
 
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21171026-1"></script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90660030-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-21171026-1'); 
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-90660030-1');
     </script>
-    <!-- Google Tag Manager -->
 
 
     <!-- TrustBox script -->
