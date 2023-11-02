@@ -68,7 +68,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
-    padding: 15px 0;
+    padding: 10px 0;
 
     .fdry-grey-line{
       position: absolute;
@@ -106,28 +106,26 @@
     }
 
     .fdry-car-single__cost-card{
+      text-align: center;
       .fdry-text{
         font-size: 15px;
         margin-bottom: 2px;
         font-weight: 500;
       }
+      .fdry-text-bottom{
+        font-weight: 600;
+      }
 
       .fdry-red-price{
         color: #B22D24;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
-        @include media('<phone-land'){
-          font-size: 21px;
-        }
       }
 
       .fdry-blue-cost{
         color: #1834A0;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
-        @include media('<phone-land'){
-          font-size: 21px;
-        }
 
         span{
           font-size: 15px;
@@ -143,6 +141,18 @@
 
     .fdry-monthly-cost{
       padding-left: 30px;
+    }
+    .fdry-red-single-car-banner{
+      background-color: #ff7777;
+      border-radius: 18px;
+      padding: 6px 10px;
+      text-align: center;
+      p{
+        font-family: $header__fontname;
+        color: #fff;
+        font-weight: 500;
+        font-size: 15px;
+      }
     }
   }
 
@@ -164,7 +174,7 @@
     row-gap: 14px;
     column-gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
   }
 
   .single-spec{
@@ -188,19 +198,16 @@
   .fdry-car-finance-check{
     position: relative;
     margin-bottom: 10px;
-    a{
+    .fdry-finance-check__btn{
       background-color: #01B47A;
       color: $color__bright;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 8px 20px;
       border-radius: 20px;
-      @include media('<tablet'){
-        font-size: 15px;
-      }
 
       span{
         position: absolute;
@@ -218,8 +225,8 @@
         align-items: center;
         justify-content: center;
         @include media('<tablet'){
-          width: 45px;
-          height: 45px;
+          width: 48px;
+          height: 48px;
           font-size: 11px;
         }
       }

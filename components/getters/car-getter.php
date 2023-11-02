@@ -5,6 +5,7 @@ global $branch, $carmodel, $carmake, $carsArray,  $saleMode, $regYear, $carId;
 //if($carmodel) $posts_per_page = '1'; else $posts_per_page = '-1';
 $posts_per_page = '-1';
 
+
 if ($carId) {
     $args = [
         'fields' => 'ids',
@@ -50,17 +51,16 @@ if ($carId) {
         ];
     }
 
-    if ($saleMode === LISTING_NORMAL_MODE) {
-        if ($branch) {
-            $meta_query[] = [
-                'relation' => 'AND',
-                [
-                    'key' => 'destination',
-                    'value' => $branch->ID,
-                    'compare' => '=',
-                ]
-            ];
-        }
+
+    if ($branch) {
+        $meta_query[] = [
+            'relation' => 'AND',
+            [
+                'key' => 'location',
+                'value' => $branch->ID,
+                'compare' => '=',
+            ]
+        ];
     }
 
     if (!empty($meta_query)) {

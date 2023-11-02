@@ -37,6 +37,10 @@ $count_posts = wp_count_posts( 'branch' )->publish;
 
             <li class="glide__slide fdry-branches-carousel__card">
               <div class="branch-carousel__card">
+                <div class="top-image-video">
+                  <img class="branch-locations__image" src="<?= get_the_post_thumbnail_url($ID); ?>"
+                      alt="<?= $post->post_title; ?> Trade Centre">
+                </div>
                 <h5><i><?php get_template_part( 'svg-template/svg-geo-tag-icon' ) ?></i> <?= 'Trade Centre ' . $post->post_title; ?></h5>
                 <p class="town"><?= $address['town']; ?></p>
                 <p class="addres"><?= $address['line1']; ?></p>

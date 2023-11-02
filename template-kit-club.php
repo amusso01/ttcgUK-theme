@@ -35,7 +35,9 @@ get_header();
           <img src="<?= $overlayGroup['overlay_image'] ?>" >
         </div>
       </div>
+      <?php get_template_part( 'components/pages/kit-klub-video' ) ?>
     </div>
+
 
     <div class="fdry-all-sport-wrapper">
       <h3>ALL SPORTS</h3>

@@ -20,6 +20,11 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
+    min-height: 530px;
+
+    .top-image-video{
+      margin-bottom: 15px;
+    }
 
     >h5{
       font-family: $text__fontname;

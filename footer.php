@@ -47,33 +47,6 @@ $footerApr = get_field('footer_apr', 'options');
                 <?= $footerApr ?>
             </div>
 
-            <div class="fdry-footer__area-link-wrapper">
-
-                <?php
-                global $showAreaLinks;
-                if (isset($showAreaLinks) && $showAreaLinks == true) : ?>
-                <div class=" fdry-footer__area-links">
-                    <p>
-                        Some of the areas we cover from our  <a href="/in/reset">Trade Centre Wales stores</a>:
-                        <?php
-                        $areas = get_terms(['taxonomy' => 'areas', 'hide_empty' => true]);
-                        $areaCount = count($areas) - 1;
-                        $i = 0;
-                        foreach ($areas as $area) :
-                        echo '<a href="/in/' . $area->slug . '">' . $area->name . '</a>';
-                        if ($i < $areaCount) {
-                            echo ', ';
-                        } else {
-                            echo '.';
-                        }
-                        $i++;
-                        endforeach;
-                        ?>
-                    </p>
-                </div>
-                <?php endif; ?>
-
-            </div>
 
             <div class="fdry-footer__menu-wrapper">
                 <?php get_template_part( 'components/footer/footer-nav-top' ); ?>
@@ -98,7 +71,7 @@ wp_footer(); ?>
 <script>
     $('.marquee_text').marquee({
     direction: 'left',
-    duration: 30000,
+    duration: 20000,
     gap: 35,
     delayBeforeStart: 0,
     duplicated: true,

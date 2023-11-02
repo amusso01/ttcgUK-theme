@@ -30,6 +30,10 @@ get_header();?>
 <?php  $video= get_field('branch_video' , $ID); ?>
 <?php  $map = get_field('map_link' , $ID); ?>
 
+
+<?php get_template_part( 'components/header/header-video' ) ?>
+<?php get_template_part( 'components/header/header-marquee' ) ?>
+
 <div class="fdry-single-branch__hero">
     <div class="fdry-single-branch__hero-wrapper">
         <h1><?= $branch->post_title ?></h1>
@@ -129,6 +133,10 @@ get_header();?>
 
     </div>
 
+</div>
+
+<div class="content-block">
+    <?php get_template_part( 'components/pages/cars-loop' ) ?>   
 </div>
 
 

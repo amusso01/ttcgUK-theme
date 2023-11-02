@@ -3,11 +3,18 @@
     margin-bottom: 0;
   }
 
+  ul{
+    list-style-position: inside;
+  }
+
   .fdry-lifetime-blue-bg{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 80px 0;
+    @include media('<phone-land'){
+      padding: 40px 0;
+    }
     .top-title-banner{
       margin-bottom: 40px;
     }

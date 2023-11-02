@@ -34,6 +34,11 @@ $branches = new WP_Query($args);
             <?php  $phoneNumber= get_field('telephone_number' , $post->ID); ?>
 
         <div class="fdry-locations-landing-singleLocation">
+            <div class="top-image-video">
+                <img class="branch-locations__image" src="<?= get_the_post_thumbnail_url($ID); ?>"
+                    alt="<?= $post->post_title; ?> Trade Centre">
+            </div>
+
             <div class="fdry-locations-landing__top-info" style="text-align:center">
                     <h5 class="fdry-locations-landing__top-info-title"><i><?php get_template_part( 'svg-template/svg-geo-tag-icon' ) ?></i> <?= 'Trade Centre ' . $post->post_title; ?></h5>
                     <address  style="font-size:16px;line-height:24px; letter-spacing:0px;">

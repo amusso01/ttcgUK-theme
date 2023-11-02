@@ -25,6 +25,8 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 
 
     .fdy-car-single-card__image{
@@ -53,6 +55,24 @@
 
     }
 
+    .fdry-red-single-car-banner{
+      background-color: #B22D24;
+      border-radius: 0px;
+      padding: 62px 10px 0px;
+      text-align: center;
+      position: absolute;
+      width: 180px;
+      transform: rotate(-45deg);
+      top: -45px;
+      left: -77px;
+      p{
+        font-family: $header__fontname;
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+
     .fdry-car-single-card__info{
       padding: 10px 20px;
 
@@ -77,16 +97,18 @@
         row-gap: 10px;
         column-gap: 4px;
         flex-wrap: wrap;
-        margin-bottom: 13px;
+        margin-bottom: 7px;
+        justify-content: center;
       }
 
       .single-spec{
         background-color: #F5F5F5;
         border-radius: 18px;
-        padding: 6px 10px;
+        padding: 6px 6px;
+        margin-bottom: 2px;
 
         p{
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 500;
           color: #1834A0;
         }
@@ -97,7 +119,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       position: relative;
-      padding: 20px 0;
+      padding: 10px 0;
+      justify-items:center ;
 
       .fdry-grey-line{
         position: absolute;
@@ -128,22 +151,28 @@
       }
 
       .fdry-car-single__cost-card{
+        text-align: center;
         .fdry-text{
-          font-size: 11px;
-          margin-bottom: 1px;
+          font-size: 13px;
+          margin-bottom: 3px;
           font-weight: 500;
+        }
+        .fdry-text-bottom{
+          font-weight: 600;
         }
 
         .fdry-red-price{
           color: #B22D24;
-          font-size: 17px;
+          font-size: 26px;
           font-weight: 700;
+          margin-bottom: 3px;
         }
 
         .fdry-blue-cost{
           color: #1834A0;
-          font-size: 17px;
+          font-size: 26px;
           font-weight: 700;
+          margin-bottom: 3px;
 
           span{
             font-size: 12px;
@@ -152,34 +181,32 @@
           }
         }
       }
-
-      .fdry-monthly-cost{
-        padding-left: 22px;
-      }
     }
 
     .fdry-car-finance-check{
       margin-top: auto;
       padding: 10px 10px;
       position: relative;
-      a{
+      .fdry-car-finance-check__btn{
         background-color: #01B47A;
         color: $color__bright;
-        font-size: 15px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 600;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 8px 20px;
+        padding-left: 32px;
         border-radius: 20px;
         @include media('<desktop'){
-          font-size: 13px;
+          font-size: 18px;
         }
 
         span{
           position: absolute;
-          width: 46px;
-          height: 46px;
+          line-height: 1;
+          width: 48px;
+          height: 48px;
           background-color: #01B500;
           font-size: 11px;
           padding: 3px;
@@ -192,9 +219,7 @@
           align-items: center;
           justify-content: center;
           @include media('<desktop'){
-            width: 43px;
-            height: 43px;
-            font-size:9px;
+            font-size:10px;
           }
         }
       }

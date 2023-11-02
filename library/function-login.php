@@ -6,7 +6,7 @@
 
 $gFontUrl = "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap";
 $fontFamily = "'Lato', sans-serif";
-$customLogo = get_stylesheet_directory_uri()."/dist/images/tcw-logo.svg";
+$customLogo = get_stylesheet_directory_uri()."/dist/images/tcuk-logo.svg";
 $mainColor = "#011025";
 
 /* 2.6 LOGIN PAGE

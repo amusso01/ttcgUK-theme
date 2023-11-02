@@ -14,10 +14,9 @@ get_header();
 <?php get_template_part( 'components/header/header-marquee' ) ?>
 
 <main class="fdry-main fdry-main__lifetime-warranty">
-  <div class="content-max">
     <div class="fdry-lifetime-blue-bg" style="background-image:url(<?= site_url( '/' ) ?>wp-content/uploads/2022/12/blue-background-scaled-1.jpg)">
-      <div class="container">
-        <img class="top-title-banner" src="<?= site_url( '/' ) ?>wp-content/uploads/2022/10/LIFETIME-WARRANTY-TCUK-HORIZONTAL-sml-1.png" alt="Lifetime warranty">
+      <div class="content-block content-max-small">
+        <img class="top-title-banner" src="https://cdn.tradecentregroup.io/image/upload/v1694785313/TTCG_UK_Banner.png" alt="Lifetime warranty">
         <h3>AVAILABLE ON EVERY SINGLE CAR!</h3>
         <h1>BENEFITS OF LIFETIME WARRANTY</h1>
 
@@ -176,7 +175,6 @@ get_header();
         </div>
       </div>
     </div>
-  </div>
 </main>
 
 <!-- BRANCHES -->

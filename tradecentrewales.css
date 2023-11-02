@@ -119,3 +119,337 @@
 
 
 /* ADD NEW STYLE DOWN HERE PLEASE DON"T USE MAIN.CSS in dist folder */
+
+/** Careers***/
+a, img, button{
+    outline: none !important;
+}
+.page-template-page-careers{
+    
+    background: #F5F9FF 0% 0% no-repeat padding-box;
+}
+
+.page-template-page-careers img{
+    max-width: 100%;
+}
+
+.page-template-page-careers .banner {display: none !important;}
+.banner-careers{
+    background: transparent linear-gradient(116deg, #C33764 0%, #1D2671 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    padding: 100px 0 70px;
+    color: #fff;
+}
+
+
+.banner-careers h1{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.banner-careers h1 span{
+    background-image: url('images/careers/Careers-underline.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.banner-careers p{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.27px;
+}
+
+
+
+.banner-careers .title-banner {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-repeat: no-repeat;
+    background-position: 10px 0px;
+    background-position: 25% 10px;
+    background-image: url('images/careers/Ellipse-icon.svg');
+} 
+.banner-careers .image-banner {
+    background-repeat: no-repeat;
+    background-position: 70% 10px;
+    background-image: url('images/careers/Plus-icon.svg');
+} 
+.banner-careers .col-5 img{
+    margin: 0px 20px;
+}
+
+
+.read-more{
+    background-color: #fff;
+    color: #000000;
+    display: inline-block;
+    border-radius: 8px;
+    transition: 0.6s;
+    padding: 10px 35px;
+    font-weight: 500;
+
+}
+
+.read-more:hover{
+    color: #fff;
+    background-color: #000000;
+
+}
+
+.go-more{
+    color: #000000 !important;
+    display: inline-block;
+    border-radius: 8px;
+    transition: 0.6s;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    border: 0px;
+    padding: 0px !important;
+    background-color: transparent; 
+
+}
+
+.go-more:after{
+    content: "\276F";
+    display: inline-block;
+    margin-left: 10px;
+    transition: 0.8s;
+    font-size: 23px;
+    color: #C33764;
+    vertical-align: bottom;
+
+}
+
+.go-more:hover:after{
+
+    margin-left: 18px;
+}
+
+
+.read-more-colorfull{
+    background: transparent linear-gradient(180deg, #C33764 0%, #1D2671 100%) 0% 0% no-repeat padding-box;
+
+    color: #fff;
+    display: inline-block;
+    border-radius: 8px;
+    transition: 0.6s;
+    padding: 10px 35px;
+    font-weight: 500;
+
+}
+
+.read-more-colorfull:hover{
+    background: transparent linear-gradient(180deg, #1D2671  0%, #C33764  100%) 0% 0% no-repeat padding-box; 
+    color: #fff;
+}
+
+
+.special-section .container{
+    max-width: 900px;
+}
+
+
+#actively{
+    padding: 70px 0;
+    background-image: url('images/careers/Background-waves.svg');
+    background-repeat: no-repeat;
+    background-position: -40% 0;
+    text-align: center;
+}
+
+#actively h2{
+    margin-bottom: 100px;
+}
+#actively .list-activity img{
+    display: inline-block;
+    width: auto;
+    height: 53px ;
+    margin-bottom: 40px;
+}
+
+#actively .read-more-colorfull{
+    margin: 108px auto;
+}
+
+.principal-benefits{
+    padding: 50px;
+    border: 1px solid #C33764;
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
+    display: block;
+    margin: 100px auto 50px;
+    text-align: center;
+}
+
+.principal-box-benefits{
+    position: relative;
+}
+
+.principal-circle{
+    top: 0;
+    right: 10%;
+    position: absolute;
+}
+
+
+.principal-polygon{
+    top: 10%;
+    right: 15%;
+    position: absolute;
+}
+
+
+
+.principal-benefits .image{ 
+    width: 105px; height: 105px; 
+    padding: 25px;
+    background: transparent linear-gradient(180deg, #C33764 0%, #1D2671 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 12px #00000022;
+    border-radius: 50%;
+    margin:0 auto 15px;
+}
+.principal-benefits .image img{
+    height: 50px;
+    display: inline-block;
+}
+.principal-benefits p{ margin-bottom: 0px; font-size: 15px; line-height: 21px; font-weight: 700;} 
+
+.benefits-box{
+    width: 100%;
+    max-width: 190px;
+    height: 190px;
+    box-shadow: 0px 3px 6px #0000001C;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 40px 0;
+    display: inline-block;
+    background-color: #F5F9FF;
+}
+
+.benefits-box img{
+    height: 40px;
+    margin: 0px auto 28px;
+    display: block;
+}
+
+.benefits-box p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.list-benefits{
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+.principal-dots{
+    top: 0;
+    left: -10%;
+    position: absolute;
+}
+.second-dots{
+    top: 45%;
+    right: -10%;
+    position: absolute;
+}
+
+
+#jobs{
+    padding: 70px 0 120px;
+    background-image: url('images/careers/Background-lines.svg');
+    background-repeat: no-repeat;
+    background-position: 90% center;
+}
+
+.job-box{
+    background: #F5F9FF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 12px #0000001A;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 23px;
+    margin-bottom: 25px;
+}
+
+.job-box h3{
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.job-box .description p,
+.job-box .description div,
+.job-box .description li{
+    font-size: 17px;
+    line-height: 25px;
+    margin-bottom: 0px;
+    display: none;
+}
+
+.job-box .description p:nth-child(1){
+    display: block !important;
+}
+
+.banner-careers.second-banner{
+    margin-bottom: 50px !important;
+}
+
+.banner-careers.second-banner .banner-description p,
+.banner-careers.second-banner .banner-description div,
+.banner-careers.second-banner .banner-description li{
+    display: none;
+}
+.banner-careers.second-banner .banner-description p:nth-child(1){
+    display: block !important;
+}
+
+.job-information,
+.job-information p,
+.job-information li{
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.job-information ul {
+    list-style: none; /* Remove default bullets */
+}
+  
+.job-information  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #C33764; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.align-center{ text-align: center;}
+.align-right{text-align: right;}
+
+
+.benefit-info{
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.27px;
+    text-align: center;
+    display: block;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: #6E6E6E;
+}
+
+
+@media (max-width: 765px) {
+    #benefits{ overflow: hidden;}
+}

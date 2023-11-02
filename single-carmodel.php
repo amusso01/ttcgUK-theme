@@ -96,11 +96,6 @@ endforeach;
 
                     <div class="fdry-car-spec">
                         <div class="single-spec">
-                            <?php if($carItem['reg_year']!="") { ?>
-                            <p class="spec"><?php echo $carItem['reg_year']; ?></p>
-                            <?php } ?>  
-                        </div>
-                        <div class="single-spec">
                             <?php if($carItem['fueltype']!="") { ?>
                             <p class="spec"><?php echo $carItem['fueltype']; ?></p>
                             <?php } ?>  
@@ -111,11 +106,6 @@ endforeach;
                             <?php } ?>  
                         </div>
                         <div class="single-spec">
-                            <?php if($carItem['transmission']!="") { ?>
-                            <p class="spec"><?php echo $carItem['transmission']; ?></p>
-                            <?php } ?>  
-                        </div>
-                        <div class="single-spec">
                             <?php if($insurence!= "") { ?>
                             <p class="spec"><?php echo $insurence ; ?> Ins. Group</p>
                             <?php } ?>  
@@ -123,23 +113,28 @@ endforeach;
                     </div>
                     <div class="fdry-car-single__cost">
                         <div class="fdry-cash-cost fdry-car-single__cost-card">
-                            <p class="fdry-text">Cash or Finance</p>
+                            <p class="fdry-text fdry-text-top">Now Just</p>
                             <p class="fdry-red-price">&pound;<?php echo  $carItem['rrp']  ?></p>
+                            <p class="fdry-text fdry-text-bottom">Cash <span>or</span> Finance</p>
                         </div>
                         <div class="fdry-grey-line"></div>
                         <div class="fdry-cash-cost-or">
                             <p>Or</p>
                         </div>
                         <div class="fdry-monthly-cost fdry-car-single__cost-card">
-                            <p class="fdry-text">From</p>
-                            <p class="fdry-blue-cost">&pound; <?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?> <span>Per Month</span></p>
-                        </div>
+                            <p class="fdry-text fdry-text-top">Fixed</p>
+                            <p class="fdry-blue-cost">&pound; <?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></p>
+                            <p class="fdry-text fdry-text-bottom">Per Month</p>
+                         </div>
                     </div>
                 </div>
                 <div class="fdry-car-finance-check">
-                    <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn">
-                        FREE FINANCE CHECK 
+                    <!-- <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn">
+                        FREE 30 SECONDS FINANCE CHECK 
                         <span>Click<br>Here</span>
+                    </a> -->
+                    <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn-img">
+                        <img src="<?= get_template_directory_uri() ?>/dist/images/free30btn.svg" alt="Free finance check button">
                     </a>
                 </div>
                 <div class="fdry-visit-us">
