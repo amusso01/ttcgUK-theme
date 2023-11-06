@@ -73,10 +73,10 @@ endforeach;
 
 <?php get_template_part( 'components/modal/car-info' ) ?>
 
-<main class="fdry-main__single-car content-max">
+<main class="fdry-main__single-car">
     <?php if($amount) : ?>
         
-    <section class="fdry-single-car__specs content-block">
+    <section class="fdry-single-car__specs content-block content-max">
         <div class="single-car__grid">
             <div class="car-figure">
                 <figure class="fdry-single-car-figure" data-vrm="<?= $carItem['reg_number']; ?>">
@@ -88,13 +88,16 @@ endforeach;
                 </figure>
                 <h3>Car Overview</h3>
             </div>
-
+            <?php global $branch; ?>
             <div class="car-specs-card__wrapper">
                 <div class="car-spec-card__info">
                     <h1 class="car-name"><?= strtoupper($carItem['make_title']) .' '.strtoupper($carItem['model_title']) ?></h1>
                     <p class="model"><?= $carItem['derivative'] ?></p>
 
                     <div class="fdry-car-spec">
+                        <div class="single-spec">
+                            <p class="spec"><a href="<?= get_the_permalink( $branch->ID ) ?>"><?= $branch->post_title ?></a></p>
+                        </div>
                         <div class="single-spec">
                             <?php if($carItem['fueltype']!="") { ?>
                             <p class="spec"><?php echo $carItem['fueltype']; ?></p>
@@ -105,11 +108,11 @@ endforeach;
                             <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
                             <?php } ?>  
                         </div>
+                        <?php if($insurence!= "") { ?>
                         <div class="single-spec">
-                            <?php if($insurence!= "") { ?>
                             <p class="spec"><?php echo $insurence ; ?> Ins. Group</p>
-                            <?php } ?>  
                         </div>
+                        <?php } ?>  
                     </div>
                     <div class="fdry-car-single__cost">
                         <div class="fdry-cash-cost fdry-car-single__cost-card">
@@ -148,17 +151,27 @@ endforeach;
         </div>
     </section>
     
-    <!-- CAR OVERVIEW SECTION -->
-    <?php get_template_part( 'components/partials/car-overview' ) ?>
+  
+    <div class="content-max">
+        <!-- CAR OVERVIEW SECTION -->
+        <?php get_template_part( 'components/partials/car-overview' ) ?>
+    </div>
 
-    <!-- CAR BANNERS -->
-    <?php get_template_part( 'components/partials/car-legal-banner' ) ?>
+    <div class="content-max">
+        <!-- CAR BANNERS -->
+        <?php get_template_part( 'components/partials/car-legal-banner' ) ?>
+   </div>
 
-    <!-- TC PROMISE CARD -->
-    <?php get_template_part( 'components/partials/car-tc-promise-card' ) ?>
+    <div class="content-max">
+        <!-- TC PROMISE CARD -->
+        <?php get_template_part( 'components/partials/car-tc-promise-card' ) ?>
+    </div>
 
-    <!-- VIDEO -->
-    <?php get_template_part( 'components/banners/better-car-video' ) ?>   
+    <div class="content-max">
+        <!-- VIDEO -->
+        <?php get_template_part( 'components/banners/better-car-video' ) ?>   
+    </div>
+
     <!-- BANNERS -->
     <?php get_template_part( 'components/banners/price-promise' ) ?>
 
@@ -167,14 +180,16 @@ endforeach;
         <?php get_template_part( 'components/pages/branches-carousel' ) ?>
     </div>
 
-    <!-- TRUSTPILOT -->
-    <?php get_template_part( 'components/pages/trustpilot' ) ?>
+    <div class="content-max">
+        <!-- TRUSTPILOT -->
+        <?php get_template_part( 'components/pages/trustpilot' ) ?>
 
-    <!-- ACTION BOX GRID -->
-    <?php get_template_part( 'components/pages/action-box-grid' ) ?>
+        <!-- ACTION BOX GRID -->
+        <?php get_template_part( 'components/pages/action-box-grid' ) ?>
 
-    <!-- VIDEO GUIDE -->
-    <?php get_template_part( 'components/pages/video-guide' ) ?>
+        <!-- VIDEO GUIDE -->
+        <?php get_template_part( 'components/pages/video-guide' ) ?>
+    </div>
 
     <?php else: ?>
         <p>We currently have no <?= $carname; ?> in our centres, however we have a large

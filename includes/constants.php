@@ -11,5 +11,5 @@ define('LISTING_SPECIALS', 'specials');
 define('SITE_LOGO', '/images/tcw-logo.svg');
 define('SITE_LOGO_MERTHYR-TYDFIL', '/images/tcw-px-logo.svg');
 
-define('TC_API_KEY', 'd6c2680597ab4c60b82c3f038553dd88');
+define('TC_API_KEY', '8d1d6627c16f40dd934b0baaed1ace15');
 define('TC_API_URL_PREFIX', 'https://adcars.vms.run');

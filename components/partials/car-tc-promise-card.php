@@ -20,7 +20,7 @@
       </div>
 
       <div class="tc-promise-single">
-        <h4>Rated 4.7/5 on TrustPliot</h4>
+        <h4>Rated Excellent on Trust Pilot</h4>
         <p>We take pride in being rated highly on TrustPilot by our valued customers. Take a look at our thousands of 5 star reviews from delighted customers, our whole team are looking forward to delighting you with the same great Trade Centre UK service</p>
       </div>
 
@@ -47,7 +47,9 @@
 
       <div class="tc-promise-single">
         <h4>Over 1,000 customers approved for car finance every week</h4>
-        <p>Our finance and compliance team approve over 1,000 customers for car finance every week. Working with a bespoke panel of lenders, our team can tailor make a deal to suit your budget at competitive interest rates with payments from as little as £20 per week. Any car can be driven away with as little as £99 cash deposit or you can use your old car as deposit. If you have outstanding finance on your current car, then out team can factor that in and arrange for it to be settled. We make arranging your car finance easy and in most cases you will be driving away same day after making your full application. Representative APR 15.9%</p>
+        <p>
+        Our finance and compliance team approve over 1,000 customers for car finance every week. Working with a bespoke panel of lenders, our team can tailor make a deal to suit your budget at competitive interest rates with payments from as little as £79 per month. Any car can be driven away with zero deposit (subject to status). If you have outstanding finance on your current car, then out team can factor that in and arrange for it to be settled. We make arranging your car finance easy and in most cases you will be driving away same day after making your full application. Representative APR 15.9%
+        </p>
       </div>
 
       <div class="tc-promise-single">

@@ -87,11 +87,11 @@ if (empty($carId) || $listingType === 'similarcarlisting') {
                     <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
                     <?php } ?>  
                 </div>
+                <?php if($insurence!= "") { ?>
                 <div class="single-spec">
-                    <?php if($insurence!= "") { ?>
                     <p class="spec"><?php echo $insurence ; ?> Ins. Group</p>
-                    <?php } ?>  
                 </div>
+                <?php } ?>  
             </div>
 
             <div class="fdry-red-single-car-banner">
