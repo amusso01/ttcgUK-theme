@@ -3,13 +3,24 @@ global $branchCustom, $branch, $custom;
 $branch = $post;
 $branchCustom = $custom; 
 
-$args = [
-    'posts_per_page' => -1,
-    'post_type' => 'branch',
-    'orderby' => 'menu_order',
-    'post__not_in' => array($branch->ID),
-    'order' => 'ASC'
-];
+if(is_front_page()){
+    $args = [
+        'posts_per_page' => -1,
+        'post_type' => 'branch',
+        'orderby' => 'menu_order',
+        // 'post__not_in' => array($branch->ID),
+        'order' => 'ASC'
+    ];
+}else{
+    $args = [
+        'posts_per_page' => -1,
+        'post_type' => 'branch',
+        'orderby' => 'menu_order',
+        'post__not_in' => array($branch->ID),
+        'order' => 'ASC'
+    ];
+}
+
 
 $branches = new WP_Query($args);
 
@@ -41,7 +52,7 @@ $branches = new WP_Query($args);
 
             <div class="fdry-locations-landing__top-info" style="text-align:center">
                     <h5 class="fdry-locations-landing__top-info-title"><i><?php get_template_part( 'svg-template/svg-geo-tag-icon' ) ?></i> <?= 'Trade Centre ' . $post->post_title; ?></h5>
-                    <address  style="font-size:16px;line-height:24px; letter-spacing:0px;">
+                    <!-- <address  style="font-size:16px;line-height:24px; letter-spacing:0px;">
 
                         <?= $address['line1']; ?>
                             <br>
@@ -54,7 +65,7 @@ $branches = new WP_Query($args);
                         <br>
                         <?= $address['postcode']; ?>
 
-                    </address>
+                    </address> -->
             </div>
             <div class="fdry-grey-line"></div>
             <div class="fdry-locations-landing__bottom-info">

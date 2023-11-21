@@ -22,9 +22,9 @@ $count_posts = wp_count_posts( 'branch' )->publish;
 
   <h3>Visit one of our car supermarkets today</h3>
 
-  <?php if($count_posts > 3) : ?>
+  <?php // if($count_posts > 3) : ?>
 
-    <div class="fdry-glide__branches glide">
+    <!-- <div class="fdry-glide__branches glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <?php if ( $branches ->have_posts() ) : ?>
@@ -63,13 +63,13 @@ $count_posts = wp_count_posts( 'branch' )->publish;
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
       </div>
-    </div>
+    </div> -->
 
-  <?php else : ?>
+  <?php // else : ?>
 
     <?php get_template_part( 'components/partials/branch-carousel' ); ?>
 
-  <?php endif; ?>
+  <?php // endif; ?>
 
 </section>
 

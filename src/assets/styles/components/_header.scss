@@ -88,10 +88,25 @@
 }
 
 .fdry-header-trustpilot{
+  display: inline-flex;
+  column-gap: 30px;
   margin-left: auto;
   @include media('<tablet'){
     margin-left: 0px;
     margin-right: auto;
+  }
+
+  >a{
+    display: inline-block;
+    svg{
+      width: auto;
+      height: 37px;
+    }
+  }
+
+  >img{
+    width: auto;
+    height: 43px;
   }
 }
 

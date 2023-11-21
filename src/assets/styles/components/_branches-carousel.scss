@@ -108,6 +108,11 @@
       min-height:46px;
       font-weight:500;
       font-size:15px;
+
+      @include media('<phone-land'){
+        padding:8px 10px;
+        font-size:11px;
+      }
     }
   }
 }

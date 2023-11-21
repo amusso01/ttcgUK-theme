@@ -15,7 +15,8 @@ $trustLogo = get_field('trustpilot_logo', 'option');
       </div>
   
       <div class="fdry-header-trustpilot">
-        <!-- <img src="<?= $trustLogo ?>" alt="trustpilot reviews logo"> -->
+        <img src="<?= $trustLogo ?>" alt="trustpilot reviews logo">
+              <a href="<?= site_url( '/locations-landing' ) ?>"><i><?php get_template_part( 'svg-template/svg', 'google-maps-icon' ) ?></i></a>
       </div>
 
       <div class="fdry-hamburger">

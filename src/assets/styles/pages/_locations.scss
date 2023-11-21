@@ -126,6 +126,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include media('<phone-land'){
+    Padding:6px 0px 8px;
+  }
 }
 
 .fdry-locations-landing-singleLocation .top-image-video{
@@ -192,6 +195,9 @@
 
   svg{
     path{fill:$color__main}
+    @include media('<phone-land'){
+      display: none;
+    }
   }
 }
 
@@ -269,7 +275,7 @@
 
   .fdry-locations-landing__top-info-title{
       font-weight:500;
-      font-size:16px;
+      font-size:14px;
   }
 
   .fdry-locations-landing__grid address{
