@@ -54,6 +54,9 @@ if (empty($carId) || $listingType === 'similarcarlisting') {
     $link = '';
 }
 
+$showRibbon = get_field('show_red_ribbon', 'option');
+$ribbonText = get_field('red_ribbon_text', 'option');
+
 ?>
 
 <div class="fdry-car-single-card">
@@ -94,9 +97,11 @@ if (empty($carId) || $listingType === 'similarcarlisting') {
                 <?php } ?>  
             </div>
 
+            <?php if($showRibbon) : ?>
             <div class="fdry-red-single-car-banner">
-                <p>CAR <br> CLEARANCE <br> ON NOW!</p>
+                <p><?= $ribbonText ?></p>
             </div>
+            <?php endif; ?>
 
             <div class="fdry-car-single__cost">
                 <div class="fdry-cash-cost fdry-car-single__cost-card">

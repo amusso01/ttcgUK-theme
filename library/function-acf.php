@@ -28,6 +28,13 @@
           'parent_slug' => $parent['menu_slug'],
         )
     );
+    $child = acf_add_options_sub_page(
+      array(
+        'page_title'  => __( 'Car cards', 'bymattlee' ),
+        'menu_title'  => __( 'Car cards', 'bymattlee' ),
+        'parent_slug' => $parent['menu_slug'],
+      )
+    );
   } 
 
 ?>
