@@ -96,6 +96,9 @@
 }
 
 .fdry-top-hour-banner{
+  position: sticky;
+  top:0;
+  z-index: 9;
   background-color: #B32D25;
   padding: 6px;
   display: flex;
@@ -111,6 +114,10 @@
 .sticky-top-banner{
   margin-bottom: 25px;
   overflow-x: hidden;
+  position: sticky;
+  top: 32px;
+  z-index: 9;
+
 }
 
 // MOBILE

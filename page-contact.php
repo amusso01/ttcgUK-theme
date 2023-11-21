@@ -29,15 +29,17 @@ get_header();
                 </div>
 
                 <div class="bottom-text">
-                    <h3>Prefer to Call or Email?</h3>
+                    <h3>Prefer to Call?</h3>
                     <p class="fdry-text__small">If you would prefer to speak to Trade Centre on the phone, please see below:</p>
 
+                    <?php if(get_field('email')) : ?>
                     <div class="fdry-grey-box fdry-gry-box__email">
                         <div class="single-grey-box__card">
                             <h5>Email</h5>
                             <a href="mailto:<?= get_field('email') ?>"><?= get_field('email') ?></a>
                         </div>
                     </div>
+                    <?php endif; ?>
 
                     <div class="fdry-grey-box fdry-gry-box__phone">
                         <div class="single-grey-box__card">

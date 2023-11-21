@@ -152,7 +152,14 @@ get_header();
     <section class="kit-club__apply" style="background-image: url('<?= site_url( '/' ) ?>wp-content/uploads/2021/06/team.jpg');">
       <div class="apply-wrapper">
           <h3>APPLY TODAY</h3>
-          <p class="tilt">The application window is closed.</p>
+          <p class="tilt">Applications open</p>
+          <a class="btn" style="background-color: #2a81ff; color: #fff;
+                font-size: 1rem;
+                display: inline-block;
+                margin-top: 30px;
+                padding: 15px 20px;
+                cursor: pointer;
+              " href="https://www.tradecentreuk.com/kit-klub-application">Apply Now</a>
       </div>
     </section>
 

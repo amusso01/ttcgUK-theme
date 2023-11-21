@@ -14,9 +14,9 @@ $trustLogo = get_field('trustpilot_logo', 'option');
         <?php get_template_part( 'components/header/main-nav' ); ?>
       </div>
   
-      <!-- <div class="fdry-header-trustpilot">
-        <img src="<?= $trustLogo ?>" alt="trustpilot reviews logo">
-      </div> -->
+      <div class="fdry-header-trustpilot">
+        <!-- <img src="<?= $trustLogo ?>" alt="trustpilot reviews logo"> -->
+      </div>
 
       <div class="fdry-hamburger">
         <a id="hamburger-menu" class="closed" href="#menu">

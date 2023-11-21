@@ -171,7 +171,7 @@ get_header();
         </div>
         <div class="single-faq">
           <p class="question">Limitations & Exclusions</p>
-          <p class="answer">For full limitations & exclusions, please view <a href="<?= site_url('/') ?>wp-content/uploads/2022/10/TCW-Lifetime-Warranty-A5-Leaflet-100-Percent-Scale-3mm-Bleed.pdf">this PDF document.</a> </p>
+          <p class="answer">For full limitations & exclusions, please view <a target="_blank" href="https://www.tradecentreuk.com/wp-content/uploads/2023/11/TCUK-Lifetime-Warranty.pdf">this PDF document.</a> </p>
         </div>
       </div>
     </div>
