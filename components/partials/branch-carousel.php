@@ -43,36 +43,21 @@ $branches = new WP_Query($args);
             <?php  $otWeekEnds= get_field('opening_times_weekends' , $post->ID); ?>
             <?php  $carNumber= get_field('code' , $post->ID); ?>
             <?php  $phoneNumber= get_field('telephone_number' , $post->ID); ?>
+            <?php  $carNumber= get_field('code' , $post->ID); ?>
 
-        <div class="fdry-locations-landing-singleLocation">
-            <div class="top-image-video">
-                <img class="branch-locations__image" src="<?= get_the_post_thumbnail_url($ID); ?>"
-                    alt="<?= $post->post_title; ?> Trade Centre">
-            </div>
+            <a href="/branches/<?= $post->post_name; ?>" class="fdry-location-link">
+                <div class="fdry-locations-landing-singleLocation">
+                    <div class="top-image-video">
+                        <img class="branch-locations__image" src="<?= get_the_post_thumbnail_url($ID); ?>"
+                            alt="<?= $post->post_title; ?> Trade Centre">
+                    </div>
 
-            <div class="fdry-locations-landing__top-info" style="text-align:center">
-                    <h5 class="fdry-locations-landing__top-info-title"><i><?php get_template_part( 'svg-template/svg-geo-tag-icon' ) ?></i> <?= 'Trade Centre ' . $post->post_title; ?></h5>
-                    <!-- <address  style="font-size:16px;line-height:24px; letter-spacing:0px;">
-
-                        <?= $address['line1']; ?>
-                            <br>
-
-                        <?= $address['line2']; ?>
-                        <br>
-
-                        <span><?= $address['town']; ?></span>
-
-                        <br>
-                        <?= $address['postcode']; ?>
-
-                    </address> -->
-            </div>
-            <div class="fdry-grey-line"></div>
-            <div class="fdry-locations-landing__bottom-info">
-
-              <a href="/branches/<?= $post->post_name; ?>" class="fdry-btn-locations">MORE INFORMATION</a>
-            </div>
-        </div>
+                    <div class="fdry-locations-landing__top-info">
+                        <h5 class="fdry-locations-landing__top-info-title"><?= $post->post_title; ?></h5>
+                        <p class="fdry-locations-landing__car-number">OVER <?= $carNumber ?> CARS AVAILABLE</p>
+                    </div>
+                </div>
+            </a>
 
             <?php endwhile; ?>
         <?php endif; ?>

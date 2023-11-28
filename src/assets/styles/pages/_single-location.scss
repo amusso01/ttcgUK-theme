@@ -90,9 +90,79 @@
     column-gap: 15px;
     row-gap: 25px;
   }
+
+
+  .fdry-location-link{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+
+    .top-image-video{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fdry-locations-landing__top-info{
+      position: absolute;
+      width: 100%;
+      height: 25%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(#000000, 0.6);
+      transform-origin: center;
+      transition: all .4s;
+      @include media('<phone-land'){
+        height: 100%;
+        background-color: rgba(#000000, 0.4);
+      }
+      h5{
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0 5px;
+        margin-bottom: 3px;
+
+      }
+      .fdry-locations-landing__car-number{
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0 5px;
+        @include media('<phone-land'){
+          font-size: 11px;
+        }
+      }
+    }
+
+    .fdry-locations-landing-singleLocation{
+      background-color: transparent;
+      border-radius: 0px;
+      padding: 0;
+      box-shadow: none;
+      display: block;
+    }
+
+    .top-image-video{
+      margin-bottom: 0;
+    }
+
+    &:hover{
+      .fdry-locations-landing__top-info{
+        height: 100%;
+      }
+    }
+  }
 }
 
 .fdry-locations-other-branches__grid .fdry-locations-landing-singleLocation{
   grid-column:auto;
-
 }
