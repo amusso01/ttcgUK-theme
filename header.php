@@ -60,33 +60,43 @@ $metaDescription = wp_strip_all_tags($metaDescription);
 // }
 $genTitle =  get_bloginfo('name');
 
+
 $today = date('l');
-$closing_time_weekends = get_option('cns_closing_hour_weekends') ? get_option('cns_closing_hour_weekends') : '18';
-$closing_time_weekdays = get_option('cns_closing_hour_weekdays') ? get_option('cns_closing_hour_weekdays') : '21';
-$closing_time = ($today == 'Saturday' || $today == 'Sunday') ? $closing_time_weekends : $closing_time_weekdays;
+$closing_time_sat = get_option('cns_closing_hour_sat');
+$closing_time_sun = get_option('cns_closing_hour_sun');
+$closing_time_weekdays = get_option('cns_closing_hour_weekdays');
+if($today == 'Saturday'){
+    $closing_time = $closing_time_sat;
+}elseif($today == 'Sunday'){
+    $closing_time = $closing_time_sun;
+}else{
+    $closing_time = $closing_time_weekdays;
+}
+
+$opening_time_sat = get_option('cns_opening_hour_sat');
+$opening_time_sun = get_option('cns_opening_hour_sun');
+$opening_time_weekdays = get_option('cns_opening_hour_weekdays');
+if($today == 'Saturday'){
+    $opening_time = $opening_time_sat;
+}elseif($today == 'Sunday'){
+    $opening_time = $opening_time_sun;
+}else{
+    $opening_time = $opening_time_weekdays;
+}
 
 $currentdate = new DateTime("now", new DateTimeZone('Europe/London'));
 $current_hour = $currentdate->format('H');
-//echo $current_hour;
-//$current_hour = date('H');
 
-if($current_hour >= $closing_time || $current_hour < 6) {
-    $ribbon_text = 'OPEN AGAIN AT 9AM';
-    $mobile_ribbon_text = 'OPEN AGAIN AT <strong>9AM</strong>';
+if($current_hour >= $closing_time || $current_hour < $opening_time) {
+    $ribbon_text = 'OPEN AGAIN AT '.$opening_time.'AM';
 }
 else {
     if ($closing_time > 12) {
         $closing_time -=12;
     }
     $ribbon_text = 'OPEN  UNTIL '.$closing_time.'PM   TONIGHT';
-    $mobile_ribbon_text = 'OPEN UNTIL <strong>'.$closing_time.'PM </strong> TONIGHT';
 }
-if (get_option('cns_opening_desktop_override')) {
-    $ribbon_text = html_entity_decode(get_option('cns_opening_desktop_override'));
-}
-if (get_option('cns_opening_mobile_override')) {
-    $mobile_ribbon_text = html_entity_decode(get_option('cns_opening_mobile_override'));
-}
+
 
 ?><!doctype html>
 <html lang="en">

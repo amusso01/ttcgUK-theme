@@ -166,3 +166,13 @@
 .fdry-locations-other-branches__grid .fdry-locations-landing-singleLocation{
   grid-column:auto;
 }
+
+.fdry-locations-other-branches__grid.fdry-branch-carousel-three-single{
+  .fdry-location-link{
+    &:first-of-type{
+      @include media('<phone-land'){
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

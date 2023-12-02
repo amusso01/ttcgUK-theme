@@ -153,92 +153,58 @@ function tcw_admin_init()
         )
     );
 
-    // add_settings_field( // Sale Mode Discount
-    //     'cns_opening_desktop_override', // Option ID
-    //     'Yellow Opening Message Desktop Override', // Label
-    //     'tcw_textbox_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'cns_opening_desktop_override' // Should match Option ID
-    //     )
-    // );
-
-    // add_settings_field( // Sale Mode Discount
-    //     'cns_opening_mobile_override', // Option ID
-    //     'Yellow Opening Message Mobile Override', // Label
-    //     'tcw_textbox_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'cns_opening_mobile_override' // Should match Option ID
-    //     )
-    // );
-
-    // add_settings_field( // Sale Mode Switch
-    //     'tcw_sale_mode', // Option ID
-    //     'Sale Mode', // Label
-    //     'tcw_sale_mode_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'tcw_sale_mode' // Should match Option ID
-    //     )
-    // );
-
-    // add_settings_field( // Sale Mode Discount
-    //     'tcw_sale_discount', // Option ID
-    //     'Sale Mode Discount Message', // Label
-    //     'tcw_textbox_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'tcw_sale_discount' // Should match Option ID
-    //     )
-    // );
-
-    // add_settings_field( // Sale Mode Switch
-    //     'tcw_special_offers', // Option ID
-    //     'Show Special Offers', // Label
-    //     'tcw_special_offers_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'tcw_special_offers' // Should match Option ID
-    //     )
-    // );
-
-    // add_settings_field( // Sale Mode Discount
-    //     'tcw_special_offers_header', // Option ID
-    //     'Special Offers Header', // Label
-    //     'tcw_textbox_callback', // !important - This is where the args go!
-    //     'general', // Page it will be displayed (General Settings)
-    //     'tcw_settings_section', // Name of our section
-    //     array( // The $args
-    //         'tcw_special_offers_header' // Should match Option ID
-    //     )
-    // );
-
-    /*add_settings_field( // Option 2
-        'option_2', // Option ID
-        'Option 2', // Label
-        'tcw_textbox_callback', // !important - This is where the args go!
-        'general', // Page it will be displayed
-        'tcw_settings_section', // Name of our section (General Settings)
+    add_settings_field(
+        'cns_closing_hour_sat', // Option ID
+        'Closing Hour Saturday', // Label
+        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'tcw_settings_section', // Name of our section
         array( // The $args
-            'option_2' // Should match Option ID
+            'cns_closing_hour_sat' // Should match Option ID
         )
-    );*/
+    );
+
+    add_settings_field(
+        'cns_opening_hour_sat', // Option ID
+        'Opening Hour Saturday', // Label
+        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'tcw_settings_section', // Name of our section
+        array( // The $args
+            'cns_opening_hour_sat' // Should match Option ID
+        )
+    );
+    
+    add_settings_field(
+        'cns_closing_hour_sun', // Option ID
+        'Closing Hour Sunday', // Label
+        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'tcw_settings_section', // Name of our section
+        array( // The $args
+            'cns_closing_hour_sun' // Should match Option ID
+        )
+    );
+
+    add_settings_field(
+        'cns_opening_hour_sun', // Option ID
+        'Opening Hour Sunday', // Label
+        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'tcw_settings_section', // Name of our section
+        array( // The $args
+            'cns_opening_hour_sun' // Should match Option ID
+        )
+    );
+
 
     register_setting('general', 'cns_representative_apr', 'esc_attr');
-    register_setting('general', 'cns_closing_hour_weekends', 'esc_attr');
+    register_setting('general', 'cns_closing_hour_sat', 'esc_attr');
+    register_setting('general', 'cns_closing_hour_sun', 'esc_attr');
+    register_setting('general', 'cns_opening_hour_sat', 'esc_attr');
+    register_setting('general', 'cns_opening_hour_sun', 'esc_attr');
     register_setting('general', 'cns_closing_hour_weekdays', 'esc_attr');
-    // register_setting('general', 'cns_opening_desktop_override', 'esc_attr');
-    // register_setting('general', 'cns_opening_mobile_override', 'esc_attr');
-    // register_setting('general', 'tcw_sale_mode', 'esc_attr');
-    // register_setting('general', 'tcw_sale_discount', 'esc_attr');
-    // register_setting('general', 'tcw_special_offers', 'esc_attr');
-    // register_setting('general', 'tcw_special_offers_header', 'esc_attr');
+    register_setting('general', 'cns_opening_hour_weekdays', 'esc_attr');
 }
 add_action('admin_init', 'tcw_admin_init');
 
@@ -375,9 +341,8 @@ function load_stylesheets()
     );
 		wp_enqueue_style( 'foundry-styles' );
 
-
     if (get_page_template_slug() === 'page-finance-application.php') {
-      // ADD IT TO THIS PAGE SEEMS TO BE REQUIRED
+        // ADD IT TO THIS PAGE SEEMS TO BE REQUIRED
         wp_register_style(
             'bootstrap',
             'https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css',
@@ -387,8 +352,7 @@ function load_stylesheets()
         );
         wp_enqueue_style('bootstrap');
 
-
-        $version53D = '1.0.0';
+        $version53D = '1.0.3';
         wp_register_style(
             '53d-bootstrap-icons',
             'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css',
@@ -409,7 +373,7 @@ function load_stylesheets()
       
         wp_register_style(
             '53d-slider',
-            'https://tcg-creditapp.53dnorth.com/assets/css/slider.css',
+            'https://tcg-creditapp.53dnorth.com/assets/css/slider.css?v=1.0.0',
             [],
             $version53D,
             'all'
@@ -418,7 +382,7 @@ function load_stylesheets()
       
         wp_register_style(
             '53d-loader',
-            'https://tcg-creditapp.53dnorth.com/assets/css/loader.css',
+            'https://tcg-creditapp.53dnorth.com/assets/css/loader.css?v=1.0.0',
             [],
             $version53D,
             'all'
@@ -427,7 +391,7 @@ function load_stylesheets()
       
         wp_register_style(
             '53d-styles',
-            'https://tcg-creditapp.53dnorth.com/assets/css/styles.css',
+            'https://tcg-creditapp.53dnorth.com/assets/css-dev/styles-v2.css?v=2.0.0',
             [],
             $version53D,
             'all'
@@ -436,7 +400,7 @@ function load_stylesheets()
       
         wp_register_style(
             '53d-stepper',
-            'https://tcg-creditapp.53dnorth.com/assets/css/stepper.css',
+            'https://tcg-creditapp.53dnorth.com/assets/css-dev/stepper.css?v=1.0.0',
             [],
             $version53D,
             'all'
@@ -553,7 +517,8 @@ function load_javascript()
     );
     
     if (get_page_template_slug() === 'page-finance-application.php') {
-        $version53D = '1.01';
+        $version53D = '1.03';
+        // var_dump($version53D);die();
         wp_deregister_script('53d-moment');
         wp_register_script(
             '53d-moment',
@@ -607,12 +572,22 @@ function load_javascript()
         wp_deregister_script('53d-app');
         wp_register_script(
             '53d-app',
-            'https://tcg-creditapp.53dnorth.com/assets/js/app-v2.js',
+            'https://tcg-creditapp.53dnorth.com/assets/js/app-v3.js',
             [],
             $version53D,
             true
         );
         wp_enqueue_script('53d-app');
+
+        wp_deregister_script('53d-address-lookup');
+        wp_register_script(
+            '53d-address-lookup',
+            'https://tcg-creditapp.53dnorth.com/assets/js/address-lookup.js',
+            [],
+            $version53D,
+            true
+        );
+        wp_enqueue_script('53d-address-lookup');
     }
 }
 add_action('wp_enqueue_scripts', 'load_javascript');
