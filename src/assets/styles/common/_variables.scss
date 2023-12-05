@@ -8,20 +8,20 @@
   */
 // =============== RESPONSIVE ================
 
-$breakpoints:(
-  'phone': 640px,
-  'phone-land': 920px,
-  'tablet': 1140px,
-  'desktop': 1360px,
-  'wideScreen': 1890px,
-  '4k' : 2160px
-  ) !default;
-  
-  @import '~include-media/dist/include-media';
-  // EXAMPLE
-  // @include media(">phone", "<=tablet") {
-    //   width: 50%;
-    //   }
+$breakpoints: (
+	'phone': 640px,
+	'phone-land': 920px,
+	'tablet': 1140px,
+	'desktop': 1360px,
+	'wideScreen': 1890px,
+	'4k': 2160px,
+) !default;
+
+@import '~include-media/dist/include-media';
+// EXAMPLE
+// @include media(">phone", "<=tablet") {
+//   width: 50%;
+//   }
 
 /*==================================================================================
   FONT
@@ -29,34 +29,57 @@ $breakpoints:(
 @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Montserrat:wght@400;500;600&display=swap');
 
 @font-face {
-  font-family: Keep Calm;
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.eot');
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.woff2') format('woff2'), url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.woff') format('woff'), url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.ttf') format('truetype'), url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.svg#keep_calmbook') format('svg');
-  font-weight: 400;
-  font-style: normal;
-  font-display: auto;
+	font-family: Keep Calm;
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.eot');
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.eot?#iefix')
+			format('embedded-opentype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.woff2') format('woff2'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.woff') format('woff'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.ttf')
+			format('truetype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-book-webfont.svg#keep_calmbook')
+			format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-display: auto;
 }
 
 @font-face {
-  font-family: Keep Calm;
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.eot');
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.woff2') format('woff2'), url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.woff') format('woff'), url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.ttf') format('truetype'), url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.svg#keep_calm_medregular') format('svg');
-  font-weight: 500;
-  font-style: normal;
-  font-display: auto;
+	font-family: Keep Calm;
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.eot');
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.eot?#iefix')
+			format('embedded-opentype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.woff2')
+			format('woff2'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.woff') format('woff'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.ttf')
+			format('truetype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-medium-webfont.svg#keep_calm_medregular')
+			format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-display: auto;
 }
 
 @font-face {
-  font-family: Keep Calm;
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.eot');
-  src: url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.woff2') format('woff2'), url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.woff') format('woff'), url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.ttf') format('truetype'), url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.svg#keep_calmheavy') format('svg');
-  font-weight: 900;
-  font-style: normal;
-  font-display: auto;
+	font-family: Keep Calm;
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.eot');
+	src: url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.eot?#iefix')
+			format('embedded-opentype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.woff2')
+			format('woff2'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.woff') format('woff'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.ttf')
+			format('truetype'),
+		url('/fonts/vendor/keepcalm-tc/keepcalm-heavy-webfont.svg#keep_calmheavy')
+			format('svg');
+	font-weight: 900;
+	font-style: normal;
+	font-display: auto;
 }
 
 $text__fontname: 'Montserrat', sans-serif;
-$header__fontname: 'Keep Calm', sans-serif; 
+$header__fontname: 'Keep Calm', sans-serif;
 $display__fontname: 'East Sea Dokdo', cursive;
 
 /*==================================================================================
@@ -65,15 +88,14 @@ $display__fontname: 'East Sea Dokdo', cursive;
 
 /* from customiser root -> see function-customiser.php
 /––––––––––––––––––––––––*/
-$color__main:#182E5B;
-$color__text:#000000;
-$color__textLight:#343434;
-$color__link-hover:#1834A0;
-$color__green:#01B47A;
-$color__greenAccent:#01B500;
+$color__main: #004480;
+$color__text: #000000;
+$color__textLight: #343434;
+$color__link-hover: #1834a0;
+$color__green: #01b47a;
+$color__greenAccent: #01b500;
 $color__bright: #ffffff;
 $color__dark: #000000;
-
 
 /*==================================================================================
   TYPOGRAPHY

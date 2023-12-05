@@ -1,4 +1,4 @@
-<section class="trustpilot-dark" style="background-color:#182E5B; padding:40px 0">
+<section class="trustpilot-dark" style="background-color:#004480;  padding:40px 0">
     <div class="container"> 
         
        <!-- TrustBox widget - Carousel -->
