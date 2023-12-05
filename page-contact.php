@@ -10,6 +10,7 @@
 
 global $title, $custom;
 $title = 'Contact Us at ' . get_bloginfo('name');
+$holidayTime = get_field('holiday_opening_hours');
 
 get_header();
 ?>
@@ -53,7 +54,19 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="fdry-contact-grid__right">
+            <div class="fdry-contact-grid__right <?= $holidayTime ? 'fdry-contact-grid__right-holiday' : '' ?>">
+
+                <?php if($holidayTime) : ?>
+                <div class="fdry-grey-box fdry-gry-box__open-hours fdry-gry-box__open-hours-holiday">
+                    <!-- <div class="svg">
+                        <?php get_template_part( 'svg-template/svg-clock' ) ?>
+                    </div> -->
+                    <div class="fdry-open-hours__cf">
+                        <h4>Christmas Opening Hours</h4>
+                        <?= get_field('holiday_opening_hours');  ?>
+                    </div>
+                </div>
+                <?php endif; ?>
 
                 <div class="fdry-grey-box fdry-gry-box__open-hours">
                     <div class="svg">
