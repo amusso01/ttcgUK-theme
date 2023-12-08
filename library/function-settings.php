@@ -121,13 +121,13 @@ function tcw_admin_init()
     );
 
     add_settings_field(
-        'cns_representative_apr', // Option ID
-        'Representative APR', // Label
-        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'cns_banner_text', // Option ID
+        'Text for the top banner', // Label
+        'tcw_textbox_callback', // !important - This is where the args go!
         'general', // Page it will be displayed (General Settings)
         'tcw_settings_section', // Name of our section
         array( // The $args
-            'cns_representative_apr' // Should match Option ID
+            'cns_banner_text' // Should match Option ID
         )
     );
 
@@ -143,13 +143,13 @@ function tcw_admin_init()
     );
 
     add_settings_field(
-        'cns_closing_hour_weekends', // Option ID
-        'Closing Hour Weekends', // Label
+        'cns_opening_hour_weekdays', // Option ID
+        'Opening Hour Weekdays', // Label
         'tcw_small_textbox_callback', // !important - This is where the args go!
         'general', // Page it will be displayed (General Settings)
         'tcw_settings_section', // Name of our section
         array( // The $args
-            'cns_closing_hour_weekends' // Should match Option ID
+            'cns_opening_hour_weekdays' // Should match Option ID
         )
     );
 
@@ -198,19 +198,32 @@ function tcw_admin_init()
     );
 
 
-    register_setting('general', 'cns_representative_apr', 'esc_attr');
+    add_settings_field(
+        'cns_representative_apr', // Option ID
+        'Representative APR', // Label
+        'tcw_small_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'tcw_settings_section', // Name of our section
+        array( // The $args
+            'cns_representative_apr' // Should match Option ID
+        )
+    );
+
+
+    register_setting('general', 'cns_banner_text', 'esc_attr');
     register_setting('general', 'cns_closing_hour_sat', 'esc_attr');
     register_setting('general', 'cns_closing_hour_sun', 'esc_attr');
     register_setting('general', 'cns_opening_hour_sat', 'esc_attr');
     register_setting('general', 'cns_opening_hour_sun', 'esc_attr');
     register_setting('general', 'cns_closing_hour_weekdays', 'esc_attr');
     register_setting('general', 'cns_opening_hour_weekdays', 'esc_attr');
+    register_setting('general', 'cns_representative_apr', 'esc_attr');
 }
 add_action('admin_init', 'tcw_admin_init');
 
 function tcw_section_options_callback()
 { // Section Callback
-    echo '<p>You can put the site into sale mode here.</p>';
+    echo '<p>You can override Opening hours banner from here.</p>';
 }
 
 function tcw_small_textbox_callback($args)

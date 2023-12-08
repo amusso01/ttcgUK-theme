@@ -97,6 +97,12 @@ else {
     $ribbon_text = 'OPEN  UNTIL '.$closing_time.'PM   TONIGHT';
 }
 
+$ribbon_text_override = get_option('cns_banner_text');
+
+if($ribbon_text_override){
+    $ribbon_text = $ribbon_text_override;
+}
+
 
 ?><!doctype html>
 <html lang="en">
@@ -180,7 +186,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="fdry-top-hour-banner fdry-sticky-top">
     <div class="content-block">
-        <?php echo $ribbon_text; ?>
+        <?php echo html_entity_decode($ribbon_text); ?>
     </div>
 </div>
 <?php
