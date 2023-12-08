@@ -75,20 +75,30 @@ endforeach;
 
 <main class="fdry-main__single-car">
     <?php if($amount) : ?>
+
+    <?php 
+    // GLOBAL DISCOUNT
+    $isDiscount = get_field('discount_active', 'option');
+    $tagImg = get_field('tag_image_for_discount', 'option');
+    ?>
         
     <section class="fdry-single-car__specs content-block content-max">
         <div class="single-car__grid">
-            <div class="car-figure">
+            <div class="car-figure <?= $isDiscount ? 'discount-tag' : '' ?>">
                 <figure class="fdry-single-car-figure" data-vrm="<?= $carItem['reg_number']; ?>">
          
                     <img class="car-img" src="<?= $carItem['image']; ?>" alt="<?= $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
     
                     <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
-    
+                    <?php if($isDiscount) : ?>
+                        <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">               
+                    <?php endif; ?>
+
                 </figure>
                 <h3>Car Overview</h3>
             </div>
             <?php global $branch; ?>
+
             <div class="car-specs-card__wrapper">
                 <div class="car-spec-card__info">
                     <h1 class="car-name"><?= strtoupper($carItem['make_title']) .' '.strtoupper($carItem['model_title']) ?></h1>
@@ -114,10 +124,11 @@ endforeach;
                         </div>
                         <?php } ?>  
                     </div>
+                    <?php if(!$isDiscount) : ?>
                     <div class="fdry-car-single__cost">
                         <div class="fdry-cash-cost fdry-car-single__cost-card">
                             <p class="fdry-text fdry-text-top">Now Just</p>
-                            <p class="fdry-red-price">&pound;<?php echo  $carItem['rrp']  ?></p>
+                            <p class="fdry-red-price">&pound;<?= $carItem['rrp'] ?></p>
                             <p class="fdry-text fdry-text-bottom">Cash <span>or</span> Finance</p>
                         </div>
                         <div class="fdry-grey-line"></div>
@@ -126,10 +137,33 @@ endforeach;
                         </div>
                         <div class="fdry-monthly-cost fdry-car-single__cost-card">
                             <p class="fdry-text fdry-text-top">Fixed</p>
-                            <p class="fdry-blue-cost">&pound; <?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></p>
+                            <p class="fdry-blue-cost">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></p>
                             <p class="fdry-text fdry-text-bottom">Per Month</p>
                          </div>
                     </div>
+                    <?php else :  ?>
+                    <div class="fdry-car-single__discount-grid">
+                        <div class="fdry-car-single__discount-was">
+                            <p class="text-top">WAS</p>
+                            <p class="price"><span class="strike"></span>&pound;<?= $carItem['rrp']  ?></p>
+                        </div>
+                        <div class="fdry-car-single__discount-now">
+                            <p class="text-top">NOW</p>
+                            <p class="price" >&pound;<?= $carItem['discounted_price'] ?></p>
+                        </div>
+                    </div>
+
+                    <div class="fdry-car-single__discount-divider">
+                        <div class="fdry-cash-cost-or">
+                            <p>Or</p>
+                        </div>
+                    </div>
+
+                    <div class="fdry-car-single__discount-finance">
+                        <p><span class="light">Or just</span>  &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price'] ); ?> per month</p>
+                    </div>
+
+                    <?php endif; ?>
                 </div>
                 <div class="fdry-car-finance-check">
                     <!-- <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn">

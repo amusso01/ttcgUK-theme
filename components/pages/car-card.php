@@ -57,10 +57,17 @@ if (empty($carId) || $listingType === 'similarcarlisting') {
 $showRibbon = get_field('show_red_ribbon', 'option');
 $ribbonText = get_field('red_ribbon_text', 'option');
 
+// GLOBAL DISCOUNT
+$isDiscount = get_field('discount_active', 'option');
+$tagImg = get_field('tag_image_for_discount', 'option');
+
 ?>
 
 <div class="fdry-car-single-card">
-    <div class="fdy-car-single-card__image">
+    <?php if($isDiscount) : ?>
+        <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">               
+    <?php endif; ?>
+    <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
         <a <?= $link ?>">
             <figure data-vrm="<?php echo $carItem['reg_number']; ?>">
                 <img class="car-img" src="<?php
@@ -103,10 +110,11 @@ $ribbonText = get_field('red_ribbon_text', 'option');
             </div>
             <?php endif; ?>
 
+            <?php if(!$isDiscount) : ?>
             <div class="fdry-car-single__cost">
                 <div class="fdry-cash-cost fdry-car-single__cost-card">
                     <p class="fdry-text fdry-text-top">Now Just</p>
-                    <p class="fdry-red-price">&pound;<?php echo  $carItem['rrp']  ?></p>
+                    <p class="fdry-red-price">&pound;<?= $carItem['rrp'] ?></p>
                     <p class="fdry-text fdry-text-bottom">Cash <span>or</span> Finance</p>
                 </div>
                 <div class="fdry-grey-line"></div>
@@ -119,6 +127,29 @@ $ribbonText = get_field('red_ribbon_text', 'option');
                     <p class="fdry-text fdry-text-bottom">Per Month</p>
                 </div>
             </div>
+            <?php else :  ?>
+            <div class="fdry-car-single__discount-grid">
+                <div class="fdry-car-single__discount-was">
+                    <p class="text-top">WAS</p>
+                    <p class="price"><span class="strike"></span>&pound;<?= $carItem['rrp']  ?></p>
+                </div>
+                <div class="fdry-car-single__discount-now">
+                    <p class="text-top">NOW</p>
+                    <p class="price" >&pound;<?= $carItem['discounted_price'] ?></p>
+                </div>
+            </div>
+
+            <div class="fdry-car-single__discount-divider">
+                <div class="fdry-cash-cost-or">
+                    <p>Or</p>
+                </div>
+            </div>
+
+            <div class="fdry-car-single__discount-finance">
+                <p><span class="light">Or just</span>  &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price'] ); ?> per month</p>
+            </div>
+
+            <?php endif; ?>
         </a>
 
     </div>
