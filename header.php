@@ -77,9 +77,9 @@ $opening_time_sat = get_option('cns_opening_hour_sat');
 $opening_time_sun = get_option('cns_opening_hour_sun');
 $opening_time_weekdays = get_option('cns_opening_hour_weekdays');
 if($today == 'Saturday'){
-    $opening_time = $opening_time_sat;
-}elseif($today == 'Sunday'){
     $opening_time = $opening_time_sun;
+}elseif($today == 'Sunday'){
+    $opening_time = $opening_time_weekdays;
 }else{
     $opening_time = $opening_time_weekdays;
 }

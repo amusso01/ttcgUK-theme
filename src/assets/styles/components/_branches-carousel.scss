@@ -1,118 +1,117 @@
-.fdry-branches-carousel__wrapper{
-  >h3{
-    font-size: 28px;
-    margin-bottom: 46px;
-    font-weight: 500;
+.fdry-branches-carousel__wrapper {
+	> h3 {
+		font-size: 28px;
+		margin-bottom: 46px;
+		font-weight: 500;
 
-    @include media('<phone-land'){
-      font-size: 21px;
-      text-align: center;
-      line-height: normal;
-    }
-  }
+		@include media('<phone-land') {
+			font-size: 21px;
+			text-align: center;
+			line-height: normal;
+		}
+	}
 
-  .branch-carousel__card{
-    background-color: #FAFAFA;
-    border-radius: 12px;
-    box-shadow: 0px 3px 6px #0000001C;
-    text-align: center;
-    width: 100%;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    min-height: 530px;
+	.branch-carousel__card {
+		background-color: #fafafa;
+		border-radius: 12px;
+		box-shadow: 0px 3px 6px #0000001c;
+		text-align: center;
+		width: 100%;
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		min-height: 530px;
 
-    @include media('<phone-land'){
-      min-height: auto;
-    }
+		@include media('<phone-land') {
+			min-height: auto;
+		}
 
-    .top-image-video{
-      margin-bottom: 15px;
-    }
+		.top-image-video {
+			margin-bottom: 15px;
+		}
 
-    >h5{
-      font-family: $text__fontname;
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 15px;
+		> h5 {
+			font-family: $text__fontname;
+			font-size: 20px;
+			font-weight: 600;
+			margin-bottom: 15px;
 
-      svg{
-        path{
-          fill: #1834A0;
-        }
-      }
-    }
+			svg {
+				path {
+					fill: #0044b0;
+				}
+			}
+		}
 
-    >p{
-      font-size: 15px;
-    }
+		> p {
+			font-size: 15px;
+		}
 
-    .fdry-btn-locations__wrapper{
-      margin-top: auto;
+		.fdry-btn-locations__wrapper {
+			margin-top: auto;
 
-      @include media('<phone-land'){
-        display: none;
-      }
-    }
-  }
+			@include media('<phone-land') {
+				display: none;
+			}
+		}
+	}
 
-  .fdry-glide__branches {
+	.fdry-glide__branches {
+		.glide__track {
+			padding: 20px 0;
+		}
 
-    .glide__track{
-      padding: 20px 0;
-    }
+		.glide__slides {
+			padding: 10px;
+		}
+		.glide__slide {
+			display: flex;
+			min-height: 280px;
+		}
 
-    .glide__slides{
-      padding: 10px;
-    }
-    .glide__slide{
-      display: flex;
-      min-height: 280px;
-    }
+		.glide__arrows {
+			margin-top: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			column-gap: 15px;
 
-    .glide__arrows{
-      margin-top: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 15px;
+			button {
+				background-color: transparent;
+				border: 1px solid $color__main;
+				border-radius: 20px;
+				padding: 5px;
+			}
+		}
+	}
 
-      button{
-        background-color: transparent;
-        border: 1px solid $color__main;
-        border-radius: 20px;
-        padding: 5px;
-      }
-    }
-  }
+	.fdry-branch-carousel-three-single {
+		h5 {
+			svg {
+				path {
+					fill: #0044b0;
+				}
+			}
+		}
+		.fdry-btn-locations {
+			font-family: $header__fontname;
+			color: white;
+			padding: 21px 30px;
+			background-color: $color__main;
+			border-radius: 12px;
+			transition: all 0.3s;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			min-height: 46px;
+			font-weight: 500;
+			font-size: 15px;
 
-  .fdry-branch-carousel-three-single{
-    h5{
-      svg{
-        path{
-          fill: #1834A0;
-        }
-      }
-    }
-    .fdry-btn-locations{
-      font-family: $header__fontname;
-      color:white;
-      padding:21px 30px;
-      background-color:$color__main;
-      border-radius:12px;
-      transition:all .3s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height:46px;
-      font-weight:500;
-      font-size:15px;
-
-      @include media('<phone-land'){
-        padding:8px 10px;
-        font-size:11px;
-      }
-    }
-  }
+			@include media('<phone-land') {
+				padding: 8px 10px;
+				font-size: 11px;
+			}
+		}
+	}
 }
