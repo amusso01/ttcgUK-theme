@@ -61,7 +61,21 @@ $ribbonText = get_field('red_ribbon_text', 'option');
 $isDiscount = get_field('discount_active', 'option');
 $tagImg = get_field('tag_image_for_discount', 'option');
 
+$cardPadding = get_field('padding_card_top', 'option');
+$tagOffset = get_field('tag_offset_top', 'option');
+
 ?>
+
+<?php if($isDiscount) : ?>
+<style>
+    .fdy-car-single-card__image.discount-padding{
+        padding-top: <?= $cardPadding ?>px;
+    }
+    .fdry-car-single-card .fdry-car-single__discount-tag{
+        top: <?= $tagOffset ?>px;
+    }
+</style>
+<?php endif; ?>
 
 <div class="fdry-car-single-card">
     <?php if($isDiscount) : ?>
