@@ -58,7 +58,10 @@ $metaDescription = wp_strip_all_tags($metaDescription);
 // if (!str_contains($title, get_bloginfo('name'))) {
 //     $genTitle .= ' | ' . get_bloginfo('name');
 // }
-$genTitle =  get_bloginfo('name');
+$genTitle = get_bloginfo('name'). ' | ' . get_the_title() ;
+if(is_front_page()){
+    $genTitle = get_bloginfo('name');
+}
 
 
 $today = date('l');
