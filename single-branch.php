@@ -84,7 +84,7 @@ get_header();?>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <a href="<?= site_url( '/contact' ) ?>" style="display:block; margin-top:15px"><b>View Christmas Opening Times</b></a>
+                        
 
                     </div>
 

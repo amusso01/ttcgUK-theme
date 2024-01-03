@@ -116,10 +116,34 @@ endif;
                     ?>
 
                     <div class="fdry-carlist-break-banner" >
-                        <img class="d-none carlist-desktop-break d-md-block w-100"
-                              src="<?php echo $banner_break_front_page[$x]['desktop']; ?>?v=<?php echo date("HdmY"); ?>"/>
-                        <img class="d-md-none carlist-mobile-break w-100"
-                              src="<?php echo $banner_break_front_page[$x]['mobile']; ?>?v=<?php echo date("HdmY"); ?>"/>
+                      <?php 
+                           $extDesktop = end(explode('.', $banner_break_front_page[$x]['desktop'] ));
+                           
+                          if($extDesktop === 'mp4') :
+                      ?>
+                        <div class="video_wrapper">
+                            <!-- DESKTOP VIDEO -->
+                            <video class="fdry-video fdry-video-desktop"
+                                    src="<?php echo $banner_break_front_page[$x]['desktop'] ?>?v=<?php
+                                    echo date("HdmY"); ?>" width="100%" autoplay loop muted
+                                    style="background-image:url('/images/banner_bg_tcw.jpg')"></video>
+
+                            <!-- MOBILE VIDEO -->
+                            <video muted="" playsinline="" class="fdry-video fdry-video-mobile" src="<?php echo $banner_break_front_page[$x]['mobile']  ?>?v=<?php
+                                echo date("HdmY"); ?>" width="100%" autoplay loop
+                                    style="background-image:url('/images/banner_bg_mob_tcw.jpg')">
+                                </video>
+                        </div> 
+
+                        <?php else : ?>
+               
+                            <img class="d-none carlist-desktop-break d-md-block w-100"
+                                src="<?php echo $banner_break_front_page[$x]['desktop']; ?>?v=<?php echo date("HdmY"); ?>"/>
+                          
+                            <img class="d-md-none carlist-mobile-break w-100"
+                                src="<?php echo $banner_break_front_page[$x]['mobile']; ?>?v=<?php echo date("HdmY"); ?>"/>
+              
+                        <?php endif; ?>
                     </div>
                   <?php
                   if( $x+1  === $countLoop){

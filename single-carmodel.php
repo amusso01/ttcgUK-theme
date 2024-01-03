@@ -153,14 +153,9 @@ endforeach;
                         </div>
                     </div>
 
-                    <div class="fdry-car-single__discount-divider">
-                        <div class="fdry-cash-cost-or">
-                            <p>Or</p>
-                        </div>
-                    </div>
 
                     <div class="fdry-car-single__discount-finance">
-                        <p><span class="light">Or just</span>  &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price'] ); ?> per month</p>
+                    <p> <span class="light">Or just</span> <span class="yellow"> &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price'] ); ?></span> per month</p>
                     </div>
 
                     <?php endif; ?>

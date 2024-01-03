@@ -512,8 +512,7 @@
 		margin-top: 11px;
 
 		.fdry-car-single__discount-was {
-			background-color: #f5f5f5;
-			border-radius: 10px;
+			background-color: #ffffff;
 			padding: 10px;
 			display: inline-flex;
 			justify-content: center;
@@ -521,14 +520,12 @@
 			flex-direction: column;
 			.text-top {
 				font-size: 12px;
-				color: #000000;
-				opacity: 0.6;
-				font-weight: 700;
+				color: #e2141c;
+				font-weight: 300;
 			}
 			.price {
 				font-size: 26px;
 				color: #000000;
-				opacity: 0.6;
 				font-weight: 600;
 				position: relative;
 
@@ -536,7 +533,7 @@
 					position: absolute;
 					width: 100%;
 					height: 2px;
-					background-color: #b22d24;
+					background-color: #e2141c;
 					top: 50%;
 					left: 0;
 					transform: rotate(20deg) translateY(-50%);
@@ -545,34 +542,46 @@
 		}
 
 		.fdry-car-single__discount-now {
-			background-color: #0044b0;
-			border-radius: 10px;
+			background-color: #ffed00;
 			padding: 10px;
+			border-radius: 10px;
 			display: inline-flex;
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
 			.text-top {
 				font-size: 12px;
-				color: #ffffff;
-				font-weight: 700;
+				color: #000000;
+				font-weight: 400;
 			}
 			.price {
 				font-size: 26px;
-				color: #ffffff;
+				color: #e2141c;
 				font-weight: 600;
 			}
 		}
 	}
 
 	.fdry-car-single__discount-finance {
+		background-color: #373737;
+		border-radius: 10px;
+		margin-top: 5px;
+		padding: 10px 5px;
 		p {
-			font-size: 15px;
+			font-size: 14px;
 			text-align: center;
-			font-weight: 900;
-			color: #0044b0;
+			font-weight: 600;
+			color: white;
+			text-transform: uppercase;
 			.light {
-				font-weight: 500;
+				font-weight: 300;
+			}
+
+			.yellow {
+				font-size: 28px;
+				color: #ffed00;
+				position: relative;
+				top: 3px;
 			}
 		}
 	}
