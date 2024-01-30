@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function tcw_cars_import()
 {
@@ -103,6 +103,7 @@ function tcw_cars_import()
             'RegistrationDate' => '2016-02-15 00:00:00',
             'RRP' => '4999',
             'Discount' => '0',
+            'fdry_paint_id' => 'gren',
             'DiscountedPrice' => '4999',
             'LocationChangedDate' => '23/03/2020',
             'Location' => 'Cardiff North',
@@ -207,7 +208,7 @@ function tcw_cars_import()
             ]
         ]
     );
-    
+
     curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
@@ -330,6 +331,7 @@ function tcw_cars_import()
             update_field('discounted_price', $row->DiscountedPrice, $carId);
             update_field('derivative', $row->Derivative, $carId);
             update_field('fueltype', $row->FuelType, $carId);
+            update_field('fdry_paint_id', $row->PaintDescription, $carId);
             update_field('transmission', $row->Transmission, $carId);
             update_field('enginecapacity', $row->EngineCapacity, $carId);
             update_field('bodytype', $row->BodyType, $carId);
@@ -338,7 +340,7 @@ function tcw_cars_import()
             update_field('mileage', $row->Mileage, $carId);
             update_field('capid', $row->CapId, $carId);
             update_field('destination_label', $row->Destination, $carId);
-            if($row->Featured===true) {
+            if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {
                 update_field('featured', 0, $carId);
@@ -361,6 +363,7 @@ function tcw_cars_import()
             update_field('derivative', $row->Derivative, $carId);
             update_field('fueltype', $row->FuelType, $carId);
             update_field('transmission', $row->Transmission, $carId);
+            update_field('fdry_paint_id', $row->PaintDescription, $carId);
             update_field('enginecapacity', $row->EngineCapacity, $carId);
             update_field('bodytype', $row->BodyType, $carId);
             update_field('seats', $row->Seats, $carId);
@@ -368,7 +371,7 @@ function tcw_cars_import()
             update_field('mileage', $row->Mileage, $carId);
             update_field('capid', $row->CapId, $carId);
             update_field('destination_label', $row->Destination, $carId);
-            if($row->Featured===true) {
+            if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {
                 update_field('featured', 0, $carId);
@@ -416,7 +419,7 @@ function tcw_cars_import()
         }
     }
 
-    if ( $_GET['import']  == 'c1b5b1a6ad' )  {
+    if ($_GET['import']  == 'c1b5b1a6ad') {
         echo "<pre>";
         echo $log;
         echo 'Total Cars: ' . $numCars;
@@ -425,7 +428,7 @@ function tcw_cars_import()
     mail(get_bloginfo('admin_email'), 'Cron Log', $log);
 }
 
-if ( $_GET['import']  == 'c1b5b1a6ad' ) {
+if ($_GET['import']  == 'c1b5b1a6ad') {
     tcw_cars_import();
     die;
 }

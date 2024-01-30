@@ -1,178 +1,243 @@
 /* SINGLE LOCATIONS */
 
-.fdry-single-branch__hero-wrapper{
-  position:relative;
+.fdry-single-branch__hero-wrapper {
+	position: relative;
 }
 
-.fdry-single-branch__hero-wrapper h1{
-  margin-bottom:60px;
-  text-align:center;
-  font-size:40px;
-  text-transform:uppercase;
-  margin-top: 80px;
-  @include media('<phone-land'){
-    font-size:30px;
-    margin-bottom:30px;
-    margin-top: 50px;
-  }
+.fdry-single-branch__hero-wrapper h1 {
+	margin-bottom: 60px;
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-top: 80px;
+	@include media('<phone-land') {
+		font-size: 30px;
+		margin-bottom: 30px;
+		margin-top: 50px;
+	}
 }
 
-.fdry-single-branch__information{
-  max-width:1240px;
-  margin:auto;
-  padding:0 24px;
+.fdry-single-branch__information {
+	max-width: 1240px;
+	margin: auto;
+	padding: 0 24px;
 }
-.fdry-single-branch__information .fdry-single-branch__info-title{
-  text-align:center;
-  color:#000000;
-  font-weight:500;
-  font-size:36px;
-  margin-bottom:50px;
-}
-
-.fdry-single-branch__information-grid{
-  display:grid;
-  grid-template-columns: 0.7fr 1fr;
-  column-gap:40px;
-  row-gap:30px;
-  margin-bottom:40px;
-
-  @include media('<phone-land'){
-    grid-template-columns: 1fr;
-  }
-
-  video{
-    width: 100%;
-    border-radius: 12px;
-  }
-
-
-  .fdry-locations-landing-singleLocation{
-    padding: 26px 46px 35px;
-  }
-}
-.fdry-single-branch__information-grid .fdry-locations-landing-singleLocation:nth-child(1){
-  grid-column:auto;
+.fdry-single-branch__information .fdry-single-branch__info-title {
+	text-align: center;
+	color: #000000;
+	font-weight: 500;
+	font-size: 36px;
+	margin-bottom: 50px;
 }
 
-.fdry-locations-other-branches{
-  max-width:1500px;
-  padding-left:24px;
-  padding-right:24px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:100px;
+.fdry-single-branch__information-grid {
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+	column-gap: 40px;
+	row-gap: 30px;
+	margin-bottom: 40px;
+
+	@include media('<phone-land') {
+		grid-template-columns: 1fr;
+	}
+
+	video {
+		width: 100%;
+		border-radius: 12px;
+	}
+
+	.fdry-locations-landing-singleLocation {
+		padding: 26px 46px 35px;
+	}
+}
+.fdry-single-branch__information-grid
+	.fdry-locations-landing-singleLocation:nth-child(1) {
+	grid-column: auto;
 }
 
-.fdry-locations-other-branches__title{
-  text-align:center;
-  color:#000000;
-  font-weight:400;
-  font-size:36px;
-  margin-bottom:55px;
-  line-height: normal;
-  @include media('<phone'){
-    font-size:28px;
-  }
+.fdry-locations-other-branches {
+	max-width: 1500px;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
 }
 
-.fdry-single-branch__information-map iframe{
-  border-radius: 12px;
+.fdry-locations-other-branches__title {
+	text-align: center;
+	color: #000000;
+	font-weight: 400;
+	font-size: 36px;
+	margin-bottom: 55px;
+	line-height: normal;
+	@include media('<phone') {
+		font-size: 28px;
+	}
 }
 
-.fdry-locations-other-branches__grid{
-  display: grid;
-  column-gap: 40px;
-  row-gap: 55px;
-  grid-template-columns: repeat(2, 1fr);
-
-  @include media('<phone-land'){
-    column-gap: 15px;
-    row-gap: 25px;
-  }
-
-
-  .fdry-location-link{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: inline-block;
-
-    .top-image-video{
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .fdry-locations-landing__top-info{
-      position: absolute;
-      width: 100%;
-      height: 25%;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(#000000, 0.6);
-      transform-origin: center;
-      transition: all .4s;
-      @include media('<phone-land'){
-        height: 100%;
-        background-color: rgba(#000000, 0.4);
-      }
-      h5{
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 0;
-        text-align: center;
-        padding: 0 5px;
-        margin-bottom: 3px;
-
-      }
-      .fdry-locations-landing__car-number{
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 0;
-        text-align: center;
-        padding: 0 5px;
-        @include media('<phone-land'){
-          font-size: 11px;
-        }
-      }
-    }
-
-    .fdry-locations-landing-singleLocation{
-      background-color: transparent;
-      border-radius: 0px;
-      padding: 0;
-      box-shadow: none;
-      display: block;
-    }
-
-    .top-image-video{
-      margin-bottom: 0;
-    }
-
-    &:hover{
-      .fdry-locations-landing__top-info{
-        height: 100%;
-      }
-    }
-  }
+.fdry-single-branch__information-map iframe {
+	border-radius: 12px;
 }
 
-.fdry-locations-other-branches__grid .fdry-locations-landing-singleLocation{
-  grid-column:auto;
+.fdry-locations-other-branches__grid {
+	display: grid;
+	column-gap: 40px;
+	row-gap: 55px;
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media('<phone-land') {
+		column-gap: 15px;
+		row-gap: 25px;
+	}
+
+	.fdry-location-link {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: inline-block;
+
+		.top-image-video {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			img {
+				transition: all 0.3s;
+			}
+		}
+
+		.fdry-locations-landing__top-info {
+			position: absolute;
+			width: 100%;
+			height: auto;
+
+			top: 40%;
+			left: 50%;
+			transform: translateY(-50%);
+			transform: translateX(-50%);
+			display: flex;
+			row-gap: 15px;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			@include media('<phone') {
+				row-gap: 8px;
+				top: 20%;
+			}
+			h5 {
+				color: #ffffff;
+				text-transform: uppercase;
+				margin-bottom: 0;
+				text-align: center;
+				padding: 0 5px;
+				margin-bottom: 3px;
+				padding: 7px 21px;
+				background-color: #fae24d;
+				border-radius: 10px;
+				font-size: 32px;
+				color: #343434;
+				@include media('<phone-land') {
+					font-size: 18px;
+					padding: 4px 10px;
+				}
+				@include media('<phone') {
+					font-size: 10px;
+				}
+			}
+			.fdry-locations-landing__car-number {
+				color: #ffffff;
+				text-transform: uppercase;
+				margin-bottom: 0;
+				text-align: center;
+				font-family: $text__fontname;
+				font-size: 28px;
+				font-weight: 400;
+				background-color: #343434;
+				border-radius: 10px;
+				padding: 5px 15px;
+				@include media('<phone-land') {
+					font-size: 13px;
+					padding: 3px 5px;
+				}
+				@include media('<phone') {
+					font-size: 8px;
+				}
+
+				.yellow {
+					color: #fae24d;
+					font-size: 40px;
+
+					@include media('<phone-land') {
+						font-size: 20px;
+					}
+					@include media('<phone') {
+						font-size: 10px;
+					}
+				}
+			}
+		}
+
+		.fdry-locations-landing-singleLocation {
+			background-color: transparent;
+			border-radius: 0px;
+			padding: 0;
+			box-shadow: none;
+			display: block;
+		}
+
+		.top-image-video {
+			margin-bottom: 0;
+		}
+		&:hover {
+			.branch-locations__image {
+				filter: brightness(60%);
+			}
+		}
+	}
 }
 
-.fdry-locations-other-branches__grid.fdry-branch-carousel-three-single{
-  .fdry-location-link{
-    &:first-of-type{
-      @include media('<phone-land'){
-        grid-column: 1/-1;
-      }
-    }
-  }
+.fdry-locations-other-branches__grid .fdry-locations-landing-singleLocation {
+	grid-column: auto;
+}
+
+.fdry-locations-other-branches__grid.fdry-branch-carousel-three-single {
+	.fdry-location-link {
+		&:first-of-type {
+			@include media('<phone-land') {
+				grid-column: 1/-1;
+			}
+
+			.fdry-locations-landing__top-info {
+				h5 {
+					@include media('<phone-land') {
+						font-size: 18px;
+						padding: 6px 12px;
+					}
+					@include media('<phone') {
+						font-size: 18px;
+					}
+				}
+			}
+			.fdry-locations-landing__car-number {
+				@include media('<phone-land') {
+					font-size: 16px;
+					padding: 5px 8px;
+				}
+				@include media('<phone') {
+					font-size: 16px;
+					padding: 5px 8px;
+				}
+
+				.yellow {
+					@include media('<phone-land') {
+						font-size: 23px;
+					}
+					@include media('<phone') {
+						font-size: 23px;
+					}
+				}
+			}
+		}
+	}
 }

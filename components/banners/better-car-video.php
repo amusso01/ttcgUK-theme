@@ -1,9 +1,9 @@
-<?php 
-$video = get_field('price_promise','option');
+<?php
+$video = get_field('price_promise', 'option');
 $videourl = $video['video_vimeo_url'];
 ?>
 
-<section class="container-fluid no-gutters | bettercar__wrapper">
+<section class="container-fluid no-gutters | bettercar__wrapper" style="margin-bottom: 50px;">
     <div class="row" style="">
         <div class="col-12">
             <div class="embed-responsive embed-responsive-16by9 | bettercar__video">

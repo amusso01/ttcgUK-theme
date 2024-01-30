@@ -4,7 +4,7 @@ global $branch, $carmodel, $carmake, $carsArray,  $saleMode, $regYear, $carId;
 
 //if($carmodel) $posts_per_page = '1'; else $posts_per_page = '-1';
 $posts_per_page = '-1';
-
+$isDiscount = get_field('discount_active', 'option');
 
 if ($carId) {
     $args = [
@@ -56,11 +56,41 @@ if ($carId) {
         $meta_query[] = [
             'relation' => 'AND',
             [
-                'key' => 'location',
+                'key' => 'destination',
                 'value' => $branch->ID,
                 'compare' => '=',
             ]
         ];
+    }
+
+
+    if ($post->post_type === 'financeexample') {
+        $rrp_finance = get_field('cash_price', $finances->ID);
+
+        if ($isDiscount) {
+            $key = 'discounted_price';
+            $meta_query[] = [
+                'relation' => 'AND',
+                [
+                    'key' => $key,
+                    'value' => $rrp_finance,
+                    'compare' => '=',
+                ]
+            ];
+        } else {
+            $args = [
+                'fields' => 'ids',
+                'post_type' => ['car'],
+                'posts_per_page' => $posts_per_page,
+
+                'meta_key' => 'rrp',
+                'meta_value' => $rrp_finance,
+                'meta_compare' => '=',
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
+            ];
+            $meta_query = [];
+        };
     }
 
     if (!empty($meta_query)) {
@@ -133,6 +163,8 @@ while ($query->have_posts()) {
     $carItem['from_price'] = $custom['from_price'][0];
     $carItem['sale_mode_override'] = $custom['sale_mode_override'][0] ? $custom['sale_mode_override'][0] : false;
     $carItem['location'] = $custom['location'][0] ? $custom['location'][0] : false;
+    $carItem['branch'] = $location ? $location : false;
+    $carItem['destination'] = get_the_title($custom['destination'][0]);
     $carItem['reg_date'] = $custom['reg_date'][0] ? $custom['reg_date'][0] : false;
     $carItem['reg_number'] = $custom['reg_number'][0] ? $custom['reg_number'][0] : false;
     $carItem['custom_title'] = $custom['title'][0] ? $custom['title'][0] : false;
@@ -154,12 +186,15 @@ while ($query->have_posts()) {
     */
     $carItem['reg_year'] = $regYear;
     $carsArray[] = $carItem;
-
 }
 
-array_multisort(array_column($carsArray, 'rrp'), SORT_ASC,
-                array_column($carsArray, 'reg_year'), SORT_DESC,
-                $carsArray);
+array_multisort(
+    array_column($carsArray, 'rrp'),
+    SORT_ASC,
+    array_column($carsArray, 'reg_year'),
+    SORT_DESC,
+    $carsArray
+);
 
 //shuffle($carsArrayFeat);
 //print_r($carsArrayFeat);

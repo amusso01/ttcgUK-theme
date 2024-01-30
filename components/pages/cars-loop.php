@@ -41,7 +41,7 @@ endif;
 <script type="text/javascript">
     const breakBanners = <?php echo json_encode($banner_break_front_page); ?>;
 </script>
-<!-- THIS IS THE HTML USED BY carlisting JS to build the banner -->
+<!-- THIS IS THE HTML USED BY carlisting JS to build the banner OLD THEME METHOD-->
 <!-- <div class="fdry-carlist-break-banner" >
     <img class="d-none carlist-desktop-break d-md-block w-100"
           src="<?php echo $banner_break_front_page[0]['desktop']; ?>?v=<?php echo date("HdmY"); ?>"/>
