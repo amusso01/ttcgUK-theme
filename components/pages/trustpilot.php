@@ -1,15 +1,15 @@
 <section class="trustpilot-dark" style="background-color:#0044b0;  padding:40px 0">
-    <div class="container"> 
-        
-       <!-- TrustBox widget - Carousel -->
+    <div class="container">
 
-    <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="4e57a575000064000510dbce" data-style-height="140px" data-style-width="100%" data-theme="dark" data-stars="5" data-review-languages="en">
+        <!-- TrustBox widget - Carousel -->
 
-    <a href=https://www.trustpilot.com/review/thetradecentrewales.co.uk target="_blank" rel="noopener">Trustpilot</a>
+        <!-- TrustBox widget - Slider -->
+        <div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="589da25c0000ff00059c6e6b" data-style-height="240px" data-style-width="100%" data-theme="dark" data-stars="5" data-review-languages="en">
+            <a href="https://www.trustpilot.com/review/www.tradecentreuk.com" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+        <!-- End TrustBox widget -->
+
+        <!-- End TrustBox widget -->
 
     </div>
-
-<!-- End TrustBox widget -->
-
-    </div>
-</section> 
+</section>

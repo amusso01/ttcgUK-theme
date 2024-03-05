@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template Name: Finance Application
  *
@@ -16,48 +15,19 @@ get_header();
 ?>
 
 <script>
-  ! function(t, e) {
-    var o, n, p, r;
-    e.__SV || (window.posthog = e, e._i = [], e.init = function(i, s, a) {
-      function g(t, e) {
-        var o = e.split(".");
-        2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function() {
-          t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
-        }
-      }(p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
-      var u = e;
-      for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function(t) {
-          var e = "posthog";
-          return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
-        }, u.people.toString = function() {
-          return u.toString(1) + ".people (stub)"
-        }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "), n = 0; n < o.length; n++) g(u, o[n]);
-      e._i.push([i, s, a])
-    }, e.__SV = 1)
-  }(document, window.posthog || []);
-  posthog.init('phc_WzjJ0GppOr9PtsahfYoXrVYNPd2dBWft5cYHcaRdd07', {
-    api_host: 'https://eu.posthog.com'
-  })
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_WzjJ0GppOr9PtsahfYoXrVYNPd2dBWft5cYHcaRdd07',{api_host:'https://eu.posthog.com'})
 </script>
 
 <style>
-  .content-tabs,
-  .sticky-mobile-footer,
-  section.banner {
+  .content-tabs, .sticky-mobile-footer, section.banner {
     display: none !important;
   }
-
-  body,
-  main {
-    background: #F8F8F8;
+  body, main {
+    background:#F8F8F8;
   }
 </style>
 <section class="container-fluid | tertiarypage contactus">
-  <form id="form" novalidate="novalidate">
-    <div class="settings-cont">
-      <a href="#" class="outer-link theme-switch">A</a>
-      <a href="#" class="outer-link header-switch">C</a>
-    </div>
     <div class="container st-cont">
       <h1 class="fnt-medium title">Free Finance Check</h1>
       <span class="fnt-medium">In a few simple steps you can check your eligibility to select a car.</span>
@@ -226,40 +196,26 @@ get_header();
         <div class="st-card">
           <h1>Where You Live</h1>
           <div class="form-group">
-            <label class="st-label">Have you been resident in the UK for the last 3 years?</label>
+            <label class="st-label">Are you a UK Resident</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="resident_uk_y" aria-required="true" type="radio" name="resident_uk" class="checkbin" checked>
+                <input 
+                  id="resident_uk_y" aria-required="true" type="radio" name="resident_uk"
+                  class="checkbin">
                 <label date-check="1" for="resident_uk_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="resident_uk_n" aria-required="true" type="radio" name="resident_uk" class="checkbin">
+                <input
+                  id="resident_uk_n" aria-required="true" type="radio" name="resident_uk"
+                  class="checkbin">
                 <label date-check="1" for="resident_uk_n" tabindex="0">No</label>
               </div>
             </div>
           </div>
-          <!-- <div class="form-group">
+          <div class="form-group">
             <label class="st-label" for="address">Current Address</label>
             <input type="text" class="form-control" id="address" placeholder="">
-          </div> -->
-
-          <div class="form-group address-lookup" id="address">
-            <label class="st-label" for="address">Current Address</label>
-            <div class="btn-group" style="display:flex;">
-              <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-              <button class="btn btn-success search">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-              </button>
-              <button class="btn btn-secondary clear">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-              </button>
-            </div>
-            <div class="error errorMessage"></div>
-            <div class="result"></div>
-            <div class="outputArea">
-            </div>
           </div>
-
           <div class="form-group addr-field d-none">
             <label class="st-label" for="address1">Address Line 1</label>
             <input type="text" class="form-control" id="address1" placeholder="">
@@ -276,7 +232,7 @@ get_header();
           <div class="form-group">
             <label class="st-label" for="addr_time">How long have you lived here? (Years / Months)</label>
             <div class="row">
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="addr_years" placeholder="Years"> -->
                 <select class="form-control form-select" id="addr_years">
                   <option value="">Years</option>
@@ -302,7 +258,7 @@ get_header();
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="addr_months" placeholder="Months"> -->
                 <select class="form-control form-select" id="addr_months">
                   <option value="">Months</option>
@@ -326,12 +282,11 @@ get_header();
             <label class="st-label" for="accommodation_type">Residential Status</label>
             <select class="form-control form-select" id="accommodation_type">
               <option value=""></option>
-              <option value="1" selected="selected">Home Owner</option>
-              <option value="2">Co-Home Owner</option>
-              <option value="3">Council Tenant</option>
-              <option value="4">Housing Association</option>
-              <option value="5">Living With Parents</option>
-              <option value="6">Private Tenant</option>
+              <option value="home_owner">Home Owner</option>
+              <option value="private_rented">Private Rented</option>
+              <option value="council_rented">Council Rented</option>
+              <option value="living_with_parents">Living With Parents</option>
+              <option value="house_share">House Share</option>
             </select>
           </div>
         </div>
@@ -360,7 +315,7 @@ get_header();
           <div class="form-group">
             <label class="st-label" for="employment_time">How Long have you been with your current employer?</label>
             <div class="row">
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="employment_years" placeholder="Years"> -->
                 <select class="form-control form-select" id="employment_years">
                   <option value="">Years</option>
@@ -386,7 +341,7 @@ get_header();
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="employment_months" placeholder="Months"> -->
                 <select class="form-control form-select" id="employment_months">
                   <option value="">Months</option>
@@ -439,20 +394,38 @@ get_header();
             <label class="st-label status-lbl error-lbl"></label>
           </div>
           <h1>Terms &amp; Conditions</h1>
+          <div class="scroll-cont">
+            <p class="banner">Please read the terms and conditions below, and then click the checkbox below to show you agree with them, then click "Send Application".</p>
+            <div id="terms_g"></div>
+          </div>
+          <label class="st-label txt-sm">
+            The Trade Centre Group is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you.
+            You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Notice.
+          </label>
           <div class="form-group">
             <label class="st-label">I agree to receive other E-Mail communications from The Trade Centre Group</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="terms_agree_y" aria-required="true" type="checkbox" name="terms_agree" class="checkbin" checked="checked">
+                <input 
+                  id="terms_agree_y" aria-required="true" type="radio" name="terms_agree"
+                  class="checkbin">
                 <label date-check="1" for="terms_agree_y" tabindex="0">Yes</label>
+              </div>
+              <div class="nontextual">
+                <input
+                  id="terms_agree_n" aria-required="true" type="radio" name="terms_agree"
+                  class="checkbin">
+                <label date-check="1" for="terms_agree_n" tabindex="0">No</label>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label class="st-label" id="lbl-pre-app-terms">I agree to allow The Trade Centre Group to store and process my personal data and have read and agree to the terms & conditions above *</label>
+            <label class="st-label">I agree to allow The Trade Centre Group to store and process my personal data and have read and agree to the terms & conditions above *</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="terms_agree2_y" aria-required="true" type="checkbox" name="terms_agree2" class="checkbin">
+                <input 
+                  id="terms_agree2_y" aria-required="true" type="checkbox" name="terms_agree2"
+                  class="checkbin">
                 <label date-check="1" for="terms_agree2_y" tabindex="0">Yes</label>
               </div>
               <!-- <div class="nontextual">
@@ -470,6 +443,9 @@ get_header();
             <button class="btn btn-success" id="btn-check-el" disabled="disabled">Check Eligibility Now</button>
             <label class="st-label text-center d-none" style="width:251px;">This won't affect your credit score</label>
           </div>
+        </div>
+        <div class="st-label txt-sm text-center">
+          Representative Example (Hire Purchase): Cash Price £6399.00. Total Deposit £1500.00. Total Amount of Credit £4899.00. 60 Equal Payments of £108.35. Agreement Duration 60 Months. Option to Purchase Fee£10.00. Interest Charges £1602.00. Total Amount Payable £8,011.00. Annual Rate of Interest is 12.4% (fixed). Representative APR 15.9%. Monthly payment is equivalent to £25.00 per week. We are a broker, not a lender. Written Guarantee may be required. Subject to Status - Alternative Deals Available. See website or in store for details. See price promise in store.
         </div>
       </div>
 
@@ -633,7 +609,7 @@ get_header();
         </div>
       </div>
 
-      <div class="st-step silver silver-licence">
+      <div class="st-step silver">
         <div class="st-card">
           <h1>Driving Licence and Identity Check</h1>
           <div class="form-group">
@@ -649,11 +625,15 @@ get_header();
             <label class="st-label">Please reconfirm you can provide a utility bill in your name dated within the last 3 months; Gas, Water or Electricity, if none… of these are in your name it could be any form of official bill in your name dated within the last 3 months, mobile phone bill, bank statement</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="sil_license_confirm_y" aria-required="true" type="radio" name="sil_license_confirm" class="checkbin">
+                <input 
+                  id="sil_license_confirm_y" aria-required="true" type="radio" name="sil_license_confirm"
+                  class="checkbin">
                 <label date-check="1" for="sil_license_confirm_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="sil_license_confirm_n" aria-required="true" type="radio" name="sil_license_confirm" class="checkbin">
+                <input
+                  id="sil_license_confirm_n" aria-required="true" type="radio" name="sil_license_confirm"
+                  class="checkbin">
                 <label date-check="1" for="sil_license_confirm_n" tabindex="0">No</label>
               </div>
             </div>
@@ -669,35 +649,26 @@ get_header();
         <div class="st-card">
           <h1>Provide 3 years address information</h1>
           <div class="form-group" id="sil_resident_uk_cont">
-            <label class="st-label">Have you been resident in the UK for the last 3 years?</label>
+            <label class="st-label">Are you a UK Resident</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="sil_resident_uk_y" aria-required="true" type="radio" name="resident_uk" class="checkbin" checked="checked">
+                <input 
+                  id="sil_resident_uk_y" aria-required="true" type="radio" name="resident_uk"
+                  class="checkbin">
                 <label date-check="1" for="sil_resident_uk_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="sil_resident_uk_n" aria-required="true" type="radio" name="resident_uk" class="checkbin">
+                <input
+                  id="sil_resident_uk_n" aria-required="true" type="radio" name="resident_uk"
+                  class="checkbin">
                 <label date-check="1" for="sil_resident_uk_n" tabindex="0">No</label>
               </div>
             </div>
           </div>
-          <div class="form-group address-lookup" id="sil_address">
-            <label class="st-label" for="address">Current Address</label>
-            <div class="btn-group" style="display:flex;">
-              <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-              <button class="btn btn-success search">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-              </button>
-              <button class="btn btn-secondary clear">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-              </button>
-            </div>
-            <div class="error errorMessage"></div>
-            <div class="result"></div>
-            <div class="outputArea">
-            </div>
+          <div class="form-group">
+            <label class="st-label" for="sil_address">Current Address</label>
+            <input type="text" class="form-control" id="sil_address" placeholder="">
           </div>
-
           <div class="form-group addr-field d-none">
             <label class="st-label" for="sil_address1">Address Line 1</label>
             <input type="text" class="form-control" id="sil_address1" placeholder="">
@@ -714,18 +685,17 @@ get_header();
             <label class="st-label" for="sil_accommodation_type">Residential Status</label>
             <select class="form-control form-select" id="sil_accommodation_type">
               <option value=""></option>
-              <option value="1" selected="selected">Home Owner</option>
-              <option value="2">Co-Home Owner</option>
-              <option value="3">Council Tenant</option>
-              <option value="4">Housing Association</option>
-              <option value="5">Living With Parents</option>
-              <option value="6">Private Tenant</option>
+              <option value="home_owner">Home Owner</option>
+              <option value="private_rented">Private Rented</option>
+              <option value="council_rented">Council Rented</option>
+              <option value="living_with_parents">Living With Parents</option>
+              <option value="house_share">House Share</option>
             </select>
           </div>
           <div class="form-group">
             <label class="st-label" for="sil_addr_time">How long have you lived here? (Years / Months)</label>
             <div class="row">
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <select class="form-control form-select" id="sil_addr_years">
                   <option value="">Years</option>
                   <option value="1">01</option>
@@ -750,7 +720,7 @@ get_header();
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <select class="form-control form-select" id="sil_addr_months">
                   <option value="">Months</option>
                   <option value="0">00</option>
@@ -770,21 +740,9 @@ get_header();
             </div>
           </div>
           <div class="d-none" id="pre_addr">
-            <div class="form-group address-lookup" id="sil_prev_address">
-              <label class="st-label" for="address">Previous Address</label>
-              <div class="btn-group" style="display:flex;">
-                <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-                <button class="btn btn-success search">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-                </button>
-                <button class="btn btn-secondary clear">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-                </button>
-              </div>
-              <div class="error errorMessage"></div>
-              <div class="result"></div>
-              <div class="outputArea">
-              </div>
+            <div class="form-group">
+              <label class="st-label" for="sil_prev_address">Previous Address</label>
+              <input type="text" class="form-control" id="sil_prev_address" placeholder="">
             </div>
             <div class="form-group addr-field d-none">
               <label class="st-label" for="sil_prev_address1">Previous Address Line 1</label>
@@ -802,12 +760,11 @@ get_header();
               <label class="st-label" for="sil_prev_accommodation_type">Previous Residential Status</label>
               <select class="form-control form-select" id="sil_prev_accommodation_type">
                 <option value=""></option>
-                <option value="1" selected="selected">Home Owner</option>
-                <option value="2">Co-Home Owner</option>
-                <option value="3">Council Tenant</option>
-                <option value="4">Housing Association</option>
-                <option value="5">Living With Parents</option>
-                <option value="6">Private Tenant</option>
+                <option value="home_owner">Home Owner</option>
+                <option value="private_rented">Private Rented</option>
+                <option value="council_rented">Council Rented</option>
+                <option value="living_with_parents">Living With Parents</option>
+                <option value="house_share">House Share</option>
               </select>
             </div>
             <div class="form-group">
@@ -884,7 +841,7 @@ get_header();
           <div class="form-group">
             <label class="st-label" for="sil_employment_time">How Long have you been with your current employer?</label>
             <div class="row">
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="employment_years" placeholder="Years"> -->
                 <select class="form-control form-select" id="sil_employment_years">
                   <option value="">Years</option>
@@ -910,7 +867,7 @@ get_header();
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <!-- <input type="text" class="form-control" id="employment_months" placeholder="Months"> -->
                 <select class="form-control form-select" id="sil_employment_months">
                   <option value="">Months</option>
@@ -938,21 +895,9 @@ get_header();
             <label class="st-label" for="sil_employment_name">Employer Name</label>
             <input type="text" class="form-control" id="sil_employment_name" placeholder="">
           </div>
-          <div class="form-group address-lookup sil-employer d-none" id="sil_employment_address">
-            <label class="st-label" for="address">Employer Address</label>
-            <div class="btn-group" style="display:flex;">
-              <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-              <button class="btn btn-success search">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-              </button>
-              <button class="btn btn-secondary clear">
-                <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-              </button>
-            </div>
-            <div class="error errorMessage"></div>
-            <div class="result"></div>
-            <div class="outputArea">
-            </div>
+          <div class="form-group sil-employer d-none">
+            <label class="st-label" for="sil_employment_address">Employer Address</label>
+            <input type="text" class="form-control" id="sil_employment_address" placeholder="">
           </div>
           <div class="form-group sil-employer d-none">
             <label class="st-label" for="sil_employment_phone">Employer Phone Number (we never call them)</label>
@@ -975,7 +920,7 @@ get_header();
             <div class="form-group">
               <label class="st-label" for="sil_prev_employment_years">How Long have you been with your previous employer?</label>
               <div class="row">
-                <div class="col-6 col-xs-6 col-md-4">
+                <div class="col-4 col-xs-6">
                   <select class="form-control form-select" id="sil_prev_employment_years">
                     <option value="">Years</option>
                     <option value="1">01</option>
@@ -1000,7 +945,7 @@ get_header();
                     <option value="20">20</option>
                   </select>
                 </div>
-                <div class="col-6 col-xs-6 col-md-4">
+                <div class="col-4 col-xs-6">
                   <select class="form-control form-select" id="sil_prev_employment_months">
                     <option value="">Months</option>
                     <option value="0">00</option>
@@ -1027,21 +972,9 @@ get_header();
               <label class="st-label" for="sil_prev_employment_name">Previous Employer Name</label>
               <input type="text" class="form-control" id="sil_prev_employment_name" placeholder="">
             </div>
-            <div class="form-group address-lookup sil-prev-employer d-none" id="sil_prev_employment_address">
-              <label class="st-label" for="address">Previous Employer Address</label>
-              <div class="btn-group" style="display:flex;">
-                <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-                <button class="btn btn-success search">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-                </button>
-                <button class="btn btn-secondary clear">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-                </button>
-              </div>
-              <div class="error errorMessage"></div>
-              <div class="result"></div>
-              <div class="outputArea">
-              </div>
+            <div class="form-group sil-prev-employer d-none">
+              <label class="st-label" for="sil_prev_employment_address">Previous Employer Address</label>
+              <input type="text" class="form-control" id="sil_prev_employment_address" placeholder="">
             </div>
             <!-- <div class="form-group sil-prev-employer d-none">
               <label class="st-label" for="sil_prev_employment_phone">Previous Employer Phone Number (we never call them)</label>
@@ -1065,7 +998,7 @@ get_header();
             <div class="form-group">
               <label class="st-label" for="sil_prev2_employment_years">How Long have you been with your previous employer?</label>
               <div class="row">
-                <div class="col-6 col-xs-6 col-md-4">
+                <div class="col-4 col-xs-6">
                   <select class="form-control form-select" id="sil_prev2_employment_years">
                     <option value="">Years</option>
                     <option value="1">01</option>
@@ -1090,7 +1023,7 @@ get_header();
                     <option value="20">20</option>
                   </select>
                 </div>
-                <div class="col-6 col-xs-6 col-md-4">
+                <div class="col-4 col-xs-6">
                   <select class="form-control form-select" id="sil_prev2_employment_months">
                     <option value="">Months</option>
                     <option value="0">00</option>
@@ -1117,21 +1050,9 @@ get_header();
               <label class="st-label" for="sil_prev_employment_name">Previous Employer Name</label>
               <input type="text" class="form-control" id="sil_prev2_employment_name" placeholder="">
             </div>
-            <div class="form-group address-lookup sil-prev-employer2 d-none" id="sil_prev2_employment_address">
-              <label class="st-label" for="address">Previous Employer Address</label>
-              <div class="btn-group" style="display:flex;">
-                <input type="text" name="search" class="form-control address-lookup-inp" placeholder="Type your postcode">
-                <button class="btn btn-success search">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/search-solid.png" alt="Search" />
-                </button>
-                <button class="btn btn-secondary clear">
-                  <img src="https://tcg-creditapp.53dnorth.com/assets/img/eraser-solid.png" alt="Erased" />
-                </button>
-              </div>
-              <div class="error errorMessage"></div>
-              <div class="result"></div>
-              <div class="outputArea">
-              </div>
+            <div class="form-group sil-prev-employer2 d-none">
+              <label class="st-label" for="sil_prev_employment_address">Previous Employer Address</label>
+              <input type="text" class="form-control" id="sil_prev2_employment_address" placeholder="">
             </div>
           </div>
         </div>
@@ -1201,7 +1122,7 @@ get_header();
           <div class="form-group">
             <label class="st-label" for="bank_time_years">Time with Bank</label>
             <div class="row">
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <select class="form-control form-select" id="bank_time_years">
                   <option value="">Years</option>
                   <option value="1">01</option>
@@ -1226,7 +1147,7 @@ get_header();
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="col-6 col-xs-6 col-md-4">
+              <div class="col-4 col-xs-6">
                 <select class="form-control form-select" id="bank_time_months">
                   <option value="">Months</option>
                   <option value="0">00</option>
@@ -1292,7 +1213,9 @@ get_header();
             <label class="st-label">In ticking this box, I authorise you to use my personal information to obtain credit/funding for my intended vehicle purchase. I understand that each lender to which my application is submitted will undertake a credit search with credit reference agencies, details of which will be recorded on my credit file. I confirm that the information herein is correct to the best of my belief, and I consent to this information being passed to one or more lenders as part of the application process.</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="search_agree_y" aria-required="true" type="radio" name="search_agree" class="checkbin">
+                <input 
+                  id="search_agree_y" aria-required="true" type="radio" name="search_agree"
+                  class="checkbin">
                 <label date-check="1" for="search_agree_y" tabindex="0">Yes</label>
               </div>
             </div>
@@ -1327,15 +1250,16 @@ get_header();
       <!-- GOLD FLOW -->
       <div class="st-step gold d-none after-eli">
         <div class="st-card pd-sm">
-          <h1 class="fnt-medium title d-none">Great News!!<br />You've been APPROVED to select a car</h1>
-          <span class="lbl-appt-title"></span><br />
+          <h1 class="fnt-medium title d-none">Great News!!<br/>You've been APPROVED to select a car</h1>
+          <span class="text-lg">Make an appointment at your nearest store</span><br />
           <div class="row branch-cont">
           </div>
-          <img id="cal-banner" src="https://tcg-creditapp.53dnorth.com/assets/img/banner-gold.jpg" alt="WE WANT YOUR PART-EX AND WE PAY MORE!" style="width:100%;margin-bottom:12px;" />
-          <div class="text-lg pb-sm lbl-sel-date">Select a date and time</div>
+          <div class="text-lg pb-sm">Select a date and time</div>
           <!-- <span class="fnt-medium">Please choose a convenient date and time below<br />In most cases drive away your new car the very same day!!<br /><br /></span> -->
-          <span>
-            Please choose the most convenient date and time
+          <span class="fnt-medium">
+            Please choose the most convenient date and time to you below<br />
+            <br />
+            Drive away your new car the same day - available to all appointments before 8pm on weekdays and 4pm on weekends
             <br /><br />
           </span>
           <div class="slides" id="calendar-slider"></div>
@@ -1356,11 +1280,15 @@ get_header();
             <label class="st-label">Confirm you can bring a full in date driving licence registered to your current address</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="_license_in_date_curr_addr_y" aria-required="true" type="radio" name="_license_in_date_curr_addr" class="checkbin" value="1">
+                <input 
+                  id="_license_in_date_curr_addr_y" aria-required="true" type="radio" name="_license_in_date_curr_addr"
+                  class="checkbin" value="1">
                 <label date-check="1" for="_license_in_date_curr_addr_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="_license_in_date_curr_addr_n" aria-required="true" type="radio" name="_license_in_date_curr_addr" class="checkbin" value="0">
+                <input
+                  id="_license_in_date_curr_addr_n" aria-required="true" type="radio" name="_license_in_date_curr_addr"
+                  class="checkbin" value="0">
                 <label date-check="1" for="_license_in_date_curr_addr_n" tabindex="0">No</label>
               </div>
             </div>
@@ -1369,11 +1297,15 @@ get_header();
             <label class="st-label">Confirm you hold UK bank account in your own name</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="_bank_acct_own_name_y" aria-required="true" type="radio" name="_bank_acct_own_name" class="checkbin" value="1">
+                <input 
+                  id="_bank_acct_own_name_y" aria-required="true" type="radio" name="_bank_acct_own_name"
+                  class="checkbin" value="1">
                 <label date-check="1" for="_bank_acct_own_name_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="_bank_acct_own_name_n" aria-required="true" type="radio" name="_bank_acct_own_name" class="checkbin" value="0">
+                <input
+                  id="_bank_acct_own_name_n" aria-required="true" type="radio" name="_bank_acct_own_name"
+                  class="checkbin" value="0">
                 <label date-check="1" for="_bank_acct_own_name_n" tabindex="0">No</label>
               </div>
             </div>
@@ -1382,11 +1314,15 @@ get_header();
             <label class="st-label">Confirm you can bring a utility bill in your name dated within the last 3 months, gas- electric-water, if none of these in your name please bring any form of official bill in your name dated within the last 3 months, mobile phone bill, bank statement</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="_proof_addr_3yr_y" aria-required="true" type="radio" name="_proof_addr_3yr" class="checkbin" value="1">
+                <input 
+                  id="_proof_addr_3yr_y" aria-required="true" type="radio" name="_proof_addr_3yr"
+                  class="checkbin" value="1">
                 <label date-check="1" for="_proof_addr_3yr_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="_proof_addr_3yr_n" aria-required="true" type="radio" name="_proof_addr_3yr" class="checkbin" value="0">
+                <input
+                  id="_proof_addr_3yr_n" aria-required="true" type="radio" name="_proof_addr_3yr"
+                  class="checkbin" value="0">
                 <label date-check="1" for="_proof_addr_3yr_n" tabindex="0">No</label>
               </div>
             </div>
@@ -1395,11 +1331,15 @@ get_header();
             <label class="st-label">Confirm you can bring your latest payslip or proof of income if self employed</label>
             <div class="d-flex">
               <div class="nontextual">
-                <input id="_proof_last_payslip_y" aria-required="true" type="radio" name="_proof_last_payslip" class="checkbin" value="1">
+                <input 
+                  id="_proof_last_payslip_y" aria-required="true" type="radio" name="_proof_last_payslip"
+                  class="checkbin" value="1">
                 <label date-check="1" for="_proof_last_payslip_y" tabindex="0">Yes</label>
               </div>
               <div class="nontextual">
-                <input id="_proof_last_payslip_n" aria-required="true" type="radio" name="_proof_last_payslip" class="checkbin" value="0">
+                <input
+                  id="_proof_last_payslip_n" aria-required="true" type="radio" name="_proof_last_payslip"
+                  class="checkbin" value="0">
                 <label date-check="1" for="_proof_last_payslip_n" tabindex="0">No</label>
               </div>
             </div>
@@ -1449,67 +1389,25 @@ get_header();
           <span>We'll contact you once the review is completed</span><br />
         </div>
       </div>
-      <div class="st-step d-none ns-step">
-        <div class="st-card">
-          <h1>Application Update</h1>
-          <br />
-          <p>
-            Thank you for your recent enquiry. Further to you completing a free finace check, unfortunatelty, on this occasion based on the information provided by you for your application, and from the information we have received from Experian, we are currently not able to proceed with your application.
-          </p>
-          <p>
-            The Trade Centre Group Plc is a credit broker and not a lender and therefore, can only introduce you to a limited number of finace providers (lenders). As The Trade Centre Group Plc does not offer access to the whole of the consumer credit market, you may wish to widen your search to identity whether other finace products are available to you.<br /><br />We can of course, sell you a car for cash or you may have access to alternaive forms of credit. If so, you are very welcome to visit one of our sites where we can assist you further,<br /><br />You can find out more about your credit file and what information Experian hol on you by writing to them at the following address:<br /><br />
-            Customer Support Centre<br />
-            Experian Ltd<br />
-            PO BOX 9000<br />
-            Nottingham<br />
-            NG80 7WF<br />
-            E-mail: customerservices@uk.experian.com
-          </p>
-          <p>
-            If you write to the Credit Reference Agency asking for a copy of your file, they may ask you for an administration fee, for providing you with a copy of your file.<br /><br />Once again, thank you for taking the time to apply to us, and we are sorry that we have not been able to assist you at the time.
-          </p>
-        </div>
-      </div>
-      <div class="st-step d-none bc-step">
-        <div class="st-card">
-          <h1>Can you confirm</h1>
-          <div class="form-group">
-            <label class="st-label">Are you in an IVA or Bankrupt?</label>
-            <div class="d-flex">
-              <div class="nontextual">
-                <input id="_current_iva_y" aria-required="true" type="radio" name="_current_iva" class="checkbin" value="1">
-                <label date-check="1" for="_current_iva_y" tabindex="0">IVA</label>
-              </div>
-              <div class="nontextual">
-                <input id="_current_iva_n" aria-required="true" type="radio" name="_current_iva" class="checkbin" value="0">
-                <label date-check="1" for="_current_iva_n" tabindex="0">Bankrupt</label>
-              </div>
-            </div>
-            <div class="msg st-label mt-4"><i>We may still be able to help if you have permission from your IVA insolvency practitioner or if your bankruptcy is discharged.</i></div>
-          </div>
-        </div>
-        <div class="btn-cont">
-          <button class="btn btn-success btn-confirm-bc-status" disabled>Confirm Status</button>
-        </div>
-      </div>
       <!-- GOLD FLOW -->
     </div> <!-- /container -->
-  </form>
-
-  <div class="loader d-none">
-    <svg class="car" width="102" height="40" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(2 1)" stroke="#002742" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <path class="car__body" d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01" stroke-width="3" />
-        <ellipse class="car__wheel--left" stroke-width="3.2" fill="#FFF" cx="83.493" cy="30.25" rx="6.922" ry="6.808" />
-        <ellipse class="car__wheel--right" stroke-width="3.2" fill="#FFF" cx="46.511" cy="30.25" rx="6.922" ry="6.808" />
-        <path class="car__line car__line--top" d="M22.5 16.5H2.475" stroke-width="3" />
-        <path class="car__line car__line--middle" d="M20.5 23.5H.4755" stroke-width="3" />
-        <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3" />
-      </g>
-    </svg>
-  </div>
+    <div class="loader d-none">
+      <svg class="car" width="102" height="40" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(2 1)" stroke="#002742" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <path class="car__body" d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01" stroke-width="3"/>
+          <ellipse class="car__wheel--left" stroke-width="3.2" fill="#FFF" cx="83.493" cy="30.25" rx="6.922" ry="6.808"/>
+          <ellipse class="car__wheel--right" stroke-width="3.2" fill="#FFF" cx="46.511" cy="30.25" rx="6.922" ry="6.808"/>
+          <path class="car__line car__line--top" d="M22.5 16.5H2.475" stroke-width="3"/>
+          <path class="car__line car__line--middle" d="M20.5 23.5H.4755" stroke-width="3"/>
+          <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+    <a href="javascript:demo();" class="outer-link demo-link">Demo</a>
 </section>
 
+
+<!-- By using this audio pixel code, the Customer hereby instructs AdsWizz toProcess Personal Data in its quality as a sub-processor.The ownership and control of Personal Data remains with Customer, and Customer will always remain the Data Controller. Customer is responsible for compliance with its obligations as Data Controller under the Data Protection Laws, in particular for justification of any transmission of Personal Data to AdsWizz (including but not limited providing any required notices and obtaining any required consents from the data subjects), and for its decisions concerning the Processing and use of the Personal Data. --><img src="https://octave-469-adswizz.attribution.adswizz.com/fire?pixelId=70489ef7-723c-4a00-b846-024086888c95&type=sitevisit&subtype=PageVisit1&aw_0_req.gdpr=true&redirectURL=aHR0cHM6Ly9waXhlbC50YXBhZC5jb20vaWRzeW5jL2V4L3JlY2VpdmU_cGFydG5lcl9pZD0yOTk0JjwjaWYgcmVxdWVzdC5saXN0ZW5lcklkP21hdGNoZXMoJ1swLTlhLWZdezh9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezR9LVswLTlhLWZdezEyfScpPnBhcnRuZXJfdHlwZWRfZGlkPSU3QiUyMkhBUkRXQVJFX0FORFJPSURfQURfSUQlMjIlM0ElMjIke3JlcXVlc3QubGlzdGVuZXJJZH0lMjIlN0Q8I2Vsc2VpZiByZXF1ZXN0Lmxpc3RlbmVySWQ_bWF0Y2hlcygnWzAtOUEtRl17OH0tWzAtOUEtRl17NH0tWzAtOUEtRl17NH0tWzAtOUEtRl17NH0tWzAtOUEtRl17MTJ9Jyk-cGFydG5lcl90eXBlZF9kaWQ9JTdCJTIySEFSRFdBUkVfSURGQSUyMiUzQSUyMiR7cmVxdWVzdC5saXN0ZW5lcklkfSUyMiU3RDwjZWxzZT5wYXJ0bmVyX2RldmljZV9pZD0ke3JlcXVlc3QubGlzdGVuZXJJZCF9PC8jaWY-"/>
 
 
 <?php

@@ -337,6 +337,103 @@
 				}
 			}
 		}
+
+		// NEW LAYOUT
+		.fdry-single-car__mobile {
+			padding: 10px;
+			padding-top: 0px;
+			margin-top: -20px;
+			&-title {
+				margin-bottom: 7px;
+				.car-name-mobile {
+					font-weight: 900;
+					margin-bottom: 2px;
+					font-size: 18px;
+					line-height: 28px;
+				}
+				.model-mobile {
+					font-size: 15px;
+					font-weight: 400;
+				}
+			}
+
+			&-price {
+				display: flex;
+				align-items: center;
+				margin-bottom: 15px;
+				.red-box,
+				.blue-box {
+					width: 45%;
+					display: inline-flex;
+					padding: 4px;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					height: 90px;
+					color: white;
+					row-gap: 3px;
+				}
+				.red-box {
+					background-image: url(./../../images/red-bg.svg);
+					background-repeat: repeat;
+				}
+				.blue-box {
+					background-image: url(./../../images/blue-bg.svg);
+					background-repeat: repeat;
+				}
+
+				.cost-text {
+					color: white;
+					font-weight: 700;
+					line-height: 34px;
+					font-size: 34px;
+				}
+				.blue-box-text {
+					color: white;
+					font-weight: 500;
+					line-height: 18px;
+				}
+
+				.price-divider {
+					padding: 5px;
+					font-weight: 600;
+					text-align: center;
+				}
+			}
+
+			&-icons {
+				margin-top: 10px;
+				svg {
+					width: 19px;
+					height: 19px;
+				}
+				.single-car-mobile__icon {
+					display: flex;
+					align-items: center;
+					background-image: url(./../../images/grey-strip-bg.svg);
+					padding: 3px 0 3px 45px;
+					margin-bottom: 7px;
+					background-repeat: repeat;
+
+					i {
+						display: inline-block;
+						margin-right: 18px;
+					}
+					p {
+						font-size: 15px;
+						font-weight: 600;
+					}
+				}
+			}
+			.drop {
+				text-shadow: 1px 1px 1px #000, 1px 2px 1px #000, 1px 3px 1px #000;
+
+				&.fdry-btn-mobile {
+					background-image: url(./../../images/blue-strip-bg.svg);
+					background-repeat: repeat-x;
+				}
+			}
+		}
 	}
 }
 

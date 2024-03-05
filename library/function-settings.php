@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 function start_session()
@@ -47,17 +47,17 @@ function tcw_theme_support()
     );
 
     // ADDED SUPPORT FROM MY STARTER THEME
-    add_theme_support( 'responsive-embeds' );
-    		/*
+    add_theme_support('responsive-embeds');
+    /*
 			* Switch default core markup for search form, comment form, and comments
 			* to output valid HTML5.
 			*/
-		add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 
 
-		/* Gutenberg -> enable wide images
+    /* Gutenberg -> enable wide images
 		/––––––––––––––––––––––––*/
-		add_theme_support( 'align-wide' );
+    add_theme_support('align-wide');
 }
 add_action('after_setup_theme', 'tcw_theme_support');
 
@@ -66,41 +66,45 @@ add_action('after_setup_theme', 'tcw_theme_support');
 /––––––––––––––––––––––––*/
 // remove unused stuff from wp_head()
 
-function wpseed_wphead_cleanup () {
-	// remove the generator meta tag
-	remove_action('wp_head', 'wp_generator');
-	// remove wlwmanifest link
-	remove_action('wp_head', 'wlwmanifest_link');
-	// remove RSD API connection
-	remove_action('wp_head', 'rsd_link');
-	// remove wp shortlink support
-	remove_action('wp_head', 'wp_shortlink_wp_head');
-	// remove next/previous links (this is not affecting blog-posts)
-	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
-	// remove generator name from RSS
-	add_filter('the_generator', '__return_false');
-	// disable emoji support
-	remove_action('wp_head', 'print_emoji_detection_script', 7);
-	remove_action('admin_print_scripts', 'print_emoji_detection_script');
-	remove_action('wp_print_styles', 'print_emoji_styles');
-	remove_action('admin_print_styles', 'print_emoji_styles');
-	// disable automatic feeds
-	remove_action('wp_head', 'feed_links_extra', 3);
-	remove_action('wp_head', 'feed_links', 2);
-	// remove rest API link
-	remove_action( 'wp_head', 'rest_output_link_wp_head', 10);
-	// remove oEmbed link
-	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10);
-	remove_action('wp_head', 'wp_oembed_add_host_js');
+function wpseed_wphead_cleanup()
+{
+    // remove the generator meta tag
+    remove_action('wp_head', 'wp_generator');
+    // remove wlwmanifest link
+    remove_action('wp_head', 'wlwmanifest_link');
+    // remove RSD API connection
+    remove_action('wp_head', 'rsd_link');
+    // remove wp shortlink support
+    remove_action('wp_head', 'wp_shortlink_wp_head');
+    // remove next/previous links (this is not affecting blog-posts)
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
+    // remove generator name from RSS
+    add_filter('the_generator', '__return_false');
+    // disable emoji support
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    // disable automatic feeds
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'feed_links', 2);
+    // remove rest API link
+    remove_action('wp_head', 'rest_output_link_wp_head', 10);
+    // remove oEmbed link
+    remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+    remove_action('wp_head', 'wp_oembed_add_host_js');
 }
 add_action('after_setup_theme', 'wpseed_wphead_cleanup');
 
-    /* 2.2 HIDE CORE-UPDATES FOR NON-ADMINS
+/* 2.2 HIDE CORE-UPDATES FOR NON-ADMINS
   /––––––––––––––––––––––––––––––––––––*/
-function onlyadmin_update() {
-  if (!current_user_can('update_core')) { remove_action( 'admin_notices', 'update_nag', 3 ); }
+function onlyadmin_update()
+{
+    if (!current_user_can('update_core')) {
+        remove_action('admin_notices', 'update_nag', 3);
+    }
 }
-add_action( 'admin_head', 'onlyadmin_update', 1 );
+add_action('admin_head', 'onlyadmin_update', 1);
 
 
 
@@ -174,7 +178,7 @@ function tcw_admin_init()
             'cns_opening_hour_sat' // Should match Option ID
         )
     );
-    
+
     add_settings_field(
         'cns_closing_hour_sun', // Option ID
         'Closing Hour Sunday', // Label
@@ -292,14 +296,15 @@ function tcw_textbox_callback($args)
 // loads wordpress-menus, add your custom menus here or remove if not needed
 // by default, only 'mainmenu' is shown
 // => https://codex.wordpress.org/Function_Reference/register_nav_menus
-function wpseed_register_theme_menus() {
-  register_nav_menus([
-    'header-menu' => __('Header Menu', 'theme'),
-    'footer-menu-top' => __('Footer Top', 'theme'),
-    'footer-menu-bottom' => __('Footer Bottom', 'theme'),
-  ]);
+function wpseed_register_theme_menus()
+{
+    register_nav_menus([
+        'header-menu' => __('Header Menu', 'theme'),
+        'footer-menu-top' => __('Footer Top', 'theme'),
+        'footer-menu-bottom' => __('Footer Bottom', 'theme'),
+    ]);
 }
-add_action( 'init', 'wpseed_register_theme_menus');
+add_action('init', 'wpseed_register_theme_menus');
 
 /*==================================================================================
   STYLE REGISTER
@@ -345,14 +350,14 @@ function load_stylesheets()
     );
     wp_enqueue_style('tcw');
 
-    wp_register_style( 
-          'foundry-styles', 
-          get_template_directory_uri() . '/dist/styles/' . '/main.css', 
-          [], 
-          '1.0', 
-          'all' 
+    wp_register_style(
+        'foundry-styles',
+        get_template_directory_uri() . '/dist/styles/' . '/main.css',
+        [],
+        '1.0',
+        'all'
     );
-		wp_enqueue_style( 'foundry-styles' );
+    wp_enqueue_style('foundry-styles');
 
     if (get_page_template_slug() === 'page-finance-application.php') {
         // ADD IT TO THIS PAGE SEEMS TO BE REQUIRED
@@ -374,7 +379,7 @@ function load_stylesheets()
             'all'
         );
         wp_enqueue_style('53d-bootstrap-icons');
-      
+
         wp_register_style(
             '53d-predictiveaddress',
             'https://webservices.data-8.co.uk/content/predictiveaddress.css',
@@ -383,7 +388,7 @@ function load_stylesheets()
             'all'
         );
         wp_enqueue_style('53d-predictiveaddress');
-      
+
         wp_register_style(
             '53d-slider',
             'https://tcg-creditapp.53dnorth.com/assets/css/slider.css?v=1.0.0',
@@ -392,7 +397,7 @@ function load_stylesheets()
             'all'
         );
         wp_enqueue_style('53d-slider');
-      
+
         wp_register_style(
             '53d-loader',
             'https://tcg-creditapp.53dnorth.com/assets/css/loader.css?v=1.0.0',
@@ -401,16 +406,16 @@ function load_stylesheets()
             'all'
         );
         wp_enqueue_style('53d-loader');
-      
+
         wp_register_style(
             '53d-styles',
-            'https://tcg-creditapp.53dnorth.com/assets/css-dev/styles-v2.css?v=2.0.0',
+            'https://tcg-creditapp.53dnorth.com/assets/css/styles-v3.css',
             [],
             $version53D,
             'all'
         );
         wp_enqueue_style('53d-styles');
-      
+
         wp_register_style(
             '53d-stepper',
             'https://tcg-creditapp.53dnorth.com/assets/css-dev/stepper.css?v=1.0.0',
@@ -511,14 +516,14 @@ function load_javascript()
     // );
     // wp_enqueue_script( 'bootstrap' );
 
-    wp_register_script( 
-      'foundry-js',
-      get_template_directory_uri() . '/dist/scripts/' . 'main.js', 
-      array(), 
-      '1.0', 
-      true 
+    wp_register_script(
+        'foundry-js',
+        get_template_directory_uri() . '/dist/scripts/' . 'main.js',
+        array(),
+        '1.0',
+        true
     );
-    wp_enqueue_script( 'foundry-js' );
+    wp_enqueue_script('foundry-js');
 
     wp_localize_script(
         'site',
@@ -528,7 +533,7 @@ function load_javascript()
             'nonce' => wp_create_nonce('wp_rest'),
         ]
     );
-    
+
     if (get_page_template_slug() === 'page-finance-application.php') {
         $version53D = '1.03';
         // var_dump($version53D);die();
@@ -541,7 +546,7 @@ function load_javascript()
             true
         );
         wp_enqueue_script('53d-moment');
-    
+
         wp_deregister_script('53d-underscore');
         wp_register_script(
             '53d-underscore',
@@ -551,7 +556,7 @@ function load_javascript()
             true
         );
         wp_enqueue_script('53d-underscore');
-    
+
         wp_deregister_script('53d-clndr');
         wp_register_script(
             '53d-clndr',
@@ -561,7 +566,7 @@ function load_javascript()
             true
         );
         wp_enqueue_script('53d-clndr');
-    
+
         wp_deregister_script('53d-predictiveaddress');
         wp_register_script(
             '53d-predictiveaddress',
@@ -571,7 +576,7 @@ function load_javascript()
             true
         );
         wp_enqueue_script('53d-predictiveaddress');
-    
+
         wp_deregister_script('53d-EmailValidation');
         wp_register_script(
             '53d-EmailValidation',
@@ -581,11 +586,11 @@ function load_javascript()
             true
         );
         wp_enqueue_script('53d-EmailValidation');
-        
+
         wp_deregister_script('53d-app');
         wp_register_script(
             '53d-app',
-            'https://tcg-creditapp.53dnorth.com/assets/js/app-v3.js',
+            'https://tcg-creditapp.53dnorth.com/assets/js/app-v4.js',
             [],
             $version53D,
             true
@@ -610,10 +615,11 @@ add_action('wp_enqueue_scripts', 'load_javascript');
 // Add to existing function.php file
 
 // Disable support for comments and trackbacks in post types
-function df_disable_comments_post_types_support() {
+function df_disable_comments_post_types_support()
+{
     $post_types = get_post_types();
     foreach ($post_types as $post_type) {
-        if(post_type_supports($post_type, 'comments')) {
+        if (post_type_supports($post_type, 'comments')) {
             remove_post_type_support($post_type, 'comments');
             remove_post_type_support($post_type, 'trackbacks');
         }
@@ -622,42 +628,49 @@ function df_disable_comments_post_types_support() {
 add_action('admin_init', 'df_disable_comments_post_types_support');
 
 // Close comments on the front-end
-function df_disable_comments_status() {
+function df_disable_comments_status()
+{
     return false;
 }
 add_filter('comments_open', 'df_disable_comments_status', 20, 2);
 add_filter('pings_open', 'df_disable_comments_status', 20, 2);
 
 // Hide existing comments
-function df_disable_comments_hide_existing_comments($comments) {
+function df_disable_comments_hide_existing_comments($comments)
+{
     $comments = array();
     return $comments;
 }
 add_filter('comments_array', 'df_disable_comments_hide_existing_comments', 10, 2);
 
 // Remove comments page in menu
-function df_disable_comments_admin_menu() {
+function df_disable_comments_admin_menu()
+{
     remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'df_disable_comments_admin_menu');
 
 // Redirect any user trying to access comments page
-function df_disable_comments_admin_menu_redirect() {
+function df_disable_comments_admin_menu_redirect()
+{
     global $pagenow;
     if ($pagenow === 'edit-comments.php') {
-        wp_redirect(admin_url()); exit;
+        wp_redirect(admin_url());
+        exit;
     }
 }
 add_action('admin_init', 'df_disable_comments_admin_menu_redirect');
 
 // Remove comments metabox from dashboard
-function df_disable_comments_dashboard() {
+function df_disable_comments_dashboard()
+{
     remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 }
 add_action('admin_init', 'df_disable_comments_dashboard');
 
 // Remove comments links from admin bar
-function df_disable_comments_admin_bar() {
+function df_disable_comments_admin_bar()
+{
     if (is_admin_bar_showing()) {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }

@@ -12,7 +12,7 @@ if (empty($carItem['image'])) {
 }
 
 
-// $imageCar = get_field('image_url-fdry', $carItem['car_id']);
+$imageCar = get_field('image_url-fdry', $carItem['car_id']);
 $paintId = get_field('fdry_paint_id', $carItem['car_id']);
 
 if ($paintId) {
@@ -20,12 +20,12 @@ if ($paintId) {
 }
 
 
-if ($carItem['make_name'] == 'vauxhall') {
-    $model =    $carItem['model_name'];
-    $carItem['model_name'] = str_replace('-x', '', $model);
-}
+// if ($carItem['make_name'] == 'vauxhall') {
+//     $model =    $carItem['model_name'];
+//     $carItem['model_name'] = str_replace('-x', '', $model);
+// }
 
-$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' . $carItem['model_variant'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=1&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
+$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' .  $carItem['body_type'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=4&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
 
 
 
@@ -120,12 +120,12 @@ $tagOffset = get_field('tag_offset_top', 'option');
                                             echo $carItem['image']; ?>" alt="<?php
                                                                                 echo $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
 
-                <div class="fdry-car-reg"><?php echo $carItem['reg_number']; ?></div>
+                <!-- <div class="fdry-car-reg"><?php echo $carItem['reg_number']; ?></div> -->
             </figure>
         </a>
     </div>
 
-    <div class="fdry-car-single-card__info">
+    <!-- <div class="fdry-car-single-card__info">
         <a <?= $link ?>">
             <h2><?= $carItem['title']; ?></h2>
             <p class="fdry-car-model"><?php echo ' ' . $carItem['derivative']; ?></p>
@@ -155,20 +155,16 @@ $tagOffset = get_field('tag_offset_top', 'option');
                         <p class="spec">Manual</p>
                     </div>
                 <?php } ?>
-                <?php if ($mpgCombined != "") { ?>
+                <?php if ($paintId) { ?>
                     <div class="single-spec">
-                        <p class="spec"><?php echo $mpgCombined; ?> mpg</p>
-                    </div>
-                <?php } else { ?>
-                    <div class="single-spec">
-                        <p class="spec">TBC-mpg</p>
+                        <p class="spec"><?= $paintId ?></p>
                     </div>
                 <?php } ?>
-                <!-- <?php if ($carItem['destination'] != "") { ?>
+                <?php if ($carItem['destination'] != "") { ?>
                     <div class="single-spec">
                         <p class="spec"> <i style="display: inline-block; width:10px; margin-right: 2px"><?php get_template_part('svg-template/svg', 'google-maps-icon') ?></i><?= $carItem['destination'] ?></p>
                     </div>
-                <?php } ?> -->
+                <?php } ?>
             </div>
 
             <?php if ($showRibbon) : ?>
@@ -213,16 +209,74 @@ $tagOffset = get_field('tag_offset_top', 'option');
             <?php endif; ?>
         </a>
 
-    </div>
+    </div> -->
 
-    <div class="fdry-car-finance-check">
-        <!-- <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-car-finance-check__btn">
-            FREE 30 SECONDS FINANCE CHECK 
-            <span>Click<br>Here</span>
-        </a> -->
+    <!-- <div class="fdry-car-finance-check">
         <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn-img">
             <img src="<?= get_template_directory_uri() ?>/dist/images/free30btn.svg" alt="Free finance check button">
         </a>
+    </div> -->
+
+    <!-- NEW LAYOUT 2024 -->
+    <div class="fdry-single-car__mobile">
+        <div class="fdry-single-car__mobile-title">
+            <h1 class="car-name-mobile"><?= $carItem['title']; ?></h1>
+            <p class="model-mobile"><?= $carItem['derivative'] ?></p>
+        </div>
+        <div class="fdry-single-car__mobile-price">
+            <div class="red-box">
+                <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+            </div>
+            <p class="price-divider">
+                OR <br> JUST
+            </p>
+            <div class="blue-box">
+                <p class="blue-box-text drop">Fixed</p>
+                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                <p class="blue-box-text drop">Per Month</p>
+            </div>
+        </div>
+
+        <div class="fdry-single-car__mobile-finance-check">
+            <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
+                <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
+            </a>
+        </div>
+
+
+        <div class="fdry-single-car__mobile-icons">
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-miles-mobile') ?></i>
+                <?php if ($carItem['mileage'] > 0) { ?>
+                    <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
+                <?php } ?>
+            </div>
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-fuel-mobile') ?></i>
+                <?php if ($carItem['fueltype'] != "") { ?>
+                    <p class="spec"><?php echo $carItem['fueltype']; ?></p>
+                <?php } ?>
+            </div>
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-gears-mobile') ?></i>
+                <?php if ($carItem['transmission']  != "") { ?>
+                    <p class="spec"><?= $carItem['transmission'] ?></p>
+                <?php } ?>
+            </div>
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-insurance-mobile') ?></i>
+                <?php if ($insurence != "") { ?>
+
+                    <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
+
+                <?php } ?>
+            </div>
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-reg-mobile') ?></i>
+                <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
+            </div>
+        </div>
+
     </div>
 
 </div>

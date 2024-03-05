@@ -1,296 +1,308 @@
 /* LOCATIONS */
 
-.fdry-locations-landing__hero{
-  background-image: url('./../../images/hero.png');
-  padding:30px 0px;
-  background-repeat:no-repeat;
-  background-position: center;
-  margin-bottom:53px;
+.fdry-locations-landing__hero {
+	background-image: url('./../../images/hero.png');
+	padding: 30px 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-bottom: 53px;
 }
 
 @media (max-width: 920px) {
-  .fdry-locations-landing__hero{
-      background-image: url('./../../images/England-svg.svg');
-  }
+	.fdry-locations-landing__hero {
+		background-image: url('./../../images/England-svg.svg');
+	}
 }
 
-.fdry-locations-landing__hero .fdry-container{
-  max-width:1230px;
-  padding-left:15px;
-  padding-right:15px;
-  margin-left:auto;
-  margin-right:auto;
+.fdry-locations-landing__hero .fdry-container {
+	max-width: 1230px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.fdry-locations-landing__hero-wrapper{
-  min-height:670px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-bottom: 55px;
+.fdry-locations-landing__hero-wrapper {
+	min-height: 670px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding-bottom: 55px;
 }
 
-.fdry-locations-landing__hero .fdry-locations-landing__hero-title{
-  color:#000000;
-  margin-bottom:10px;
-  font-weight:500;
-  font-size:20px;
-  letter-spacing:1.2px;
+.fdry-locations-landing__hero .fdry-locations-landing__hero-title {
+	color: #000000;
+	margin-bottom: 10px;
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: 1.2px;
 }
 
-.fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle{
-  color:#000000;
-  margin-bottom:10px;
-  font-weight:700;
-  font-size:36px;
-  letter-spacing:0.3px;
-  display: flex;
-  flex-direction: column;
+.fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle {
+	color: #000000;
+	margin-bottom: 10px;
+	font-weight: 700;
+	font-size: 36px;
+	letter-spacing: 0.3px;
+	display: flex;
+	flex-direction: column;
 }
 
-.fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle span{
-  position:relative;
-  top:-10px;
+.fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle span {
+	position: relative;
+	top: -10px;
 }
 .fdry-btn-locations {
-  color:white;
-  padding:14px 30px;
-  background-color:$color__main;
-  border-radius:4px;
-  box-shadow: 0px 3px 12px #00000022;
-  font-size:16px;
-  letter-spacing:0.24px;
-  font-weight:500;
-  transition:all .3s;
+	color: white;
+	padding: 14px 30px;
+	background-color: $color__main;
+	border-radius: 4px;
+	box-shadow: 0px 3px 12px #00000022;
+	font-size: 16px;
+	letter-spacing: 0.24px;
+	font-weight: 500;
+	transition: all 0.3s;
 }
 
-.fdry-btn-locations:hover{
-  color:white;
-  box-shadow: 0px 4px 12px #00000042;
+.fdry-btn-locations:hover {
+	color: white;
+	box-shadow: 0px 4px 12px #00000042;
 }
 
 @media (max-width: 650px) {
-  .fdry-btn-locations {
-      display:none;
-  }
-  .fdry-locations-landing__hero .fdry-locations-landing__hero-title{
-      display:none;
-  }
-  .fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle{
-      margin-bottom:0px;
-      font-size:17px;
-      letter-spacing:0px;
-  }
+	.fdry-btn-locations {
+		display: none;
+	}
+	.fdry-locations-landing__hero .fdry-locations-landing__hero-title {
+		display: none;
+	}
+	.fdry-locations-landing__hero .fdry-locations-landing__hero-subtitle {
+		margin-bottom: 0px;
+		font-size: 17px;
+		letter-spacing: 0px;
+	}
 
-  .fdry-locations-landing__hero-wrapper{
-      min-height: 560px;
-      justify-content:flex-start;
-  }
+	.fdry-locations-landing__hero-wrapper {
+		min-height: 560px;
+		justify-content: flex-start;
+	}
 
-  .fdry-locations-landing__hero{
-      background-position: center 120px;
-  }
-
+	.fdry-locations-landing__hero {
+		background-position: center 120px;
+	}
 }
 
-.fdry-locations-landing__wrapper{
-  max-width:1500px;
-  padding-left:24px;
-  padding-right:24px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:100px;
+.fdry-locations-landing__wrapper {
+	max-width: 1500px;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
 }
 
-.fdry-locations-landing__wrapper .fdry-locations-landing-title{
-  text-align:center;
-  margin-bottom:55px;
-  font-size:36px;
-  color:#000000;
-  font-weight:500;
+.fdry-locations-landing__wrapper .fdry-locations-landing-title {
+	text-align: center;
+	margin-bottom: 55px;
+	font-size: 36px;
+	color: #000000;
+	font-weight: 500;
 }
 
-.fdry-locations-landing__grid{
-  display:grid;
-  column-gap:40px;
-  row-gap:55px;
-  grid-template-columns:repeat(12, 1fr);
+.fdry-locations-landing__grid {
+	display: grid;
+	column-gap: 40px;
+	row-gap: 55px;
+	grid-template-columns: repeat(12, 1fr);
 }
 
-.fdry-locations-landing-singleLocation{ 
-  background-color:#FAFAFA;
-  padding:16px 16px 35px;
-  border-radius: 12px;
-  box-shadow: 0px 3px 12px #0000001C;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @include media('<phone-land'){
-    Padding:6px 0px 8px;
-  }
+.fdry-locations-landing-singleLocation {
+	background-color: #fafafa;
+	padding: 16px 16px 35px;
+	border-radius: 12px;
+	box-shadow: 0px 3px 12px #0000001c;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	@include media('<phone-land') {
+		padding: 6px 0px 8px;
+	}
 }
 
-.fdry-locations-landing-singleLocation .top-image-video{
-  margin-bottom:15px;
-  video{
-    width: 100%;
-  }
+.fdry-locations-landing-singleLocation .top-image-video {
+	margin-bottom: 15px;
+	video {
+		width: 100%;
+		@include media('<phone-land') {
+			display: none;
+		}
+	}
+
+	.branch-locations__image-mobile {
+		display: none;
+		@include media('<phone-land') {
+			display: block;
+		}
+	}
 }
 
-.fdry-locations-landing-singleLocation:nth-child(1){ 
-  grid-column: 1 / span 4;
+.fdry-locations-landing-singleLocation:nth-child(1) {
+	grid-column: 1 / span 4;
 }
-.fdry-locations-landing-singleLocation:nth-child(2){ 
-  grid-column: 5 / span 4;
+.fdry-locations-landing-singleLocation:nth-child(2) {
+	grid-column: 5 / span 4;
 }
-.fdry-locations-landing-singleLocation:nth-child(3){ 
-  grid-column: 9 / span 4;
+.fdry-locations-landing-singleLocation:nth-child(3) {
+	grid-column: 9 / span 4;
 }
-.fdry-locations-landing-singleLocation:nth-child(4){ 
-  grid-column: 3 / span 4;
+.fdry-locations-landing-singleLocation:nth-child(4) {
+	grid-column: 3 / span 4;
 }
-.fdry-locations-landing-singleLocation:nth-child(5){ 
-  grid-column: 7 / span 4;
-}
-
-.fdry-locations-landing__grid .fdry-grey-line{
-  margin: 14px 0;
-  width:100%;
-  height:1px;
-  background-color:#BEBEBE;
+.fdry-locations-landing-singleLocation:nth-child(5) {
+	grid-column: 7 / span 4;
 }
 
-.fdry-locations-landing__grid address{
-  margin-bottom:0;
-  font-size:16px;line-height:24px; letter-spacing:0px;
+.fdry-locations-landing__grid .fdry-grey-line {
+	margin: 14px 0;
+	width: 100%;
+	height: 1px;
+	background-color: #bebebe;
 }
 
-.fdry-locations-landing__top-info-title{
-  font-size:20px;
-  margin-bottom:14px;
+.fdry-locations-landing__grid address {
+	margin-bottom: 0;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0px;
 }
 
-.fdry-locations-landing__middle-info-container{
-  margin-bottom:17px;
+.fdry-locations-landing__top-info-title {
+	font-size: 20px;
+	margin-bottom: 14px;
 }
 
-.fdry-locations-landing-singleLocation-svg{
-  align-self: center;
-  display:flex;
-  align-items:center;
-  column-gap:5px;
+.fdry-locations-landing__middle-info-container {
+	margin-bottom: 17px;
 }
 
-.fdry-locations-landing-singleLocation-svg .fdry-car-numbers{
-  font-size:14px;
-  color:#1A1A1A;
-  margin-bottom:0;
+.fdry-locations-landing-singleLocation-svg {
+	align-self: center;
+	display: flex;
+	align-items: center;
+	column-gap: 5px;
 }
 
-.fdry-locations-landing-singleLocation-time{
-  display:flex;
-  align-items:center;
-  column-gap:20px;
-
-  svg{
-    path{fill:$color__main}
-    @include media('<phone-land'){
-      display: none;
-    }
-  }
+.fdry-locations-landing-singleLocation-svg .fdry-car-numbers {
+	font-size: 14px;
+	color: #1a1a1a;
+	margin-bottom: 0;
 }
 
-.fdry-locations-landing-singleLocation-time .fdry-car-numbers{
-  font-size:14px;
-  color:#1A1A1A;
-  margin-bottom:3px;
+.fdry-locations-landing-singleLocation-time {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+
+	svg {
+		path {
+			fill: $color__main;
+		}
+		@include media('<phone-land') {
+			display: none;
+		}
+	}
 }
 
-
-.fdry-locations-landing__bottom-info{
-  display:grid;
-  grid-template-columns:1fr;
-  column-gap:5px;
-  row-gap:15px;
+.fdry-locations-landing-singleLocation-time .fdry-car-numbers {
+	font-size: 14px;
+	color: #1a1a1a;
+	margin-bottom: 3px;
 }
 
-.fdry-loactions-landing__phone p{
-  margin-bottom:2px;
-  font-size:14px;
-  color:#6E6E6E;
+.fdry-locations-landing__bottom-info {
+	display: grid;
+	grid-template-columns: 1fr;
+	column-gap: 5px;
+	row-gap: 15px;
 }
 
-.fdry-loactions-landing__phone a{
-  font-size:14px;
-  color:$color__main;
-  font-weight:500;
+.fdry-loactions-landing__phone p {
+	margin-bottom: 2px;
+	font-size: 14px;
+	color: #6e6e6e;
 }
 
-.fdry-locations-landing__bottom-info .fdry-btn-locations{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  min-height:47px;
-  padding:0 0;
-  font-weight:400;
-  font-size:13px;
-  letter-spacing:0.2px;
+.fdry-loactions-landing__phone a {
+	font-size: 14px;
+	color: $color__main;
+	font-weight: 500;
+}
+
+.fdry-locations-landing__bottom-info .fdry-btn-locations {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	min-height: 47px;
+	padding: 0 0;
+	font-weight: 400;
+	font-size: 13px;
+	letter-spacing: 0.2px;
 }
 
 @media (max-width: 1140px) {
-  .fdry-locations-landing__grid{;
-      grid-template-columns:repeat(2, 1fr);
-  }
+	.fdry-locations-landing__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-  .fdry-locations-landing-singleLocation:nth-child(1){ 
-      grid-column: auto;
-  }
-  .fdry-locations-landing-singleLocation:nth-child(2){ 
-       grid-column: auto;
-  }
-  .fdry-locations-landing-singleLocation:nth-child(3){ 
-       grid-column: auto;
-  }
-  .fdry-locations-landing-singleLocation:nth-child(4){ 
-       grid-column: auto;
-  }
-  .fdry-locations-landing-singleLocation:nth-child(5){ 
-       grid-column: auto;
-  }
+	.fdry-locations-landing-singleLocation:nth-child(1) {
+		grid-column: auto;
+	}
+	.fdry-locations-landing-singleLocation:nth-child(2) {
+		grid-column: auto;
+	}
+	.fdry-locations-landing-singleLocation:nth-child(3) {
+		grid-column: auto;
+	}
+	.fdry-locations-landing-singleLocation:nth-child(4) {
+		grid-column: auto;
+	}
+	.fdry-locations-landing-singleLocation:nth-child(5) {
+		grid-column: auto;
+	}
 }
 
 @media (max-width: 870px) {
-  .fdry-locations-landing__grid{
-      grid-template-columns:repeat(1, 1fr);
-  }
+	.fdry-locations-landing__grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
 
-  .fdry-locations-landing__wrapper .fdry-locations-landing-title{
-      margin-bottom:50px;
-      font-size:17px;
-      letter-spacing:0px;
-  }
+	.fdry-locations-landing__wrapper .fdry-locations-landing-title {
+		margin-bottom: 50px;
+		font-size: 17px;
+		letter-spacing: 0px;
+	}
 
-  .fdry-locations-landing__top-info-title{
-      font-weight:500;
-      font-size:14px;
-  }
+	.fdry-locations-landing__top-info-title {
+		font-weight: 500;
+		font-size: 14px;
+	}
 
-  .fdry-locations-landing__grid address{
-      font-size:14px;
-  }
+	.fdry-locations-landing__grid address {
+		font-size: 14px;
+	}
 
-  .fdry-locations-landing-singleLocation-svg .fdry-car-numbers{
-      font-size:13px;
-  }
+	.fdry-locations-landing-singleLocation-svg .fdry-car-numbers {
+		font-size: 13px;
+	}
 
-  .fdry-loactions-landing__phone a{
-      font-size:13px;
-  }
+	.fdry-loactions-landing__phone a {
+		font-size: 13px;
+	}
 
-  .fdry-locations-landing__bottom-info .fdry-btn-locations{
-      font-size:10px;
-  }
+	.fdry-locations-landing__bottom-info .fdry-btn-locations {
+		font-size: 10px;
+	}
 }

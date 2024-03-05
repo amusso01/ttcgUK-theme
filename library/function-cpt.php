@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // FINANCE CPT
 function tcw_define_finance_post_type()
@@ -79,67 +79,67 @@ add_action('manage_financeexample_posts_custom_column', 'tcw_finance_column', 10
 // CARMAKE CPT
 function tcw_define_car_make_post_type()
 {
-  $post_type = 'carmake';
-  $args = [
-      'supports' => [
-          'title',
-          'editor',
-          'custom-fields',
-          'post-formats'
-      ],
-      'labels' => [
-          'name' => 'Car Makes',
-          'singular_name' => 'Car Make',
-          'add_new' => 'Add New Car Make',
-          'add_new_item' => 'Add New Car Make',
-          'edit_item' => 'Edit Car Make',
-          'new_item' => 'New Car Make',
-          'all_items' => 'All Car Makes',
-          'view_item' => 'View Car Make',
-          'search_items' => 'Search Car Makes',
-          'not_found' => 'No car make found',
-          'not_found_in_trash' => 'No Car Make found in Bin',
-          'menu_name' => 'Car Makes',
-      ],
-      'rewrite' => ['slug' => 'cars'],
-      'public' => true,
-      'hierarchical' => true,
-      'has_archive' => true,
-  ];
-  register_post_type($post_type, $args);
+    $post_type = 'carmake';
+    $args = [
+        'supports' => [
+            'title',
+            'editor',
+            'custom-fields',
+            'post-formats'
+        ],
+        'labels' => [
+            'name' => 'Car Makes',
+            'singular_name' => 'Car Make',
+            'add_new' => 'Add New Car Make',
+            'add_new_item' => 'Add New Car Make',
+            'edit_item' => 'Edit Car Make',
+            'new_item' => 'New Car Make',
+            'all_items' => 'All Car Makes',
+            'view_item' => 'View Car Make',
+            'search_items' => 'Search Car Makes',
+            'not_found' => 'No car make found',
+            'not_found_in_trash' => 'No Car Make found in Bin',
+            'menu_name' => 'Car Makes',
+        ],
+        'rewrite' => ['slug' => 'cars'],
+        'public' => true,
+        'hierarchical' => true,
+        'has_archive' => true,
+    ];
+    register_post_type($post_type, $args);
 }
 add_action('init', 'tcw_define_car_make_post_type');
 
 // MODIFY BACKEND COLUMN NAME FOR CARMAKE
 function tcw_carmake_columns($columns)
 {
-  return [
-      'cb' => $columns['cb'],
-      'title' => __('Make', 'calculation'),
-      'content' => __('Description', 'calculation'),
-      'date' => $columns['date'],
-  ];
+    return [
+        'cb' => $columns['cb'],
+        'title' => __('Make', 'calculation'),
+        'content' => __('Description', 'calculation'),
+        'date' => $columns['date'],
+    ];
 }
 add_filter('manage_carmake_posts_columns', 'tcw_carmake_columns');
 
 function tcw_carmake_column($column, $post_id)
 {
-  $columns = [
-      'make',
-  ];
-  if (in_array($column, $columns)) {
-      $field = get_post_meta($post_id, $column, true);
-  }
+    $columns = [
+        'make',
+    ];
+    if (in_array($column, $columns)) {
+        $field = get_post_meta($post_id, $column, true);
+    }
 
-  if ($column === 'content') {
-      if ($page = get_post($post_id)) {
-          $field = limit_words(apply_filters('the_content', $page->post_content), 25);
-      }
-  }
+    if ($column === 'content') {
+        if ($page = get_post($post_id)) {
+            $field = limit_words(apply_filters('the_content', $page->post_content), 25);
+        }
+    }
 
-  if (isset($field)) {
-      echo $field;
-  }
+    if (isset($field)) {
+        echo $field;
+    }
 }
 add_action('manage_carmake_posts_custom_column', 'tcw_carmake_column', 10, 2);
 
@@ -376,8 +376,8 @@ function tcw_car_columns($columns)
         'model' => __('Model', 'calculation'),
         'title' => $columns['title'],
         'id' => __('ID', 'calculation'),
-        'featured' => __('Featured','calculation'),
-        'mileage' => __('Mileage','calculation'),
+        'featured' => __('Featured', 'calculation'),
+        'mileage' => __('Mileage', 'calculation'),
         'reg_number_with_space' => __('Reg No.', 'calculation'),
         'discounted_price' => __('Discount Price', 'calculation'),
         'content' => __('Description', 'calculation'),
@@ -501,5 +501,3 @@ function tcw_define_branches_post_type()
 }
 
 add_action('init', 'tcw_define_branches_post_type');
-
-

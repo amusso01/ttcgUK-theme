@@ -35,7 +35,7 @@ if (empty($carItem['image'])) {
     $carItem['image'] = 'https://cdn.tradecentregroup.io/image/upload/q_auto/f_auto/w_400/web/Group/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'] . '.png';
 }
 
-// $imageCar = get_field('image_url-fdry', $carItem['car_id']);
+$imageCar = get_field('image_url-fdry', $carItem['car_id']);
 $paintId = get_field('fdry_paint_id', $carItem['car_id']);
 
 if ($paintId) {
@@ -44,15 +44,18 @@ if ($paintId) {
 
 // RULES TO REMOVE THE -x from Vauxhall model that have the X at end of the model
 // If -x is there imagin not working
-if ($carItem['make_name'] == 'vauxhall') {
-    $model =    $carItem['model_name'];
-    $carItem['model_name'] = str_replace('-x', '', $model);
+// if ($carItem['make_name'] == 'vauxhall') {
+//     $model =    $carItem['model_name'];
+//     $carItem['model_name'] = str_replace('-x', '', $model);
+// }
+
+$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' .  $carItem['body_type'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=1&width=720&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
+
+
+
+if ($imageCar) {
+    $carItem['image'] = $imageCar;
 }
-
-$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' . $carItem['model_variant'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=1&width=720&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
-
-
-
 
 
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
@@ -85,8 +88,10 @@ endforeach;
 
 ?>
 
-<?php get_template_part('components/header/header-video') ?>
-<?php get_template_part('components/header/header-image-banner') ?>
+<?php //get_template_part('components/header/header-video') 
+?>
+<?php //get_template_part('components/header/header-image-banner') 
+?>
 <?php get_template_part('components/header/header-marquee') ?>
 
 
@@ -101,6 +106,9 @@ endforeach;
         $tagImg = get_field('tag_image_for_discount', 'option');
         ?>
 
+
+
+
         <section class="fdry-single-car__specs content-block content-max">
             <div class="single-car__grid">
                 <div class="car-figure <?= $isDiscount ? 'discount-tag' : '' ?>">
@@ -114,11 +122,92 @@ endforeach;
                         <?php endif; ?>
 
                     </figure>
-                    <h3>Car Overview</h3>
+                    <!-- <h3>Car Overview</h3> -->
                 </div>
                 <?php global $branch; ?>
 
-                <div class="car-specs-card__wrapper">
+                <!-- NEW MOBILE LAYOUT -->
+
+                <div class="fdry-single-car__mobile">
+                    <div class="fdry-single-car__mobile-title">
+                        <h1 class="car-name-mobile"><?= strtoupper($carItem['make_title']) . ' ' . strtoupper($carItem['model_title']) ?></h1>
+                        <p class="model-mobile"><?= $carItem['derivative'] ?></p>
+                    </div>
+                    <div class="fdry-single-car__mobile-price">
+                        <div class="red-box">
+                            <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                        </div>
+                        <p class="price-divider">
+                            OR <br> JUST
+                        </p>
+                        <div class="blue-box">
+                            <p class="blue-box-text drop">Fixed</p>
+                            <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                            <p class="blue-box-text drop">Per Month</p>
+                        </div>
+                    </div>
+
+                    <div class="fdry-single-car__mobile-specs-buttons">
+                        <a href="#" data-hystmodal="#modalFeatures" class="fdry-btn-mobile drop">
+                            <i><?php get_template_part('svg-template/svg-feat-mobile') ?></i> Car Specs
+                        </a>
+                        <a href="#" data-hystmodal="#modalSpec" class="fdry-btn-mobile drop">
+                            <i><?php get_template_part('svg-template/svg-spec-mobile') ?></i> Car Features
+                        </a>
+                        <a href="<?= get_permalink($branch->ID) ?>" class="fdry-btn-mobile drop">
+                            <i><?php get_template_part('svg-template/svg', 'visit-mobile') ?></i>
+                            Visit Us
+                        </a>
+
+                    </div>
+
+                    <div class="fdry-single-car__mobile-finance-check">
+                        <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
+                            <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
+                        </a>
+                    </div>
+
+
+                    <div class="fdry-single-car__mobile-icons">
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-miles-mobile') ?></i>
+                            <?php if ($carItem['mileage'] > 0) { ?>
+                                <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
+                            <?php } ?>
+                        </div>
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-fuel-mobile') ?></i>
+                            <?php if ($carItem['fueltype'] != "") { ?>
+                                <p class="spec"><?php echo $carItem['fueltype']; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-gears-mobile') ?></i>
+                            <?php if ($carItem['transmission']  != "") { ?>
+                                <p class="spec"><?= $carItem['transmission'] ?></p>
+                            <?php } ?>
+                        </div>
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-insurance-mobile') ?></i>
+                            <?php if ($insurence != "") { ?>
+
+                                <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
+
+                            <?php } ?>
+                        </div>
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-location-mobile') ?></i>
+                            <p class="spec"><?= $branch->post_title ?></p>
+                        </div>
+                        <div class="single-car-mobile__icon">
+                            <i><?php get_template_part('svg-template/svg-reg-mobile') ?></i>
+                            <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="car-specs-card__wrapper">
                     <div class="car-spec-card__info">
                         <h1 class="car-name"><?= strtoupper($carItem['make_title']) . ' ' . strtoupper($carItem['model_title']) ?></h1>
                         <p class="model"><?= $carItem['derivative'] ?></p>
@@ -142,6 +231,11 @@ endforeach;
                             <?php if ($carItem['transmission']  != "") { ?>
                                 <div class="single-spec">
                                     <p class="spec"><?= $carItem['transmission'] ?></p>
+                                </div>
+                            <?php } ?>
+                            <?php if ($paintId) { ?>
+                                <div class="single-spec">
+                                    <p class="spec"><?= $paintId ?></p>
                                 </div>
                             <?php } ?>
                             <div class="single-spec">
@@ -185,10 +279,6 @@ endforeach;
                         <?php endif; ?>
                     </div>
                     <div class="fdry-car-finance-check">
-                        <!-- <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn">
-                        FREE 30 SECONDS FINANCE CHECK 
-                        <span>Click<br>Here</span>
-                    </a> -->
                         <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn-img">
                             <img src="<?= get_template_directory_uri() ?>/dist/images/free30btn.svg" alt="Free finance check button">
                         </a>
@@ -199,7 +289,7 @@ endforeach;
                             VISIT US
                         </a>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section>
@@ -217,7 +307,8 @@ endforeach;
 
         <div class="content-max">
             <!-- TC PROMISE CARD -->
-            <?php get_template_part('components/partials/car-tc-promise-card') ?>
+            <?php // get_template_part('components/partials/car-tc-promise-card') 
+            ?>
         </div>
 
         <div class="content-max">

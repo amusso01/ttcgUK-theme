@@ -138,6 +138,7 @@ while ($query->have_posts()) {
     $rimDescription = get_field('rim_description', $model->ID);
     $interiorId = get_field('interior_id', $model->ID);
     $interiorDescription = get_field('interior_description', $model->ID);
+    $bodyType =  $custom['bodytype'][0];
     $carItem = [];
     $carItem['type'] = LISTING_NORMAL_MODE;
     $carItem['car_id'] = $itemId;
@@ -149,6 +150,7 @@ while ($query->have_posts()) {
     $carItem['model_variant'] = $modelVariant;
     $carItem['power_train'] = $powerTrain;
     $carItem['body_size'] = $bodySize;
+    $carItem['body_type'] = $bodyType;
     $carItem['trim'] = $trim;
     $carItem['paint_id'] = $paintId;
     $carItem['paint_description'] = $paintDescription;

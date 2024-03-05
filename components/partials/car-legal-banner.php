@@ -37,19 +37,19 @@ $rpeTitle = $carItem['reg_year'] . ' ' . $carItem['model_title'] . ' ' . $carIte
 ?>
 
 <!-- LEGAL -->
-<section class="fdry-single-car-legal-banner">
+<!-- <section class="fdry-single-car-legal-banner">
   <div class="content-block">
     <div class="legal-banner__wrapper fdry-shadow-card">
       <?= $legal ?>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- RPE -->
 <section class="fdry-single-car-rpe-banner">
   <div class="content-block">
     <div class="rpe__wrapper fdry-shadow-card">
-      <h2><?= $rpeTitle ?></h2>
+      <!-- <h2><?= $rpeTitle ?></h2> -->
       <p class="rpe-subtitle">Illustrative Example (Hire Purchase):</p>
       <div class="rpe-info">
         <p>

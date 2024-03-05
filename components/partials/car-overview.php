@@ -8,23 +8,23 @@ $carItem = $carsArray[0];
 
 $carSpecs = array();
 $engineCapacity = cns_format_engine_capacity(get_field('enginecapacity', $carId));
-$carSpecs["trasmission"] = $carItem["transmission"]; 
-$carSpecs["mileage"] = $carItem["mileage"]; 
-$carSpecs["fueltype"] = $carItem["fueltype"]; 
-$carSpecs["reg_number"] = $carItem["reg_number"]; 
-$carSpecs["engine"] = ($engineCapacity>0) ? $engineCapacity : "TBC"; 
-$carSpecs["doors"] = get_field('doors', $carId)!='' ? get_field('doors', $carId) : "TBC";
-$carSpecs["seats"] = get_field('seats', $carId)!='' ? get_field('seats', $carId) : "TBC";
-$carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $carId) : "TBC";
+$carSpecs["trasmission"] = $carItem["transmission"];
+$carSpecs["mileage"] = $carItem["mileage"];
+$carSpecs["fueltype"] = $carItem["fueltype"];
+$carSpecs["reg_number"] = $carItem["reg_number"];
+$carSpecs["engine"] = ($engineCapacity > 0) ? $engineCapacity : "TBC";
+$carSpecs["doors"] = get_field('doors', $carId) != '' ? get_field('doors', $carId) : "TBC";
+$carSpecs["seats"] = get_field('seats', $carId) != '' ? get_field('seats', $carId) : "TBC";
+$carSpecs["body"] = get_field('bodytype', $carId) != '' ? get_field('bodytype', $carId) : "TBC";
 
 ?>
 
 
-<section class="fdry-single-car__overview content-block" >
-    <div class="overview-grid">                    
+<section class="fdry-single-car__overview content-block">
+    <div class="overview-grid">
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'trasmission' ) ?>
+                <?php get_template_part('svg-template/svg', 'trasmission') ?>
             </i>
             <div class="info">
                 <p class="grey">Trasmission</p>
@@ -33,7 +33,7 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'mileage' ) ?>
+                <?php get_template_part('svg-template/svg', 'mileage') ?>
             </i>
             <div class="info">
                 <p class="grey">Mileage</p>
@@ -42,7 +42,7 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'fuel' ) ?>
+                <?php get_template_part('svg-template/svg', 'fuel') ?>
             </i>
             <div class="info">
                 <p class="grey">Fuel</p>
@@ -51,7 +51,7 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg-body', 'body' ) ?>
+                <?php get_template_part('svg-template/svg-body', 'body') ?>
             </i>
             <div class="info">
                 <p class="grey">Body</p>
@@ -60,7 +60,7 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'engine' ) ?>
+                <?php get_template_part('svg-template/svg', 'engine') ?>
             </i>
             <div class="info">
                 <p class="grey">Engine</p>
@@ -69,7 +69,7 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'doors' ) ?>
+                <?php get_template_part('svg-template/svg', 'doors') ?>
             </i>
             <div class="info">
                 <p class="grey">Doors</p>
@@ -78,16 +78,17 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'seats' ) ?>
+                <?php get_template_part('svg-template/svg', 'pound') ?>
             </i>
             <div class="info">
-                <p class="grey">Seats</p>
-                <p class="black"><?= $carSpecs['seats'] ?></p>
+                <p class="grey">Price includes <br> £299 admin fee</p>
+                <!-- <p class="grey">Seats</p>
+                <p class="black"><?= $carSpecs['seats'] ?></p> -->
             </div>
         </div>
         <div class="overview-single-spec">
             <i>
-            <?php get_template_part( 'svg-template/svg', 'plate' ) ?>
+                <?php get_template_part('svg-template/svg', 'plate') ?>
             </i>
             <div class="info">
                 <p class="grey">Registration</p>
@@ -96,12 +97,12 @@ $carSpecs["body"] = get_field('bodytype', $carId)!='' ? get_field('bodytype', $c
         </div>
     </div>
 
-    <div class="fdry-modal-group__button">
+    <!-- <div class="fdry-modal-group__button">
         <a href="#" data-hystmodal="#modalFeatures" class="fdry-btn fdry-btn__features">
-            <i><?php  get_template_part( 'svg-template/svg-car-fet' ) ?></i> CAR SPECS
+            <i><?php get_template_part('svg-template/svg-car-fet') ?></i> CAR SPECS
         </a>
         <a href="#" data-hystmodal="#modalSpec" class="fdry-btn fdry-btn__specs">
-            <i><?php  get_template_part( 'svg-template/svg-car-spec' ) ?></i> CAR FEATURES
+            <i><?php get_template_part('svg-template/svg-car-spec') ?></i> CAR FEATURES
         </a>
-    </div>
+    </div> -->
 </section>
