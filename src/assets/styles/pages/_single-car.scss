@@ -662,12 +662,60 @@
 				row-gap: 3px;
 			}
 			.red-box {
-				background-image: url(./../../images/red-bg.svg);
-				background-repeat: repeat-x;
+				// background-image: url(./../../images/red-bg.svg);
+				background: linear-gradient(
+					0deg,
+					rgba(224, 31, 38, 1) 25%,
+					rgba(238, 134, 105, 1) 50%,
+					rgba(224, 31, 38, 1) 75%
+				);
+				background-repeat: repeat;
+				border-radius: 16px;
 			}
 			.blue-box {
-				background-image: url(./../../images/blue-bg.svg);
-				background-repeat: repeat-x;
+				// background-image: url(./../../images/blue-bg.svg);
+				background: linear-gradient(
+					0deg,
+					rgba(31, 54, 101, 1) 25%,
+					rgba(106, 102, 141, 1) 50%,
+					rgba(31, 54, 101, 1) 75%
+				);
+				background-repeat: repeat;
+				border-radius: 16px;
+			}
+			.black-box {
+				// background-image: url(./../../images/black-bg.svg);
+				background: linear-gradient(
+					0deg,
+					rgba(29, 29, 27, 1) 25%,
+					rgba(117, 116, 116, 1) 50%,
+					rgba(29, 29, 27, 1) 75%
+				);
+				background-repeat: repeat;
+				position: relative;
+				border-radius: 16px;
+			}
+			.turq-box {
+				// background-image: url(./../../images/turq-bg.svg);
+				background: linear-gradient(
+					0deg,
+					rgba(40, 137, 177, 1) 25%,
+					rgba(56, 171, 215, 1) 50%,
+					rgba(40, 137, 177, 1) 75%
+				);
+				background-repeat: repeat;
+				border-radius: 16px;
+			}
+			.yellow-box {
+				// background-image: url(./../../images/yellow-bg.svg);
+				background: linear-gradient(
+					0deg,
+					rgba(253, 236, 5, 1) 25%,
+					rgba(253, 245, 158, 1) 50%,
+					rgba(253, 236, 5, 1) 75%
+				);
+				background-size: cover;
+				border-radius: 16px;
 			}
 
 			.cost-text {
@@ -689,7 +737,54 @@
 			}
 		}
 
+		&-price__discounted {
+			column-gap: 3px;
+			.red-box,
+			.blue-box,
+			.yellow-box,
+			.black-box,
+			.turq-box {
+				width: 33%;
+				display: inline-flex;
+				padding: 4px;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				height: 90px;
+				color: white;
+				row-gap: 3px;
+			}
+
+			.cost-text {
+				color: white;
+				font-weight: 700;
+				line-height: 28px;
+				font-size: 28px;
+			}
+
+			.yellow-box {
+				.cost-text {
+					color: #000;
+				}
+				.blue-box-text {
+					color: #000;
+				}
+			}
+
+			.strike {
+				position: absolute;
+				width: 85%;
+				height: 3px;
+				background-color: white;
+				border-radius: 5px;
+				top: 50%;
+				transform-origin: center;
+				transform: translateY(-50%) rotate(45deg);
+			}
+		}
+
 		&-specs-buttons {
+			margin-bottom: 15px;
 			a {
 				display: block;
 				color: white;

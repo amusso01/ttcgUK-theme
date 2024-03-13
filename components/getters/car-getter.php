@@ -162,6 +162,7 @@ while ($query->have_posts()) {
     $carItem['title'] = $regYear . $make->post_title . ' ' . $model->post_title;
     $carItem['rrp'] = $custom['rrp'][0];
     $carItem['discounted_price'] = $custom['discounted_price'][0] ? $custom['discounted_price'][0] : false;
+    $carItem['discount'] = $custom['discount'][0] ? $custom['discount'][0] : false;
     $carItem['from_price'] = $custom['from_price'][0];
     $carItem['sale_mode_override'] = $custom['sale_mode_override'][0] ? $custom['sale_mode_override'][0] : false;
     $carItem['location'] = $custom['location'][0] ? $custom['location'][0] : false;

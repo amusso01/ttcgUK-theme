@@ -104,6 +104,8 @@ endforeach;
         // GLOBAL DISCOUNT
         $isDiscount = get_field('discount_active', 'option');
         $tagImg = get_field('tag_image_for_discount', 'option');
+
+        $mixDiscount = $carItem['discount'] > 0 ? true : false;
         ?>
 
 
@@ -133,19 +135,39 @@ endforeach;
                         <h1 class="car-name-mobile"><?= strtoupper($carItem['make_title']) . ' ' . strtoupper($carItem['model_title']) ?></h1>
                         <p class="model-mobile"><?= $carItem['derivative'] ?></p>
                     </div>
-                    <div class="fdry-single-car__mobile-price">
-                        <div class="red-box">
-                            <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                    <?php if ($mixDiscount) : ?>
+                        <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
+                            <div class="black-box">
+                                <p class="blue-box-text drop">WAS</p>
+                                <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                                <div class="strike"></div>
+                            </div>
+                            <div class="turq-box">
+                                <p class="blue-box-text drop">NOW</p>
+                                <div class="cost-text drop">&pound;<?= $carItem['discounted_price']; ?></div>
+                            </div>
+                            <div class="yellow-box">
+                                <p class="blue-box-text drop-light">Fixed</p>
+                                <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
+                                <p class="blue-box-text drop-light">Per Month</p>
+                            </div>
                         </div>
-                        <p class="price-divider">
-                            OR <br> JUST
-                        </p>
-                        <div class="blue-box">
-                            <p class="blue-box-text drop">Fixed</p>
-                            <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
-                            <p class="blue-box-text drop">Per Month</p>
+
+                    <?php else : ?>
+                        <div class="fdry-single-car__mobile-price">
+                            <div class="red-box">
+                                <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                            </div>
+                            <p class="price-divider">
+                                OR <br> JUST
+                            </p>
+                            <div class="blue-box">
+                                <p class="blue-box-text drop">Fixed</p>
+                                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                                <p class="blue-box-text drop">Per Month</p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
 
                     <div class="fdry-single-car__mobile-specs-buttons">
                         <a href="#" data-hystmodal="#modalFeatures" class="fdry-btn-mobile drop">

@@ -34,7 +34,7 @@ if ($imageCar) {
     $carItem['image'] = $imageCar;
 }
 
-
+$mixDiscount = $carItem['discount'] > 0 ? true : false;
 
 
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
@@ -113,9 +113,14 @@ $tagOffset = get_field('tag_offset_top', 'option');
     <?php if ($isDiscount) : ?>
         <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">
     <?php endif; ?>
+    <?php if ($mixDiscount) : ?>
+        <div class="mix-discount-save">
+            <p class="drop">SAVE &pound;<?= $carItem['discount'] ?></p>
+        </div>
+    <?php endif; ?>
     <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
         <a <?= $link ?>">
-            <figure data-vrm="<?php echo $carItem['reg_number']; ?>">
+            <figure class="<?= $mixDiscount ? 'discount-bg' : '' ?>" data-vrm="<?php echo $carItem['reg_number']; ?>">
                 <img class="car-img" src="<?php
                                             echo $carItem['image']; ?>" alt="<?php
                                                                                 echo $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
@@ -125,120 +130,49 @@ $tagOffset = get_field('tag_offset_top', 'option');
         </a>
     </div>
 
-    <!-- <div class="fdry-car-single-card__info">
-        <a <?= $link ?>">
-            <h2><?= $carItem['title']; ?></h2>
-            <p class="fdry-car-model"><?php echo ' ' . $carItem['derivative']; ?></p>
-
-            <div class="fdry-car-spec">
-                <div class="single-spec">
-                    <?php if ($carItem['fueltype'] != "") { ?>
-                        <p class="spec"><?php echo $carItem['fueltype']; ?></p>
-                    <?php } ?>
-                </div>
-                <div class="single-spec">
-                    <?php if ($carItem['mileage'] > 0) { ?>
-                        <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
-                    <?php } ?>
-                </div>
-                <?php if ($insurence != "") { ?>
-                    <div class="single-spec">
-                        <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
-                    </div>
-                <?php } ?>
-                <?php if ($carItem['transmission']  != "") { ?>
-                    <div class="single-spec">
-                        <p class="spec"><?= $carItem['transmission'] ?></p>
-                    </div>
-                <?php } else { ?>
-                    <div class="single-spec">
-                        <p class="spec">Manual</p>
-                    </div>
-                <?php } ?>
-                <?php if ($paintId) { ?>
-                    <div class="single-spec">
-                        <p class="spec"><?= $paintId ?></p>
-                    </div>
-                <?php } ?>
-                <?php if ($carItem['destination'] != "") { ?>
-                    <div class="single-spec">
-                        <p class="spec"> <i style="display: inline-block; width:10px; margin-right: 2px"><?php get_template_part('svg-template/svg', 'google-maps-icon') ?></i><?= $carItem['destination'] ?></p>
-                    </div>
-                <?php } ?>
-            </div>
-
-            <?php if ($showRibbon) : ?>
-                <div class="fdry-red-single-car-banner">
-                    <p><?= $ribbonText ?></p>
-                </div>
-            <?php endif; ?>
-
-            <?php if (!$isDiscount) : ?>
-                <div class="fdry-car-single__cost">
-                    <div class="fdry-cash-cost fdry-car-single__cost-card">
-                        <p class="fdry-text fdry-text-top">Now Just</p>
-                        <p class="fdry-red-price">&pound;<?= $carItem['rrp'] ?></p>
-                        <p class="fdry-text fdry-text-bottom">Cash <span>or</span> Finance</p>
-                    </div>
-                    <div class="fdry-grey-line"></div>
-                    <div class="fdry-cash-cost-or">
-                        <p>Or</p>
-                    </div>
-                    <div class="fdry-monthly-cost fdry-car-single__cost-card">
-                        <p class="fdry-text fdry-text-top">Fixed</p>
-                        <p class="fdry-blue-cost">&pound; <?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></p>
-                        <p class="fdry-text fdry-text-bottom">Per Month</p>
-                    </div>
-                </div>
-            <?php else :  ?>
-                <div class="fdry-car-single__discount-grid">
-                    <div class="fdry-car-single__discount-was">
-                        <p class="text-top">WAS</p>
-                        <p class="price"><span class="strike"></span>&pound;<?= $carItem['rrp']  ?></p>
-                    </div>
-                    <div class="fdry-car-single__discount-now">
-                        <p class="text-top">NOW</p>
-                        <p class="price">&pound;<?= $carItem['discounted_price'] ?></p>
-                    </div>
-                </div>
-
-                <div class="fdry-car-single__discount-finance">
-                    <p> <span class="light">Or just</span> <span class="yellow"> &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></span> per month</p>
-                </div>
-
-            <?php endif; ?>
-        </a>
-
-    </div> -->
-
-    <!-- <div class="fdry-car-finance-check">
-        <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn-img">
-            <img src="<?= get_template_directory_uri() ?>/dist/images/free30btn.svg" alt="Free finance check button">
-        </a>
-    </div> -->
-
     <!-- NEW LAYOUT 2024 -->
     <div class="fdry-single-car__mobile">
         <div class="fdry-single-car__mobile-title">
             <h1 class="car-name-mobile"><?= $carItem['title']; ?></h1>
             <p class="model-mobile"><?= $carItem['derivative'] ?></p>
         </div>
-        <div class="fdry-single-car__mobile-price">
-            <div class="red-box">
-                <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+        <?php if ($mixDiscount) : ?>
+            <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
+                <div class="black-box">
+                    <p class="blue-box-text drop">WAS</p>
+                    <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                    <div class="strike"></div>
+                </div>
+                <div class="turq-box">
+                    <p class="blue-box-text drop">NOW</p>
+                    <!-- <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div> -->
+                    <div class="cost-text drop">&pound;<?= $carItem['discounted_price']; ?></div>
+                </div>
+                <div class="yellow-box">
+                    <p class="blue-box-text drop-light">Fixed</p>
+                    <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
+                    <p class="blue-box-text drop-light">Per Month</p>
+                </div>
             </div>
-            <p class="price-divider">
-                OR <br> JUST
-            </p>
-            <div class="blue-box">
-                <p class="blue-box-text drop">Fixed</p>
-                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
-                <p class="blue-box-text drop">Per Month</p>
+
+        <?php else : ?>
+            <div class="fdry-single-car__mobile-price">
+                <div class="red-box">
+                    <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                </div>
+                <p class="price-divider">
+                    OR <br> JUST
+                </p>
+                <div class="blue-box">
+                    <p class="blue-box-text drop">Fixed</p>
+                    <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                    <p class="blue-box-text drop">Per Month</p>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
 
         <div class="fdry-single-car__mobile-finance-check">
-            <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
+            <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
                 <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
             </a>
         </div>

@@ -26,33 +26,32 @@ $listingType = 'maincarlisting';
 get_header();
 
 ?>
-<?php get_template_part( 'components/header/header-video' ) ?>
-<?php get_template_part( 'components/header/header-image-banner' ) ?>
-<?php get_template_part( 'components/header/header-marquee' ) ?>
+<?php get_template_part('components/header/header-video') ?>
+<?php get_template_part('components/header/header-image-banner') ?>
+<?php get_template_part('components/header/header-marquee') ?>
 
 <main class="fdry-main__front fdry-main">
 
+    <?php get_template_part('components/pages/cars-loop') ?>
 
-    <?php get_template_part( 'components/pages/cars-loop' ) ?>   
-    
     <!-- BANNERS -->
-    <?php get_template_part( 'components/banners/better-car-video' ) ?>   
-    <?php get_template_part( 'components/banners/price-promise' ) ?>
-    
+    <?php get_template_part('components/banners/better-car-video') ?>
+    <?php get_template_part('components/banners/price-promise') ?>
+
     <!-- BRANCHES -->
     <div class="content-block content-max" style="margin-top: 50px; margin-bottom: 40px; padding-bottom:60px">
-        <?php get_template_part( 'components/pages/branches-carousel' ) ?>
+        <?php get_template_part('components/pages/branches-carousel') ?>
     </div>
 
     <!-- TRUSTPILOT -->
-    <?php get_template_part( 'components/pages/trustpilot' ) ?>
+    <?php get_template_part('components/pages/trustpilot') ?>
 
     <!-- ACTION BOX GRID -->
-    <?php get_template_part( 'components/pages/action-box-grid' ) ?>
-    
+    <?php get_template_part('components/pages/action-box-grid') ?>
+
 
     <!-- VIDEO GUIDE -->
-    <?php get_template_part( 'components/pages/video-guide' ) ?>
+    <?php get_template_part('components/pages/video-guide') ?>
 
 </main>
 
@@ -74,7 +73,7 @@ get_header();
 //     if ($saleMode === LISTING_FROM_MODE) {
 //         get_template_part('template-parts/carslisting/similar-from-mode', 'front-page');
 //     } else {
-        
+
 //         if ($saleMode === LISTING_SALE_MODE) {
 //             get_template_part('template-parts/carslisting/similar-sale-mode', 'front-page');
 //         } else {

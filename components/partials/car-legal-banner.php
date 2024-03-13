@@ -2,8 +2,11 @@
 
 global $car, $carsArray, $carItem, $carId;
 
-$isDiscount = get_field('discount_active', 'option');
-$globalPrice = $isDiscount ? $carItem['discounted_price'] : $carItem['rrp'];
+if ($carItem['discounted_price'] !== $carItem['rrp']) {
+  $globalPrice = $carItem['discounted_price'];
+} else {
+  $globalPrice = $carItem['rrp'];
+}
 
 // args
 $args = array(
