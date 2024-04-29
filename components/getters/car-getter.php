@@ -178,7 +178,7 @@ while ($query->have_posts()) {
     $carItem['transmission'] = $custom['transmission'][0] ? $custom['transmission'][0] : false;
     $carItem['fueltype'] = $custom['fueltype'][0] ? $custom['fueltype'][0] : false;
     $carItem['mileage'] = $custom['mileage'][0] ? $custom['mileage'][0] : false;
-
+    $carItem['stock_number'] = $custom['stock_number'][0] ? $custom['stock_number'][0] : false;
     $carItem['image'] = get_the_post_thumbnail_url($model->ID);
     /*$carItem['image'] = $custom['image_url'][0];*/
     /*

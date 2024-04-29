@@ -1,7 +1,6 @@
 <?php
-$options = get_field('front_page', 'options');
-$videoDesktop = $options['video_desktop'];
-$videoMobile = $options['video_mobile'];
+$videoDesktop = get_field('clearance_video_desktop');
+$videoMobile = get_field('clearance_video_mobile');
 ?>
 
 <section class="fdry-banner-video-top">

@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "accordion-js": "^3.3.4",
     "include-media": "^1.4.10",
     "smoothscroll-polyfill": "^0.4.4"

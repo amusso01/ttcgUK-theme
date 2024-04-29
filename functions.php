@@ -16,7 +16,7 @@ require get_template_directory() . '/library/function-settings.php';
 /*==================================================================================
   OLD SETTINGS
 ==================================================================================*/
-require get_template_directory() . '/library/function-old-theme.php';
+require get_template_directory() . '/library/function-v1.php';
 
 /*==================================================================================
   CPT
@@ -47,5 +47,5 @@ require get_template_directory() . '/library/function-acf.php';
 
 
 if ($_GET['flush']) {
-    flush_rewrite_rules();
+  flush_rewrite_rules();
 }

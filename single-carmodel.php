@@ -124,7 +124,6 @@ endforeach;
                         <?php endif; ?>
 
                     </figure>
-                    <!-- <h3>Car Overview</h3> -->
                 </div>
                 <?php global $branch; ?>
 
@@ -184,9 +183,12 @@ endforeach;
                     </div>
 
                     <div class="fdry-single-car__mobile-finance-check">
-                        <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
+                        <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?= $carItem['stock_number'];  ?>" class="fdry-finance-check-mobile__btn-img">
                             <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
                         </a>
+                        <div class="apr" style="width:100%; margin-top:10px">
+                            <img src="https://cdn.tradecentregroup.io/image/upload/v1710868315/APR_BANNER.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
+                        </div>
                     </div>
 
 

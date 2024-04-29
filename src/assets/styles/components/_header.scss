@@ -112,18 +112,18 @@
 	position: sticky;
 	top: 0;
 	z-index: 9;
-	background-color: #b32d25;
+	background-color: white;
 	padding: 6px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	> div {
-		color: $color__bright;
+		color: #b32d25;
 		font-weight: 600;
 		font-size: 14px;
 
 		a {
-			color: $color__bright;
+			color: #b32d25;
 			font-weight: 600;
 			font-size: 14px;
 		}

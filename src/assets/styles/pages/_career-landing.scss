@@ -1,0 +1,841 @@
+// HERO
+.fdry-career-2-hero {
+	min-height: 670px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		opacity: 0.4;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.fdry-career-2-hero__content {
+		position: relative;
+		z-index: 3;
+		padding: 15px 20px;
+		h5 {
+			margin-bottom: 18px;
+			color: white;
+		}
+		h1 {
+			margin-bottom: 45px;
+			color: white;
+			span {
+				background-image: url('./../../../images/careers/Careers-underline.svg');
+				background-repeat: no-repeat;
+				background-position: bottom left;
+				display: inline-block;
+				padding-bottom: 20px;
+			}
+		}
+		.read-more {
+			background-color: #1464e3;
+			color: white;
+		}
+	}
+}
+
+// HERO VIDEO
+.fdry-career-2-hero-video {
+	min-height: 730px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		opacity: 0.1;
+		pointer-events: none;
+		z-index: 1;
+	}
+	video {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.fdry-career-2-hero-video__content {
+		position: relative;
+		z-index: 3;
+		padding: 15px 20px;
+		h5 {
+			margin-bottom: 18px;
+			color: white;
+		}
+		h1 {
+			margin-bottom: 45px;
+			color: white;
+			span {
+				background-image: url('./../../../images/careers/Careers-underline.svg');
+				background-repeat: no-repeat;
+				background-position: bottom left;
+				display: inline-block;
+				padding-bottom: 20px;
+			}
+		}
+		.read-more {
+			background-color: #1464e3;
+			color: white;
+		}
+	}
+}
+
+// TOP banner
+.fdry-career-2-top-banner {
+	background-color: #f0f6ff;
+	padding: 57px 0;
+
+	.fdry-career-2-top-banner__title {
+		font-size: 36px;
+		text-align: center;
+		margin-bottom: 40px;
+		line-height: 44px;
+
+		@include media('<phone') {
+			font-size: 26px;
+			line-height: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.fdry-career-2-top-banner__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 20px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.fdry-career-2-top-banner__card {
+			border-radius: 12px;
+			background-color: white;
+			overflow: hidden;
+
+			figure {
+				position: relative;
+				width: 100%;
+				height: 180px;
+				img {
+					@extend %cover;
+					object-fit: cover;
+				}
+			}
+
+			.fdry-career-2-top-banner__card-content {
+				padding: 19px 22px 29px;
+
+				h4 {
+					margin-bottom: 16px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+
+// WHY
+.fdry-career-2-why-work {
+	background-color: #f0f6ff;
+	padding: 37px 0 96px;
+
+	.fdry-career-2-why-work__title {
+		font-size: 36px;
+		text-align: center;
+		margin-bottom: 40px;
+		line-height: 44px;
+
+		@include media('<phone') {
+			font-size: 26px;
+			line-height: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.subtitle {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 600;
+		text-align: center;
+		margin-bottom: 40px;
+		p {
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: 600;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+	}
+
+	.fdry-career-2-why-work__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 43px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 13px;
+		}
+
+		.fdry-career-2-why-work__single-card {
+			min-height: 290px;
+			border: 1px solid #021b79;
+			border-radius: 20px;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+			row-gap: 17px;
+			align-items: center;
+			justify-content: center;
+			padding: 60px 45px;
+
+			@include media('<phone') {
+				padding: 30px 15px;
+			}
+			p {
+				text-align: center;
+			}
+		}
+	}
+}
+
+// HIRING
+.fdry-career-2-hiring {
+	background-color: #f0f6ff;
+	padding: 96px 0 25px;
+	@include media('<phone') {
+		padding: 46px 0 25px;
+	}
+
+	.fdry-career-2-hiring__title {
+		font-size: 36px;
+		text-align: center;
+		margin-bottom: 40px;
+		line-height: 44px;
+
+		@include media('<phone') {
+			font-size: 26px;
+			line-height: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.subtitle {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 600;
+		text-align: center;
+		margin-bottom: 40px;
+		p {
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: 600;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+	}
+
+	.fdry-career-2-hiring__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 43px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 15px;
+		}
+
+		.fdry-career-2-hiring__single-card {
+			min-height: 290px;
+			overflow: hidden;
+			border-radius: 12px;
+			max-width: 204px;
+			justify-self: center;
+
+			.content {
+				background: transparent
+					linear-gradient(250deg, #0358e0 0%, #021b79 100%) 0% 0% no-repeat
+					padding-box;
+				padding: 22px 50px;
+				border-radius: 0px 0px 12px 12px;
+
+				@include media('<phone') {
+					padding: 20px 20px;
+				}
+			}
+			p {
+				text-align: center;
+				color: white;
+				font-size: 22px;
+				line-height: 21px;
+				font-weight: 600;
+				@include media('<phone') {
+					font-size: 18px;
+					line-height: 19px;
+				}
+			}
+
+			figure {
+				position: relative;
+				width: 100%;
+				min-width: 204px;
+				min-height: 152px;
+
+				@include media('<phone') {
+					min-width: 164px;
+				}
+
+				> img {
+					@extend %cover;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+
+// PROGRESS
+.fdry-career-2-progress {
+	background: transparent linear-gradient(227deg, #1464e3 0%, #0a3272 100%) 0%
+		0% no-repeat padding-box;
+
+	padding: 50px 0 120px;
+
+	@include media('<phone') {
+		padding: 61px 0 80px;
+	}
+
+	h3 {
+		@include media('<phone') {
+			text-align: center;
+		}
+	}
+
+	.fdry-career-2-progress__title {
+		font-size: 34px;
+		margin-bottom: 38px;
+		line-height: 40px;
+		color: white;
+
+		@include media('<phone') {
+			font-size: 26px;
+			line-height: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.fdry-career-2-progress__2col {
+		display: flex;
+		flex-direction: row-reverse;
+		row-gap: 30px;
+		column-gap: 50px;
+		margin-bottom: 65px;
+		margin-top: 50px;
+		align-items: center;
+		@include media('<phone') {
+			flex-direction: column-reverse;
+		}
+
+		.text {
+			padding-right: 20px;
+			@include media('<phone') {
+				text-align: center;
+			}
+		}
+	}
+
+	.subtitle {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 600;
+		margin-bottom: 40px;
+		color: white;
+		p {
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: 600;
+			margin-bottom: 40px;
+			color: white;
+			@include media('<phone') {
+				text-align: center;
+			}
+		}
+	}
+
+	.fdry-career-2-progress__carrer-card {
+		border-radius: 12px;
+		background-color: white;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		margin: auto;
+
+		figure {
+			position: relative;
+			width: 300px;
+			height: 210px;
+			border-top-left-radius: 12px;
+			border-top-right-radius: 12px;
+			overflow: hidden;
+
+			> img {
+				@extend %cover;
+				object-fit: cover;
+			}
+		}
+
+		p {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			padding: 19px 30px 30px;
+			color: #0044b0;
+			text-align: center;
+			font-size: 22px;
+			line-height: 27px;
+		}
+	}
+
+	.fdry-career-2-progress__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 20px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			overflow-x: scroll;
+		}
+
+		.fdry-career-2-progress__single-card-container {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			.year {
+				font-size: 24px;
+				color: white;
+				text-transform: uppercase;
+				font-family: $header__fontname;
+				line-height: 30px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.fdry-career-2-progress__single-card {
+			border-radius: 12px;
+			background-color: white;
+			overflow: hidden;
+			height: 100%;
+
+			figure {
+				position: relative;
+				width: 100%;
+				height: 180px;
+				@include media('<phone-land') {
+					min-width: 190px;
+				}
+				img {
+					@extend %cover;
+					object-fit: cover;
+				}
+			}
+
+			.fdry-career-2-progress__single-card-content {
+				padding: 19px 22px 29px;
+
+				@include media('<phone') {
+					padding: 15px 12px 19px;
+				}
+
+				.title {
+					margin-bottom: 16px;
+					font-size: 16px;
+					font-family: $header__fontname;
+					line-height: 30px;
+					text-transform: uppercase;
+
+					@include media('<phone') {
+						font-size: 13px;
+						line-height: 18px;
+						margin-bottom: 10px;
+					}
+				}
+
+				.body {
+					font-size: 15px;
+					@include media('<phone') {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// TESTIMONIALS
+.fdry-career-2-testimonials {
+	background-color: #021b79;
+	padding: 59px 0;
+	@include media('<phone') {
+		padding: 39px 0;
+	}
+
+	.fdry-career-2-testimonial__grid {
+		display: grid;
+		grid-template-columns: 1fr 2.2fr;
+		column-gap: 90px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			grid-template-columns: 1fr;
+			column-gap: 20px;
+		}
+
+		.image {
+			width: 350px;
+			height: 350px;
+			border-radius: 100%;
+			background: transparent linear-gradient(138deg, #2574f0 0%, #b32e25 100%)
+				0% 0% no-repeat padding-box;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include media('<phone-land') {
+				width: 230px;
+				height: 230px;
+			}
+			figure {
+				position: relative;
+				width: 300px;
+				height: 300px;
+
+				@include media('<phone-land') {
+					width: 220px;
+					height: 220px;
+				}
+
+				> img {
+					@extend %cover;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-right: 50px;
+			@include media('<phone-land') {
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+			.quote {
+				p {
+					color: white;
+					font-size: 20px;
+					line-height: 24px;
+					margin-bottom: 20px;
+					@include media('<phone-land') {
+						font-size: 18px;
+						line-height: 21px;
+						margin-bottom: 15px;
+					}
+				}
+			}
+			.name {
+				margin-bottom: 10px;
+				color: white;
+				font-size: 20px;
+				line-height: 24px;
+				@include media('<phone-land') {
+					font-size: 16px;
+					line-height: 21px;
+				}
+			}
+			.role {
+				color: white;
+				font-size: 20px;
+				line-height: 24px;
+				@include media('<phone-land') {
+					font-size: 16px;
+					line-height: 21px;
+				}
+			}
+		}
+	}
+}
+.fdry-career-2-testimonials {
+	position: relative;
+
+	.glide {
+		padding: 0 50px;
+		@include media('<phone-land') {
+			padding: 0 0px;
+		}
+	}
+	.glide__bullets {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 15px;
+		@include media('<phone-land') {
+			margin-top: 10px;
+		}
+		.glide__bullet {
+			border: 2px solid white;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			background-color: transparent;
+
+			&--active {
+				background-color: white;
+			}
+		}
+	}
+
+	.glide__arrows {
+		width: 100%;
+
+		.glide__arrow {
+			background-color: transparent;
+			border: none;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+			@include media('<phone-land') {
+				display: none;
+			}
+			&--left {
+				left: 0px;
+			}
+			&--right {
+				right: 0;
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// LOGOS
+.fdry-career-2-logos {
+	background-color: #f0f6ff;
+	padding: 67px 0 160px;
+
+	@include media('<phone') {
+		padding: 47px 0 60px;
+	}
+
+	h3 {
+		font-size: 24px;
+		text-align: center;
+		margin-bottom: 55px;
+		line-height: 30px;
+	}
+
+	.splide__slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+// MAP
+.fdry-career-2-map {
+	background: transparent linear-gradient(245deg, #1464e3 0%, #0a3272 100%) 0%
+		0% no-repeat padding-box;
+
+	padding: 90px 0;
+	position: relative;
+	height: 670px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+
+	.uk-map {
+		position: absolute;
+		top: 50px;
+		right: 100px;
+		@include media('<phone') {
+			right: -100px;
+		}
+	}
+
+	.fdry-career-2-hero__content {
+		.h1 {
+			color: white;
+			margin-bottom: 40px;
+			font-family: $header__fontname;
+			font-size: 36px;
+			line-height: 43px;
+		}
+	}
+
+	.read-more {
+		background-color: white;
+		color: #1262df;
+	}
+}
+.fdry-career-2-ready {
+	background-color: #0044b0;
+	min-height: 300px;
+	padding: 90px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	> .content-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.h1 {
+		margin-bottom: 25px;
+		font-size: 36px;
+		line-height: 43px;
+		color: white;
+		text-align: center;
+	}
+
+	.read-more {
+		color: white;
+		background: transparent;
+		border: 2px solid white;
+		text-align: center;
+	}
+}
+
+// IMAGES TEXT
+.fdry-career-2-images-text {
+	background-color: #02155d;
+	padding: 92px 0;
+
+	@include media('<phone') {
+		padding: 52px 0;
+	}
+
+	.fdry-career-2-images-text__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 40px;
+		row-gap: 25px;
+
+		@include media('<phone-land') {
+			grid-template-columns: 1fr;
+			column-gap: 20px;
+		}
+
+		&.inverse {
+			figure {
+				order: 2;
+			}
+			.content {
+				order: 1;
+			}
+		}
+
+		figure {
+			height: 373px;
+			width: 100%;
+			border-radius: 20px;
+			overflow: hidden;
+			position: relative;
+
+			> img {
+				@extend %cover;
+				object-fit: cover;
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.title {
+				color: white;
+				font-size: 24px;
+				line-height: 30px;
+				margin-bottom: 20px;
+				p {
+					color: white;
+					font-size: 24px;
+					line-height: 30px;
+					margin-bottom: 20px;
+				}
+			}
+			.text {
+				font-size: 18px;
+				line-height: 20px;
+				color: white;
+
+				p {
+					font-size: 18px;
+					line-height: 20px;
+					color: white;
+				}
+			}
+		}
+	}
+
+	.fdry-career-2-images-text__grid + .fdry-career-2-images-text__grid {
+		margin-top: 90px;
+	}
+}
+
+// GALLERY
+.fdry-career-2-gallery {
+	padding: 87px 0;
+
+	@include media('<phone') {
+		padding: 57px 0;
+	}
+
+	.fdry-career-2-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 24px;
+		row-gap: 24px;
+		justify-items: center;
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	figure {
+		width: 100%;
+		height: 181px;
+		position: relative;
+
+		> img {
+			@extend %cover;
+			object-fit: cover;
+		}
+	}
+}

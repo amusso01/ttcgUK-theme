@@ -503,10 +503,17 @@
 					.cost-text {
 						color: #000;
 						font-size: 30px;
+
+						@include media('<phone') {
+							font-size: 28px;
+						}
 					}
 					.blue-box-text {
 						color: #000;
 						font-size: 15px;
+						@include media('<phone') {
+							font-size: 13px;
+						}
 					}
 				}
 
@@ -524,6 +531,10 @@
 
 			&-icons {
 				margin-top: 10px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 10px;
+				row-gap: 10px;
 				svg {
 					width: 19px;
 					height: 19px;
@@ -532,8 +543,7 @@
 					display: flex;
 					align-items: center;
 					background-image: url(./../../images/grey-strip-bg.svg);
-					padding: 3px 0 3px 45px;
-					margin-bottom: 7px;
+					padding: 3px 3px 3px 3px;
 					background-repeat: repeat;
 
 					i {

@@ -115,7 +115,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
     <?php endif; ?>
     <?php if ($mixDiscount) : ?>
         <div class="mix-discount-save">
-            <p class="drop">SAVE &pound;<?= $carItem['discount'] ?></p>
+            <p class="drop">&pound;<?= $carItem['discount'] ?> OFF THIS CAR TODAY</p>
         </div>
     <?php endif; ?>
     <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
@@ -172,7 +172,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
         <?php endif; ?>
 
         <div class="fdry-single-car__mobile-finance-check">
-            <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['car_id']; ?>" class="fdry-finance-check-mobile__btn-img">
+            <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['stock_number']; ?>" class="fdry-finance-check-mobile__btn-img">
                 <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
             </a>
         </div>

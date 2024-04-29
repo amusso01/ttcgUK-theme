@@ -1,52 +1,13 @@
 <?php
 
-// SPECIALS POST TYPE REMOVED PROBABLY NOT NEEDED
-// function tcw_define_specials_post_type()
-// {
-//     $post_type = 'specials';
-//     $args = [
-//         'supports' => [
-//             'title',
-//             //'editor',
-//             'custom-fields',
-//             'post-formats'
-//         ],
-//         'labels' => [
-//             'name' => 'Specials',
-//             'singular_name' => 'Special Offer',
-//             'add_new' => 'Add New Special Offer',
-//             'add_new_item' => 'Add New Special Offer',
-//             'edit_item' => 'Edit Special Offer',
-//             'new_item' => 'New Special Offer',
-//             'all_items' => 'All Specials',
-//             'view_item' => 'View Special Offer',
-//             'search_items' => 'Search Specials',
-//             'not_found' => 'No special offer found',
-//             'not_found_in_trash' => 'No Specials found in Bin',
-//             'menu_name' => 'Specials',
-//         ],
-//         'public' => true,
-//         'hierarchical' => false,
-//         'has_archive' => true,
-//     ];
-//     register_post_type($post_type, $args);
-// }
-// add_action('init', 'tcw_define_specials_post_type');
-
-
-// PROBABLY NOT NEEDED
-
-
-
-
-// THIS FUNCTION REBUILD THE URL AND PROBABLY REDIRECT TO HOME THE REQUEST
-// NOT SURE, IF REMOVED THE SINGLE CAR CANNOT BE SEEN
+// THIS FUNCTION REBUILD THE URL AND REDIRECT TO HOME THE REQUEST
+// IF REMOVED THE SINGLE CAR CANNOT BE SEEN
 
 function tcw_template_redirect()
 {
     global $wp_query, $wp, $custom, $tertiaryBanner, $tertiaryBannerMobile, $tertiaryVideo, $tertiaryVideoMobile,
-    $title, $similarCarTitle, $metaDescription, $metaImage, $customerPhotos, $tertiaryPage, $pageUrl, $area,
-    $areaSuffix, $post, $carmake, $carmodel, $branch, $branchCustom, $saleMode, $saleModeDiscount, $carId;
+        $title, $similarCarTitle, $metaDescription, $metaImage, $customerPhotos, $tertiaryPage, $pageUrl, $area,
+        $areaSuffix, $post, $carmake, $carmodel, $branch, $branchCustom, $saleMode, $saleModeDiscount, $carId;
     $pageUrl = str_replace(site_url() . '/', '', home_url($wp->request));
 
     $saleMode = get_option('tcw_sale_mode');
@@ -61,17 +22,19 @@ function tcw_template_redirect()
     $metaImage = '';
     $customerPhotos = [];
 
+    // BUILD THE SESSION PARAMS USED BY PLUGIN FINANCE FORM AND THE THEME
     $_SESSION['utm_source'] = (isset($_GET['utm_source'])) ? $_GET['utm_source'] : $_SESSION['utm_source'];
     $_SESSION['utm_medium'] = (isset($_GET['utm_medium'])) ? $_GET['utm_medium'] : $_SESSION['utm_medium'];
     $_SESSION['utm_content'] = (isset($_GET['utm_content'])) ? $_GET['utm_content'] : $_SESSION['utm_content'];
     $_SESSION['utm_campaign'] = (isset($_GET['utm_campaign'])) ? $_GET['utm_campaign'] : $_SESSION['utm_campaign'];
     $_SESSION['utm_term'] = (isset($_GET['utm_term'])) ? $_GET['utm_term'] : $_SESSION['utm_term'];
     $_SESSION['utm_gclid'] = (isset($_GET['gclid'])) ? $_GET['gclid'] : $_SESSION['utm_gclid'];
-    $_SESSION['utm_make'] = (isset($_GET['utm_make'])) ? $_GET['utm_make'] : $_SESSION['utm_make'];
-    $_SESSION['utm_model'] = (isset($_GET['utm_model'])) ? $_GET['utm_model'] : $_SESSION['utm_model'];
+    $_SESSION['utm_make'] = (isset($_GET['make'])) ? $_GET['make'] : $_SESSION['utm_make'];
+    $_SESSION['utm_model'] = (isset($_GET['model'])) ? $_GET['model'] : $_SESSION['utm_model'];
     $_SESSION['utm_category'] = (isset($_GET['utm_category'])) ? $_GET['utm_category'] : $_SESSION['utm_category'];
     $_SESSION['utm_price'] = (isset($_GET['utm_price'])) ? $_GET['utm_price'] : $_SESSION['utm_price'];
-    $_SESSION['utm_vid'] = (isset($_GET['utm_vid'])) ? $_GET['utm_vid'] : $_SESSION['utm_vid'];
+    $_SESSION['utm_vid'] = (isset($_GET['vid'])) ? $_GET['vid'] : $_SESSION['utm_vid'];
+    $_SESSION['utm_fbclid'] = (isset($_COOKIE['_fbc'])) ? $_COOKIE['_fbc'] : $_SESSION['utm_fbclid'];
 
     // Reset the branch.
     if ($pageUrl === 'in/reset') {
@@ -101,7 +64,7 @@ function tcw_template_redirect()
 
     $areaSlug = get_query_var('area');
     $carId = get_query_var('car_id');
-	
+
     // Backup method of getting it.
     /*$areaCheck = explode('/in/', $wp->request);
     if (isset($areaCheck[1])) {

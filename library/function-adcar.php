@@ -332,6 +332,7 @@ function tcw_cars_import()
             update_field('derivative', $row->Derivative, $carId);
             update_field('fueltype', $row->FuelType, $carId);
             update_field('fdry_paint_id', $row->PaintDescription, $carId);
+            update_field('stock_number', $row->StockNumber, $carId);
             update_field('transmission', $row->Transmission, $carId);
             update_field('enginecapacity', $row->EngineCapacity, $carId);
             update_field('bodytype', $row->BodyType, $carId);
@@ -364,6 +365,7 @@ function tcw_cars_import()
             update_field('fueltype', $row->FuelType, $carId);
             update_field('transmission', $row->Transmission, $carId);
             update_field('fdry_paint_id', $row->PaintDescription, $carId);
+            update_field('stock_number', $row->StockNumber, $carId);
             update_field('enginecapacity', $row->EngineCapacity, $carId);
             update_field('bodytype', $row->BodyType, $carId);
             update_field('seats', $row->Seats, $carId);
