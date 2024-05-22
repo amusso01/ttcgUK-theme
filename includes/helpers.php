@@ -44,7 +44,7 @@ if (!function_exists('getJsFinanceExamples')) {
 }
 
 if (!function_exists('replaceShortCodes')) {
-    function str_contains($haystack, $needles)
+    function fdry_str_contains($haystack, $needles)
     {
         foreach ((array)$needles as $needle) {
             if ($needle !== '' && mb_strpos($haystack, $needle) !== false) {
@@ -124,7 +124,7 @@ if (!function_exists('tcw_get_active_taxonomy_types')) {
         unset($terms, $termSort);*/
 
         return $terms;
-    }// tcw_get_active_taxonomy_types
+    } // tcw_get_active_taxonomy_types
 }
 
 if (!function_exists('tcw_full_page_search_form')) {
@@ -139,12 +139,12 @@ if (!function_exists('tcw_full_page_search_form')) {
         $output .= '<div class="form-group">';
         $output .= '<div class="col-xs-10">';
         $output .= '<input type="text" name="s" value="' . esc_attr(
-                get_search_query()
-            ) . '" placeholder="' . esc_attr_x(
-                'Search &hellip;',
-                'placeholder',
-                'tcw'
-            ) . '" title="' . esc_attr_x('Search &hellip;', 'label', 'tcw') . '" class="form-control" />';
+            get_search_query()
+        ) . '" placeholder="' . esc_attr_x(
+            'Search &hellip;',
+            'placeholder',
+            'tcw'
+        ) . '" title="' . esc_attr_x('Search &hellip;', 'label', 'tcw') . '" class="form-control" />';
         $output .= '</div>';
         $output .= '<div class="col-xs-2">';
         $output .= '<button type="submit" class="btn btn-default">' . __('Search', 'tcw') . '</button>';
@@ -153,7 +153,7 @@ if (!function_exists('tcw_full_page_search_form')) {
         $output .= '</form>';
 
         return $output;
-    }// tcw_full_page_search_form
+    } // tcw_full_page_search_form
 }
 
 if (!function_exists('tcw_pagination')) {
@@ -216,7 +216,7 @@ if (!function_exists('tcw_pagination')) {
         }
 
         unset($page, $pagination_array);
-    }// tcw_pagination
+    } // tcw_pagination
 }
 
 if (!function_exists('tcw_post_on')) {
@@ -257,7 +257,7 @@ if (!function_exists('tcw_post_on')) {
                 esc_html(get_the_author())
             )
         );
-    }// tcw_post_on
+    } // tcw_post_on
 }
 
 if (!function_exists('tcw_more_link_text')) {
@@ -268,7 +268,7 @@ if (!function_exists('tcw_more_link_text')) {
     function tcw_more_link_text()
     {
         return __('Continue reading <span class="meta-nav">&rarr;</span>', 'tcw');
-    }// tcw_more_link_text
+    } // tcw_more_link_text
 }
 
 if (!function_exists('tcw_categories_list')) {
@@ -287,7 +287,7 @@ if (!function_exists('tcw_categories_list')) {
             ) . '"></span> %1$s',
             $categories_list
         );
-    }// tcw_categories_list
+    } // tcw_categories_list
 }
 
 if (!function_exists('tcw_tags_list')) {
@@ -303,7 +303,7 @@ if (!function_exists('tcw_tags_list')) {
             '<span class="tags-icon glyphicon glyphicon-tags" title="' . __('Tagged', 'tcw') . '"></span>&nbsp; %1$s',
             $tags_list
         );
-    }// tcw_tags_list
+    } // tcw_tags_list
 }
 
 if (!function_exists('cns_format_engine_capacity')) {
@@ -347,18 +347,18 @@ if (!function_exists('xml2array')) {
         $current = &$xml_array;
         $repeated_tag_index = array();
         foreach ($xml_values as $data) {
-            unset ($attributes, $value);
+            unset($attributes, $value);
             extract($data);
             $result = array();
             $attributes_data = array();
-            if (isset ($value)) {
+            if (isset($value)) {
                 if ($priority == 'tag') {
                     $result = $value;
                 } else {
                     $result['value'] = $value;
                 }
             }
-            if (isset ($attributes) and $get_attributes) {
+            if (isset($attributes) and $get_attributes) {
                 foreach ($attributes as $attr => $val) {
                     if ($priority == 'tag') {
                         $attributes_data[$attr] = $val;
@@ -377,7 +377,7 @@ if (!function_exists('xml2array')) {
                     $repeated_tag_index[$tag . '_' . $level] = 1;
                     $current = &$current[$tag];
                 } else {
-                    if (isset ($current[$tag][0])) {
+                    if (isset($current[$tag][0])) {
                         $current[$tag][$repeated_tag_index[$tag . '_' . $level]] = $result;
                         $repeated_tag_index[$tag . '_' . $level]++;
                     } else {
@@ -386,23 +386,23 @@ if (!function_exists('xml2array')) {
                             $result
                         );
                         $repeated_tag_index[$tag . '_' . $level] = 2;
-                        if (isset ($current[$tag . '_attr'])) {
+                        if (isset($current[$tag . '_attr'])) {
                             $current[$tag]['0_attr'] = $current[$tag . '_attr'];
-                            unset ($current[$tag . '_attr']);
+                            unset($current[$tag . '_attr']);
                         }
                     }
                     $last_item_index = $repeated_tag_index[$tag . '_' . $level] - 1;
                     $current = &$current[$tag][$last_item_index];
                 }
             } elseif ($type == "complete") {
-                if (!isset ($current[$tag])) {
+                if (!isset($current[$tag])) {
                     $current[$tag] = $result;
                     $repeated_tag_index[$tag . '_' . $level] = 1;
                     if ($priority == 'tag' and $attributes_data) {
                         $current[$tag . '_attr'] = $attributes_data;
                     }
                 } else {
-                    if (isset ($current[$tag][0]) and is_array($current[$tag])) {
+                    if (isset($current[$tag][0]) and is_array($current[$tag])) {
                         $current[$tag][$repeated_tag_index[$tag . '_' . $level]] = $result;
                         if ($priority == 'tag' and $get_attributes and $attributes_data) {
                             $current[$tag][$repeated_tag_index[$tag . '_' . $level] . '_attr'] = $attributes_data;
@@ -415,9 +415,9 @@ if (!function_exists('xml2array')) {
                         );
                         $repeated_tag_index[$tag . '_' . $level] = 1;
                         if ($priority == 'tag' and $get_attributes) {
-                            if (isset ($current[$tag . '_attr'])) {
+                            if (isset($current[$tag . '_attr'])) {
                                 $current[$tag]['0_attr'] = $current[$tag . '_attr'];
-                                unset ($current[$tag . '_attr']);
+                                unset($current[$tag . '_attr']);
                             }
                             if ($attributes_data) {
                                 $current[$tag][$repeated_tag_index[$tag . '_' . $level] . '_attr'] = $attributes_data;
