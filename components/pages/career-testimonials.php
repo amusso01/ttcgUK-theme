@@ -8,7 +8,7 @@ $testimonials = get_field('testimonials')
     <div class="glide fdry-glide__testimonials">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <?php foreach ($testimonials as $testimonial) : ?>
+          <!-- <?php foreach ($testimonials as $testimonial) : ?>
             <li class="glide__slide">
               <div class="fdry-career-2-testimonial__grid">
                 <div class="image">
@@ -26,7 +26,58 @@ $testimonials = get_field('testimonials')
                 </div>
               </div>
             </li>
-          <?php endforeach; ?>
+          <?php endforeach; ?> -->
+          <li class="glide__slide">
+            <div class="fdry-career-2-testimonial__grid">
+              <div class="image">
+                <figure>
+                  <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/image-2-2.png">
+                </figure>
+              </div>
+
+              <div class="content">
+                <div class="quote">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum inventore sit nemo? Temporibus, ducimus nulla. Animi odit minima quae doloribus rem quo, labore odio ab laborum. Explicabo, esse?</p>
+                </div>
+                <p class="name">Richard Evans</p>
+                <p class="role">General Manager</p>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="fdry-career-2-testimonial__grid">
+              <div class="image">
+                <figure>
+                  <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/image.png">
+                </figure>
+              </div>
+
+              <div class="content">
+                <div class="quote">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum porro inventore quaerat sapiente voluptates id totam enim aliquid ducimus consequatur quis, ut aspernatur corporis fuga?</p>
+                </div>
+                <p class="name">Lance Williams</p>
+                <p class="role">CEO</p>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="fdry-career-2-testimonial__grid">
+              <div class="image">
+                <figure>
+                  <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/image-1.png">
+                </figure>
+              </div>
+
+              <div class="content">
+                <div class="quote">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eveniet assumenda magni odit aliquam. Sapiente, illo nobis eum corrupti eius et quas, inventore itaque dolore quae deleniti quos perferendis quibusdam.</p>
+                </div>
+                <p class="name">Olivia Wilton</p>
+                <p class="role">Talent and Resourcing Manager</p>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -44,9 +95,12 @@ $testimonials = get_field('testimonials')
       </div>
 
       <div class="glide__bullets" data-glide-el="controls[nav]">
-        <?php foreach ($testimonials as $key => $testimonial) : ?>
+        <!-- <?php foreach ($testimonials as $key => $testimonial) : ?>
           <button class="glide__bullet" data-glide-dir="=<?= $key ?>"></button>
-        <?php endforeach; ?>
+        <?php endforeach; ?> -->
+        <button class="glide__bullet" data-glide-dir="=0"></button>
+        <button class="glide__bullet" data-glide-dir="=1"></button>
+        <button class="glide__bullet" data-glide-dir="=2"></button>
       </div>
     </div>
   </div>

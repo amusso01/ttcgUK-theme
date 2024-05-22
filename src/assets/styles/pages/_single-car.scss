@@ -43,6 +43,37 @@
 			border-radius: 6px;
 			padding: 3px 8px;
 		}
+
+		.mix-discount-save {
+			position: absolute;
+			z-index: 1;
+			width: 75%;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -10px;
+			background-color: #1f3665;
+			background-repeat: repeat;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 24px;
+			padding: 8px;
+			border-radius: 8px;
+			.drop {
+				color: #222b5e;
+				font-weight: 700;
+				font-size: 23px;
+				@include media('<phone') {
+					font-size: 16px;
+				}
+			}
+			.save {
+				color: #b11212;
+			}
+			&.blue {
+				background-color: #f3f6ff;
+			}
+		}
 	}
 
 	.car-specs-card__wrapper {
@@ -718,6 +749,19 @@
 				border-radius: 16px;
 			}
 
+			.grey-box {
+				background: linear-gradient(
+					180deg,
+					rgba(230, 230, 230, 1) 0%,
+					rgba(221, 221, 221, 0.8519782913165266) 35%,
+					rgba(227, 227, 227, 0.8715861344537815) 60%,
+					rgba(227, 227, 227, 0.8575805322128851) 82%,
+					rgba(227, 227, 227, 0.958420868347339) 100%
+				);
+				background-size: cover;
+				border-radius: 16px;
+			}
+
 			.cost-text {
 				color: white;
 				font-weight: 700;
@@ -743,7 +787,8 @@
 			.blue-box,
 			.yellow-box,
 			.black-box,
-			.turq-box {
+			.turq-box,
+			.grey-box {
 				width: 33%;
 				display: inline-flex;
 				padding: 4px;
@@ -753,6 +798,15 @@
 				height: 90px;
 				color: white;
 				row-gap: 3px;
+				position: relative;
+			}
+
+			.grey-box {
+				.cost-text,
+				p {
+					color: #000;
+					font-weight: 700;
+				}
 			}
 
 			.cost-text {
@@ -777,9 +831,19 @@
 				height: 3px;
 				background-color: white;
 				border-radius: 5px;
-				top: 50%;
+				top: 60%;
 				transform-origin: center;
-				transform: translateY(-50%) rotate(45deg);
+				transform: translateY(-60%) rotate(25deg);
+			}
+			.strike-2 {
+				position: absolute;
+				width: 85%;
+				height: 3px;
+				background-color: white;
+				border-radius: 5px;
+				top: 60%;
+				transform-origin: center;
+				transform: translateY(-60%) rotate(340deg);
 			}
 		}
 
@@ -793,6 +857,7 @@
 				font-weight: 600;
 				text-align: center;
 				margin-bottom: 8px;
+				border-radius: 8px;
 				&:last-of-type {
 					margin-bottom: 0px;
 				}
@@ -814,36 +879,40 @@
 		&-icons {
 			margin-top: 10px;
 			display: none;
+
 			@include media('<phone-land') {
-				display: block;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 10px;
+				row-gap: 10px;
 			}
 			svg {
-				width: 25px;
-				height: 25px;
+				width: 19px;
+				height: 19px;
 			}
 			.single-car-mobile__icon {
 				display: flex;
 				align-items: center;
 				background-image: url(./../../images/grey-strip-bg.svg);
-				padding: 3px 0 3px 45px;
-				margin-bottom: 7px;
+				padding: 3px 3px 3px 6px;
 				background-repeat: repeat;
+				border-radius: 7px;
 
 				i {
 					display: inline-block;
-					margin-right: 18px;
+					margin-right: 8px;
 				}
 				p {
-					font-size: 18px;
+					font-size: 13px;
 					font-weight: 600;
 				}
 			}
 		}
 		.drop {
-			text-shadow: 1px 1px 1px #000, 1px 2px 1px #000, 1px 3px 1px #000;
+			text-shadow: 1px 1px 1px #000, 1px 1px 1px #000, 1px 1px 1px #000;
 
 			&.fdry-btn-mobile {
-				background-image: url(./../../images/blue-strip-bg.svg);
+				background-image: url(./../images/blue-strip-bg.svg);
 				background-repeat: repeat-x;
 			}
 		}

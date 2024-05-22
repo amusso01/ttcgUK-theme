@@ -65,6 +65,9 @@ if (strtolower($carItem['make_title']) == 'mercedes-benz') {
     $carItem['make_title'] = 'Mercedes';
 }
 
+// Text for message in top card banner. TO DO
+$carBannerTxt = get_field('discount_banner_text_v1', $carItem['car_id']);
+
 // GET CAR SPEC
 $techinfo = cns_car_technical_data($carItem['car_id']);
 
@@ -123,6 +126,13 @@ endforeach;
                             <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">
                         <?php endif; ?>
 
+
+                        <div class="mix-discount-save blue">
+
+                            <p class="drop"><?= $carBannerTxt ? '<span class="save">SAVE</span> £' . $carBannerTxt . ' vs. <span class="save">Auto</span>Trader' : '' ?></p>
+
+                        </div>
+
                     </figure>
                 </div>
                 <?php global $branch; ?>
@@ -136,19 +146,21 @@ endforeach;
                     </div>
                     <?php if ($mixDiscount) : ?>
                         <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
-                            <div class="black-box">
+                            <div class="red-box">
                                 <p class="blue-box-text drop">WAS</p>
                                 <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
                                 <div class="strike"></div>
+                                <div class="strike-2"></div>
                             </div>
-                            <div class="turq-box">
-                                <p class="blue-box-text drop">NOW</p>
-                                <div class="cost-text drop">&pound;<?= $carItem['discounted_price']; ?></div>
+                            <div class="grey-box">
+                                <p class="drop-light">NOW</p>
+                                <!-- <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div> -->
+                                <div class="cost-text drop-light">&pound;<?= $carItem['discounted_price']; ?></div>
                             </div>
-                            <div class="yellow-box">
-                                <p class="blue-box-text drop-light">Fixed</p>
-                                <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
-                                <p class="blue-box-text drop-light">Per Month</p>
+                            <div class="red-box">
+                                <p class="blue-box-text drop">Fixed</p>
+                                <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
+                                <p class="blue-box-text drop">Per Month</p>
                             </div>
                         </div>
 

@@ -350,11 +350,13 @@ function load_stylesheets()
     );
     wp_enqueue_style('tcw');
 
+    $fdryStylePath = get_template_directory_uri() . '/dist/styles/main.css';
+    $style_ver = date("m-d-Y-H:i:s", filemtime(get_template_directory() . '/dist/styles/main.css'));
     wp_register_style(
         'foundry-styles',
-        get_template_directory_uri() . '/dist/styles/' . '/main.css',
+        $fdryStylePath,
         [],
-        '1.0',
+        $style_ver,
         'all'
     );
     wp_enqueue_style('foundry-styles');

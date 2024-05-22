@@ -25,7 +25,7 @@ if ($paintId) {
 //     $carItem['model_name'] = str_replace('-x', '', $model);
 // }
 
-$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' .  $carItem['body_type'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=4&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.15&countryCode=GB';
+$carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $carItem['make_name'] . '&modelFamily=' . $carItem['model_name'] . '&modelYear=' . $carItem['reg_year'] . '&modelRange=' . $carItem['model_name'] . '&modelVariant=' .  $carItem['body_type'] . '&powerTrain=' . $carItem['power_train'] . '&bodySize=' . $carItem['body_size'] . '&trim=' . $carItem['trim'] . '&paintDescription=' . $carItem['paint_description'] . '&rimId=' . $carItem['rim_id'] . '&rimDescription=' . $carItem['rim_description'] . '&interiorId=' . $carItem['interior_id'] . '&interiorDescription=' . $carItem['interior_description'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=1&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.80&countryCode=GB';
 
 
 
@@ -35,6 +35,9 @@ if ($imageCar) {
 }
 
 $mixDiscount = $carItem['discount'] > 0 ? true : false;
+
+// Text for message in top card banner. TO DO
+$carBannerTxt = get_field('discount_banner_text_v1', $carItem['car_id']);
 
 
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
@@ -95,6 +98,7 @@ $tagImg = get_field('tag_image_for_discount', 'option');
 $cardPadding = get_field('padding_card_top', 'option');
 $tagOffset = get_field('tag_offset_top', 'option');
 
+
 ?>
 
 <?php if ($isDiscount) : ?>
@@ -114,10 +118,31 @@ $tagOffset = get_field('tag_offset_top', 'option');
         <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">
     <?php endif; ?>
     <?php if ($mixDiscount) : ?>
-        <div class="mix-discount-save">
-            <p class="drop">&pound;<?= $carItem['discount'] ?> OFF THIS CAR TODAY</p>
+        <div class="mix-discount-stamp">
+
+            <svg enable-background="new 0 0 185.1 185.1" viewBox="0 0 185.1 185.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="m92.5 182c49.4 0 89.4-40 89.4-89.4s-40-89.5-89.4-89.5-89.4 40.1-89.4 89.4 40 89.4 89.4 89.4" fill="#ea0304" />
+                <circle cx="92.5" cy="92.5" fill="none" r="89.4" stroke="#fff" stroke-width="6.3" />
+                <g fill="#fff">
+                    <path d="m31.2 77.5 4.2-7.4c2.8 2.1 6.6 3.6 10.1 4 3 .3 4.2-.2 4.3-1.3.4-4-17.3-2.6-16.1-14.3.6-5.9 6-10.1 15.8-9.1 4.2.4 8.5 1.8 11.6 4l-4 7.4c-2.9-1.9-5.8-3-8.5-3.3-3.1-.3-4.2.5-4.3 1.6-.4 3.8 17.4 2.5 16.1 14.1-.6 5.8-6 10.1-15.8 9.1-5.3-.6-10.4-2.4-13.4-4.8z" />
+                    <path d="m83.5 80-12-1.3-2.7 5.3-10.8-1.1 17.1-30.1 10.4 1.1 10.5 33-11-1.2s-1.5-5.7-1.5-5.7zm-2.1-8-2.2-8.2-3.9 7.6z" />
+                    <path d="m131.9 58.8-16.6 30.1-10.4-1.1-10-32.9 11.4 1.2 5.6 19.2 9.6-17.6s10.4 1.1 10.4 1.1z" />
+                    <path d="m155.5 85-.8 8-26.2-2.8 3.3-31.5 25.6 2.7-.8 8-15.2-1.6-.4 3.7 13.3 1.4-.8 7.7-13.3-1.4-.4 4.1 15.8 1.7z" />
+                    <path d="m32.2 113.9 13.7 1.4-.8 8-28.4-3 .8-8 4.1.4.5-4.8-4.1-.4.6-5.9 4.1.4c1.2-8.7 7.5-12.9 17.5-11.8 3.7.4 7 1.5 9.2 2.9l-3.9 7.7c-1.7-1.1-3.6-1.7-5.3-1.9-3.8-.4-6.3.9-6.9 4.2l9.5 1-.6 5.9-9.5-1-.5 4.8z" />
+                    <path d="m72.4 117.9-.9 8.2-25.3-2.7.7-6.5 12.5-9.3c2.4-1.8 2.8-3 2.9-4.1.2-1.5-.8-2.6-2.8-2.8-1.9-.2-3.8.6-4.9 2.4l-7.6-4.8c2.8-4.1 7.6-6.6 14.4-5.9 7.5.8 12.3 5.2 11.7 11.2-.3 3.1-1.4 5.8-6.5 9.5l-4.9 3.6 10.6 1.1z" />
+                    <path d="m74.3 110.5c1.1-10.4 7.7-15.9 16-15s13.6 7.5 12.5 18c-1.1 10.4-7.7 15.9-16 15s-13.6-7.5-12.5-18zm17.9 1.9c.6-6.1-.7-8.1-2.8-8.3s-3.8 1.5-4.4 7.6.7 8.1 2.8 8.3 3.8-1.5 4.4-7.6z" />
+                    <path d="m104.4 113.7c1.1-10.4 7.7-15.9 16-15s13.6 7.5 12.5 18c-1.1 10.4-7.7 15.9-16 15s-13.6-7.5-12.5-18zm17.8 1.9c.6-6.1-.7-8.1-2.8-8.3s-3.8 1.5-4.4 7.6.7 8.1 2.8 8.3 3.8-1.5 4.4-7.6z" />
+                    <path d="m134.4 116.9c1.1-10.4 7.7-15.9 16-15s13.6 7.5 12.5 18c-1.1 10.4-7.7 15.9-16 15s-13.6-7.5-12.5-18zm17.9 1.8c.6-6.1-.7-8.1-2.8-8.3s-3.8 1.5-4.4 7.6.7 8.1 2.8 8.3 3.8-1.5 4.4-7.6z" />
+                </g>
+            </svg>
+
         </div>
     <?php endif; ?>
+    <div class="mix-discount-save blue">
+
+        <p class="drop"><?= $carBannerTxt ? '<span class="save">SAVE</span> £' . $carBannerTxt . ' vs. <span class="save">Auto</span>Trader' : '' ?></p>
+
+    </div>
     <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
         <a <?= $link ?>">
             <figure class="<?= $mixDiscount ? 'discount-bg' : '' ?>" data-vrm="<?php echo $carItem['reg_number']; ?>">
@@ -138,20 +163,21 @@ $tagOffset = get_field('tag_offset_top', 'option');
         </div>
         <?php if ($mixDiscount) : ?>
             <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
-                <div class="black-box">
+                <div class="red-box">
                     <p class="blue-box-text drop">WAS</p>
                     <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
                     <div class="strike"></div>
+                    <div class="strike-2"></div>
                 </div>
-                <div class="turq-box">
-                    <p class="blue-box-text drop">NOW</p>
-                    <!-- <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div> -->
-                    <div class="cost-text drop">&pound;<?= $carItem['discounted_price']; ?></div>
+                <div class="grey-box">
+                    <p class="drop-light">NOW</p>
+                    <!-- <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div> -->
+                    <div class="cost-text drop-light">&pound;<?= $carItem['discounted_price']; ?></div>
                 </div>
-                <div class="yellow-box">
-                    <p class="blue-box-text drop-light">Fixed</p>
-                    <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
-                    <p class="blue-box-text drop-light">Per Month</p>
+                <div class="red-box">
+                    <p class="blue-box-text drop">Fixed</p>
+                    <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div>
+                    <p class="blue-box-text drop">Per Month</p>
                 </div>
             </div>
 
@@ -208,6 +234,10 @@ $tagOffset = get_field('tag_offset_top', 'option');
             <div class="single-car-mobile__icon">
                 <i><?php get_template_part('svg-template/svg-reg-mobile') ?></i>
                 <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
+            </div>
+            <div class="single-car-mobile__icon">
+                <i><?php get_template_part('svg-template/svg-paint') ?></i>
+                <p class="fdry-car-paint"><?= $paintId; ?></p>
             </div>
         </div>
 

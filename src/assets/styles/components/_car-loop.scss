@@ -42,28 +42,53 @@
 			width: 100%;
 			left: 0;
 			top: 0;
-			background-color: #ea0304;
+			background-color: #1f3665;
 			background-repeat: repeat;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			min-height: 24px;
+			width: 100%;
 			.drop {
-				color: white;
+				color: #222b5e;
 				font-weight: 700;
+			}
+			.save {
+				color: #b11212;
+			}
+
+			&.blue {
+				background-color: #f3f6ff;
 			}
 		}
 
+		.mix-discount-stamp {
+			position: absolute;
+			top: 28px;
+			width: 65px;
+			z-index: 1;
+			right: 5px;
+		}
+
 		.fdy-car-single-card__image {
-			padding-top: 24px;
-			margin-bottom: 7px;
+			padding-top: 15px;
+			margin-bottom: 0px;
 			figure {
 				position: relative;
 				max-width: 100%;
-				height: 170px;
+				height: 165px;
 
 				&.discount-bg {
-					background-image: url(./../../images/tc-car-bg.jpg);
-					background-size: cover;
+					// background-image: url(./../../images/tc-car-bg.jpg);
+					// background-size: cover;
+					background: linear-gradient(
+						180deg,
+						rgba(230, 230, 230, 1) 0%,
+						rgba(221, 221, 221, 0.8519782913165266) 35%,
+						rgba(227, 227, 227, 0.7343312324929971) 60%,
+						rgba(240, 240, 240, 0.258140756302521) 82%,
+						rgba(240, 240, 240, 1) 100%
+					);
 				}
 
 				img {
@@ -455,6 +480,19 @@
 					border-radius: 16px;
 				}
 
+				.grey-box {
+					background: linear-gradient(
+						180deg,
+						rgba(230, 230, 230, 1) 0%,
+						rgba(221, 221, 221, 0.8519782913165266) 35%,
+						rgba(227, 227, 227, 0.8715861344537815) 60%,
+						rgba(227, 227, 227, 0.8575805322128851) 82%,
+						rgba(227, 227, 227, 0.958420868347339) 100%
+					);
+					background-size: cover;
+					border-radius: 16px;
+				}
+
 				.cost-text {
 					color: white;
 					font-weight: 700;
@@ -480,7 +518,8 @@
 				.blue-box,
 				.yellow-box,
 				.black-box,
-				.turq-box {
+				.turq-box,
+				.grey-box {
 					width: 33%;
 					display: inline-flex;
 					padding: 4px;
@@ -490,6 +529,15 @@
 					height: 90px;
 					color: white;
 					row-gap: 3px;
+					position: relative;
+				}
+
+				.grey-box {
+					.cost-text,
+					p {
+						color: #000;
+						font-weight: 700;
+					}
 				}
 
 				.cost-text {
@@ -523,9 +571,19 @@
 					height: 3px;
 					background-color: white;
 					border-radius: 5px;
-					top: 50%;
+					top: 60%;
 					transform-origin: center;
-					transform: translateY(-50%) rotate(45deg);
+					transform: translateY(-60%) rotate(25deg);
+				}
+				.strike-2 {
+					position: absolute;
+					width: 85%;
+					height: 3px;
+					background-color: white;
+					border-radius: 5px;
+					top: 60%;
+					transform-origin: center;
+					transform: translateY(-60%) rotate(340deg);
 				}
 			}
 
@@ -542,25 +600,26 @@
 				.single-car-mobile__icon {
 					display: flex;
 					align-items: center;
-					background-image: url(./../../images/grey-strip-bg.svg);
-					padding: 3px 3px 3px 3px;
+					background-image: url(./../images/grey-strip-bg.svg);
+					padding: 3px 3px 3px 7px;
 					background-repeat: repeat;
+					border-radius: 7px;
 
 					i {
 						display: inline-block;
-						margin-right: 18px;
+						margin-right: 8px;
 					}
 					p {
-						font-size: 15px;
+						font-size: 13px;
 						font-weight: 600;
 					}
 				}
 			}
 			.drop {
-				text-shadow: 1px 1px 1px #000, 1px 2px 1px #000, 1px 3px 1px #000;
+				text-shadow: 1px 1px 1px #000, 1px 1px 1px #000, 1px 1px 1px #000;
 
 				&.fdry-btn-mobile {
-					background-image: url(./../../images/blue-strip-bg.svg);
+					background-image: url(./../images/blue-strip-bg.svg);
 					background-repeat: repeat-x;
 				}
 			}
