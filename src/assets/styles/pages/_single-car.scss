@@ -50,7 +50,7 @@
 			width: 75%;
 			left: 50%;
 			transform: translateX(-50%);
-			bottom: -10px;
+			bottom: -44px;
 			background-color: #1f3665;
 			background-repeat: repeat;
 			display: flex;
@@ -59,6 +59,11 @@
 			min-height: 24px;
 			padding: 8px;
 			border-radius: 8px;
+			@include media('<phone') {
+				bottom: unset;
+				top: -18px;
+				width: 90%;
+			}
 			.drop {
 				color: #222b5e;
 				font-weight: 700;
@@ -72,6 +77,18 @@
 			}
 			&.blue {
 				background-color: #f3f6ff;
+			}
+
+			.fdryCaveat {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				cursor: help;
+				svg {
+					path {
+						fill: #b7b7b7;
+					}
+				}
 			}
 		}
 	}

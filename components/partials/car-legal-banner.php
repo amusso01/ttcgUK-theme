@@ -10,11 +10,12 @@ if ($carItem['discounted_price'] !== $carItem['rrp']) {
 
 // args
 $args = array(
-  'numberposts'   => -1,
+  'posts_per_page'   => 1,
   'post_type'     => 'financeexample',
   'meta_key'      => 'cash_price',
   'meta_value'    => $globalPrice
 );
+
 
 $the_query = new WP_Query($args);
 if ($the_query->have_posts()) :

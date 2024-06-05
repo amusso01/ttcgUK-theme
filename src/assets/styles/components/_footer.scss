@@ -101,3 +101,17 @@
 		font-size: 11px;
 	}
 }
+
+.sticky-footer {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100000;
+	padding: 8px;
+	background: #009640;
+
+	@include media('>phone') {
+		display: none;
+	}
+}

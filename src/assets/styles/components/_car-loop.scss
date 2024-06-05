@@ -52,6 +52,7 @@
 			.drop {
 				color: #222b5e;
 				font-weight: 700;
+				position: relative;
 			}
 			.save {
 				color: #b11212;
@@ -59,6 +60,17 @@
 
 			&.blue {
 				background-color: #f3f6ff;
+			}
+			.fdryCaveat {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				cursor: help;
+				svg {
+					path {
+						fill: #b7b7b7;
+					}
+				}
 			}
 		}
 
