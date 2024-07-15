@@ -28,13 +28,17 @@ if ($the_query->have_posts()) :
     $interest = get_field('interest_charged');
     $totalAmount = get_field('total_amount');
     $dealApr = get_field('apr');
+
+    $re = get_field('representative_example');
   endwhile;
 endif;
 wp_reset_query();
 $globalApr = get_option('cns_representative_apr');
 
-$rpe = '<strong>Representative Example</strong> (Hire Purchase): Cash price £' . $cashPrice . ' (incl. Admin Fee £299).
-Total Deposit £' . $deposit . '. Total Amount of Credit £' . $credit . ' equal payments of £' . $monthlyAmount . '. Agreement Duration ' . $duration . ' Months. Option to Purchase Fee £10. Interest Charged £' . $interest . '. Total Amount Payable £' . $totalAmount . '. Annual Rate of Interest ' . $dealApr . ' (fixed), <strong>Representative APR ' . $globalApr . '.%</strong>';
+// $rpe = '<strong>Representative Example</strong> (Hire Purchase): Cash price £' . $cashPrice . ' (incl. Admin Fee £349).
+// Total Deposit £' . $deposit . '. Total Amount of Credit £' . $credit . ' equal payments of £' . $monthlyAmount . '. Agreement Duration ' . $duration . ' Months. Option to Purchase Fee £10. Interest Charged £' . $interest . '. Total Amount Payable £' . $totalAmount . '. Annual Rate of Interest ' . $dealApr . ' (fixed), <strong>Representative APR ' . $globalApr . '.%</strong>';
+
+$rpe = $re;
 
 $legal = get_field('legal_banner', 'option');
 $rpeTitle = $carItem['reg_year'] . ' ' . $carItem['model_title'] . ' ' . $carItem["derivative"];

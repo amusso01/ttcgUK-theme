@@ -59,6 +59,7 @@ if ($imageCar) {
 
 
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
+$carDiscountedPrice = $carItem['discounted_price'];
 
 // REPLACE MERCEDES TITLE
 if (strtolower($carItem['make_title']) == 'mercedes-benz') {
@@ -108,7 +109,8 @@ endforeach;
         $isDiscount = get_field('discount_active', 'option');
         $tagImg = get_field('tag_image_for_discount', 'option');
 
-        $mixDiscount = $carItem['discount'] > 0 ? true : false;
+        // $mixDiscount = $carItem['discount'] > 0 ? true : false;
+        $mixDiscount = false;
         ?>
 
 
@@ -124,6 +126,10 @@ endforeach;
                         <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
                         <?php if ($isDiscount) : ?>
                             <img src="<?= $tagImg ?>" alt="" class="fdry-car-single__discount-tag">
+                        <?php endif; ?>
+
+                        <?php if ($carDiscountedPrice === '5099') : ?>
+                            <img src="<?= get_template_directory_uri() ?>/dist/images/99-circle.svg" alt="" class="fdry-car-single__99-circle">
                         <?php endif; ?>
 
 
@@ -174,14 +180,14 @@ endforeach;
                     <?php else : ?>
                         <div class="fdry-single-car__mobile-price">
                             <div class="red-box">
-                                <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                                <p class="cost-text drop">&pound;<?= $carDiscountedPrice ?></p>
                             </div>
                             <p class="price-divider">
                                 OR <br> JUST
                             </p>
                             <div class="blue-box">
                                 <p class="blue-box-text drop">Fixed</p>
-                                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carDiscountedPrice); ?></div>
                                 <p class="blue-box-text drop">Per Month</p>
                             </div>
                         </div>
@@ -250,89 +256,6 @@ endforeach;
 
                 </div>
 
-                <!-- <div class="car-specs-card__wrapper">
-                    <div class="car-spec-card__info">
-                        <h1 class="car-name"><?= strtoupper($carItem['make_title']) . ' ' . strtoupper($carItem['model_title']) ?></h1>
-                        <p class="model"><?= $carItem['derivative'] ?></p>
-
-                        <div class="fdry-car-spec">
-                            <div class="single-spec">
-                                <?php if ($carItem['fueltype'] != "") { ?>
-                                    <p class="spec"><?php echo $carItem['fueltype']; ?></p>
-                                <?php } ?>
-                            </div>
-                            <div class="single-spec">
-                                <?php if ($carItem['mileage'] > 0) { ?>
-                                    <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
-                                <?php } ?>
-                            </div>
-                            <?php if ($insurence != "") { ?>
-                                <div class="single-spec">
-                                    <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
-                                </div>
-                            <?php } ?>
-                            <?php if ($carItem['transmission']  != "") { ?>
-                                <div class="single-spec">
-                                    <p class="spec"><?= $carItem['transmission'] ?></p>
-                                </div>
-                            <?php } ?>
-                            <?php if ($paintId) { ?>
-                                <div class="single-spec">
-                                    <p class="spec"><?= $paintId ?></p>
-                                </div>
-                            <?php } ?>
-                            <div class="single-spec">
-                                <p class="spec"><a href="<?= get_the_permalink($branch->ID) ?>"><i style="display: inline-block; width:11px; margin-right:2px;"><?php get_template_part('svg-template/svg', 'google-maps-icon') ?></i><?= $branch->post_title ?></a></p>
-                            </div>
-                        </div>
-                        <?php if (!$isDiscount) : ?>
-                            <div class="fdry-car-single__cost">
-                                <div class="fdry-cash-cost fdry-car-single__cost-card">
-                                    <p class="fdry-text fdry-text-top">Now Just</p>
-                                    <p class="fdry-red-price">&pound;<?= $carItem['rrp'] ?></p>
-                                    <p class="fdry-text fdry-text-bottom">Cash <span>or</span> Finance</p>
-                                </div>
-                                <div class="fdry-grey-line"></div>
-                                <div class="fdry-cash-cost-or">
-                                    <p>Or</p>
-                                </div>
-                                <div class="fdry-monthly-cost fdry-car-single__cost-card">
-                                    <p class="fdry-text fdry-text-top">Fixed</p>
-                                    <p class="fdry-blue-cost">&pound;<?php echo TcFinance::getMonthlyPrice($carPriceRRP); ?></p>
-                                    <p class="fdry-text fdry-text-bottom">Per Month</p>
-                                </div>
-                            </div>
-                        <?php else :  ?>
-                            <div class="fdry-car-single__discount-grid">
-                                <div class="fdry-car-single__discount-was">
-                                    <p class="text-top">WAS</p>
-                                    <p class="price"><span class="strike"></span>&pound;<?= $carItem['rrp']  ?></p>
-                                </div>
-                                <div class="fdry-car-single__discount-now">
-                                    <p class="text-top">NOW</p>
-                                    <p class="price">&pound;<?= $carItem['discounted_price'] ?></p>
-                                </div>
-                            </div>
-
-
-                            <div class="fdry-car-single__discount-finance">
-                                <p> <span class="light">Or just</span> <span class="yellow"> &pound;<?php echo TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></span> per month</p>
-                            </div>
-
-                        <?php endif; ?>
-                    </div>
-                    <div class="fdry-car-finance-check">
-                        <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?php echo $carItem['car_id']; ?>" class="fdry-finance-check__btn-img">
-                            <img src="<?= get_template_directory_uri() ?>/dist/images/free30btn.svg" alt="Free finance check button">
-                        </a>
-                    </div>
-                    <div class="fdry-visit-us">
-                        <a href="<?= get_permalink($branch->ID) ?>">
-                            <i><?php get_template_part('svg-template/svg', 'geo-tag-icon') ?></i>
-                            VISIT US
-                        </a>
-                    </div>
-                </div> -->
 
             </div>
         </section>
@@ -351,6 +274,8 @@ endforeach;
         <div class="content-max">
             <!-- TC PROMISE CARD -->
             <?php // get_template_part('components/partials/car-tc-promise-card') 
+            ?>
+            <?php get_template_part('components/partials/car-alt-autotrader')
             ?>
         </div>
 

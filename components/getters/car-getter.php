@@ -89,6 +89,7 @@ if ($carId) {
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
             ];
+
             $meta_query = [];
         };
     }
@@ -192,7 +193,8 @@ while ($query->have_posts()) {
 }
 
 array_multisort(
-    array_column($carsArray, 'rrp'),
+    // array_column($carsArray, 'rrp'),
+    array_column($carsArray, 'discounted_price'),
     SORT_ASC,
     array_column($carsArray, 'reg_year'),
     SORT_DESC,

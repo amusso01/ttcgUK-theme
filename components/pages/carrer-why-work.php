@@ -12,13 +12,13 @@ $cards = get_field('icon_cards');
     <h3 class="fdry-career-2-why-work__title">WHY WORK AT <br>
       TRADE CENTRE UK?</h3>
 
-    <div class="subtitle">The Trade Centre UK has a fantastic opportunity for a <b>Car Sales Executive</b> to join the UK’s largest independent used car supermarket. We are looking for motivated and professional individuals who strive for the very best level of service in a busy retail environment.
+    <div class="subtitle">The Trade Centre UK are looking for motivated and professional individuals who strive for the very best level of service in a busy retail environment to join the UK’s largest independent supermarket.
       <br>
       <br>
       Established in 1999 and with over 700 employees across all our UK showrooms, we pride ourselves on offering our employees support and opportunity for growth within the motor trade and are committed to promoting a diverse and inclusive community within our work force.
       <br>
       <br>
-      Are you ambitious, dedicated with a strong desire to develop a career in sales? Are you enthusiastic, enjoy a dynamic, energetic environment and being rewarded well for your efforts? Do you want to be a part of a team with an appetite for success?
+      Are you ambitious, dedicated with a strong desire to develop your career? Are you enthusiastic, enjoy a dynamic, energetic environment and being rewarded well for your efforts? Do you want to be a part of a team with an appetite for success?
       <br>
       <br>
       If this sounds like the type of role you are looking for then get in touch today!

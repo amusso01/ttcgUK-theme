@@ -34,13 +34,15 @@ if ($imageCar) {
     $carItem['image'] = $imageCar;
 }
 
-$mixDiscount = $carItem['discount'] > 0 ? true : false;
+// $mixDiscount = $carItem['discount'] > 0 ? true : false;
+$mixDiscount = false;
 
 // Text for message in top card banner. TO DO
 $carBannerTxt = get_field('discount_banner_text_v1', $carItem['car_id']);
 
 
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
+$carDiscountedPrice = $carItem['discounted_price'];
 
 // GET CAR SPEC
 $techinfo = cns_car_technical_data($carItem['car_id']);
@@ -138,7 +140,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
 
         </div>
     <?php endif; ?>
-    <div class="mix-discount-save blue">
+    <!-- <div class="mix-discount-save blue">
 
         <p class="drop">
             <?= $carBannerTxt ? '<span class="save">SAVE</span> £' . $carBannerTxt . ' vs. <span class="save">Auto</span>Trader' : '' ?>
@@ -149,7 +151,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
             </span>
         </p>
 
-    </div>
+    </div> -->
     <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
         <a <?= $link ?>">
             <figure class="<?= $mixDiscount ? 'discount-bg' : '' ?>" data-vrm="<?php echo $carItem['reg_number']; ?>">
@@ -158,6 +160,9 @@ $tagOffset = get_field('tag_offset_top', 'option');
                                                                                 echo $carItem['make_title'] . ' ' . $carItem['model_title']; ?>" />
 
                 <!-- <div class="fdry-car-reg"><?php echo $carItem['reg_number']; ?></div> -->
+                <?php if ($carDiscountedPrice === '5099') : ?>
+                    <img src="<?= get_template_directory_uri() ?>/dist/images/99-circle.svg" alt="" class="fdry-car-single__99-circle">
+                <?php endif; ?>
             </figure>
         </a>
     </div>
@@ -168,6 +173,19 @@ $tagOffset = get_field('tag_offset_top', 'option');
             <h1 class="car-name-mobile"><?= $carItem['title']; ?></h1>
             <p class="model-mobile"><?= $carItem['derivative'] ?></p>
         </div>
+        <div class="fdry-single-car__vs-autotrader">
+
+            <p class="save-price">
+                <?= $carBannerTxt ? '<span class="big blue">£' . $carBannerTxt . '</span><span class="big red"> CHEAPER</span><br> THAN <span class="little red">AUTO</span><span class="blue little">TRADER</span><span>!</span>' : '' ?>
+                <span class="fdryCaveat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+                    </svg>
+                </span>
+            </p>
+
+        </div>
+
         <?php if ($mixDiscount) : ?>
             <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
                 <div class="red-box">
@@ -191,14 +209,14 @@ $tagOffset = get_field('tag_offset_top', 'option');
         <?php else : ?>
             <div class="fdry-single-car__mobile-price">
                 <div class="red-box">
-                    <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
+                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice ?></p>
                 </div>
                 <p class="price-divider">
                     OR <br> JUST
                 </p>
                 <div class="blue-box">
                     <p class="blue-box-text drop">Fixed</p>
-                    <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carPriceRRP); ?></div>
+                    <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carDiscountedPrice); ?></div>
                     <p class="blue-box-text drop">Per Month</p>
                 </div>
             </div>

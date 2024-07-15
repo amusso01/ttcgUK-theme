@@ -81,7 +81,7 @@ $carSpecs["body"] = get_field('bodytype', $carId) != '' ? get_field('bodytype', 
                 <?php get_template_part('svg-template/svg', 'pound') ?>
             </i>
             <div class="info">
-                <p class="grey">Price includes <br> £299 admin fee</p>
+                <p class="grey">Price includes <br> £349 admin fee</p>
                 <!-- <p class="grey">Seats</p>
                 <p class="black"><?= $carSpecs['seats'] ?></p> -->
             </div>

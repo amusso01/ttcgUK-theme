@@ -44,6 +44,15 @@
 			padding: 3px 8px;
 		}
 
+		.fdry-car-single__99-circle {
+			position: absolute;
+			width: 100px;
+			top: 24px;
+			height: auto;
+			right: 75px !important;
+			left: unset;
+		}
+
 		.mix-discount-save {
 			position: absolute;
 			z-index: 1;
@@ -480,6 +489,90 @@
 
 			.bold {
 				font-weight: 600;
+			}
+		}
+	}
+
+	// AUTOTRADER ALT
+	.fdry-single-car-altAutotrader {
+		margin: 0 80px;
+		margin-bottom: 50px;
+		margin-top: 50px;
+		@include media('<phone') {
+			margin: 0 0px;
+			margin-bottom: 30px;
+		}
+
+		.table-responsive {
+			padding: 45px;
+			border-radius: 12px;
+			box-shadow: 0px 3px 12px #0000001c;
+			@include media('<phone') {
+				padding: 15px 20px;
+			}
+		}
+
+		.table {
+			margin-bottom: 0;
+			svg {
+				width: 23px;
+				height: auto;
+				path {
+					fill: #8acb8a;
+				}
+			}
+
+			thead {
+				tr {
+					&:hover {
+						background-color: transparent;
+					}
+				}
+				th {
+					background-color: #f3f6ff;
+					color: #222b5e;
+				}
+			}
+
+			tr {
+				&:hover {
+					background-color: #f3f6ff;
+				}
+				th {
+					text-align: center;
+					&:nth-of-type(1) {
+						span {
+							color: #b11212;
+						}
+					}
+					&:nth-of-type(2) {
+						border-top: none;
+						background-color: transparent;
+					}
+				}
+
+				td {
+					vertical-align: middle;
+					font-size: 14px !important;
+					color: #343434;
+					line-height: 25px;
+					font-weight: 500;
+
+					&:nth-of-type(2) {
+						text-align: center;
+					}
+					&:nth-of-type(3) {
+						text-align: center;
+					}
+					&:nth-of-type(4) {
+						text-align: center;
+					}
+
+					&.span {
+						text-align: center;
+						background-color: #f3f6ff;
+					}
+				}
 			}
 		}
 	}

@@ -341,6 +341,13 @@ function tcw_cars_import()
             update_field('mileage', $row->Mileage, $carId);
             update_field('capid', $row->CapId, $carId);
             update_field('destination_label', $row->Destination, $carId);
+            update_field('discount_banner_text_v1', $row->AltCarSaving, $carId);
+            update_field('alt_car_year', $row->AltCarYear, $carId);
+            update_field('alt_car_miles', $row->AltCarMileage, $carId);
+            update_field('alt_car_model', $row->AltCarModel, $carId);
+            update_field('alt_car_fuel_type', $row->AltCarFuelType, $carId);
+            update_field('alt_car_doors', $row->AltCarDoors, $carId);
+            update_field('alt_car_spec', $row->AltCarSpec, $carId);
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {
@@ -373,6 +380,13 @@ function tcw_cars_import()
             update_field('mileage', $row->Mileage, $carId);
             update_field('capid', $row->CapId, $carId);
             update_field('destination_label', $row->Destination, $carId);
+            update_field('discount_banner_text_v1', $row->AltCarSaving, $carId);
+            update_field('alt_car_year', $row->AltCarYear, $carId);
+            update_field('alt_car_miles', $row->AltCarMileage, $carId);
+            update_field('alt_car_model', $row->AltCarModel, $carId);
+            update_field('alt_car_fuel_type', $row->AltCarFuelType, $carId);
+            update_field('alt_car_doors', $row->AltCarDoors, $carId);
+            update_field('alt_car_spec', $row->AltCarSpec, $carId);
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {

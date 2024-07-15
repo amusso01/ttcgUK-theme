@@ -8,9 +8,15 @@ $cards = get_field('images_text');
 
     <?php foreach ($cards as $key => $card) : ?>
       <div class="fdry-career-2-images-text__grid <?= ($key % 2) === 0 ? '' : 'inverse' ?>">
-        <figure>
-          <img src="<?= $card['image']['url'] ?>">
-        </figure>
+        <?php if (!$card['has_video']) : ?>
+          <figure>
+            <img src="<?= $card['image']['url'] ?>">
+          </figure>
+        <?php else : ?>
+          <video controls width="100%">
+            <source src="<?= $card['video'] ?>" type="video/mp4" />
+          </video>
+        <?php endif; ?>
         <div class="content">
           <div class="title"><?= $card['title'] ?></div>
           <div class="text">

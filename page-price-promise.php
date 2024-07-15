@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The price promise page template file
  *
@@ -13,8 +14,8 @@ get_header();
 ?>
 
 <!-- BANNERS -->
-<?php get_template_part( 'components/banners/price-promise' ) ?>
-<?php get_template_part( 'components/header/header-marquee' ) ?>
+<?php get_template_part('components/banners/price-promise') ?>
+<?php get_template_part('components/header/header-marquee') ?>
 
 <main class="fdry-main fdry-main__price-promise">
     <div class="container">
@@ -28,30 +29,44 @@ get_header();
             <?php the_field('page_terms'); ?>
         </div>
 
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+            hbspt.forms.create({
+                region: "na1",
+                portalId: "6645024",
+                formId: "48aaebcb-8a44-4126-ab22-474806ebcf67"
+            });
+        </script>
+
+        </br>
+        </br>
+        </br>
+
         <!-- <div class="content">
-            <?php // the_content() ?>
+            <?php // the_content() 
+            ?>
         </div> -->
     </div>
 
-        
+
     <!-- PRICE PROMISE VIDEO -->
-    <?php get_template_part( 'components/banners/better-car-video' ) ?>   
+    <?php get_template_part('components/banners/better-car-video') ?>
 
     <!-- BRANCHES -->
     <div class="content-block content-max" style="margin-top: 50px; margin-bottom: 40px; padding-bottom:60px">
-        <?php get_template_part( 'components/pages/branches-carousel' ) ?>
+        <?php get_template_part('components/pages/branches-carousel') ?>
     </div>
 
     <!-- TRUSTPILOT -->
-    <?php get_template_part( 'components/pages/trustpilot' ) ?>
+    <?php get_template_part('components/pages/trustpilot') ?>
 
 
     <!-- ACTION BOX GRID -->
-    <?php get_template_part( 'components/pages/action-box-grid' ) ?>
-    
+    <?php get_template_part('components/pages/action-box-grid') ?>
+
 
     <!-- VIDEO GUIDE -->
-    <?php get_template_part( 'components/pages/video-guide' ) ?>
+    <?php get_template_part('components/pages/video-guide') ?>
 
 </main>
 

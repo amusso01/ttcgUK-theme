@@ -100,6 +100,52 @@
 	.copyright {
 		font-size: 11px;
 	}
+
+	.autotrader-footer-table {
+		ul {
+			list-style: none;
+			text-align: left;
+			font-size: 13px;
+			max-width: 750px;
+			margin-top: 28px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 50px;
+			li {
+				padding: 3px;
+				color: white;
+				border: 1px solid #b3bee3;
+				display: flex;
+				justify-content: space-between;
+				font-weight: 400;
+				align-items: center;
+				span {
+					display: inline-flex;
+					width: 50px;
+					height: 20px;
+					border-left: 1px solid;
+					justify-content: center;
+					align-items: center;
+					@include media('<phone') {
+						height: 39px;
+					}
+
+					i {
+						position: relative;
+						top: 3px;
+					}
+				}
+
+				svg {
+					width: 20px;
+					height: auto;
+					path {
+						fill: white;
+					}
+				}
+			}
+		}
+	}
 }
 
 .sticky-footer {
