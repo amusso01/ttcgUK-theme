@@ -1,5 +1,5 @@
-import Splide from '@splidejs/splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import Splide from '@splidejs/splide'
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 
 export default function logosSplide() {
 	new Splide('.splideLogos', {
@@ -7,14 +7,15 @@ export default function logosSplide() {
 		focus: 'center',
 		arrows: false,
 		pagination: false,
-		perPage: 6,
+		perPage: 5,
 		drag: false,
 		direction: 'rtl',
 		pauseOnHover: false,
 		pauseOnFocus: false,
+		gap: '60px',
 		breakpoints: {
 			1360: {
-				perPage: 5,
+				perPage: 4,
 			},
 			1140: {
 				perPage: 3,
@@ -28,5 +29,5 @@ export default function logosSplide() {
 			pauseOnHover: false,
 			pauseOnFocus: false,
 		},
-	}).mount({ AutoScroll });
+	}).mount({ AutoScroll })
 }

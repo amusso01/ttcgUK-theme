@@ -1,11 +1,12 @@
-html{
+html {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 body {
-  font-size: $text__p;
-  color: $color__textLight;
-  font-family: $text__fontname;
-  font-weight: 400;
+	font-size: $text__p;
+	color: $color__textLight;
+	font-family: $text__fontname;
+	font-weight: 400;
 }
 
 p,
@@ -15,11 +16,11 @@ pre,
 ul,
 li,
 ol {
-  color: $color__textLight;
-  font-weight: 500;
+	color: $color__textLight;
+	font-weight: 500;
 }
 
-ul{
+ul {
 	list-style-position: inside;
 }
 
@@ -28,7 +29,7 @@ i,
 q,
 dfn {
 	font-style: italic;
-  color: $color__textLight;
+	color: $color__textLight;
 }
 
 sub,
@@ -37,7 +38,7 @@ sup {
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
-  color: $color__textLight;
+	color: $color__textLight;
 }
 
 sup {
@@ -51,14 +52,14 @@ sub {
 /**
  * Links
  */
- a {
-  color: $color__textLight;
+a {
+	color: $color__textLight;
 	text-decoration: none;
 	font-size: $text__p;
-  font-weight: inherit;
+	font-weight: inherit;
 	&:hover {
 		color: $color__link-hover;
-    text-decoration: underline;
+		text-decoration: underline;
 	}
 }
 
@@ -66,24 +67,24 @@ sub {
  * Headings
  */
 
- .h1,
- .h2,
- .h3,
- .h4,
- .h5,
- .h6,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-   margin: 0px;
-   font-family: $header__fontname;
-   color: $color__text;
- }
- 
- h1,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0px;
+	font-family: $header__fontname;
+	color: $color__text;
+}
+
+h1,
 .h1 {
 	line-height: 45px;
 	font-size: $text__h1;
@@ -98,7 +99,7 @@ h2,
 h3,
 .h3 {
 	font-size: $text__h3;
-  line-height: 24px;
+	line-height: 24px;
 }
 
 h4,

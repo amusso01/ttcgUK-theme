@@ -51,10 +51,75 @@ get_header();
   main {
     background: #F8F8F8;
   }
+
+  .apr-finance {
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apr-finance svg {
+    width: 230px;
+    height: auto;
+  }
+
+  .apr-rep-content {
+    margin-bottom: 70px;
+    background-color: white;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 32px;
+  }
 </style>
 
 
 <section class="container-fluid | tertiarypage contactus">
+
+  <div class="apr-finance" style>
+    <svg enable-background="new 0 0 172.2 22.9" viewBox="0 0 172.2 22.9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <clipPath id="a">
+        <path d="m0 0h172.2v22.9h-172.2z" />
+      </clipPath>
+      <clipPath id="b">
+        <path d="m0 0h172.2v22.9h-172.2z" />
+      </clipPath>
+      <clipPath id="c">
+        <path d="m-.4-7h176.3v30h-176.3z" />
+      </clipPath>
+      <g clip-path="url(#a)">
+        <path clip-path="url(#b)" d="m10.9 1.1c-6 0-10.9 4.8-10.9 10.9 0 6 4.9 10.9 10.9 10.9h150.4c6 0 10.9-4.9 10.9-10.9s-4.9-10.9-10.9-10.9h-150.4z" fill="#f2f2f2" />
+        <g clip-path="url(#b)" fill="#1d1d1b" opacity=".85">
+          <g clip-path="url(#c)">
+            <path d="m11.7 5.7h2.8c2 0 2.8.9 2.8 2.9v.8c0 1.4-.5 2.2-1.5 2.5 1.1.3 1.5 1.2 1.5 2.6v2.3c0 .6 0 1.1.2 1.5h-1.4c-.1-.4-.2-.7-.2-1.5v-2.3c0-1.4-.5-1.8-1.7-1.8h-1.1v5.7h-1.4zm2.6 5.6c1.1 0 1.7-.5 1.7-1.7v-.9c0-1.2-.4-1.7-1.5-1.7h-1.3v4.4h1.1z" />
+            <path d="m19 5.7h5.2v1.3h-3.8v4.1h3.1v1.3h-3.1v4.6h3.8v1.3h-5.2z" />
+            <path d="m25.4 5.7h2.8c1.9 0 2.8 1 2.8 3.1v1.1c0 2-.9 3-2.8 3h-1.4v5.4h-1.4zm2.7 5.9c1 0 1.4-.5 1.4-1.7v-1.2c0-1.2-.5-1.7-1.4-1.7h-1.4v4.6z" />
+            <path d="m32.3 5.7h2.7c2 0 2.8.9 2.8 2.9v.8c0 1.4-.5 2.2-1.5 2.5 1.1.3 1.5 1.2 1.5 2.6v2.3c0 .6 0 1.1.2 1.5h-1.4c-.1-.4-.2-.7-.2-1.5v-2.3c0-1.4-.5-1.8-1.7-1.8h-1.1v5.7h-1.4v-12.7zm2.5 5.6c1.1 0 1.7-.5 1.7-1.7v-.9c0-1.2-.5-1.7-1.5-1.7h-1.3v4.4h1.1z" />
+            <path d="m39.5 5.7h5.2v1.3h-3.8v4.1h3.1v1.3h-3.1v4.6h3.8v1.3h-5.2z" />
+            <path d="m45.6 15.4v-.7h1.3v.8c0 1.1.6 1.7 1.5 1.7s1.5-.5 1.5-1.7-.5-1.9-1.9-3.1c-1.7-1.4-2.3-2.5-2.3-3.9 0-1.9 1-3 2.8-3s2.8 1.1 2.8 3v.5h-1.3v-.5c0-1.1-.5-1.7-1.4-1.7s-1.4.5-1.4 1.6c0 1 .5 1.8 2 3 1.7 1.4 2.3 2.5 2.3 4 0 2-1 3.1-2.9 3.1s-3-1.1-3-3.1z" />
+            <path d="m52.6 5.7h5.2v1.3h-3.8v4.1h3v1.3h-3v4.6h3.8v1.3h-5.2z" />
+            <path d="m59 5.7h1.8l2.8 9v-9h1.3v12.6h-1.5l-3.1-10.2v10.3h-1.3z" />
+            <path d="m68.3 7h-2.2v-1.3h5.9v1.3h-2.2v11.3h-1.4v-11.3z" />
+            <path d="m76.3 15.6h-2.9l-.5 2.7h-1.3l2.3-12.6h1.9l2.4 12.6h-1.4zm-.2-1.2-1.3-7.1-1.2 7.1z" />
+            <path d="m80.1 7h-2.2v-1.3h5.9v1.3h-2.2v11.3h-1.4v-11.3z" />
+            <path d="m84.9 5.7h1.4v12.6h-1.4z" />
+            <path d="m87.4 5.7h1.4l1.8 10.7 1.8-10.7h1.3l-2.2 12.6h-1.9z" />
+            <path d="m95 5.7h5.2v1.3h-3.8v4.1h3.1v1.3h-3.1v4.6h3.8v1.3h-5.2z" />
+            <path d="m108.5 15.6h-2.9l-.5 2.7h-1.3l2.3-12.6h1.9l2.4 12.6h-1.4zm-.2-1.2-1.3-7.1-1.2 7.1z" />
+            <path d="m111.5 5.7h2.8c1.9 0 2.8 1 2.8 3.1v1.1c0 2-.9 3-2.8 3h-1.4v5.4h-1.4zm2.8 5.9c1 0 1.4-.5 1.4-1.7v-1.2c0-1.2-.5-1.7-1.4-1.7h-1.4v4.6z" />
+            <path d="m118.4 5.7h2.8c2 0 2.8.9 2.8 2.9v.8c0 1.4-.5 2.2-1.5 2.5 1.1.3 1.5 1.2 1.5 2.6v2.3c0 .6 0 1.1.2 1.5h-1.4c-.1-.4-.2-.7-.2-1.5v-2.3c0-1.4-.5-1.8-1.7-1.8h-1.1v5.7h-1.4zm2.6 5.6c1.1 0 1.7-.5 1.7-1.7v-.9c0-1.2-.4-1.7-1.5-1.7h-1.3v4.4h1.1z" />
+          </g>
+          <g clip-path="url(#c)">
+            <path d="m130.1 8.7h-2.1v-1.4c1.7 0 2.3-.4 2.7-1.6h1.3v12.6h-2v-9.6z" />
+            <path d="m133.5 15.3v-1h1.9v1.1c0 .9.4 1.2 1 1.2s1-.3 1-1.2v-2.8c0-.9-.4-1.2-1-1.2s-1 .3-1 1.2v.1h-1.9l.4-7h5.2v1.8h-3.5l-.2 3c.4-.6 1-.9 1.7-.9 1.5 0 2.2 1 2.2 2.9v2.8c0 2-1 3.2-3 3.2s-2.8-1.2-2.8-3.2z" />
+            <path d="m140.7 16.3h2v2h-2z" />
+            <path d="m144 15.3v-.2h1.9v.4c0 .9.4 1.2 1 1.2.7 0 1.1-.3 1.1-1.5v-2.4c-.4.7-1 1.1-1.8 1.1-1.5 0-2.2-1-2.2-2.9v-2.3c0-2 1.1-3.2 3-3.2s3 1.2 3 3.2v6.5c0 2.1-1 3.3-3 3.3s-3-1.2-3-3.2zm4-4.5v-2.3c0-.8-.3-1.2-1-1.2s-1 .4-1 1.2v2.2c0 .8.3 1.2 1 1.2s1-.3 1-1.1z" />
+            <path d="m150.9 10.7v-3.2c0-1.3.7-2 1.9-2s1.9.7 1.9 2v3.2c0 1.3-.7 2-1.9 2s-1.9-.7-1.9-2zm2.6.1v-3.4c0-.6-.3-.8-.6-.8-.4 0-.6.2-.6.8v3.3c0 .6.2.8.6.8.3.1.6-.2.6-.7zm3.9-5.1h1.3l-4.9 12.6h-1.3zm-.9 10.8v-3.2c0-1.3.7-2 1.9-2s1.9.7 1.9 2v3.2c0 1.3-.7 2-1.9 2s-1.9-.7-1.9-2zm2.5.1v-3.3c0-.6-.3-.8-.6-.8-.4 0-.6.2-.6.8v3.3c0 .6.2.8.6.8s.6-.3.6-.8z" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
 
   <form id="form" novalidate="novalidate">
     <div class="settings-cont">
@@ -1510,6 +1575,15 @@ get_header();
         <path class="car__line car__line--bottom" d="M25.5 9.5h-19" stroke-width="3" />
       </g>
     </svg>
+  </div>
+
+
+  <div class="apr-rep-content container">
+    <p>Illustrative Example (Hire Purchase): <br> <br>
+      Representative Example (Hire Purchase): Cash price £5,699 (incl. Admin Fee £349). Total Deposit £1,600. Total Amount of Credit £4,099. Agreement Duration 60 Months. 59 payments of £97.19 and 1 final payment of £107.19. Option to Purchase Fee £10. Interest Charged £1,732.40. Total Amount Payable £7,441.40. Annual Rate of Interest 14.81% APR (fixed), Representative APR 15.9%.
+      <br> <br>
+      Please Note: The above is an ‘illustrative example’ with limited availability – subject to status. <strong> The Trade Centre Group PLC is a Credit Broker not a Lender </strong>
+    </p>
   </div>
 </section>
 

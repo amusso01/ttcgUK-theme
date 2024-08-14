@@ -1,8 +1,9 @@
-<section class="fdry-career-2-hero-video">
+<section class="fdry-career-2-hero-video" style="background-image: url('https://www.tradecentreuk.com/wp-content/uploads/2021/04/477D68BCCFE912662E06F8E40F9DB34A-scaled.jpg'); background-size:cover;background-position: center;">
   <div class="overlay"></div>
+  <!-- 
   <video width="250" autoplay="" disablepictureinpicture="" loop="true" muted="false" poster="https://www.tradecentreuk.com/wp-content/uploads/2021/04/477D68BCCFE912662E06F8E40F9DB34A-scaled.jpg">
     <source src="https://cdn.tradecentregroup.io/video/upload/q_auto/f_auto/v1693835184/Rotherham_640x425.mp4" type="video/mp4">
-  </video>
+  </video> -->
   <div class="content-block">
     <div class="fdry-career-2-hero-video__content">
       <h5>CAREERS</h5>

@@ -16,8 +16,6 @@ global $wp, $show404, $carmake, $carmodel, $car, $branch, $listingType, $custom,
 <?php
 get_header();
 
-
-
 ?>
 <?php get_template_part('components/getters/car-getter') ?>
 
@@ -212,7 +210,11 @@ endforeach;
                             <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
                         </a>
                         <div class="apr" style="width:100%; margin-top:10px">
-                            <img src="https://cdn.tradecentregroup.io/image/upload/v1710868315/APR_BANNER.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
+                            <?php if ($carItem['rrp'] === '5099') : ?>
+                                <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/08/APR_BANNER_169.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
+                            <?php else : ?>
+                                <img src="https://cdn.tradecentregroup.io/image/upload/v1710868315/APR_BANNER.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
+                            <?php endif; ?>
                         </div>
                     </div>
 

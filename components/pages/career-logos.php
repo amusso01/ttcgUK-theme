@@ -22,37 +22,32 @@ $logos = get_field('logos');
           <?php endforeach; ?> -->
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-2.png">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/1533894560011-Walsall-Col_CMYK.png">
             </figure>
           </li>
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-4.svg">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/gcs-logo-web.png">
             </figure>
           </li>
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-5.svg">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/Hopwood-logo.jpg">
             </figure>
           </li>
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-6.svg">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/Neath-Port-Talbot-College.png">
             </figure>
           </li>
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-3.svg">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/Sandwell-College-Campaign-Logo-72dpi.jpg">
             </figure>
           </li>
           <li class="splide__slide">
             <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-7.png">
-            </figure>
-          </li>
-          <li class="splide__slide">
-            <figure>
-              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/03/school-8.svg">
+              <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/07/Solihull-college-logo.png">
             </figure>
           </li>
         </ul>

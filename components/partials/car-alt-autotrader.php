@@ -53,7 +53,7 @@ $altSpecs['specs'] = get_field('alt_car_spec', $carId) != '' ? get_field('alt_ca
         </thead>
         <tbody>
           <tr>
-            <td>Autotrader car is registered in the same year as our car</td>
+            <td>Autotrader Year Search</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs['date'] ?></td>
             <td><?= $altSpecs['date']  ?></td>
@@ -73,7 +73,7 @@ $altSpecs['specs'] = get_field('alt_car_spec', $carId) != '' ? get_field('alt_ca
 
           </tr>
           <tr>
-            <td>Autotrader car has mileage within 5000 miles of our car (either way)</td>
+            <td>Mileage Range Searched</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs["mileage"] ?> miles</td>
             <td><?= $altSpecs['milage']  ?></td>
@@ -94,7 +94,7 @@ $altSpecs['specs'] = get_field('alt_car_spec', $carId) != '' ? get_field('alt_ca
 
           </tr>
           <tr>
-            <td>Autotrader car is not higher specification variant</td>
+            <td>Vehicle Specification Searched</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs['specs'] ?></td>
             <td><?= $altSpecs['specs'] ?></td>

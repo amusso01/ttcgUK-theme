@@ -23,9 +23,13 @@ get_header();
 
   <?php get_template_part('components/pages/carrer-why-work'); ?>
 
-  <?php get_template_part('components/pages/career-images-text'); ?>
+  <?php // get_template_part('components/pages/career-images-text'); 
+  ?>
 
-  <?php get_template_part('components/pages/career-testimonials'); ?>
+  <?php
+  //get_template_part('components/pages/career-testimonials'); 
+  get_template_part('components/pages/career-video');
+  ?>
 
   <!-- JOBS -->
   <div class="content-block content-max" style="margin: 50px 50px 70px;" id='jobs'>

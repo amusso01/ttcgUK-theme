@@ -1,0 +1,40 @@
+.page-template-template-bs-notice {
+	.fdry-main__bs {
+		margin-bottom: 100px;
+		> h1 {
+			margin-bottom: 30px;
+			@include media('<phone-land') {
+				font-size: 34px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+	.bs-notice__grid {
+		display: grid;
+		column-gap: 150px;
+		row-gap: 40px;
+		grid-template-columns: 1fr 1fr;
+		@include media('<phone-land') {
+			column-gap: 50px;
+		}
+		@include media('<phone') {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.fdry-locations-landing-singleLocation {
+		padding: 35px;
+		grid-column: unset !important;
+	}
+
+	.fdry-btn-locations__wrapper {
+		i {
+			display: inline-block;
+			margin-left: 8px;
+		}
+		svg {
+			width: auto;
+			height: 38px;
+		}
+	}
+}

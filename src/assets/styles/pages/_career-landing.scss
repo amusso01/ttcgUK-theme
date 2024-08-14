@@ -5,6 +5,8 @@
 	align-items: center;
 	position: relative;
 	overflow: hidden;
+	background-size: cover;
+	justify-content: center;
 
 	.overlay {
 		position: absolute;
@@ -16,6 +18,43 @@
 		opacity: 0.4;
 		pointer-events: none;
 		z-index: 1;
+	}
+
+	.career-back-btn {
+		position: absolute;
+		z-index: 3;
+		top: 30px;
+		left: 30px;
+		@include media('<phone') {
+			top: 20px;
+			left: 30px;
+		}
+		i {
+			svg {
+				width: auto;
+				height: 26px;
+				margin-right: 10px;
+				position: relative;
+				top: -1px;
+				transition: 0.5s;
+				path {
+					transition: 0.5s;
+				}
+			}
+		}
+		a {
+			@include media('<phone') {
+				padding: 4px 15px;
+			}
+			&:hover {
+				text-decoration: none;
+				svg {
+					path {
+						stroke: white;
+					}
+				}
+			}
+		}
 	}
 
 	.fdry-career-2-hero__content {
@@ -41,6 +80,44 @@
 			background-color: #1464e3;
 			color: white;
 		}
+	}
+
+	.content-block {
+		width: 85%;
+		@include media('<phone') {
+			width: 100%;
+		}
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+
+		@include media('<phone') {
+			grid-template-columns: 1fr;
+		}
+	}
+	.job-info__inner {
+		background-color: white;
+		padding: 30px 20px;
+		border-radius: 10px;
+		width: 100%;
+
+		h4 {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 4px;
+		}
+		span {
+			text-decoration: underline;
+		}
+	}
+	.fdry-career-2-hero__job-info {
+		display: flex;
+		justify-content: flex-end;
+		z-index: 8;
+		position: relative;
 	}
 }
 
@@ -279,7 +356,7 @@
 				background: transparent
 					linear-gradient(250deg, #0358e0 0%, #021b79 100%) 0% 0% no-repeat
 					padding-box;
-				padding: 22px 50px;
+				padding: 22px 10px;
 				border-radius: 0px 0px 12px 12px;
 
 				@include media('<phone') {
@@ -289,8 +366,8 @@
 			p {
 				text-align: center;
 				color: white;
-				font-size: 22px;
-				line-height: 21px;
+				font-size: 20px;
+				line-height: 20px;
 				font-weight: 600;
 				@include media('<phone') {
 					font-size: 18px;
@@ -752,7 +829,8 @@
 		}
 
 		&.inverse {
-			figure {
+			figure,
+			video {
 				order: 2;
 			}
 			.content {
@@ -760,6 +838,9 @@
 			}
 		}
 
+		video {
+			border-radius: 20px;
+		}
 		figure {
 			height: 373px;
 			width: 100%;
@@ -836,6 +917,101 @@
 		> img {
 			@extend %cover;
 			object-fit: cover;
+		}
+	}
+}
+
+// Video Testimonials
+.fdry-career-2-videos {
+	padding: 70px 0;
+	@include media('<phone-land') {
+		padding-bottom: 30px;
+	}
+
+	.fdry-video-desktop {
+		@include media('<phone-land') {
+			display: block;
+		}
+		@include media('<phone') {
+			display: block;
+		}
+	}
+	.fdry-career-2-videos__title {
+		color: #1464e3;
+		margin-bottom: 50px;
+	}
+	.fdry-career-2-videos__main {
+		max-width: 750px;
+		margin: auto;
+		column-gap: 100px;
+		margin-bottom: 20px;
+
+		@include media('<phone-land') {
+			row-gap: 40px;
+			grid-template-columns: 1fr;
+		}
+
+		.name {
+			color: #1464e3;
+			font-size: 22px;
+			font-weight: 600;
+			margin-bottom: 5px;
+		}
+		.role {
+			font-size: 20px;
+			font-weight: 500;
+			margin-bottom: 15px;
+		}
+		.info {
+			font-size: 17px;
+		}
+	}
+
+	.videoIframe {
+		margin: auto;
+	}
+	.fdry-career-2-videos__thumbnails {
+		figure {
+			width: 100%;
+			height: 116px;
+			position: relative;
+			max-width: 206px;
+			margin-bottom: 3px;
+
+			img {
+				@extend %cover;
+				object-fit: cover;
+			}
+		}
+		.name {
+			font-weight: 600;
+			margin-bottom: 5px;
+		}
+		.role {
+			font-size: 14px;
+		}
+	}
+
+	.glide__arrows {
+		text-align: center;
+		margin-top: 18px;
+	}
+	.glide__arrow--right {
+		transform: rotate(180deg);
+	}
+	.glide__arrow {
+		border: none;
+		width: 40px;
+		height: 40px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			height: 25px;
+			width: auto;
+			path {
+				fill: black;
+			}
 		}
 	}
 }
