@@ -7,11 +7,19 @@ import mobileNav from './part/mobileNav'
 import logosSplide from './part/infinteLogos'
 import carouselTestimonials from './part/carouselTestimonials'
 import carouselThumbnails from './part/carouselThumbnails'
+import carSlider from './part/carSlider'
 
 document.addEventListener('DOMContentLoaded', function (event) {
 	starter()
 
-	mobileNav()
+	const carSliderEl = document.querySelector('.fdry-car-slider')
+	if (typeof carSliderEl != 'undefined' && carSliderEl != null) {
+		carSlider()
+	}
+	const mobileNavEl = document.querySelector('.hamburger-menu')
+	if (typeof mobileNavEl != 'undefined' && mobileNavEl != null) {
+		mobileNav()
+	}
 
 	const myModal = new HystModal({
 		linkAttributeName: 'data-hystmodal',
@@ -42,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	if (typeof carAccordion != 'undefined' && carAccordion != null) {
 		new Accordion('.accordion-container')
 		new Accordion('.features-accordion-container')
+	}
+
+	const financeAccordion = document.querySelector('.fdry-accordion-container')
+	if (typeof financeAccordion != 'undefined' && financeAccordion != null) {
+		new Accordion('.fdry-accordion-container')
 	}
 
 	const logosSection = document.querySelector('.splideLogos')

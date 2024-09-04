@@ -1,0 +1,108 @@
+.fdry-finance-landing-hero {
+	background-image: url('https://www.thetradecentrewales.co.uk/wp-content/uploads/2024/09/hero-banner-HQ.png');
+	min-height: 430px;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+
+	.fdry-finance-landing-hero__content {
+		color: white;
+		img {
+			width: 120px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			margin-bottom: 25px;
+			color: white;
+		}
+	}
+}
+
+.fdry-finance-landing__front {
+	.credit-impact {
+		background-color: #f2f2f2;
+		min-height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		> p {
+			text-align: center;
+			font-weight: 600;
+			font-size: 13px;
+			color: #000;
+		}
+	}
+
+	.fdry-car-slider {
+		padding: 40px 0;
+		margin-bottom: 40px;
+	}
+	.splideCars {
+		cursor: grab;
+	}
+
+	.splide__track {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	.fdry-accordion-block {
+		max-width: 1190px;
+		padding-bottom: 80px;
+		display: flex;
+		flex-direction: column;
+
+		&__title {
+			text-align: center;
+			margin-bottom: 50px;
+			font-size: 36px;
+		}
+
+		.ac-header {
+			> button {
+				font-family: $text__fontname;
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 20px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
+		.ac-panel {
+			padding: 0px 32px 0px 8px;
+		}
+	}
+
+	.fdry-accordion-container {
+		margin-bottom: 35px;
+	}
+
+	.fdry-btn-locations {
+		display: inline-block;
+		align-self: center;
+	}
+
+	.single-car-mobile__icon {
+		justify-content: space-between;
+	}
+}
+.fdry-finance-landing__30sec {
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	h4 {
+		margin-bottom: 30px;
+	}
+	a {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	p {
+		font-weight: 600;
+		font-size: 16px;
+		color: #000;
+	}
+}

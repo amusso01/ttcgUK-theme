@@ -361,6 +361,16 @@ function load_stylesheets()
     );
     wp_enqueue_style('foundry-styles');
 
+
+    wp_register_style(
+        'cami-style',
+        get_template_directory_uri() . '/cami-style.css',
+        [],
+        $style_ver,
+        'all'
+    );
+    wp_enqueue_style('cami-style');
+
     if (get_page_template_slug() === 'page-finance-application.php') {
         // ADD IT TO THIS PAGE SEEMS TO BE REQUIRED
         wp_register_style(
