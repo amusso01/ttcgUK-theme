@@ -45,29 +45,29 @@ $altSpecs['specs'] = get_field('alt_car_spec', $carId) != '' ? get_field('alt_ca
       <table class="table table-bordered table-sm table-hover">
         <thead>
           <tr>
-            <th><span class="red">Auto</span>Trader Comparison <span class="red">Fact</span>-Checker</th>
+            <th>Comparison <span class="red">Fact</span>-Checker</th>
             <th></th>
             <th>Our car</th>
-            <th>Autotrader</th>
+            <th>Britain’s Cheapest</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Autotrader Year Search</td>
+            <td>Comparative Year Search</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs['date'] ?></td>
             <td><?= $altSpecs['date']  ?></td>
 
           </tr>
           <tr>
-            <td>Autotrader car is for sale from a car dealer</td>
+            <td>Comparative car is for sale from a car dealer</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td colspan=2 class="span">Both dealer cars</td>
 
 
           </tr>
           <tr>
-            <td>Autotrader car is not accident repaired Cat S/C/D/N</td>
+            <td>Comparative car is not accident repaired Cat S/C/D/N</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td colspan=2 class="span">Neither car recorded CAT S/C/D/N</td>
 
@@ -80,14 +80,14 @@ $altSpecs['specs'] = get_field('alt_car_spec', $carId) != '' ? get_field('alt_ca
 
           </tr>
           <tr>
-            <td>Autotrader car is same make & model as our car</td>
+            <td>Comparative car is same make & model as our car</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs['make-model']  ?></td>
             <td><?= $altSpecs['make-model'] ?></td>
 
           </tr>
           <tr>
-            <td>Autotrader car is same fuel type and number of doors</td>
+            <td>Comparative car is same fuel type and number of doors</td>
             <td><?php get_template_part('svg-template/svg', 'check-table') ?></td>
             <td><?= $carSpecs['fuel-door'] ?></td>
             <td><?= $altSpecs['fuel-door'] ?></td>

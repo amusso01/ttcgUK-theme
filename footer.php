@@ -72,13 +72,13 @@ $footerApr = get_field('footer_apr', 'options');
 
             <div class="autotrader-footer-table">
                 <ul>
-                    <li>Autotrader car is registered in the same year as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car is for sale from a car dealer<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car is not accident repaired Cat S/C/D/N<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car has mileage within 5000 miles of our car (either way)<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car is same make & model as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car is same fuel type and number of doors<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Autotrader car is not higher specification variant<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is registered in the same year as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is for sale from a car dealer<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is not accident repaired Cat S/C/D/N<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car has mileage within 5000 miles of our car (either way)<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is same make & model as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is same fuel type and number of doors<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
+                    <li>Comparative car is not higher specification variant<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
                 </ul>
             </div>
 
@@ -138,7 +138,7 @@ wp_footer(); ?>
     // With the above scripts loaded, you can call `tippy()` with a CSS
     // selector and a `content` prop:
     tippy('.fdryCaveat', {
-        content: 'Comparison is for cars registered in the same year, regardless of month. Comparison excludes Autotrader private sales and Autotrader accident/repaired cars (Cat S/C/D/N). Comparison is against the lowest priced car on Autotrader, within a 10,000 miles range, this being 5,000 miles higher and 5,000 miles lower. Same make, model, fuel type and number of doors. We will not compare against Autotrader cars that have a higher specification than our car. If the comparative stock on Autotrader is limited then we may compare our car to an older car, lower specification car or higher mileage car advertised on Autotrader. Click through to the car details page to see details within our Fact-Checker table.',
+        content: 'Comparison is for cars registered in the same year, regardless of month. Comparison excludes private sales and accident/repaired cars (Cat S/C/D/N). Comparison is against the lowest priced car the UKs No.1 Classifieds website, within a 10,000 miles range, this being 5,000 miles higher and 5,000 miles lower. Same make, model, fuel type and number of doors. We will not compare against Autotrader cars that have a higher specification than our car. If the comparative stock is limited then we may compare our car to an older car, lower specification car or higher mileage car advertised. Click through to the car details page to see details within our Fact-Checker table.',
         arrow: true,
     });
 </script>

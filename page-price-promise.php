@@ -29,14 +29,16 @@ get_header();
             <?php the_field('page_terms'); ?>
         </div>
 
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <!-- <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
         <script>
             hbspt.forms.create({
                 region: "na1",
                 portalId: "6645024",
                 formId: "48aaebcb-8a44-4126-ab22-474806ebcf67"
             });
-        </script>
+        </script> -->
+
+        <?= do_shortcode('[formidable id=1]') ?>
 
         </br>
         </br>

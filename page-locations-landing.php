@@ -29,7 +29,8 @@ $branches = new WP_Query($args);
 <?php get_template_part('components/header/header-marquee') ?>
 
 
-<section class="fdry-locations-landing__hero">
+<section class="fdry-locations-landing__hero" style="background-image: url('https://www.tradecentreuk.com/wp-content/uploads/2021/04/477D68BCCFE912662E06F8E40F9DB34A-scaled.jpg'); background-size:cover;background-position: center;">
+    <div class="overlay"></div>
     <div class="fdry-container">
         <div class="fdry-locations-landing__hero-wrapper">
             <h1 class="fdry-locations-landing__hero-title">LOCATIONS</h1>

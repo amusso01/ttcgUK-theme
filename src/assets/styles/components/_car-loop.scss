@@ -129,31 +129,11 @@
 		}
 
 		.fdry-single-car__vs-autotrader {
-			border-radius: 10px;
-			border: 1px solid #d0d0d0;
-			padding: 4px;
-			background-color: #f5f5f5;
 			margin-bottom: 10px;
-			text-align: center;
 			position: relative;
 
-			.big {
-				line-height: 26px;
-				font-size: 27px;
-			}
-
-			.save-price {
-				color: #000;
-				line-height: 16px;
-				> span {
-					font-weight: 900;
-				}
-			}
-			.blue {
-				color: #222b5e;
-			}
-			.red {
-				color: #b11212;
+			svg {
+				width: 100%;
 			}
 
 			.fdryCaveat {

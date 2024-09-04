@@ -1,5 +1,5 @@
 .fdry-main__single-car {
-	padding-top: 20px;
+	padding-top: 40px;
 	.single-car__grid {
 		display: grid;
 		grid-template-columns: 1.7fr 1fr;
@@ -70,7 +70,7 @@
 			border-radius: 8px;
 			@include media('<phone') {
 				bottom: unset;
-				top: -18px;
+				top: -40px;
 				width: 90%;
 			}
 			.drop {
@@ -78,14 +78,18 @@
 				font-weight: 700;
 				font-size: 23px;
 				@include media('<phone') {
-					font-size: 16px;
+					display: flex;
+					width: 80%;
+					svg {
+						height: 32px;
+					}
 				}
 			}
 			.save {
 				color: #b11212;
 			}
 			&.blue {
-				background-color: #f3f6ff;
+				background-color: transparent;
 			}
 
 			.fdryCaveat {
