@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	if (typeof carSliderEl != 'undefined' && carSliderEl != null) {
 		carSlider()
 	}
-	const mobileNavEl = document.querySelector('.hamburger-menu')
+	const mobileNavEl = document.querySelector('#hamburger-menu')
 	if (typeof mobileNavEl != 'undefined' && mobileNavEl != null) {
 		mobileNav()
 	}
