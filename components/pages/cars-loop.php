@@ -199,6 +199,21 @@ endif;
 
 </section>
 
+<!-- Show section for carmake description -->
+<style>
+  .boxcontentcar{padding: 0 40px 60px;}
+  .boxcontentcar h1, .boxcontentcar h2{margin-bottom: 20px;}
+  .boxcontentcar h2{margin-top: 30px;}
+  .boxcontentcar p{margin-bottom: 10px;}
+</style>
+<?php if (get_post_type() == 'carmake') { 
+  if( get_the_content() ){ ?>
+    <div class="content-max boxcontentcar">
+      <?php echo get_the_content(); ?>
+    </div>
+<?php  
+  }
+} ?>
 
 <!-- <section class="container-fluid | carslisting <?php
                                                     echo $listingType; ?>"> -->
