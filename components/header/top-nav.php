@@ -12,11 +12,13 @@ $trustLogo = get_field('trustpilot_logo', 'option');
 
     <div class="fdry-header-nav">
       <?php get_template_part('components/header/main-nav'); ?>
+
+      <a href="<?= site_url('/locations-landing') ?>" class="nav-map__mobile"><i><?php get_template_part('svg-template/svg', 'google-maps-icon') ?> </i>FIND US</a>
     </div>
 
     <div class="fdry-header-trustpilot">
       <img src="<?= $trustLogo ?>" alt="trustpilot reviews logo">
-      <a href="<?= site_url('/locations-landing') ?>"><i><?php get_template_part('svg-template/svg', 'google-maps-icon') ?></i></a>
+      <a href="<?= site_url('/locations-landing') ?>" class="nav-map__desktop"><i><?php get_template_part('svg-template/svg', 'google-maps-icon') ?></i></a>
     </div>
 
     <div class="fdry-hamburger">
