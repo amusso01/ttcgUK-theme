@@ -82,6 +82,7 @@ $branches = new WP_Query($args);
                     <?php $otWeekEnds = get_field('opening_times_weekends', $ID); ?>
                     <?php $carNumber = get_field('code', $ID); ?>
                     <?php $phoneNumber = get_field('telephone_number', $ID); ?>
+                    <?php $stockcars = get_field('stock_cars', $ID); ?>
 
                     <div class="fdry-locations-landing-singleLocation">
                         <div class="top-image-video">
