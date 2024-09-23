@@ -138,9 +138,15 @@ $branches = new WP_Query($args);
                         </div>
                         <div class="fdry-grey-line"></div>
                         <div class="fdry-locations-landing__bottom-info">
-                            <div class="fdry-loactions-landing__phone">
-                                <p>Call Dealership:</p>
-                                <a href="tel:<?= $phoneNumber ?>"><?= $phoneNumber ?></a>
+                            <div class="columnsinfo">
+                                <div class="fdry-loactions-landing__phone">
+                                    <p>Contact Number:</p>
+                                    <a href="tel:<?= $phoneNumber ?>"><?= $phoneNumber ?></a>
+                                </div>
+                                <div class="fdry-loactions-landing__phone stockcars">
+                                    <p>Cars in stock:</p>
+                                    <strong><?= $stockcars ?></strong>
+                                </div>
                             </div>
 
                             <div class="fdry-btn-locations__wrapper">

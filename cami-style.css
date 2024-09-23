@@ -94,8 +94,91 @@
   line-height: 20px;
 }
 
+.fdry-locations-other-branches__grid {
+    display: grid;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    row-gap: 55px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/*solid red*/
+.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .red-box, .fdry-main__single-car .fdry-single-car__mobile-price .red-box{
+  background: #cd151f;
+}
+/*solid blue*/
+.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .blue-box, .fdry-main__single-car .fdry-single-car__mobile-price .blue-box, .fdry-main__single-car .fdry-single-car__mobile .drop.fdry-btn-mobile{
+  background: #1a3a6c;
+}
+/*solid grey*/
+.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-icons .single-car-mobile__icon{
+  background-image: none;
+  background-color: #ececec;
+}
+
+/*Hidden vehicule registration*/
+.vehicleregistration{display: none;}
+.vehicleregistration.active{display: block;}
+
+.slidegallery{margin-bottom: 80px;}
+.slidegallery img{width: 100%; height: 400px; object-fit: cover;}
+.slidegallery div{margin: 0 5px;}
+
+.slick-prev:before, .slick-next:before {
+    color: #0044b0!important;
+    font-size: 38px!important;
+}
+.slick-next {
+    right: 0!important;
+}
+.slick-prev{
+    left: 0!important;
+    z-index: 999;
+}
+
+.columnsinfo{
+  display: grid;
+  -moz-column-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 100%;
+}
+.stockcars{
+  text-align: right;
+}
+
+@media (max-width: 1139px) {
+    .site-header__menu {
+        padding: 80px 35px 20px;
+    }
+
+    .pinmobile{width: 200px;}
+
+    .fdry-header-trustpilot {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .fdry-main-logo {
+        margin-right: 0;
+    }
+}
+
+@media(max-width:  919px){
+  .fdry-locations-other-branches__grid {
+    display: grid;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    row-gap: 55px;
+    grid-template-columns: repeat(1, 1fr);
+}
+}
+
 @media(max-width:  1050px){
   .stepboxes{padding: 0 16px;}
+}
+
+@media(max-width:  639px){
+  .fdry-main__single-car .fdry-single-car-figure img{margin-top: 40px;}
+  .fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {height: 45px;}
 }
 
 @media(max-width:  600px){
@@ -106,4 +189,10 @@
 @media(max-width:  500px){
   .checkmarks-container {display: block;width: 100%;margin: 0 auto; padding: 0 16px;}
   .checkmark-item {width: 100%;margin-bottom: 32px;}
+
+  .pinmobile{width: 150px;}
+}
+
+@media(max-width:  450px){
+  .fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {height: 53px;}
 }

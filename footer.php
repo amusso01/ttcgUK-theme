@@ -143,6 +143,22 @@ wp_footer(); ?>
     });
 </script>
 
+<script>
+    $(document).ready(function() {
+      $('#frm_field_21_container select').on('change', function() {
+        var valor = $(this).val();
+        if ( valor === "Customer care" ) {
+            $( ".vehicleregistration" ).addClass( "active" );
+            $('#field_qq6fd').attr('required', true);
+            $("#field_qq6fd_label").append('<span class="frm_required">*</span>');
+        }else{
+            $( ".vehicleregistration" ).removeClass( "active" );
+            $('#field_qq6fd').attr('required', false);
+        }
+      });
+    });
+</script>
+
 </body>
 
 </html>
