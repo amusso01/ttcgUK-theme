@@ -147,6 +147,7 @@ while ($query->have_posts()) {
     $carItem['make_name'] = $make->post_name;
     $carItem['model_title'] = $model->post_title;
     $carItem['model_name'] = $model->post_name;
+    $carItem['model_id'] = $model->ID;
     $carItem['model_range'] = $modelRange;
     $carItem['model_variant'] = $modelVariant;
     $carItem['power_train'] = $powerTrain;

@@ -1,6 +1,6 @@
 <?php
 
-global $carItem, $saleModeDiscount, $amount, $listingType, $hide1hrMsg, $regYear, $carId;
+global $carItem, $carmodel, $saleModeDiscount, $amount, $listingType, $hide1hrMsg, $regYear, $carId;
 
 if (empty($carItem['image'])) {
     $carItem['image'] = 'https://cdn.tradecentregroup.io/image/upload/q_auto/f_auto/w_400/web/Group/cars/' . $carItem['make_name'] . '/' . $carItem['model_name'] . '.png';
@@ -33,6 +33,10 @@ $carItem['image'] = 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecent
 if ($imageCar) {
     $carItem['image'] = $imageCar;
 }
+if (has_post_thumbnail($carItem['model_id'])) {
+    $carItem['image'] = get_the_post_thumbnail_url($carItem['model_id']);
+}
+
 
 // $mixDiscount = $carItem['discount'] > 0 ? true : false;
 $mixDiscount = false;

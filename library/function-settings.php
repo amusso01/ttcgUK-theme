@@ -361,12 +361,12 @@ function load_stylesheets()
     );
     wp_enqueue_style('foundry-styles');
 
-
+    $style_ver_cam = date("m-d-Y-H:i:s", filemtime(get_template_directory() . '/dist/styles/cami-style.css'));
     wp_register_style(
         'cami-style',
         get_template_directory_uri() . '/cami-style.css',
         [],
-        $style_ver,
+        $style_ver_cam,
         'all'
     );
     wp_enqueue_style('cami-style');
@@ -688,3 +688,27 @@ function df_disable_comments_admin_bar()
     }
 }
 add_action('init', 'df_disable_comments_admin_bar');
+
+
+// REMOVE ALL FEATURED IMAGE OF A SPECIFIC POST TYPE
+// function remove_featured_images_from_custom_post_type()
+// {
+//     // Define the custom post type where you want to remove the featured images
+//     $custom_post_type = 'carmodel';
+
+//     // Query all posts from the custom post type
+//     $args = array(
+//         'post_type'      => $custom_post_type,
+//         'posts_per_page' => -1, // Get all posts
+//         'fields'         => 'ids', // We only need the post IDs
+//     );
+//     $posts = get_posts($args);
+
+//     // Loop through each post and delete the featured image
+//     foreach ($posts as $post_id) {
+//         delete_post_thumbnail($post_id);
+//     }
+// }
+
+// // Hook the function to an appropriate action (like after theme setup)
+// add_action('after_setup_theme', 'remove_featured_images_from_custom_post_type');

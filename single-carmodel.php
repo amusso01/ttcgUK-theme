@@ -56,6 +56,10 @@ if ($imageCar) {
 }
 
 
+if (has_post_thumbnail($carmodel->ID)) {
+    $carItem['image'] = get_the_post_thumbnail_url($carmodel->ID);
+}
+
 $carPriceRRP = $carItem['rrp'] ? $carItem['rrp'] : 'TBC';
 $carDiscountedPrice = $carItem['discounted_price'];
 

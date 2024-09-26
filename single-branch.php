@@ -112,6 +112,61 @@ get_header(); ?>
 
         </div>
 
+
+        <link rel="stylesheet" type="text/css" href="<?php print(get_template_directory_uri()); ?>/dist/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="<?php print(get_template_directory_uri()); ?>/dist/slick/slick-theme.css" />
+
+        <?php if (have_rows('gallery')) { ?>
+            <div class="slidegallery">
+                <?php
+                if (have_rows('gallery')):
+                    while (have_rows('gallery')) : the_row(); ?>
+
+                        <div>
+                            <img src="<?php echo get_sub_field('image'); ?>">
+                        </div>
+
+                <?php
+                    endwhile;
+                endif;
+                ?>
+            </div>
+        <?php } ?>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php print(get_template_directory_uri()); ?>/dist/slick/slick.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.slidegallery').slick({
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    pauseOnHover: true,
+                    arrows: true,
+                    responsive: [{
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+        </script>
+
         <div class="fdry-single-branch__information-map" style="margin-bottom: 60px;">
             <iframe width="100%" height="410" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="<?= $map ?>">
             </iframe>
