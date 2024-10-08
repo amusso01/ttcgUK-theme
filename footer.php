@@ -32,7 +32,7 @@ $footerApr = get_field('footer_apr', 'options');
 
     <div class="sticky-footer">
         <a href="/finance-check?make=<?= $make; ?>&model=<?= $model; ?>&vid=<?= $vid;  ?>" class="fdry-finance-check-mobile__btn-img">
-            <img src="<?= get_template_directory_uri() ?>/dist/images/sticky-footer.svg" alt="Free finance check button">
+            <img src="<?= get_template_directory_uri() ?>/dist/images/FFC-btn.svg" alt="Free finance check button">
         </a>
     </div>
 <?php endif; ?>
@@ -145,17 +145,17 @@ wp_footer(); ?>
 
 <script>
     $(document).ready(function() {
-      $('#frm_field_21_container select').on('change', function() {
-        var valor = $(this).val();
-        if ( valor === "Customer care" ) {
-            $( ".vehicleregistration" ).addClass( "active" );
-            $('#field_qq6fd').attr('required', true);
-            $("#field_qq6fd_label").append('<span class="frm_required">*</span>');
-        }else{
-            $( ".vehicleregistration" ).removeClass( "active" );
-            $('#field_qq6fd').attr('required', false);
-        }
-      });
+        $('#frm_field_21_container select').on('change', function() {
+            var valor = $(this).val();
+            if (valor === "Customer care") {
+                $(".vehicleregistration").addClass("active");
+                $('#field_qq6fd').attr('required', true);
+                $("#field_qq6fd_label").append('<span class="frm_required">*</span>');
+            } else {
+                $(".vehicleregistration").removeClass("active");
+                $('#field_qq6fd').attr('required', false);
+            }
+        });
     });
 </script>
 

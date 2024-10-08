@@ -355,6 +355,7 @@
 				grid-template-columns: repeat(2, 1fr);
 			}
 			@include media('<phone') {
+				display: none;
 				grid-template-columns: repeat(1, 1fr);
 			}
 		}
@@ -775,6 +776,12 @@
 	// MOBILE NEW LAYOUT
 	.fdry-single-car__mobile {
 		margin-bottom: 30px;
+
+		.fdry-single-car__mobile-finance-check {
+			@include media('<phone') {
+				display: none;
+			}
+		}
 
 		&-title {
 			margin-bottom: 7px;

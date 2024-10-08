@@ -476,15 +476,15 @@ endforeach;
 
                     <div class="fdry-single-car__mobile-finance-check">
                         <a href="/finance-check?make=<?php echo $carItem['make_title']; ?>&model=<?php echo $carItem['model_title']; ?>&vid=<?= $carItem['stock_number'];  ?>" class="fdry-finance-check-mobile__btn-img">
-                            <img src="<?= get_template_directory_uri() ?>/dist/images/30sec-mobile.svg" alt="Free finance check button">
+                            <img style="margin: auto;" src="<?= get_template_directory_uri() ?>/dist/images/FFC-btn.svg" alt="Free finance check button">
                         </a>
-                        <div class="apr" style="width:100%; margin-top:10px">
+                        <!-- <div class="apr" style="width:100%; margin-top:10px">
                             <?php if ($carItem['rrp'] === '5099') : ?>
                                 <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/08/APR_BANNER_169.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
                             <?php else : ?>
                                 <img src="https://cdn.tradecentregroup.io/image/upload/v1710868315/APR_BANNER.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
                             <?php endif; ?>
-                        </div>
+                        </div> -->
                     </div>
 
 
