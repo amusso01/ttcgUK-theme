@@ -155,7 +155,14 @@
 	width: 100%;
 	z-index: 100000;
 	padding: 8px;
+	padding-top: 0;
+	padding-bottom: 0;
 	background: #009640;
+
+	img {
+		height: 58px;
+		margin: auto;
+	}
 
 	@include media('>phone') {
 		display: none;

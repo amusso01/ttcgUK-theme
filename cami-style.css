@@ -1,198 +1,500 @@
-.benefits{text-align: center; background-color: #F2F2F2; padding: 63px 0;}
-.benefits .content-max{max-width: 972px;}
-.benefits h2{color: #000000; font-size: 36px; line-height: 43px; margin-bottom: 26px;}
-.benefits .description{font-size: 18px; line-height: 20px; margin-bottom: 32px; color: #000000; font-weight: 600;}
+.benefits {
+	text-align: center;
+	background-color: #f2f2f2;
+	padding: 63px 0;
+}
+.benefits .content-max {
+	max-width: 972px;
+}
+.benefits h2 {
+	color: #000000;
+	font-size: 36px;
+	line-height: 43px;
+	margin-bottom: 26px;
+}
+.benefits .description {
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 32px;
+	color: #000000;
+	font-weight: 600;
+}
 .checkmarks-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 32px;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	margin-bottom: 32px;
 }
 
 .checkmark-item {
-  background-color: white;
-  border: 1px solid #12C951;
-  border-radius: 20px;
-  padding: 47px 32px 49px;
-  text-align: center;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	background-color: white;
+	border: 1px solid #12c951;
+	border-radius: 20px;
+	padding: 47px 32px 49px;
+	text-align: center;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
-.checkmark-item p{color: #000000; font-size: 14px; line-height: 16px; margin: 27px 0 0;}
+.checkmark-item p {
+	color: #000000;
+	font-size: 14px;
+	line-height: 16px;
+	margin: 27px 0 0;
+}
 
-.howworks{padding: 0 0 70px; text-align: center;}
-.howworks h2{color: #000000; font-size: 36px; line-height: 43px; margin-bottom: 26px;}
-.howworks .description{font-size: 18px; line-height: 20px; max-width: 972px; margin: 0 auto 32px; color: #000000; font-weight: 600;}
-.stepboxes{display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;}
+.howworks {
+	padding: 0 0 70px;
+	text-align: center;
+}
+.howworks h2 {
+	color: #000000;
+	font-size: 36px;
+	line-height: 43px;
+	margin-bottom: 26px;
+}
+.howworks .description {
+	font-size: 18px;
+	line-height: 20px;
+	max-width: 972px;
+	margin: 0 auto 32px;
+	color: #000000;
+	font-weight: 600;
+}
+.stepboxes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
 .stepscontainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  height: auto;
-  margin-bottom: 32px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	max-width: 1000px;
+	height: auto;
+	margin-bottom: 32px;
 }
 
 .step-item {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: left;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	text-align: left;
 }
 
 .step-header {
-    background-color: #9fffc059;
-    border-radius: 12px;
-    font-weight: bold;
+	background-color: #9fffc059;
+	border-radius: 12px;
+	font-weight: bold;
 }
-.step-header span{color: #12C951; display: block; padding: 37px 19px; font-size: 22px; line-height: 30px; font-family: "Keep Calm", sans-serif;}
+.step-header span {
+	color: #12c951;
+	display: block;
+	padding: 37px 19px;
+	font-size: 22px;
+	line-height: 30px;
+	font-family: 'Keep Calm', sans-serif;
+}
 
 .step-body {
-  padding: 20px 0;
+	padding: 20px 0;
 }
 
 .stepscontainer h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 20px;
-  margin-bottom: 18px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 18px;
 }
 
 .stepscontainer ul {
-  list-style-type: none;
-  margin-bottom: 15px;
+	list-style-type: none;
+	margin-bottom: 15px;
 }
 
 .stepscontainer ul li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 18px;
-  color: #3E3E3E;
-  font-size: 17px;
-  line-height: 20px;
+	position: relative;
+	padding-left: 20px;
+	margin-bottom: 18px;
+	color: #3e3e3e;
+	font-size: 17px;
+	line-height: 20px;
 }
 
 .stepscontainer ul li::before {
-  content: '■';
-  color: #12C951;
-  position: absolute;
-  left: 0;
-  top: 0;
+	content: '■';
+	color: #12c951;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .stepscontainer p {
-  font-size: 17px;
-  color: #3E3E3E;
-  line-height: 20px;
+	font-size: 17px;
+	color: #3e3e3e;
+	line-height: 20px;
 }
 
 .fdry-locations-other-branches__grid {
-    display: grid;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
-    row-gap: 55px;
-    grid-template-columns: repeat(2, 1fr);
+	display: grid;
+	-moz-column-gap: 40px;
+	column-gap: 40px;
+	row-gap: 55px;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 /*solid red*/
-.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .red-box, .fdry-main__single-car .fdry-single-car__mobile-price .red-box{
-  background: #cd151f;
+.fdry-carrow__grid
+	.fdry-car-single-card
+	.fdry-single-car__mobile-price
+	.red-box,
+.fdry-main__single-car .fdry-single-car__mobile-price .red-box {
+	background: #cd151f;
 }
 /*solid blue*/
-.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .blue-box, .fdry-main__single-car .fdry-single-car__mobile-price .blue-box, .fdry-main__single-car .fdry-single-car__mobile .drop.fdry-btn-mobile{
-  background: #1a3a6c;
+.fdry-carrow__grid
+	.fdry-car-single-card
+	.fdry-single-car__mobile-price
+	.blue-box,
+.fdry-main__single-car .fdry-single-car__mobile-price .blue-box,
+.fdry-main__single-car .fdry-single-car__mobile .drop.fdry-btn-mobile {
+	background: #1a3a6c;
 }
 /*solid grey*/
-.fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-icons .single-car-mobile__icon{
-  background-image: none;
-  background-color: #ececec;
+.fdry-carrow__grid
+	.fdry-car-single-card
+	.fdry-single-car__mobile-icons
+	.single-car-mobile__icon {
+	background-image: none;
+	background-color: #ececec;
 }
 
 /*Hidden vehicule registration*/
-.vehicleregistration{display: none;}
-.vehicleregistration.active{display: block;}
+.vehicleregistration {
+	display: none;
+}
+.vehicleregistration.active {
+	display: block;
+}
 
-.slidegallery{margin-bottom: 80px;}
-.slidegallery img{width: 100%; height: 400px; object-fit: cover;}
-.slidegallery div{margin: 0 5px;}
+.slidegallery {
+	margin-bottom: 80px;
+}
+.slidegallery img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+.slidegallery div {
+	margin: 0 5px;
+}
 
-.slick-prev:before, .slick-next:before {
-    color: #0044b0!important;
-    font-size: 38px!important;
+.slick-prev:before,
+.slick-next:before {
+	color: #0044b0 !important;
+	font-size: 38px !important;
 }
 .slick-next {
-    right: 0!important;
+	right: 0 !important;
 }
-.slick-prev{
-    left: 0!important;
-    z-index: 999;
+.slick-prev {
+	left: 0 !important;
+	z-index: 999;
 }
 
-.columnsinfo{
-  display: grid;
-  -moz-column-gap: 40px;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 100%;
+.columnsinfo {
+	display: grid;
+	-moz-column-gap: 40px;
+	grid-template-columns: repeat(2, 1fr);
+	max-width: 100%;
 }
-.stockcars{
-  text-align: right;
+.stockcars {
+	text-align: right;
+}
+
+/******************************/
+.fdry-main__single-car .fdry-banner-video-top {
+	border-bottom: transparent;
+}
+.boxinfocar {
+	background-color: #f3f3f3;
+	border-radius: 12px;
+	padding: 10px 12px 27px;
+}
+.boxinfocar h1 {
+	font-size: 26px;
+	line-height: 31px;
+	margin-bottom: 9px;
+}
+.boxinfocar .model-mobile {
+	font-size: 17px;
+	line-height: 19px;
+	margin-bottom: 10px;
+}
+.boxinfocar .fdry-single-car__mobile-price .cost-text {
+	font-size: 26px;
+}
+.boxinfocar .fdry-single-car__mobile-price .cost-text span {
+	font-weight: 100;
+	font-size: 16px;
+}
+.boxinfocar .fdry-single-car__mobile-price {
+	margin-bottom: 9px;
+}
+.boxinfocar .fdry-single-car__mobile-price .red-box,
+.boxinfocar .fdry-single-car__mobile-price .blue-box {
+	height: 45px;
+}
+.boxinfocar .ancle {
+	color: #585858;
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto 10px;
+	font-weight: 500;
+	text-decoration: underline;
+	font-size: 13px;
+}
+
+.greybtns {
+	display: flex;
+}
+.greybtns .column {
+	flex: 1;
+}
+.greybtns .column:nth-child(1) {
+	padding-right: 5px;
+}
+.greybtns .column:nth-child(2) {
+	padding-left: 5px;
+}
+.greybtns a {
+	text-decoration: none !important;
+	background-color: #333333 !important;
+	color: #fff;
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: center;
+	border-radius: 16px;
+	padding: 9px;
+}
+.greybtns svg {
+	margin-left: 10px;
+}
+
+.maincarinfo {
+	margin-top: 20px;
+}
+.maincarinfo h3 {
+	font-size: 16px;
+}
+.internalinfocar {
+	display: flex;
+	margin-top: 15px;
+}
+.internalinfocar .column {
+	flex: 1;
+}
+.internalinfocar .column .box {
+	background-color: #fff;
+	border-radius: 6px;
+	margin-bottom: 16px;
+	text-align: center;
+	padding: 6px 0;
+}
+.internalinfocar .column.colm1 {
+	margin-right: 14px;
+}
+.internalinfocar .column.colm2 {
+	margin-left: 14px;
+}
+.internalinfocar .spec {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+}
+.internalinfocar svg {
+	margin-right: 10px;
+}
+
+.visitusbtn .box {
+	background-color: #fff;
+	border-radius: 6px;
+	margin-bottom: 0px;
+	text-align: center;
+	padding: 10px 0;
+}
+.visitusbtn .box a:hover {
+	text-decoration: none !important;
+}
+.visitusbtn .box .spec {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600;
+	color: #0044b0;
+}
+.visitusbtn .box svg {
+	margin-right: 10px;
+}
+
+.bannerdriveaway {
+	display: none;
+}
+
+.originalsection {
+	display: none;
+}
+
+.fdry-main__single-car .fdry-single-car__mobile-price .price-divider {
+	padding: 5px;
+	font-weight: 600;
+	text-align: center;
+	font-size: 8px;
+	color: #0044b0;
+	background: #fff;
+	border-radius: 100%;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	width: 40px;
+}
+.fdry-main__single-car .fdry-single-car__mobile-price .price-divider span {
+	font-size: 12px;
+	font-weight: 700;
 }
 
 @media (max-width: 1139px) {
-    .site-header__menu {
-        padding: 80px 35px 20px;
-    }
+	.site-header__menu {
+		padding: 80px 35px 20px;
+	}
 
-    .pinmobile{width: 200px;}
+	.pinmobile {
+		width: 200px;
+	}
 
-    .fdry-header-trustpilot {
-        text-align: center;
-        margin: 0 auto;
-    }
-    .fdry-main-logo {
-        margin-right: 0;
-    }
+	.fdry-header-trustpilot {
+		text-align: center;
+		margin: 0 auto;
+	}
+	.fdry-main-logo {
+		margin-right: 0;
+	}
 }
 
-@media(max-width:  919px){
-  .fdry-locations-other-branches__grid {
-    display: grid;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
-    row-gap: 55px;
-    grid-template-columns: repeat(1, 1fr);
-}
+@media (max-width: 919px) {
+	.fdry-locations-other-branches__grid {
+		display: grid;
+		-moz-column-gap: 40px;
+		column-gap: 40px;
+		row-gap: 55px;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.fdry-main__single-car .fdry-video-mobile {
+		display: block;
+	}
+	.fdry-main__single-car .fdry-banner-video-top {
+		border-bottom: 2px solid #182e52;
+	}
+	.fdry-main__single-car .fdry-single-car-figure .mix-discount-save {
+		display: none;
+	}
+
+	.bannerdriveaway {
+		display: block;
+		margin: 10px 0 15px;
+	}
+	.bannerdriveaway img {
+		width: 100%;
+		height: auto;
+		border-radius: 30px;
+	}
+	.fdry-single-car__overview.content-block {
+		display: none;
+	}
+
+	.fdry-main__single-car .fdry-single-car-legal-banner,
+	.fdry-main__single-car .fdry-single-car-rpe-banner,
+	.fdry-main__single-car .fdry-tc-promise-card {
+		margin: 0 30px !important;
+	}
+	.fdry-main__single-car .fdry-single-car-altAutotrader {
+		margin: 50px 30px !important;
+	}
+
+	.fdry-main__single-car {
+		padding-top: 0;
+	}
 }
 
-@media(max-width:  1050px){
-  .stepboxes{padding: 0 16px;}
+@media (max-width: 1050px) {
+	.stepboxes {
+		padding: 0 16px;
+	}
 }
 
-@media(max-width:  639px){
-  .fdry-main__single-car .fdry-single-car-figure img{margin-top: 40px;}
-  .fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {height: 45px;}
+@media (max-width: 639px) {
+	.fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {
+		height: 45px;
+	}
+
+	.fdry-main__single-car .fdry-single-car-legal-banner,
+	.fdry-main__single-car .fdry-single-car-rpe-banner,
+	.fdry-main__single-car .fdry-tc-promise-card {
+		margin: 0 !important;
+	}
+	.fdry-main__single-car .fdry-single-car-altAutotrader {
+		margin: 50px 0 !important;
+	}
 }
 
-@media(max-width:  600px){
-  .stepscontainer{display: block; margin-bottom: 0;}
-  .step-item{margin-bottom: 32px;}
+@media (max-width: 600px) {
+	.stepscontainer {
+		display: block;
+		margin-bottom: 0;
+	}
+	.step-item {
+		margin-bottom: 32px;
+	}
+
+	.boxinfocar .fdry-single-car__mobile-price .cost-text {
+		font-size: 20px;
+	}
+	.boxinfocar .fdry-single-car__mobile-price .cost-text span {
+		font-size: 9px;
+	}
+
+	.greybtns a {
+		font-size: 12px;
+	}
+
+	.internalinfocar .spec {
+		font-size: 11px;
+	}
 }
 
-@media(max-width:  500px){
-  .checkmarks-container {display: block;width: 100%;margin: 0 auto; padding: 0 16px;}
-  .checkmark-item {width: 100%;margin-bottom: 32px;}
+@media (max-width: 500px) {
+	.checkmarks-container {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 16px;
+	}
+	.checkmark-item {
+		width: 100%;
+		margin-bottom: 32px;
+	}
 
-  .pinmobile{width: 150px;}
+	.pinmobile {
+		width: 150px;
+	}
 }
 
-@media(max-width:  450px){
-  .fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {height: 53px;}
+@media (max-width: 450px) {
+	.fdry-main__single-car .fdry-single-car-figure .mix-discount-save .drop svg {
+		height: 53px;
+	}
 }

@@ -140,6 +140,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 	> div {
 		color: #b32d25;
 		font-weight: 600;
@@ -149,6 +150,10 @@
 			color: #b32d25;
 			font-weight: 600;
 			font-size: 14px;
+		}
+
+		span {
+			color: #1a3a6c;
 		}
 	}
 }

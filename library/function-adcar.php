@@ -348,6 +348,8 @@ function tcw_cars_import()
             update_field('alt_car_fuel_type', $row->AltCarFuelType, $carId);
             update_field('alt_car_doors', $row->AltCarDoors, $carId);
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
+            update_field('total_in_stock', $row->TotalInStock, $carId);
+            update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {
@@ -387,6 +389,8 @@ function tcw_cars_import()
             update_field('alt_car_fuel_type', $row->AltCarFuelType, $carId);
             update_field('alt_car_doors', $row->AltCarDoors, $carId);
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
+            update_field('total_in_stock', $row->TotalInStock, $carId);
+            update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {

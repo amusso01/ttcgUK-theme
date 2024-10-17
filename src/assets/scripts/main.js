@@ -8,6 +8,7 @@ import logosSplide from './part/infinteLogos'
 import carouselTestimonials from './part/carouselTestimonials'
 import carouselThumbnails from './part/carouselThumbnails'
 import carSlider from './part/carSlider'
+import threeDCarModel from './part/3dCarModel'
 
 document.addEventListener('DOMContentLoaded', function (event) {
 	starter()
@@ -60,5 +61,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	const logosSection = document.querySelector('.splideLogos')
 	if (typeof logosSection != 'undefined' && logosSection != null) {
 		logosSplide()
+	}
+
+	const imageScript = document.querySelector('.fdryThreeDModel')
+	if (typeof imageScript != 'undefined' && imageScript != null) {
+		threeDCarModel()
 	}
 })

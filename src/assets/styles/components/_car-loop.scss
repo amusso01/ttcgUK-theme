@@ -42,7 +42,6 @@
 			width: 100%;
 			left: 0;
 			top: 0;
-			background-color: #1f3665;
 			background-repeat: repeat;
 			display: flex;
 			align-items: center;
@@ -50,12 +49,16 @@
 			min-height: 24px;
 			width: 100%;
 			.drop {
-				color: #222b5e;
-				font-weight: 700;
+				color: #000;
+				font-weight: 500;
 				position: relative;
 			}
-			.save {
+			.bold {
+				font-weight: 700;
+			}
+			.red {
 				color: #b11212;
+				font-weight: 700;
 			}
 
 			&.blue {
@@ -721,6 +724,19 @@
 					fill: #b7b7b7;
 				}
 			}
+		}
+	}
+
+	.stockCount {
+		color: #000;
+		font-weight: 500;
+		position: relative;
+		.bold {
+			font-weight: 700;
+		}
+		.red {
+			color: #b11212;
+			font-weight: 700;
 		}
 	}
 

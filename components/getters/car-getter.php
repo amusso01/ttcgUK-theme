@@ -182,6 +182,7 @@ while ($query->have_posts()) {
     $carItem['mileage'] = $custom['mileage'][0] ? $custom['mileage'][0] : false;
     $carItem['stock_number'] = $custom['stock_number'][0] ? $custom['stock_number'][0] : false;
     $carItem['image'] = get_the_post_thumbnail_url($model->ID);
+    $carItem['total_make_in_stock'] = $custom['total_make_in_stock'][0] ? $custom['total_make_in_stock'][0] : false;
     /*$carItem['image'] = $custom['image_url'][0];*/
     /*
     if($carItem['featured']==1) {

@@ -216,7 +216,10 @@ if ($ribbon_text_override) {
     <!-- End of CustomerLabs Tag -->
 
 
+
 </head>
+<?php $announcement = get_field('announcement_bar', 'option'); ?>
+
 
 <body <?php body_class(); ?>>
     <!-- Google Tag Manager (noscript) -->
@@ -225,7 +228,13 @@ if ($ribbon_text_override) {
     <!-- End Google Tag Manager (noscript) -->
     <div class="fdry-top-hour-banner fdry-sticky-top">
         <div class="content-block">
+            <span>
+                <?= $announcement ?>
+            </span>
+            <br>
             <?php echo html_entity_decode($ribbon_text); ?>
+
+
         </div>
     </div>
     <?php
