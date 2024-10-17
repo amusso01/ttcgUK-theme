@@ -210,7 +210,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
         </div>
 
         <center>
-            <a href="" class="btnblue">
+            <a <?= $link ?> class="btnblue">
                 ZERO DEPOSIT DEAL!
                 <svg id="Group_3800" data-name="Group 3800" xmlns="http://www.w3.org/2000/svg" width="25.809" height="25.809" viewBox="0 0 25.809 25.809">
                   <rect id="Rectangle_1828" data-name="Rectangle 1828" width="16" height="16" transform="translate(4.906 4.904)" fill="#777"/>
