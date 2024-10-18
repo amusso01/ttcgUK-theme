@@ -237,7 +237,7 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-single-car') ?>
+                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                                     <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -267,7 +267,7 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-single-car') ?>
+                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                                     <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -299,13 +299,13 @@ endforeach;
                         <p class="stockCount">
                             <span class="red"><?= $carItem['total_make_in_stock'] ?></span>
                             <span class="bold"><?= $carItem['make_title'] ?></span>'s
-                            in stock!
+                            in group stock!
                         </p>
                         <h1 class="car-name-mobile"><?= strtoupper($carItem['title']) ?></h1>
                         <p class="model-mobile"><?= $carItem['derivative'] ?></p>
 
                         <div class="fdry-svg-infobox">
-                            <?php get_template_part('svg-template/svg-single-car') ?>
+                            <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                             <span class="fdryCaveat">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">

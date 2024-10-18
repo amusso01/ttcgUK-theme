@@ -380,6 +380,16 @@
 .fdry-finance-check-mobile__btn-img img{width: 100%;}
 .fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .price-divider{padding: 5px;font-weight: 600;text-align: center;font-size: 8px;color: #0044b0;background: #fff;border-radius: 100%;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;width: 40px;}
 .fdry-carrow__grid .fdry-car-single-card .fdry-single-car__mobile-price .price-divider span {font-size: 12px;font-weight: 700;}
+
+.fdry-carrow__grid .fdry-car-single-card .mix-discount-save.white{background-color: #fff!important;}
+.fdry-carrow__grid .fdry-car-single-card .mix-discount-save .red {color: #CD151F;font-weight: 700;}
+.fdry-carrow__grid .fdry-car-single-card .mix-discount-save .bold{color: #02155D;}
+
+.fdry-main__single-car .stockCount .red {color: #CD151F!important;}
+.fdry-main__single-car .stockCount .bold{color: #02155D!important;}
+
+.boxinfocar .fdry-single-car__mobile-price .cost-text{text-shadow: inherit!important;}
+
 /************************/
 
 @media (max-width: 1139px) {
@@ -465,6 +475,8 @@
 	.fdry-main__single-car .fdry-single-car-altAutotrader {
 		margin: 50px 0 !important;
 	}
+
+	.fdry-main__single-car .fdry-svg-infobox{display: block!important;}
 }
 
 @media (max-width: 600px) {

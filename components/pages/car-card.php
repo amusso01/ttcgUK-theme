@@ -144,15 +144,15 @@ $tagOffset = get_field('tag_offset_top', 'option');
 
         </div>
     <?php endif; ?>
-    <!--<div class="mix-discount-save blue">
+    <div class="mix-discount-save white">
 
         <p class="drop stockCount">
             <span class="red"><?= $carItem['total_make_in_stock'] ?></span>
             <span class="bold"><?= $carItem['make_title'] ?></span>'s
-            in stock!
+            in group stock!
         </p>
 
-    </div>-->
+    </div>
     <div class="fdy-car-single-card__image <?= $isDiscount ? 'discount-padding' : '' ?>">
         <a <?= $link ?>">
             <figure class="<?= $mixDiscount ? 'discount-bg' : '' ?>" data-vrm="<?php echo $carItem['reg_number']; ?>">
