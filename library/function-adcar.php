@@ -350,6 +350,17 @@ function tcw_cars_import()
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
             update_field('total_in_stock', $row->TotalInStock, $carId);
             update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
+            update_field('size', $row->Size, $carId);
+            if ($row->SUV === true) {
+                update_field('suv', 1, $carId);
+            } else {
+                update_field('suv', 0, $carId);
+            }
+            if ($row->Premium === true) {
+                update_field('premium', 1, $carId);
+            } else {
+                update_field('premium', 0, $carId);
+            }
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {
@@ -391,6 +402,18 @@ function tcw_cars_import()
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
             update_field('total_in_stock', $row->TotalInStock, $carId);
             update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
+
+            update_field('size', $row->Size, $carId);
+            if ($row->SUV === true) {
+                update_field('suv', 1, $carId);
+            } else {
+                update_field('suv', 0, $carId);
+            }
+            if ($row->Premium === true) {
+                update_field('premium', 1, $carId);
+            } else {
+                update_field('premium', 0, $carId);
+            }
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
             } else {

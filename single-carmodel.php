@@ -335,13 +335,17 @@ endforeach;
                         <?php else : ?>
                             <div class="fdry-single-car__mobile-price">
                                 <div class="red-box">
+                                    <p class="blue-box-text">Pay Only</p>
                                     <p class="cost-text drop">&pound;<?= $carDiscountedPrice - 2000 ?></p>
+                                    <p class="blue-box-text " style="font-size: 12px;">With Part-Exchange</p>
                                 </div>
                                 <p class="price-divider">
                                     <span>Or</span><br> JUST
                                 </p>
                                 <div class="blue-box">
-                                    <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carDiscountedPrice); ?><span>/ month</span></div>
+                                    <p class="blue-box-text">Fixed</p>
+                                    <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carDiscountedPrice); ?><span></span></div>
+                                    <p class="blue-box-text" style="font-size: 12px;">Per Month</p>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -379,7 +383,7 @@ endforeach;
                             </a>
                             <!-- <div class="apr" style="width:100%; margin-top:10px">
                             <?php if ($carItem['rrp'] === '5099') : ?>
-                                <img src="https://www.tradecentreuk.com/wp-content/uploads/2024/08/APR_BANNER_169.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
+                                <img src="https://wordpress-531412-4045767.cloudwaysapps.com/wp-content/uploads/2024/08/APR_BANNER_169.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
                             <?php else : ?>
                                 <img src="https://cdn.tradecentregroup.io/image/upload/v1710868315/APR_BANNER.svg" class="fdry-car-single__apr" style="width:300px; height:45px; margin:auto">
                             <?php endif; ?>
