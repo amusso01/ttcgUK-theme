@@ -70,17 +70,6 @@ $footerApr = get_field('footer_apr', 'options');
                 <?= $footerApr ?>
             </div>
 
-            <div class="autotrader-footer-table">
-                <ul>
-                    <li>Comparative car is registered in the same year as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car is for sale from a car dealer<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car is not accident repaired Cat S/C/D/N<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car has mileage within 5000 miles of our car (either way)<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car is same make & model as our car<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car is same fuel type and number of doors<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                    <li>Comparative car is not higher specification variant<span><i><?php get_template_part('svg-template/svg', 'check-table') ?></i></span></li>
-                </ul>
-            </div>
 
 
             <div class="fdry-footer__menu-wrapper">

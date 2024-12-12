@@ -80,7 +80,7 @@ get_header(); ?>
                                     <p class="fdry-car-numbers">Sat-Sun <?= $otWeekEnds ?> </p>
                                 <?php else : ?>
                                     <p class="fdry-car-numbers">Sat <?= $otSat ?> </p>
-                                    <p class="fdry-car-numbers">Sun <?= $otSun ?> </p>
+                                    <p class="fdry-car-numbers">Sun <?= $otSun ?><span style="font-style: italic;">(first/last hour for browsing)</span></p>
                                 <?php endif; ?>
                             </div>
                         </div>

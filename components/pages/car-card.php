@@ -144,12 +144,12 @@ $tagOffset = get_field('tag_offset_top', 'option');
 
         </div>
     <?php endif; ?>
-    <div class="mix-discount-save blue">
+    <div class="mix-discount-save white">
 
         <p class="drop stockCount">
             <span class="red"><?= $carItem['total_make_in_stock'] ?></span>
             <span class="bold"><?= $carItem['make_title'] ?></span>'s
-            in stock!
+            in group stock!
         </p>
 
     </div>
@@ -174,21 +174,41 @@ $tagOffset = get_field('tag_offset_top', 'option');
             <h1 class="car-name-mobile"><?= $carItem['title']; ?></h1>
             <p class="model-mobile"><?= $carItem['derivative'] ?></p>
         </div>
+
+        <div class="featurecar">
+            <?php if ($carItem['fueltype'] != "") { ?>
+                <div class="featurebox">
+                    <p class="spec"><?php echo $carItem['fueltype']; ?></p>
+                </div>
+            <?php } ?>
+            <?php if ($carItem['mileage'] > 0) { ?>
+                <div class="featurebox">
+                    <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
+                </div>
+            <?php } ?>
+            <?php if ($insurence != "") { ?>
+                <div class="featurebox">
+                    <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
+                </div>
+            <?php } ?>
+        </div>
+
         <div class="fdry-single-car__vs-autotrader">
 
             <p class="save-price">
 
-                <?php get_template_part('svg-template/svg-single-car') ?>
+                <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
 
-                <span class="fdryCaveat">
+                <!-- <span class="fdryCaveat">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
                     </svg>
-                </span>
+                </span> -->
             </p>
 
         </div>
+
 
         <?php if ($mixDiscount) : ?>
             <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
@@ -213,10 +233,12 @@ $tagOffset = get_field('tag_offset_top', 'option');
         <?php else : ?>
             <div class="fdry-single-car__mobile-price">
                 <div class="red-box">
-                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice ?></p>
+                    <p class="blue-box-text drop">Pay Only</p>
+                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice - 2000 ?></p>
+                    <p class="blue-box-text drop" style="font-size: 12px;">With Part-Exchange</p>
                 </div>
                 <p class="price-divider">
-                    OR <br> JUST
+                    <span>OR</span> <br> JUST
                 </p>
                 <div class="blue-box">
                     <p class="blue-box-text drop">Fixed</p>
@@ -226,50 +248,66 @@ $tagOffset = get_field('tag_offset_top', 'option');
             </div>
         <?php endif; ?>
 
-        <div class="fdry-single-car__mobile-finance-check">
-            <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['stock_number']; ?>" class="fdry-finance-check-mobile__btn-img">
-                <img src="<?= get_template_directory_uri() ?>/dist/images/FFC-btn.svg" alt="Free finance check button">
-            </a>
-        </div>
-
-
-        <div class="fdry-single-car__mobile-icons">
+        <!--<div class="fdry-single-car__mobile-icons">
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-miles-mobile') ?></i>
-                <?php if ($carItem['mileage'] > 0) { ?>
-                    <p class="spec"><?php echo $carItem['mileage']; ?> Miles</p>
-                <?php } ?>
+                <i><? php // get_template_part('svg-template/svg-miles-mobile') 
+                    ?></i>
+                <? php // if ($carItem['mileage'] > 0) { 
+                ?>
+                    <p class="spec"><? php // echo $carItem['mileage']; 
+                                    ?> Miles</p>
+                <? php // } 
+                ?>
             </div>
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-fuel-mobile') ?></i>
-                <?php if ($carItem['fueltype'] != "") { ?>
-                    <p class="spec"><?php echo $carItem['fueltype']; ?></p>
-                <?php } ?>
+                <i><? php // get_template_part('svg-template/svg-fuel-mobile') 
+                    ?></i>
+                <? php // if ($carItem['fueltype'] != "") { 
+                ?>
+                    <p class="spec"><? php // echo $carItem['fueltype']; 
+                                    ?></p>
+                <? php // } 
+                ?>
             </div>
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-gears-mobile') ?></i>
-                <?php if ($carItem['transmission']  != "") { ?>
+                <i><? php // get_template_part('svg-template/svg-gears-mobile') 
+                    ?></i>
+                <? php // if ($carItem['transmission']  != "") { 
+                ?>
                     <p class="spec"><?= $carItem['transmission'] ?></p>
-                <?php } ?>
+                <? php // } 
+                ?>
             </div>
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-insurance-mobile') ?></i>
-                <?php if ($insurence != "") { ?>
+                <i><? php // get_template_part('svg-template/svg-insurance-mobile') 
+                    ?></i>
+                <? php // if ($insurence != "") { 
+                ?>
 
-                    <p class="spec"><?php echo $insurence; ?> Ins. Group</p>
+                    <p class="spec"><? php // echo $insurence; 
+                                    ?> Ins. Group</p>
 
-                <?php } ?>
+                <? php // } 
+                ?>
             </div>
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-reg-mobile') ?></i>
+                <i><? php // get_template_part('svg-template/svg-reg-mobile') 
+                    ?></i>
                 <p class="fdry-car-reg"><?= $carItem['reg_number']; ?></p>
             </div>
             <div class="single-car-mobile__icon">
-                <i><?php get_template_part('svg-template/svg-paint') ?></i>
+                <i><? php // get_template_part('svg-template/svg-paint') 
+                    ?></i>
                 <p class="fdry-car-paint"><?= $paintId; ?></p>
             </div>
-        </div>
+        </div>-->
 
+    </div>
+
+    <div class="fdry-single-car__mobile-finance-check">
+        <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['stock_number']; ?>" class="fdry-finance-check-mobile__btn-img">
+            <img src="<?= get_template_directory_uri() ?>/dist/images/Finance.svg" alt="Free finance check button">
+        </a>
     </div>
 
 </div>

@@ -237,13 +237,13 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-single-car') ?>
+                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
-                                    <span class="fdryCaveat">
+                                    <!-- <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
                                         </svg>
-                                    </span>
+                                    </span> -->
                                 </p>
 
                             </div>
@@ -267,13 +267,13 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-single-car') ?>
+                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
-                                    <span class="fdryCaveat">
+                                    <!-- <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
                                         </svg>
-                                    </span>
+                                    </span> -->
                                 </p>
 
                             </div>
@@ -299,19 +299,19 @@ endforeach;
                         <p class="stockCount">
                             <span class="red"><?= $carItem['total_make_in_stock'] ?></span>
                             <span class="bold"><?= $carItem['make_title'] ?></span>'s
-                            in stock!
+                            in group stock!
                         </p>
                         <h1 class="car-name-mobile"><?= strtoupper($carItem['title']) ?></h1>
                         <p class="model-mobile"><?= $carItem['derivative'] ?></p>
 
                         <div class="fdry-svg-infobox">
-                            <?php get_template_part('svg-template/svg-single-car') ?>
+                            <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
-                            <span class="fdryCaveat">
+                            <!-- <span class="fdryCaveat">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
                                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
                                 </svg>
-                            </span>
+                            </span> -->
                         </div>
 
                         <?php if ($mixDiscount) : ?>
@@ -335,7 +335,7 @@ endforeach;
                         <?php else : ?>
                             <div class="fdry-single-car__mobile-price">
                                 <div class="red-box">
-                                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice ?></p>
+                                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice - 2000 ?></p>
                                 </div>
                                 <p class="price-divider">
                                     <span>Or</span><br> JUST
@@ -578,23 +578,24 @@ endforeach;
         </section>
 
 
-        <div class="content-max">
-            <!-- CAR OVERVIEW SECTION -->
-            <?php get_template_part('components/partials/car-overview') ?>
-        </div>
+        <!-- <div class="content-max"> -->
+        <!-- CAR OVERVIEW SECTION -->
+        <!-- <?php // get_template_part('components/partials/car-overview') 
+                ?> -->
+        <!-- </div>  -->
 
         <div id="view" class="content-max">
             <!-- CAR BANNERS -->
             <?php get_template_part('components/partials/car-legal-banner') ?>
         </div>
 
-        <div class="content-max">
-            <!-- TC PROMISE CARD -->
-            <?php // get_template_part('components/partials/car-tc-promise-card') 
-            ?>
-            <?php get_template_part('components/partials/car-alt-autotrader')
-            ?>
-        </div>
+        <!-- <div class="content-max"> -->
+        <!-- TC PROMISE CARD -->
+        <?php // get_template_part('components/partials/car-tc-promise-card') 
+        ?>
+        <?php // get_template_part('components/partials/car-alt-autotrader')
+        ?>
+        <!-- </div> -->
 
         <div class="content-max">
             <!-- VIDEO -->

@@ -361,7 +361,7 @@ function load_stylesheets()
     );
     wp_enqueue_style('foundry-styles');
 
-    $style_ver_cam = date("m-d-Y-H:i:s", filemtime(get_template_directory() . '/dist/styles/cami-style.css'));
+    $style_ver_cam = date("m-d-Y-H:i:s", filemtime(get_template_directory() . '/cami-style.css'));
     wp_register_style(
         'cami-style',
         get_template_directory_uri() . '/cami-style.css',

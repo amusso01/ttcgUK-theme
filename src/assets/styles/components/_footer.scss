@@ -23,12 +23,22 @@
 		max-width: 1200px;
 		margin: auto;
 	}
+	ul,
+	ol {
+		margin: 4px 0 18px;
+	}
 
-	p {
+	p,
+	a,
+	li {
 		color: $color__bright;
 		font-size: 12px;
 		line-height: 25px;
 		font-weight: 400;
+	}
+
+	a {
+		text-decoration: underline;
 	}
 
 	.fdry-footer-apr__title {
