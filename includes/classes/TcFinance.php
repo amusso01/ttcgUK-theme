@@ -40,14 +40,13 @@ class TcFinance
                 }
 
                 $financeHelper->financeExamples[$financeCustom['cash_price'][0]] = $example;
-
             }
             static::$instance = $financeHelper;
         }
         return static::$instance;
     }
 
-     /**
+    /**
      * Retrieve the monthly price of a car given its price
      *
      * @param string $cash_price the price of the car
@@ -61,17 +60,16 @@ class TcFinance
             // var_dump($financeHelper->financeExamples);
             // SOMETHING WRONG THE 8999 array retunr null for the field fixed_monthly_amount
             // I CAN't GET WHY. THIS IS A HACK WORK AROUND
-            if($cash_price === "8999"){
-                return "179";
-            }else{
-                return $financeHelper->financeExamples[$cash_price]['fixed_monthly_amount'];
-            }
-
+            // if ($cash_price === "8999") {
+            //     return "179";
+            // } else {
+            return $financeHelper->financeExamples[$cash_price]['fixed_monthly_amount'];
+            // }
         } else {
             return '';
         }
     }
-    
+
 
 
     /**

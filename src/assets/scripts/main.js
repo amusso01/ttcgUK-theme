@@ -9,9 +9,12 @@ import carouselTestimonials from './part/carouselTestimonials'
 import carouselThumbnails from './part/carouselThumbnails'
 import carSlider from './part/carSlider'
 import threeDCarModel from './part/3dCarModel'
+// import ajaxFilter from './part/ajaxFilter'
 
 document.addEventListener('DOMContentLoaded', function (event) {
 	starter()
+
+	// ajaxFilter()
 
 	const carSliderEl = document.querySelector('.fdry-car-slider')
 	if (typeof carSliderEl != 'undefined' && carSliderEl != null) {

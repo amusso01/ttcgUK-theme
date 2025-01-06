@@ -15,9 +15,11 @@
 		"@splidejs/splide": "^4.1.4",
 		"@splidejs/splide-extension-auto-scroll": "^0.5.3",
 		"accordion-js": "^3.3.4",
+		"axios": "^1.7.9",
 		"basicrotate": "^1.1.2",
 		"device-detector-js": "^3.0.3",
 		"include-media": "^1.4.10",
+		"qs": "^6.13.1",
 		"smoothscroll-polyfill": "^0.4.4"
 	},
 	"devDependencies": {

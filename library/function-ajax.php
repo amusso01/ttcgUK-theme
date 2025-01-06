@@ -1,117 +1,75 @@
+
 <?php
+add_action('wp_ajax_getSmallCars', 'my_function');
+add_action('wp_ajax_nopriv_getSmallCars', 'my_function');
+function my_function()
+{
+  $data = $_POST['data'];
+  $size = $data['size'];
 
-global $branch, $carmodel, $carmake, $carsArray,  $saleMode, $regYear, $carId;
-
-//if($carmodel) $posts_per_page = '1'; else $posts_per_page = '-1';
-$posts_per_page = '-1';
-$isDiscount = get_field('discount_active', 'option');
-
-if ($carId) {
-    $args = [
-        'fields' => 'ids',
-        'post_type' => ['car'],
-        'posts_per_page' => $posts_per_page,
-        'post__in' => [$carId],
-
-        'meta_key' => 'rrp',
-        'orderby' => 'meta_value_num',
-        'order' => 'ASC',
+  $meta_query = [];
+  if ($size == 'small') {
+    $meta_query[] = [
+      'relation' => 'OR',
+      array(
+        'meta_key' => 'size',
+        'value' => 'Small',
+        'compare' => '='
+      ),
+      array(
+        'meta_key' => 'size',
+        'value' => 'Micro',
+        'compare' => '='
+      ),
     ];
-} else {
-    $args = [
-        'fields' => 'ids',
-        'post_type' => ['car'],
-        'posts_per_page' => $posts_per_page,
-
-        'meta_key' => 'rrp',
-        'orderby' => 'meta_value_num',
-        'order' => 'ASC',
+  } elseif ($size == 'family') {
+    $meta_query[] = [
+      'relation' => 'AND',
+      array(
+        'meta_key' => 'size',
+        'value' => 'Medium/Large',
+        'compare' => '='
+      ),
     ];
-    $meta_query = [];
-
-    if ($carmake) {
-        $meta_query[] = [
-            'relation' => 'AND',
-            [
-                'key' => 'make',
-                'value' => $carmake->ID,
-                'compare' => '=',
-            ]
-        ];
-    }
-
-    if ($carmodel) {
-        $meta_query[] = [
-            'relation' => 'AND',
-            [
-                'key' => 'model',
-                'value' => $carmodel->ID,
-                'compare' => '=',
-            ]
-        ];
-    }
+  } elseif ($size == 'premium') {
+    $meta_query[] = [
+      'relation' => 'AND',
+      array(
+        'meta_key' => 'premium',
+        'value' => "premium",
+        'compare' => '='
+      ),
+    ];
+  } elseif ($size == 'suv') {
+    $meta_query[] = [
+      'relation' => 'AND',
+      array(
+        'meta_key' => 'suv',
+        'value' => "suv",
+        'compare' => '='
+      ),
+    ];
+  }
 
 
-    if ($branch) {
-        $meta_query[] = [
-            'relation' => 'AND',
-            [
-                'key' => 'destination',
-                'value' => $branch->ID,
-                'compare' => '=',
-            ]
-        ];
-    }
+  $carsArray = [];
+
+  $args = [
+    'fields' => 'ids',
+    'post_type' => ['car'],
+    'posts_per_page' => -1,
+
+    'meta_key' => 'rrp',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC',
+  ];
+  if (!empty($meta_query)) {
+    $args['meta_query'] = $meta_query;
+  }
 
 
-    if ($post->post_type === 'financeexample') {
-        $rrp_finance = get_field('cash_price', $finances->ID);
-
-        if ($isDiscount) {
-            $key = 'discounted_price';
-            $meta_query[] = [
-                'relation' => 'AND',
-                [
-                    'key' => $key,
-                    'value' => $rrp_finance,
-                    'compare' => '=',
-                ]
-            ];
-        } else {
-            $args = [
-                'fields' => 'ids',
-                'post_type' => ['car'],
-                'posts_per_page' => $posts_per_page,
-
-                'meta_key' => 'rrp',
-                'meta_value' => $rrp_finance,
-                'meta_compare' => '=',
-                'orderby' => 'meta_value_num',
-                'order' => 'ASC',
-            ];
-
-            $meta_query = [];
-        };
-    }
-
-    if (!empty($meta_query)) {
-        $args['meta_query'] = $meta_query;
-    }
-}
-
-$carsArrayFeat = [];
-$carsArrayNorm = [];
-
-/*echo "<pre>";
-var_dump($args);
-die;*/
-$query = new WP_Query($args);
-if ($carId && !$query->have_posts()) {
-    // The car ID is not valid.
-    wp_redirect('/', 301);
-    die;
-}
-while ($query->have_posts()) {
+  $query = new WP_Query($args);
+  while ($query->have_posts()) {
     $amount = $query->post_count;
     $itemId = $query->next_post();
     $custom = get_post_custom($itemId);
@@ -120,8 +78,8 @@ while ($query->have_posts()) {
     $model = get_post($custom['model'][0]);
 
     if ($custom['reg_date'][0]) {
-        $regDate = explode('-', $custom['reg_date'][0]);
-        $regYear = substr($regDate[0], 0, 4) . ' ';
+      $regDate = explode('-', $custom['reg_date'][0]);
+      $regYear = substr($regDate[0], 0, 4) . ' ';
     }
 
     //$model = get_post($itemId);
@@ -134,7 +92,7 @@ while ($query->have_posts()) {
     $bodySize = get_field('body_size', $model->ID);
     $trim   = get_field('trim', $model->ID);
     $paintId = get_field('paint_id', $model->ID);
-    $paintDescription = get_field('paint_description', $model->ID);
+    $paintDescription = $custom['fdry_paint_id'][0];
     $rimId = get_field('rim_id', $model->ID);
     $rimDescription = get_field('rim_description', $model->ID);
     $interiorId = get_field('interior_id', $model->ID);
@@ -183,30 +141,23 @@ while ($query->have_posts()) {
     $carItem['stock_number'] = $custom['stock_number'][0] ? $custom['stock_number'][0] : false;
     $carItem['image'] = get_the_post_thumbnail_url($model->ID);
     $carItem['total_make_in_stock'] = $custom['total_make_in_stock'][0] ? $custom['total_make_in_stock'][0] : false;
-    $carItem['size'] = $custom['size'][0] ? $custom['size'][0] : false;
+    $carItem['reg_year'] = $regYear;
     $carItem['suv'] = $custom['suv'][0] ? $custom['suv'][0] : false;
     $carItem['premium'] = $custom['premium'][0] ? $custom['premium'][0] : false;
-    /*$carItem['image'] = $custom['image_url'][0];*/
-    /*
-    if($carItem['featured']==1) {
-        $carsArrayFeat[] = $carItem; 
-    }
-    else $carsArrayNorm[] = $carItem;
-    */
-    $carItem['reg_year'] = $regYear;
-    $carsArray[] = $carItem;
-}
+    $carItem['size'] = $custom['size'][0] ? $custom['size'][0] : false;
+    $carItem['finance'] = TcFinance::getMonthlyPrice($custom['discounted_price'][0]);
 
-array_multisort(
+    $carsArray[] = $carItem;
+  }
+
+  array_multisort(
     // array_column($carsArray, 'rrp'),
     array_column($carsArray, 'discounted_price'),
     SORT_ASC,
     array_column($carsArray, 'reg_year'),
     SORT_DESC,
     $carsArray
-);
+  );
 
-//shuffle($carsArrayFeat);
-//print_r($carsArrayFeat);
-//shuffle($carsArrayNorm);
-//$carsArray = array_merge($carsArrayFeat,$carsArrayNorm); 
+  wp_send_json_success($carsArray);
+}

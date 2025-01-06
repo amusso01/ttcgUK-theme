@@ -352,14 +352,14 @@ function tcw_cars_import()
             update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
             update_field('size', $row->Size, $carId);
             if ($row->SUV === true) {
-                update_field('suv', 1, $carId);
+                update_field('suv', 'suv', $carId);
             } else {
-                update_field('suv', 0, $carId);
+                update_field('suv', 'non suv', $carId);
             }
             if ($row->Premium === true) {
-                update_field('premium', 1, $carId);
+                update_field('premium', 'premium', $carId);
             } else {
-                update_field('premium', 0, $carId);
+                update_field('premium', 'non premium', $carId);
             }
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);
@@ -405,14 +405,14 @@ function tcw_cars_import()
 
             update_field('size', $row->Size, $carId);
             if ($row->SUV === true) {
-                update_field('suv', 1, $carId);
+                update_field('suv', 'suv', $carId);
             } else {
-                update_field('suv', 0, $carId);
+                update_field('suv', 'non suv', $carId);
             }
             if ($row->Premium === true) {
-                update_field('premium', 1, $carId);
+                update_field('premium', 'premium', $carId);
             } else {
-                update_field('premium', 0, $carId);
+                update_field('premium', 'non premium', $carId);
             }
             if ($row->Featured === true) {
                 update_field('featured', 1, $carId);

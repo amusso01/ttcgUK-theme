@@ -237,7 +237,6 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                                     <!-- <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -267,7 +266,6 @@ endforeach;
                             <div class="mix-discount-save blue">
 
                                 <p class="drop">
-                                    <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                                     <!-- <span class="fdryCaveat">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -305,7 +303,6 @@ endforeach;
                         <p class="model-mobile"><?= $carItem['derivative'] ?></p>
 
                         <div class="fdry-svg-infobox">
-                            <?php get_template_part('svg-template/svg-britain-cheapest') ?>
 
                             <!-- <span class="fdryCaveat">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
@@ -314,41 +311,23 @@ endforeach;
                             </span> -->
                         </div>
 
-                        <?php if ($mixDiscount) : ?>
-                            <div class="fdry-single-car__mobile-price fdry-single-car__mobile-price__discounted">
-                                <div class="red-box">
-                                    <p class="blue-box-text drop">WAS</p>
-                                    <p class="cost-text drop">&pound;<?= $carItem['rrp'] ?></p>
-                                    <div class="strike"></div>
-                                    <div class="strike-2"></div>
-                                </div>
-                                <div class="grey-box">
-                                    <p class="drop-light">NOW</p>
-                                    <!-- <div class="cost-text drop-light">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?></div> -->
-                                    <div class="cost-text drop-light">&pound;<?= $carItem['discounted_price']; ?></div>
-                                </div>
-                                <div class="red-box">
-                                    <div class="cost-text drop">&pound;<?= TcFinance::getMonthlyPrice($carItem['discounted_price']); ?><span>/ month</span></div>
-                                </div>
-                            </div>
 
-                        <?php else : ?>
-                            <div class="fdry-single-car__mobile-price">
-                                <div class="red-box">
-                                    <p class="blue-box-text">Pay Only</p>
-                                    <p class="cost-text drop">&pound;<?= $carDiscountedPrice - 2000 ?></p>
-                                    <p class="blue-box-text " style="font-size: 12px;">With Part-Exchange</p>
-                                </div>
-                                <p class="price-divider">
-                                    <span>Or</span><br> JUST
-                                </p>
-                                <div class="blue-box">
-                                    <p class="blue-box-text">Fixed</p>
-                                    <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carDiscountedPrice); ?><span></span></div>
-                                    <p class="blue-box-text" style="font-size: 12px;">Per Month</p>
-                                </div>
+                        <div class="fdry-single-car__mobile-price">
+                            <div class="red-box">
+                                <p class="blue-box-text">Cash or Finance</p>
+                                <p class="cost-text drop">&pound;<?= $carDiscountedPrice - 0 ?></p>
+                                <p hidden class="blue-box-text " style="font-size: 12px;">With Part-Exchange</p>
                             </div>
-                        <?php endif; ?>
+                            <p class="price-divider">
+                                <span>Or</span><br> JUST
+                            </p>
+                            <div class="blue-box">
+                                <p class="blue-box-text">Fixed</p>
+                                <div class="cost-text drop">&pound;<?php echo TcFinance::getMonthlyPrice($carDiscountedPrice); ?><span></span></div>
+                                <p class="blue-box-text" style="font-size: 12px;">Per Month</p>
+                            </div>
+                        </div>
+
 
                         <center>
                             <a href="#view" class="ancle">View finance example

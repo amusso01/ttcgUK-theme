@@ -96,6 +96,19 @@ class FDRY_Custom_Endpoint
           'carPaint'  => get_field('fdry_paint_id'),
         );
 
+        $carSize = get_field('size');
+        $carSuv = get_field('suv');
+        $carPremium = get_field('premium');
+
+        if ($carSize === 'Small' || $carSize === 'Micro') {
+          $requestFilter = 'Small';
+        } elseif ($carSize === 'Medium/Large' && $carPremium === 'non premium' && $carSuv === 'non suv') {
+          $requestFilter = 'Family';
+        } elseif ($carSuv === 'suv') {
+          $requestFilter = 'SUV';
+        } elseif ($carPremium === 'premium') {
+          $requestFilter = 'Premium';
+        }
 
 
         $car_data = array( /*an array that stores the title and content of every post*/
@@ -110,6 +123,7 @@ class FDRY_Custom_Endpoint
           'carModel' => $carModel->post_title,
           'carVariant' => get_field('bodytype'),
           'carPaint'  => get_field('fdry_paint_id'),
+          'carCategory' => $requestFilter
           // Add other fields as needed
         );
         $cars[] = $car_data;
@@ -123,6 +137,7 @@ class FDRY_Custom_Endpoint
   {
     return 'https://cdn-08.imagin.studio/getImage?&customer=gbtradecentregroupplc&tailoring=tradecentre&make=' . $imageArray['carMake'] . '&modelFamily=' . $imageArray['carModel'] .  '&modelRange=' . $imageArray['carModel'] . '&modelVariant=' .  $imageArray['carVariant'] . '&paintDescription=' . $imageArray['carPaint'] . '&fileType=webp&zoomType=fullscreen&zoomLevel=1&width=400&angle=1&safeMode=false&groundPlaneAdjustment=-0.80&countryCode=GB';
   }
+
 
   //GET SINGLE cars FIELD 
   // ENDPOINT /wp-json/fdry/v2/cars/{id}

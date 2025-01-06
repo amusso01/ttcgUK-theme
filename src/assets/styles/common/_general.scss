@@ -2,12 +2,12 @@ html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
-// html,
-// body {
-// 	@include media('<phone') {
-// 		overflow-x: hidden;
-// 	}
-// }
+html,
+body {
+	@include media('<phone') {
+		overflow-x: hidden;
+	}
+}
 body {
 	font-size: $text__p;
 	color: $color__textLight;
