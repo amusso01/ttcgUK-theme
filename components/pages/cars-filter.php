@@ -9,19 +9,53 @@ get_template_part('components/getters/car-getter', 'front-page');
 
 // banners
 $fpOptions = get_field('front_page', 'options');
-$banner_break_front_page = [];
+$banner_break_small = [];
+$banner_break_family = [];
+$banner_break_suv = [];
+$banner_break_premium = [];
 if (count($fpOptions['break_collection'])) :
   foreach ($fpOptions['break_collection'] as $breakRow) {
-    $banner_break_front_page[] = [
-      'desktop' => $breakRow['break_desktop'],
-      'desktop_link' => $breakRow['break_desktop_link'],
-      'mobile' => $breakRow['break_mobile'],
-      'mobile_link' => $breakRow['break_mobile_link']
-    ];
+
+    foreach ($breakRow['car_category'] as $category) {
+      if ($category === 'small') {
+        $banner_break_small[] = [
+          'desktop' => $breakRow['break_desktop'],
+          'desktop_link' => $breakRow['break_desktop_link'],
+          'mobile' => $breakRow['break_mobile'],
+          'mobile_link' => $breakRow['break_mobile_link'],
+        ];
+      }
+      if ($category === 'family') {
+        $banner_break_family[] = [
+          'desktop' => $breakRow['break_desktop'],
+          'desktop_link' => $breakRow['break_desktop_link'],
+          'mobile' => $breakRow['break_mobile'],
+          'mobile_link' => $breakRow['break_mobile_link'],
+        ];
+      }
+      if ($category === 'suv') {
+        $banner_break_suv[] = [
+          'desktop' => $breakRow['break_desktop'],
+          'desktop_link' => $breakRow['break_desktop_link'],
+          'mobile' => $breakRow['break_mobile'],
+          'mobile_link' => $breakRow['break_mobile_link'],
+        ];
+      }
+      if ($category === 'premium') {
+        $banner_break_premium[] = [
+          'desktop' => $breakRow['break_desktop'],
+          'desktop_link' => $breakRow['break_desktop_link'],
+          'mobile' => $breakRow['break_mobile'],
+          'mobile_link' => $breakRow['break_mobile_link'],
+        ];
+      }
+    }
   }
 endif;
 
+// Create the filtered cars array based on page
 $filteredArray = [];
+$bannerArray = [];
 $whichPage = "all";
 if (is_page('car-filters-small')) {
   $whichPage = 'small';
@@ -57,27 +91,33 @@ if (is_page('car-filters-small')) {
   $carsArray = $filteredArray;
 }
 
+if (is_page('car-filters-small')) {
+  $bannerArray = $banner_break_small;
+} elseif (is_page('car-filters-family')) {
+  $bannerArray = $banner_break_family;
+} elseif (is_page('car-filters-premium')) {
+  $bannerArray = $banner_break_premium;
+} elseif (is_page('car-filters-suv')) {
+  $bannerArray = $banner_break_suv;
+} else {
+  foreach ($fpOptions['break_collection'] as $breakRow) {
+    $bannerArray[] = [
+      'desktop' => $breakRow['break_desktop'],
+      'desktop_link' => $breakRow['break_desktop_link'],
+      'mobile' => $breakRow['break_mobile'],
+      'mobile_link' => $breakRow['break_mobile_link']
+    ];
+  }
+}
+
 
 ?>
 
 
 
 <section class="fdry-carlisting__loop">
-  <div class="content-max content-block__carloop fdry-filter__top-nav">
 
-    <!-- <h3>Car Filter</h3> -->
-    <div class="fdry-filter__nav">
-
-      <button class='filterBtn-noAjax <?= $whichPage === 'all' ? 'selected' : '' ?>' data-filter="all"><a href="<?= site_url('/car-filters') ?>">ALL</a></button>
-      <button class='filterBtn-noAjax <?= $whichPage === 'small' ? 'selected' : '' ?>' data-filter="small"><a href="<?= site_url('/car-filters-small') ?>">SMALL</a></button>
-      <button class='filterBtn-noAjax <?= $whichPage === 'medium/large' ? 'selected' : '' ?>' data-filter="family"><a href="<?= site_url('/car-filters-family') ?>">FAMILY</a></button>
-      <button class='filterBtn-noAjax <?= $whichPage === 'premium' ? 'selected' : '' ?>' data-filter="premium"><a href="<?= site_url('/car-filters-premium') ?>">PREMIUM</a></button>
-      <button class='filterBtn-noAjax <?= $whichPage === 'suv' ? 'selected' : '' ?>' data-filter="suv"><a href="<?= site_url('/car-filters-suv') ?>">SUV</a></button>
-
-    </div>
-
-
-  </div>
+  <?php get_template_part('components/partials/filter-nav') ?>
 
   <div class="fdry-carlistrow carlistrow">
     <?php
@@ -104,66 +144,54 @@ if (is_page('car-filters-small')) {
             if ($i % 4 === 0) { ?>
               </div>
               <?php
-              $countLoop = count($fpOptions['break_collection']);
-              // dd(count($fpOptions['break_collection']));
-              $banner_break_front_page = [];
-              if (count($fpOptions['break_collection'])) :
-                foreach ($fpOptions['break_collection'] as $breakRow) {
-                  $banner_break_front_page[] = [
-                    'desktop' => $breakRow['break_desktop'],
-                    'desktop_link' => $breakRow['break_desktop_link'],
-                    'mobile' => $breakRow['break_mobile'],
-                    'mobile_link' => $breakRow['break_mobile_link']
-                  ];
-                }
-              endif;
+              $countLoop = count($bannerArray);
               ?>
 
               <div class="fdry-carlist-break-banner">
 
                 <?php
-                $extDesktop = end(explode('.', $banner_break_front_page[$x]['desktop']));
+                $extDesktop = end(explode('.', $bannerArray[$x]['desktop']));
 
                 if ($extDesktop === 'mp4') :
                 ?>
                   <div class="video_wrapper">
-                    <?php if ($banner_break_front_page[$x]['desktop_link']) : ?>
-                      <a href="<?= $banner_break_front_page[$x]['desktop_link'] ?>">
+                    <?php if ($bannerArray[$x]['desktop_link']) : ?>
+                      <a href="<?= $bannerArray[$x]['desktop_link'] ?>">
                       <?php endif; ?>
                       <!-- DESKTOP VIDEO -->
-                      <video class="fdry-video fdry-video-desktop" src="<?php echo $banner_break_front_page[$x]['desktop'] ?>?v=<?php
-                                                                                                                                echo date("HdmY"); ?>" width="100%" autoplay loop muted style="background-image:url('/images/banner_bg_tcuk.jpg')"></video>
-                      <?php if ($banner_break_front_page[$x]['desktop_link']) : ?>
+                      <video class="fdry-video fdry-video-desktop" src="<?php echo $bannerArray[$x]['desktop'] ?>?v=<?php
+                                                                                                                    echo date("HdmY"); ?>" width="100%" autoplay loop muted style="background-image:url('/images/banner_bg_tcuk.jpg')"></video>
+                      <?php if ($bannerArray[$x]['desktop_link']) : ?>
                       </a>
                     <?php endif; ?>
 
-                    <?php if ($banner_break_front_page[$x]['mobile_link']) : ?>
-                      <a href="<?= $banner_break_front_page[$x]['mobile_link'] ?>">
+                    <?php if ($bannerArray[$x]['mobile_link']) : ?>
+                      <a href="<?= $bannerArray[$x]['mobile_link'] ?>">
                       <?php endif; ?>
                       <!-- MOBILE VIDEO -->
-                      <video muted="" playsinline="" class="fdry-video fdry-video-mobile" src="<?php echo $banner_break_front_page[$x]['mobile']  ?>?v=<?php
-                                                                                                                                                        echo date("HdmY"); ?>" width="100%" autoplay loop style="background-image:url('/images/banner_bg_mob_tcuk.jpg')">
+                      <video muted="" playsinline="" class="fdry-video fdry-video-mobile" src="<?php echo $bannerArray[$x]['mobile']  ?>?v=<?php
+                                                                                                                                            echo date("HdmY"); ?>" width="100%" autoplay loop style="background-image:url('/images/banner_bg_mob_tcuk.jpg')">
                       </video>
-                      <?php if ($banner_break_front_page[$x]['mobile_link']) : ?>
+                      <?php if ($bannerArray[$x]['mobile_link']) : ?>
 
                       </a>
                     <?php endif; ?>
                   </div>
 
                 <?php else : ?>
-                  <?php if ($banner_break_front_page[$x]['desktop_link']) : ?>
-                    <a href="<?= $banner_break_front_page[$x]['desktop_link'] ?>">
+                  <?php if ($bannerArray[$x]['desktop_link']) : ?>
+                    <a href="<?= $bannerArray[$x]['desktop_link'] ?>">
                     <?php endif; ?>
-                    <img class="d-none carlist-desktop-break d-md-block w-100" src="<?php echo $banner_break_front_page[$x]['desktop']; ?>?v=<?php echo date("HdmY"); ?>" />
-                    <?php if ($banner_break_front_page[$x]['desktop_link']) : ?>
+                    <img class="d-none carlist-desktop-break d-md-block w-100" src="<?php echo $bannerArray[$x]['desktop']; ?>?v=<?php echo date("HdmY"); ?>" />
+                    <?php if ($bannerArray[$x]['desktop_link']) : ?>
                     </a>
                   <?php endif; ?>
 
-                  <?php if ($banner_break_front_page[$x]['mobile_link']) : ?>
-                    <a href="<?= $banner_break_front_page[$x]['mobile_link'] ?>">
+                  <?php if ($bannerArray[$x]['mobile_link']) : ?>
+                    <a href="<?= $bannerArray[$x]['mobile_link'] ?>">
                     <?php endif; ?>
-                    <img class="d-md-none carlist-mobile-break w-100" src="<?php echo $banner_break_front_page[$x]['mobile']; ?>?v=<?php echo date("HdmY"); ?>" />
-                    <?php if ($banner_break_front_page[$x]['mobile_link']) : ?>
+                    <img class="d-md-none carlist-mobile-break w-100" src="<?php echo $bannerArray[$x]['mobile']; ?>?v=<?php echo date("HdmY"); ?>" />
+                    <?php if ($bannerArray[$x]['mobile_link']) : ?>
                     </a>
                   <?php endif; ?>
 

@@ -123,6 +123,8 @@ class FDRY_Custom_Endpoint
           'carModel' => $carModel->post_title,
           'carVariant' => get_field('bodytype'),
           'carPaint'  => get_field('fdry_paint_id'),
+          'carSuv' => $carSuv === 'suv' ? true : false,
+          'carPremium' => $carPremium === 'premium' ? true : false,
           'carCategory' => $requestFilter
           // Add other fields as needed
         );

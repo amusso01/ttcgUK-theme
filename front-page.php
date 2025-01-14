@@ -32,6 +32,8 @@ get_header();
 
 <main class="fdry-main__front fdry-main">
 
+    <?php get_template_part('components/partials/filter-nav') ?>
+
     <?php get_template_part('components/pages/cars-loop') ?>
 
     <!-- BANNERS -->
