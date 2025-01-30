@@ -78,7 +78,6 @@
 .fdry-main__front {
 	.fdry-filter__nav {
 		display: flex;
-		overflow-x: scroll;
 		flex-wrap: nowrap;
 		column-gap: 7px;
 		@include media('>phone') {

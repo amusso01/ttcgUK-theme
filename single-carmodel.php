@@ -211,6 +211,41 @@ endforeach;
             </div>
         </section>
 
+        <script>
+            window.carInfo = {
+                car_url: '<?= get_the_permalink() ?>',
+                car_image: '<?= $carItem['image'] ?>',
+                car_make: '<?= $carItem['make_title'] ?>',
+                car_model: '<?= $carItem['model_title'] ?>',
+                car_price: '<?= $carDiscountedPrice ?>',
+                car_monthly_price: '<?= TcFinance::getMonthlyPrice($carDiscountedPrice); ?>',
+                car_size: '<?= $carItem['size'] ?>',
+                car_suv: '<?= $carItem['suv'] ?>',
+                car_premium: '<?= $carItem['premium'] ?>'
+            };
+        </script>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                if (window.carInfo && window.klaviyo) {
+                    klaviyo.track("Car page view", {
+                        car_url: window.carInfo.car_url,
+                        car_image: window.carInfo.car_image,
+                        car_make: window.carInfo.car_make,
+                        car_model: window.carInfo.car_model,
+                        car_price: window.carInfo.car_price,
+                        car_monthly_price: window.carInfo.car_monthly_price,
+                        car_size: window.carInfo.car_size,
+                        car_suv: window.carInfo.car_suv,
+                        car_premium: window.carInfo.car_premium,
+                        url: window.location.href,
+                        timestamp: new Date().toISOString(),
+                    });
+                }
+            });
+        </script>
+
         <section class="fdry-single-car__specs content-block content-max">
             <div class="single-car__grid">
                 <div class="car-figure <?= $isDiscount ? 'discount-tag' : '' ?>">

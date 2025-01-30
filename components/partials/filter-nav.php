@@ -11,6 +11,13 @@ if (is_page('car-filters-small')) {
 }
 
 ?>
+<style>
+  .fdry-filter__top-nav .fdry-filter__nav {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: center;
+  }
+</style>
 
 <div class="content-max content-block__carloop fdry-filter__top-nav">
 
@@ -24,6 +31,8 @@ if (is_page('car-filters-small')) {
     <button class='filterBtn-noAjax <?= $whichPage === 'suv' ? 'selected' : '' ?>' data-filter="suv"><a href="<?= site_url('/car-filters-suv') ?>">SUV</a></button>
 
   </div>
+
+
 
 
 </div>
