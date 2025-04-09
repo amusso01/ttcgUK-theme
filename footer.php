@@ -166,8 +166,8 @@ wp_footer(); ?>
 <script>
     // With the above scripts loaded, you can call `tippy()` with a CSS
     // selector and a `content` prop:
-    tippy('.fdryCaveat', {
-        content: 'Britain’s Cheapest Guaranteed: comparison is for cars registered in the same year, regardless of month. Comparison excludes private sales and accident/repaired cars (Cat S/C/D/N). Comparison is against the lowest priced car the UKs No.1 Classifieds website, within a 10,000 miles range, this being 5,000 miles higher and 5,000 miles lower. Same make, model, fuel type and number of doors. We will not compare against Autotrader cars that have a higher specification than our car. If the comparative stock is limited then we may compare our car to an older car, lower specification car or higher mileage car advertised. Click through to the car details page to see details within our Fact-Checker table.',
+    tippy('.fdryRrpInfo', {
+        content: 'Recommended Retail Prices (RRP) listed on our website are provided as a guide by CAP HPI, who are recognised experts in providing data to the automotive industry. These figures are updated monthly to maintain accuracy. Figures quoted for ‘RRP’ are used market values.',
         arrow: true,
     });
 </script>

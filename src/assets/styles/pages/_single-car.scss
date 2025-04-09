@@ -1245,7 +1245,7 @@
 			font-weight: 500;
 			font-family: $header__fontname;
 			margin-bottom: 18px;
-			line-height: 11px;
+			line-height: 1;
 			@include media('<phone-land') {
 				font-size: 21px;
 			}

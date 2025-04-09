@@ -226,9 +226,16 @@ if ($ribbon_text_override) {
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5MGKV3"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <style>
+        @media (max-width: 768px) {
+            .fdry-top-hour-banner .announcement {
+                font-size: 12px;
+            }
+        }
+    </style>
     <div class="fdry-top-hour-banner fdry-sticky-top">
         <div class="content-block">
-            <span>
+            <span class="announcement">
                 <?= $announcement ?>
             </span>
             <br>

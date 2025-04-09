@@ -193,7 +193,7 @@ $customLogo = get_stylesheet_directory_uri() . "/dist/images/TCUK_WEB.png";
             </div>
             <div class="fdry-printable-cars__content-item-cell">
               <p><?= $car['reg_number'] ?></p>
-              <p data-branch-id="<?= esc_attr($car['destination']) ?>"><?= $car['destination'] ?></p>
+              <p data-branch-id="<?= esc_attr($car['location']) ?>"><?= get_the_title($car['location']) ?></p>
             </div>
             <div class="fdry-printable-cars__content-item-cell">
               <?php if (!empty($car['image'])) : ?>
