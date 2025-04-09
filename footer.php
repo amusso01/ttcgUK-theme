@@ -90,10 +90,12 @@ $footerApr = get_field('footer_apr', 'options');
 <?php
 wp_footer(); ?>
 
-<!-- <script type="application/javascript" async src="https://static.klaviyo.com/onsite/js/STkTCz/klaviyo.js"></script> -->
-<script
+
+<!-- <script
     async type="text/javascript"
-    src="//static.klaviyo.com/onsite/js/STkTCz/klaviyo.js"></script>
+    src="//static.klaviyo.com/onsite/js/STkTCz/klaviyo.js"></script> -->
+
+<script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=STkTCz"></script>
 
 <script>
     ! function() {

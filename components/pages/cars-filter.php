@@ -133,15 +133,15 @@ if (is_page('car-filters-small')) {
           $i = 0;
           foreach ($carsArray as $carItem) {
             $i++;
-            if ($i % 4 === 1) { ?>
-              <div class="car-4-grid-row content-block content-block__carloop">
+            if ($i % 3 === 1) { ?>
+              <div class="car-3-grid-row content-block content-block__carloop">
               <?php
             }
 
 
-            get_template_part('components/pages/car-card', 'front-page');
+            get_template_part('components/pages/car-card-new', 'front-page');
 
-            if ($i % 4 === 0) { ?>
+            if ($i % 3 === 0) { ?>
               </div>
               <?php
               $countLoop = count($bannerArray);

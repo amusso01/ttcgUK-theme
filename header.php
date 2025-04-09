@@ -237,6 +237,4 @@ if ($ribbon_text_override) {
 
         </div>
     </div>
-    <?php
-
-    get_template_part('components/header/top-nav', 'header'); ?>
+    <?php get_template_part('components/header/top-nav', 'header'); ?>

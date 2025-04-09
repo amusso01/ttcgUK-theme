@@ -271,7 +271,7 @@
 }
 .greybtns a {
 	text-decoration: none !important;
-	background-color: #333333 !important;
+	background-color: #000;
 	color: #fff;
 	display: block;
 	font-size: 15px;
@@ -481,7 +481,7 @@
 
 	.fdry-header-trustpilot {
 		text-align: center;
-		margin: 0 auto;
+		margin: 0 0 0 auto;
 	}
 	.fdry-main-logo {
 		margin-right: 0;

@@ -16,7 +16,7 @@ get_header();
 
 <?php get_template_part('components/header/header-image-banner') ?>
 
-<main class="fdry-filter__main fdry-main">
+<main class="fdry-filter__main fdry-main" style="background-color: black;">
   <?php get_template_part('components/pages/cars-filter') ?>
 </main>
 

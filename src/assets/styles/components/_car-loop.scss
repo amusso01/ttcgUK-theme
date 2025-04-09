@@ -2,6 +2,7 @@
 	margin-bottom: 70px;
 	margin-top: 40px;
 
+	// 4col layout
 	.car-4-grid-row {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -12,6 +13,29 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@include media('<phone') {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	// 2col layout
+	.car-2-grid-row {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 17px;
+		row-gap: 35px;
+
+		@include media('<phone-land') {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// 3col layout
+	.car-3-grid-row {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 17px;
+		row-gap: 35px;
+
+		@include media('<phone-land') {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
@@ -1337,4 +1361,551 @@
 
 .fdry-banner-video-top .video_wrapper {
 	line-height: 0;
+}
+
+// NEW dark card layout
+.fdry-car-single-card__dark {
+	.fdry-car-single-card__save-banner {
+		background-color: #f6ed35;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		p {
+			padding: 3px 0;
+			font-size: 45px;
+			line-height: 1;
+			color: #000002;
+			font-weight: 900;
+			text-align: center;
+			font-family: $text__fontname;
+			@include media('<phone-land') {
+				font-size: 32px;
+				font-weight: 800;
+			}
+		}
+	}
+
+	.fdry-car-single__info {
+		a {
+			&:hover {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+		.fdry-car-single__info-grid {
+			display: grid;
+			grid-template-columns: 1.3fr 1fr;
+			column-gap: 8px;
+			row-gap: 8px;
+			// background: transparent
+			// 	linear-gradient(
+			// 		124deg,
+			// 		#303133 0%,
+			// 		#303338 45%,
+			// 		var(--unnamed-color-000000) 70%,
+			// 		#212121 100%
+			// 	)
+			// 	0% 0% no-repeat padding-box;
+			// background: transparent
+			// linear-gradient(
+			// 	124deg,
+			// 	#212121 0%,
+			// 	#000000 45%,
+			// 	#303133 70%,
+			// 	#313133 100%
+			// )
+			// 0% 0% no-repeat padding-box;
+
+			background-image: url('./../images/RRP-Black.jpg');
+			background-position: center;
+			background-size: cover;
+
+			@include media('<phone-land') {
+				grid-template-columns: 1.5fr 1fr;
+			}
+			.fdry-car-single__info-grid-item {
+				@include media('<phone-land') {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					margin: 4px 0;
+				}
+			}
+		}
+
+		.car-info__title {
+			padding: 17px 0 0px 10px;
+			height: 57px;
+			@include media('<phone-land') {
+				height: auto;
+				padding: 7px 0 0px 6px;
+			}
+			.car-name {
+				color: #ffffff;
+				font-size: 18px;
+				margin-bottom: 3px;
+				line-height: 1;
+				@include media('<phone-land') {
+					font-size: 17px;
+					margin-bottom: 5px;
+				}
+			}
+			.title-yellow {
+				color: #f6ed35;
+				font-weight: 900;
+				@include media('<phone-land') {
+					font-weight: 800;
+				}
+			}
+			.model {
+				color: #ffffff;
+				font-size: 14px;
+				font-family: $text__fontname;
+				font-weight: 300;
+				@include media('<phone-land') {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.fdy-car-single-card__image {
+			figure {
+				width: 225px;
+				height: auto;
+				@include media('<phone-land') {
+					// margin: auto;
+					width: 180px;
+				}
+			}
+		}
+
+		.fdry-single-car__features {
+			display: flex;
+			column-gap: 6px;
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-bottom: 20px;
+			@include media('<phone-land') {
+				padding-left: 6px;
+				padding-bottom: 7px;
+				flex-wrap: wrap;
+				row-gap: 7px;
+				column-gap: 5px;
+			}
+
+			.featurebox {
+				background-color: #f3f6ff;
+				box-shadow: 0px 3px 6px #0000000f;
+				padding: 8px 3px;
+				border-radius: 30px;
+				@include media('<phone-land') {
+					padding: 6px 4px;
+				}
+				p {
+					color: #000;
+					font-size: 10px;
+					line-height: 6px;
+					@include media('<phone-land') {
+						font-size: 11px;
+					}
+				}
+			}
+		}
+
+		.fdry-single-car__mobile-price {
+			padding-right: 10px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			@include media('<phone-land') {
+				align-items: center;
+				// flex-direction: row;
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+			.price-box {
+				border-radius: 8px;
+				overflow: hidden;
+				min-height: 105px;
+				min-width: 175px;
+				text-align: center;
+				@include media('<phone') {
+					min-height: 105px;
+					min-width: 140px;
+					max-width: 145px;
+				}
+				p {
+					font-size: 16px;
+					font-weight: 500;
+					padding: 0 12px;
+					@include media('<phone') {
+						padding: 0 8px;
+					}
+				}
+				.cost-text {
+					font-weight: bold;
+					font-size: 40px;
+					font-weight: 900;
+					line-height: 43px;
+					@include media('<phone') {
+						font-size: 34px;
+						font-weight: 800;
+						line-height: 1;
+					}
+				}
+			}
+			.red-box {
+				background: linear-gradient(
+					0deg,
+					rgb(174, 21, 17) 25%,
+					rgb(193, 19, 20) 65%,
+					rgb(225, 22, 26) 78%
+				);
+				background-repeat: repeat;
+				p {
+					color: #fff;
+				}
+				.banner-price {
+					padding: 4px;
+					margin-bottom: 5px;
+					background-color: #f6ed35;
+					color: #000;
+					font-size: 21px;
+					font-weight: 800;
+					width: 100%;
+					line-height: 1;
+					@include media('<phone') {
+						font-weight: 800;
+						font-size: 14px;
+					}
+				}
+				.price-text {
+					font-size: 12px;
+					font-weight: 800;
+					@include media('<phone') {
+						font-size: 13px;
+						line-height: 16px;
+						font-weight: 700;
+					}
+				}
+			}
+
+			.price-divider {
+				height: 6px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 1;
+				span {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					width: 24px;
+					height: 24px;
+					border-radius: 24px;
+					background-color: #000;
+					border: 1px solid white;
+					color: #fff;
+					font-size: 10px;
+					font-weight: bold;
+				}
+			}
+
+			.white-box {
+				background: linear-gradient(
+					0deg,
+					rgb(208, 208, 208) 25%,
+					rgb(225, 225, 224) 65%,
+					rgb(249, 249, 249) 78%
+				);
+				background-repeat: repeat;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				@include media('<phone') {
+					min-height: 87px;
+				}
+				p {
+					color: #000;
+					font-size: 24px;
+					font-weight: 800;
+					@include media('<phone') {
+						font-size: 21px;
+					}
+				}
+				.cost-text {
+					color: #000;
+				}
+				.price-text {
+					@include media('<phone') {
+						font-size: 21px;
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+// NEW LAYOUT MARCH 2025
+.fdry-car-single-card__new {
+	a {
+		&:hover {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+	.fdry-car-single-card__save-banner {
+		position: relative;
+		min-height: 83px;
+		background: linear-gradient(
+			0deg,
+			rgb(174, 21, 17) 25%,
+			rgb(193, 19, 20) 65%,
+			rgb(225, 22, 26) 78%
+		);
+		background-repeat: repeat;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		text-align: center;
+		padding: 8px;
+		p,
+		h1 {
+			color: white;
+		}
+		h1 {
+			font-size: 28px;
+			font-weight: 700;
+			margin-bottom: 6px;
+			line-height: 1;
+			@include media('<phone-land') {
+				font-size: 23px;
+			}
+		}
+		p {
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 1;
+			@include media('<phone-land') {
+				font-size: 15px;
+			}
+		}
+		.low-milage-row {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			position: relative;
+			img {
+				margin-top: 5px;
+				width: 90px;
+				height: auto;
+				@include media('<phone-land') {
+					width: 80px;
+				}
+			}
+		}
+
+		.mileage-badge {
+			background-color: #ffffff;
+			color: #b11212;
+			font-size: 10px;
+			font-weight: 700;
+			padding: 4px 8px;
+			line-height: 1;
+			border-radius: 8px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: -23px;
+			right: -3px;
+		}
+	}
+	.fdry-car-single__info-grid-stack {
+		background-image: url('./../images/RRP-Black.jpg');
+		background-position: center;
+		background-size: cover;
+		padding: 10px 30px;
+		display: flex;
+		flex-direction: column;
+		@include media('<phone-land') {
+			padding: 10px 0px;
+		}
+	}
+	.fdry-car-single__info-stack-item {
+		margin-bottom: 5px;
+		position: relative;
+		@include media('<phone-land') {
+			margin: 0 5px;
+			margin-bottom: 5px;
+		}
+		.price {
+			font-weight: 900;
+			font-size: 42px;
+			color: #000002;
+			@include media('<phone-land') {
+				font-size: 32px;
+			}
+		}
+	}
+	.fdy-car-single-card__rrp {
+		background-color: #ffffff;
+		padding: 5px 10px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		row-gap: 10px;
+		column-gap: 15px;
+		justify-content: space-between;
+		p {
+			color: #000002;
+			font-weight: 900;
+			font-size: 40px;
+			line-height: 1;
+			@include media('<phone') {
+				font-size: 26px;
+			}
+
+			span {
+				font-weight: 300;
+				font-size: 17px;
+				position: relative;
+				left: -11px;
+				@include media('<phone') {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.fdy-car-single-card__tcprice {
+		background-color: #f6ed35;
+		padding: 5px 10px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		row-gap: 10px;
+		column-gap: 15px;
+		justify-content: space-between;
+		p {
+			color: #000002;
+			font-weight: 800;
+			font-size: 28px;
+			line-height: 1;
+			@include media('<phone-land') {
+				font-size: 26px;
+			}
+		}
+	}
+	.fdy-car-single-card__save {
+		background-color: #b11212;
+		padding: 5px 10px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		row-gap: 10px;
+		column-gap: 15px;
+		justify-content: space-between;
+		p {
+			color: white;
+			font-weight: 800;
+			font-size: 38px;
+			line-height: 1;
+			@include media('<phone-land') {
+				font-size: 32px;
+			}
+		}
+		.price {
+			color: #ffffff;
+		}
+	}
+
+	.fdy-car-single-card__image {
+		position: relative;
+		padding-top: 10px;
+		.fdy-car-features {
+			position: absolute;
+			top: 2px;
+			left: 0;
+			display: flex;
+			column-gap: 4px;
+			row-gap: 4px;
+			.featurebox {
+				background-color: #ffffff;
+				padding: 3px 4px;
+				border-radius: 8px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				p {
+					font-weight: 500;
+					font-size: 10px;
+					line-height: 1;
+					@include media('<phone') {
+						font-size: 9px;
+					}
+				}
+			}
+		}
+	}
+
+	.fdry-car-single__info-stack-item__grid {
+		display: grid;
+		grid-template-columns: 1fr 0.7fr;
+		column-gap: 10px;
+		margin-bottom: 8px;
+	}
+
+	.fdy-car-single-card__finance-price {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		row-gap: 4px;
+		background-color: #ffffff;
+		padding: 5px;
+		border-radius: 8px;
+		position: relative;
+		p {
+			color: #000000;
+			font-weight: 800;
+			font-size: 21px;
+			line-height: 1;
+			@include media('<phone') {
+				font-size: 18px;
+			}
+		}
+
+		.price-divider {
+			position: absolute;
+			top: -13px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #000000;
+			width: 26px;
+			height: 26px;
+			border-radius: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid white;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+		}
+	}
+
+	.fdy-car-single-card__promo {
+		text-align: center;
+		p {
+			color: #ffffff;
+			font-size: 11px;
+			font-weight: 700;
+			line-height: 1;
+			span {
+				font-weight: 400;
+			}
+		}
+	}
 }

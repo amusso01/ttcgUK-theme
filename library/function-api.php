@@ -99,6 +99,7 @@ class FDRY_Custom_Endpoint
         $carSize = get_field('size');
         $carSuv = get_field('suv');
         $carPremium = get_field('premium');
+        $carLink = site_url('/cars/' . $carMake->post_name . '/' . $carModel->post_name . '/' .  $postId);
 
         if ($carSize === 'Small' || $carSize === 'Micro') {
           $requestFilter = 'Small';
@@ -113,7 +114,7 @@ class FDRY_Custom_Endpoint
 
         $car_data = array( /*an array that stores the title and content of every post*/
           'carID' => $postId,
-          'carLink' => get_the_permalink(),
+          'carLink' => $carLink,
           'carTitle' => get_the_title(),
           'carPrice' => get_field('rrp'),
           'carImage' => $this->buildImageCDN($carImageData),

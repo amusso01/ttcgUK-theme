@@ -350,6 +350,7 @@ function tcw_cars_import()
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
             update_field('total_in_stock', $row->TotalInStock, $carId);
             update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
+            update_field('cap_price', $row->CapRetail, $carId);
             update_field('size', $row->Size, $carId);
             if ($row->SUV === true) {
                 update_field('suv', 'suv', $carId);
@@ -402,6 +403,7 @@ function tcw_cars_import()
             update_field('alt_car_spec', $row->AltCarSpec, $carId);
             update_field('total_in_stock', $row->TotalInStock, $carId);
             update_field('total_make_in_stock', $row->TotalMakeInStock, $carId);
+            update_field('cap_price', $row->CapRetail, $carId);
 
             update_field('size', $row->Size, $carId);
             if ($row->SUV === true) {

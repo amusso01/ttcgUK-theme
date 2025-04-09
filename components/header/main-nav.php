@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Primary Nav
  * 
@@ -7,7 +8,7 @@
  * @package Foundry
  */
 
-if ( has_nav_menu( 'header-menu' ) ) :
+if (has_nav_menu('header-menu')) :
     wp_nav_menu([
         'theme_location'    => 'header-menu',
         'menu_id'           => 'menu_main-l',

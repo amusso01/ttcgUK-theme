@@ -32,8 +32,8 @@
 	}
 
 	.fdry-filter__top-nav {
-		margin-top: 35px;
-		margin-bottom: 15px;
+		padding-top: 35px;
+		padding-bottom: 15px;
 	}
 
 	.fdry-filter__top-nav button {
@@ -44,6 +44,7 @@
 		font-weight: 600;
 		transition: box-shadow 0.5s;
 		color: #1834a0;
+		background-color: white;
 		a {
 			color: inherit;
 			&:hover {
@@ -76,6 +77,10 @@
 }
 
 .fdry-main__front {
+	.fdry-filter__top-nav {
+		padding-top: 35px;
+		padding-bottom: 15px;
+	}
 	.fdry-filter__nav {
 		display: flex;
 		flex-wrap: nowrap;
@@ -89,11 +94,6 @@
 		position: relative;
 	}
 
-	.fdry-filter__top-nav {
-		margin-top: 35px;
-		margin-bottom: 15px;
-	}
-
 	.fdry-filter__top-nav button {
 		border: 1px solid #1834a0;
 		background-color: transparent;
@@ -102,6 +102,7 @@
 		font-weight: 600;
 		transition: box-shadow 0.5s;
 		color: #1834a0;
+		background-color: white;
 		a {
 			color: inherit;
 			&:hover {

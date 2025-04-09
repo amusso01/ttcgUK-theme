@@ -178,7 +178,7 @@ $tagOffset = get_field('tag_offset_top', 'option');
 
     <div class="fdry-single-car__mobile-finance-check">
         <a href="/finance-check?make=<?= $carItem['make_title']; ?>&model=<?= $carItem['model_title']; ?>&vid=<?= $carItem['stock_number']; ?>" class="fdry-finance-check-mobile__btn-img">
-            <img src="<?= get_template_directory_uri() ?>/dist/images/Finance.svg" alt="Free finance check button">
+            <img src="<?= get_template_directory_uri() ?>/dist/images/Finance-new.svg" alt="Free finance check button">
         </a>
     </div>
 

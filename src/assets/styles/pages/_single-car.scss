@@ -1205,3 +1205,194 @@
 		}
 	}
 }
+
+// 2025 JAN layout
+
+.fdry-single-car__layout-25 {
+	position: relative;
+	padding-top: 10px;
+
+	.fdry-single-car__boxinfocar {
+		background-color: #f3f3f3;
+		padding: 10px 12px 27px;
+		border-radius: 0 0 12px 12px;
+		margin-bottom: 30px;
+	}
+
+	.fdry-car-single-card__save-banner {
+		width: 100%;
+		background-color: #f6ed35;
+		padding: 5px 10px;
+		border-radius: 12px 12px 0 0;
+		p {
+			font-size: 42px;
+			font-weight: 900;
+			text-align: center;
+			line-height: 1;
+			color: #000;
+			@include media('<phone-land') {
+				font-size: 32px;
+				font-weight: 800;
+			}
+		}
+	}
+
+	.car-info__title {
+		margin-bottom: 25px;
+		margin-top: 8px;
+		.car-name {
+			font-size: 25px;
+			font-weight: 500;
+			font-family: $header__fontname;
+			margin-bottom: 18px;
+			line-height: 11px;
+			@include media('<phone-land') {
+				font-size: 21px;
+			}
+		}
+		.title-yellow {
+			font-weight: 800;
+		}
+		.model {
+			font-size: 18px;
+			color: #000;
+			line-height: 11px;
+		}
+	}
+
+	.fdry-single-car__mobile-price {
+		justify-content: center;
+		.price-box {
+			width: 45%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			height: 90px;
+			color: white;
+			row-gap: 3px;
+			overflow: hidden;
+			padding: 0;
+			text-align: center;
+			.price-text {
+				color: #fff;
+				padding: 2px;
+				font-size: 13px;
+				line-height: 1;
+				font-weight: 800;
+				@include media('<phone') {
+					font-size: 11px;
+					font-weight: 600;
+					top: -10px;
+					position: relative;
+				}
+			}
+			.cost-text {
+				font-weight: 900;
+				font-size: 40px;
+				margin-bottom: 10px;
+				line-height: 37px;
+				@include media('<phone') {
+					font-size: 28px;
+					line-height: 20px;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.price-box.blue-box {
+			.cost-text {
+				font-size: 55px;
+				margin-top: 10px;
+				line-height: 30px;
+				font-weight: 900;
+				@include media('<phone') {
+					font-size: 32px;
+					line-height: 38px;
+					margin-bottom: 0;
+				}
+			}
+			.price-text {
+				font-size: 28px;
+				line-height: 25px;
+				font-weight: 900;
+				@include media('<phone') {
+					font-size: 17px;
+					line-height: 1;
+				}
+			}
+		}
+
+		.divider {
+			width: 20px;
+			z-index: 1;
+			span {
+				width: 28px;
+				height: 28px;
+				padding: 5px;
+				border-radius: 15px;
+				background-color: #000;
+				color: #fff;
+				border: 1px solid white;
+				font-weight: bold;
+				font-size: 12px;
+				position: relative;
+				left: -5px;
+			}
+		}
+
+		.banner-price {
+			width: 100%;
+			background-color: #f6ed35;
+			color: #000;
+			font-weight: 800;
+			font-size: 21px;
+			line-height: 1;
+			text-align: center;
+			padding: 3px;
+			padding-top: 5px;
+			padding-bottom: 0;
+			@include media('<phone') {
+				font-size: 18px;
+				position: relative;
+				top: -13px;
+			}
+		}
+	}
+
+	.greybtns {
+		margin-bottom: 20px;
+		> a {
+			background-color: #000;
+		}
+	}
+}
+
+.fdry-single-car-similar {
+	.fdry-car-single-card__dark {
+		a {
+			cursor: pointer;
+		}
+		.fdry-single-car__mobile-price {
+			margin-bottom: 0;
+			.red-box,
+			.price-box {
+				width: 100%;
+				padding-left: 0px;
+				padding-right: 0px;
+
+				.banner-price {
+					top: -6px;
+					position: relative;
+				}
+			}
+			.red-box {
+				justify-content: flex-start;
+			}
+
+			.price-divider {
+				background: transparent;
+			}
+		}
+	}
+}

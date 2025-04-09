@@ -30,31 +30,34 @@ get_header();
 <?php get_template_part('components/header/header-image-banner') ?>
 <?php get_template_part('components/header/header-marquee') ?>
 
-<main class="fdry-main__front fdry-main">
+<main class="fdry-main__front fdry-main" style="background-color: black;">
 
     <?php get_template_part('components/partials/filter-nav') ?>
 
     <?php get_template_part('components/pages/cars-loop') ?>
 
-    <!-- BANNERS -->
-    <?php get_template_part('components/banners/better-car-video') ?>
-    <?php get_template_part('components/banners/price-promise') ?>
+    <div class="white-bg" style="background-color: white">
+        <!-- BANNERS -->
+        <?php get_template_part('components/banners/better-car-video') ?>
+        <?php get_template_part('components/banners/price-promise') ?>
 
-    <!-- BRANCHES -->
-    <div class="content-block content-max" style="margin-top: 50px; margin-bottom: 40px; padding-bottom:60px">
-        <?php get_template_part('components/pages/branches-carousel') ?>
+        <!-- BRANCHES -->
+
+        <div class="content-block content-max" style="margin-top: 50px; margin-bottom: 40px; padding-bottom:60px">
+            <?php get_template_part('components/pages/branches-carousel') ?>
+        </div>
+
+
+        <!-- TRUSTPILOT -->
+        <?php get_template_part('components/pages/trustpilot') ?>
+
+        <!-- ACTION BOX GRID -->
+        <?php get_template_part('components/pages/action-box-grid') ?>
+
+
+        <!-- VIDEO GUIDE -->
+        <?php get_template_part('components/pages/video-guide') ?>
     </div>
-
-    <!-- TRUSTPILOT -->
-    <?php get_template_part('components/pages/trustpilot') ?>
-
-    <!-- ACTION BOX GRID -->
-    <?php get_template_part('components/pages/action-box-grid') ?>
-
-
-    <!-- VIDEO GUIDE -->
-    <?php get_template_part('components/pages/video-guide') ?>
-
 </main>
 
 <?php

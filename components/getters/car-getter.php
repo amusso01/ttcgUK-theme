@@ -1,6 +1,6 @@
 <?php
 
-global $branch, $carmodel, $carmake, $carsArray,  $saleMode, $regYear, $carId;
+global $branch, $carmodel, $carmake, $carsArray,  $saleMode, $regYear, $carId, $originalCarsArray, $removedCarsArray;
 
 //if($carmodel) $posts_per_page = '1'; else $posts_per_page = '-1';
 $posts_per_page = '-1';
@@ -186,6 +186,7 @@ while ($query->have_posts()) {
     $carItem['size'] = $custom['size'][0] ? $custom['size'][0] : false;
     $carItem['suv'] = $custom['suv'][0] ? $custom['suv'][0] : false;
     $carItem['premium'] = $custom['premium'][0] ? $custom['premium'][0] : false;
+    $carItem['cap_price'] = $custom['cap_price'][0] ? $custom['cap_price'][0] : false;
     /*$carItem['image'] = $custom['image_url'][0];*/
     /*
     if($carItem['featured']==1) {
@@ -206,7 +207,38 @@ array_multisort(
     $carsArray
 );
 
+$originalCarsArray = $carsArray;
+
+// REMOVE CAR SAME MODEL AND YEAR
+// Create a new array to store the unique car items
+$uniqueCarsArray = array();
+
+// Create a new array to store the removed car items
+$removedCarsArray = array();
+
+// Iterate through the $carsArray
+foreach ($carsArray as $carItem) {
+    // Create a key based on the reg_year and model_title values
+    $key = $carItem['reg_year'] . '_' . $carItem['model_title'];
+
+    // Check if the key already exists in the $uniqueCarsArray
+    if (!isset($uniqueCarsArray[$key])) {
+        // If not, add the car item to the $uniqueCarsArray
+        $uniqueCarsArray[$key] = $carItem;
+    } else {
+        // If the key already exists, add the car item to the $removedCarsArray
+        $removedCarsArray[] = $carItem;
+    }
+}
+
+// Replace the original $carsArray with the $uniqueCarsArray
+// $carsArray = $uniqueCarsArray;
+$carsArray = $originalCarsArray;
+
 //shuffle($carsArrayFeat);
 //print_r($carsArrayFeat);
 //shuffle($carsArrayNorm);
 //$carsArray = array_merge($carsArrayFeat,$carsArrayNorm); 
+?>
+
+<!--  -->

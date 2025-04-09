@@ -211,40 +211,66 @@ endforeach;
             </div>
         </section>
 
+
+        <!-- KLAVIYO DPV EVENT TRACK -->
+        <?php
+        $requestFilter = '';
+        if ($carItem['size'] === 'Small' || $carItem['size'] === 'Micro') {
+            $requestFilter = 'Small';
+        } elseif ($carItem['size'] === 'Medium/Large' && $carItem['premium'] === 'non premium' && $carItem['suv'] === 'non suv') {
+            $requestFilter = 'Family';
+        } elseif ($$carItem['suv'] === 'suv') {
+            $requestFilter = 'SUV';
+        } elseif ($carItem['premium'] === 'premium') {
+            $requestFilter = 'Premium';
+        }
+
+        ?>
         <script>
             window.carInfo = {
+                car_id: '<?= $carId ?>',
                 car_url: '<?= get_the_permalink() ?>',
                 car_image: '<?= $carItem['image'] ?>',
                 car_make: '<?= $carItem['make_title'] ?>',
                 car_model: '<?= $carItem['model_title'] ?>',
                 car_price: '<?= $carDiscountedPrice ?>',
                 car_monthly_price: '<?= TcFinance::getMonthlyPrice($carDiscountedPrice); ?>',
-                car_size: '<?= $carItem['size'] ?>',
-                car_suv: '<?= $carItem['suv'] ?>',
-                car_premium: '<?= $carItem['premium'] ?>'
+                car_size: '<?= $requestFilter ?>',
+                car_suv: '<?= $carItem['suv'] === 'suv' ? 'true' : 'false' ?>',
+                car_premium: '<?= $carItem['premium'] === 'premium' ? 'true' : 'false' ?>'
             };
         </script>
 
 
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
+            var _learnq = _learnq || [];
+            window.onload = function() {
+
+
                 if (window.carInfo && window.klaviyo) {
-                    klaviyo.track("Car page view", {
-                        car_url: window.carInfo.car_url,
-                        car_image: window.carInfo.car_image,
-                        car_make: window.carInfo.car_make,
-                        car_model: window.carInfo.car_model,
-                        car_price: window.carInfo.car_price,
-                        car_monthly_price: window.carInfo.car_monthly_price,
-                        car_size: window.carInfo.car_size,
-                        car_suv: window.carInfo.car_suv,
-                        car_premium: window.carInfo.car_premium,
+                    var klaviyoItem = {
+                        carID: window.carInfo.car_id,
+                        carLink: window.carInfo.car_url,
+                        carImage: window.carInfo.car_image,
+                        carMake: window.carInfo.car_make,
+                        carModel: window.carInfo.car_model,
+                        carPrice: window.carInfo.car_price,
+                        carMonthlyPrice: window.carInfo.car_monthly_price,
+                        carCategory: window.carInfo.car_size,
+                        carSuv: window.carInfo.car_suv,
+                        carPremium: window.carInfo.car_premium,
                         url: window.location.href,
                         timestamp: new Date().toISOString(),
-                    });
+                    }
+                    klaviyo.track("Car page view", klaviyoItem);
+
+                    _learnq.push(['track', 'Viewed Product', klaviyoItem]);
+                    console.log(klaviyoItem)
+                    console.log(_learnq);
                 }
-            });
+            }
         </script>
+
 
         <section class="fdry-single-car__specs content-block content-max">
             <div class="single-car__grid">

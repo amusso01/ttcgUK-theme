@@ -1,14 +1,14 @@
 <?php
 
 global $wp, $show404, $carmake, $carmodel, $car, $branch, $listingType, $custom, $title, $similarCars, $similarCarTitle,
-  $metaDescription, $saleModeDiscount, $carsArray, $carItem, $amount, $saleMode, $regYear, $carId;
+  $metaDescription, $saleModeDiscount, $carsArray, $carItem, $amount, $saleMode, $regYear, $carId, $originalCarsArray;
 
 if ($listingType != 'similarcarlisting') {
 
   $carsArray = [];
+  $originalCarsArray = [];
   get_template_part('components/getters/car-getter', 'front-page');
 }
-
 
 
 ?>
@@ -76,31 +76,17 @@ endif;
           $i = 0;
           foreach ($carsArray as $carItem) {
             $i++;
-            //   var_dump($i);
-            //   var_dump($i % 4);
-            // switch ($carItem['type']) {
-            //     case LISTING_NORMAL_MODE :
-            //         get_template_part('template-parts/carslisting/normal-mode-cars-item', 'front-page');
-            //         break;
-            //     case LISTING_SALE_MODE :
-            //         get_template_part('template-parts/carslisting/sale-mode-cars-item', 'front-page');
-            //         break;
-            //     case LISTING_FROM_MODE :
-            //         get_template_part('template-parts/carslisting/from-mode-cars-item', 'front-page');
-            //         break;
-            //     case LISTING_SPECIALS :
-            //         get_template_part('template-parts/carslisting/special-cars-item', 'front-page');
-            //         break;
-            // }
-            if ($i % 4 === 1) { ?>
-              <div class="car-4-grid-row content-block content-block__carloop">
+
+            if ($i % 3 === 1) { ?>
+              <!-- change it to 4 col with car-4-grid-row -->
+              <div class="car-3-grid-row content-block content-block__carloop">
               <?php
             }
 
 
-            get_template_part('components/pages/car-card', 'front-page');
+            get_template_part('components/pages/car-card-new', 'front-page');
 
-            if ($i % 4 === 0) { ?>
+            if ($i % 3 === 0) { ?>
               </div>
               <?php
               $countLoop = count($fpOptions['break_collection']);
@@ -201,17 +187,29 @@ endif;
 
 <!-- Show section for carmake description -->
 <style>
-  .boxcontentcar{padding: 0 40px 60px;}
-  .boxcontentcar h1, .boxcontentcar h2{margin-bottom: 20px;}
-  .boxcontentcar h2{margin-top: 30px;}
-  .boxcontentcar p{margin-bottom: 10px;}
+  .boxcontentcar {
+    padding: 0 40px 60px;
+  }
+
+  .boxcontentcar h1,
+  .boxcontentcar h2 {
+    margin-bottom: 20px;
+  }
+
+  .boxcontentcar h2 {
+    margin-top: 30px;
+  }
+
+  .boxcontentcar p {
+    margin-bottom: 10px;
+  }
 </style>
-<?php if (get_post_type() == 'carmake') { 
-  if( get_the_content() ){ ?>
+<?php if (get_post_type() == 'carmake') {
+  if (get_the_content()) { ?>
     <div class="content-max boxcontentcar">
       <?php echo get_the_content(); ?>
     </div>
-<?php  
+<?php
   }
 } ?>
 

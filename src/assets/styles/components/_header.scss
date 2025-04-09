@@ -112,13 +112,15 @@
 		margin-left: 0px;
 		margin-right: auto;
 	}
-
-	> a {
-		display: inline-block;
-
+	.nav-map__desktop {
 		@include media('<tablet') {
 			display: none;
 		}
+	}
+
+	a {
+		display: inline-block;
+
 		svg {
 			width: auto;
 			height: 37px;
@@ -127,7 +129,10 @@
 
 	> img {
 		width: auto;
-		height: 43px;
+		height: 48px;
+		@include media('<tablet') {
+			height: 55px;
+		}
 	}
 }
 
